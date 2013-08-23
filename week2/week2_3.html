@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Websites Bouwen 1 - Week 2 - Hyperlinks II</title>
+  <link href="../css/active.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>Hyperlinks II</h2>
+  <hr />
+  Hiervoor hebben we gezien hoe je met behulp van hyperlinks een
+  webpagina kunt verbinden met andere webpagina&#39;s en/of verwijzen
+  naar een bepaald onderdeel binnen een webpagina, de zogenaamde
+  interne koppeling.<br />
+  Hoewel dit de belangrijkste toepassing van hyperlinks is, kun je met
+  behulp van hyperlinks in principe verwijzen naar iedere
+  informatiebron die te vinden en te bereiken is op het WWW.<br />
+  Hieronder zullen we de overige meest voorkomende hyperlinks
+  bespreken. Achtereenvolgens bekijken we koppelingen naar:
+
+  <ul>
+    <li><a href="#ftp">een FTP-site;</a></li>
+
+    <li><a href="#mail">een e-mail adres;</a></li>
+
+    <li><a href="#dynamisch">een dynamische webpagina;</a></li>
+
+    <li><a href="#bestand">een bestand dat gedownload kan
+    worden.</a></li>
+  </ul><br />
+  <br />
+  <a name="ftp" id="ftp"></a>
+
+  <h3>Een koppeling naar een FTP-site maken.</h3>Op een FTP-site staan
+  bestanden die je kunt downloaden (FTP = File Transfer Protocol). Voor
+  het downloaden van bestanden maakt de browser geen gebruik van het
+  http-protocol maar wordt het ftp-protocol gebruikt. Een link naar een
+  ftp-site begint dan ook niet met <i>http://</i> maar met
+  <b>ftp://</b>. Dit is dus een 2e vorm van een URL!<br />
+  De syntax voor een ftp-koppeling ziet er als volgt uit:
+  <pre>
+&lt;a href=&quot;ftp://naam van de site/&quot;&gt;Dit is een ftp-koppeling&lt;/a&gt;
+</pre>Wil je bijvoorbeeld een link opnemen naar de FTP-site van McAfee
+(de makers van het bekende antivirus programma) dan ziet de html-code
+er als volgt uit:
+  <pre>
+&lt;a href=&quot;ftp://ftp.mcafee.com&quot;&gt;Download hier de nieuwste virusscanner&lt;/a&gt;
+</pre>De browser geeft dit weer als:<br />
+  <a href="ftp://ftp.mcafee.com/">Download hier de nieuwste
+  virusscanner</a><br />
+  <br />
+  Je kunt niet alleen een koppeling naar een ftp-site (in zijn geheel)
+  maken, maar ook naar een specifiek bestand dat op die site staat. Om
+  bijvoorbeeld de laatste &quot;dat file&quot; van McAfee te downloaden
+  kun je de volgende link maken:
+  <pre>
+&lt;a href=&quot;ftp://ftp.mcafee.com/pub/datfiles/dutch/dat-4388.zip&quot;&gt;Download hier dat-file 4388.&lt;/a&gt;
+</pre>De browser geeft dit vervolgens weer als:<br />
+  <a href=
+  "ftp://ftp.mcafee.com/pub/datfiles/dutch/dat-4388.zip">Download hier
+  dat-file 4388.</a><br />
+  <br />
+  <b>Let op:</b><br />
+  Wees terughoudend in het maken van een link naar een specifiek
+  bestand als je niet zeker weet dat dat bestand daar altijd onder
+  dezelfde naam te vinden is. De dat-files bij McAfee worden
+  bijvoorbeeld wekelijks vervangen en na een week zal deze link dus al
+  dood zijn.<br />
+  <br />
+  Er bestaan 2 typen FTP-sites: <i>anonieme</i> en
+  <i>niet-anonieme</i>.<br />
+  Bij anonieme FTP-sites kan iedereen inloggen met de gebruikersnaam
+  <i>anonymous</i> en het email-adres als wachtwoord. Hier hoeft de
+  gebruiker geen moeite voor te doen; de browser verzorgt dat
+  automatisch voorn hem/haar. In 99% van de gevallen gaat het om
+  anonieme FTP-sites.<br />
+  Bij niet-anonieme sites (b.v. een intranet) moet de gebruiker met een
+  expliciete inlognaam en wachtwoord inloggen.<br />
+  <br />
+  <br />
+  <a name="mail" id="mail"></a>
+
+  <h3>Een koppeling naar een e-mail adres maken.</h3>Vaak is het handig
+  als bezoekers van je website jouw of iemand anders een e-mailtje
+  kunnen versturen. Hiervoor kun je de volgende link opnemen:
+  <pre>
+&lt;a href=&quot;mailto:janjansen@zijndomein.nl&quot;&gt;Stuur Jan Jansen een mailtje.&lt;/a&gt;
+</pre>Merk op, dat bij het mailto-protocol niet de 2 forward-slashes
+voorkomen, zoals bij het http- en ftp-protocol wel het geval is.<br />
+
+  <br />
+  De browser geeft dit weer als: <a href=
+  "mailto:janjansen@zijndomein.nl">Stuur Jan Jansen een
+  mailtje.</a><br />
+  <br />
+  Als de gebruiker op deze link klikt zal zijn e-mail programma
+  opgestart worden en kan hij een mailtje versturen.<br />
+  <b>Let op:</b>Deze link werkt alleen goed als de gebruiker een e-mail
+  programma op zijn computer heeft staan &eacute;n als dit programma
+  juist geconfigureerd is.<br />
+  <br />
+  <br />
+  <a name="dynamisch" id="dynamisch"></a>
+
+  <h3>Een koppeling naar een dynamische webpagina maken.</h3>Steeds
+  vaker zien we dat een website is opgebouwd uit dynamische
+  webpagina&#39;s. In tegenstelling tot statische webpagina&#39;s staan
+  dynamische webpagina&#39;s niet kant en klaar op de server. Een
+  dynamische webpagina wordt feitelijk pas gemaakt als de gebruiker
+  deze opvraagt. De inhoud, die is opgeslagen in een database, wordt
+  dan samengevoegd met HTML-codes om zodoende een HTML pagina te vormen
+  die vervolgens naar de browser gestuurd wordt.<br />
+  Het maken van (in deze zin) dynamische websites komt verder in deze
+  module niet aan bod; wel in een vervolgmodule.<br />
+  <br />
+  Doordat een dynamische webpagina geen bestand op een server is, kun
+  je daar ook geen link naartoe opnemen op de manier die we tot nu toe
+  gezien hebben. In plaats daarvan neem je een link op naar het
+  &quot;hoofdbestand&quot; van de site/pagina gevolgd door een
+  vraagteken en de parameters die verantwoordelijk zijn voor de
+  samenstelling van de pagina. De verschillende parameters worden
+  gescheiden door een ampersand (&amp;).<br />
+  <br />
+  Een rechtstreekste link naar de downloadpagina op ZDnet van de
+  nieuwste versie van Internet Explorer ziet er bijvoorbeeld als volgt
+  uit:
+  <pre>
+&lt;a href=&quot;http://www.zdnet.nl/downl.cfm?id=11718&amp;mxp=13&quot;&gt;Hier kun je de nieuwste versie van Internet Explorer (versie 6) downloaden &lt;/a&gt;
+</pre>In de browser zien we dan: <a href=
+"http://www.zdnet.nl/downl.cfm?id=11718&amp;mxp=13" target=
+"_blank"><br />
+  Hier kun je de nieuwste versie van Internet Explorer (versie 6)
+  downloaden</a><br />
+  <br />
+  <br />
+  <a name="bestand" id="bestand"></a>
+
+  <h3>Een koppeling naar een bestand dat gedownload kan worden.</h3>Het
+  maken van een koppeling naar een bestand dat gedownload kan worden is
+  eigenlijk precies hetzelfde als het maken van een koppeling naar een
+  webpagina. Het enige verschil is dat het bestand waarnaar je verwijst
+  geen HTML-bestand is, maar een bestand dat de browser niet kan
+  weergeven. Als de browser namelijk een bestand tegenkomt dat het niet
+  kan weergeven - ook niet met eventueel ge&iuml;nstalleerde plug ins -
+  zal hij automatisch vragen of je het bestand wil downloaden.<br />
+  <br />
+  Als ik jullie bijvoorbeeld het bestand test.zip van deze website wil
+  laten downloaden, neem ik daarvoor de volgende code in de pagina op:
+  <pre>
+&lt;a href=&quot;test.abc&quot;&gt;Download hier het bestand test.abc&lt;/a&gt;
+</pre>In de browser zien we dan: <a href="test.abc">Download hier het
+bestand test.abc</a><br />
+  <br />
+  Merk op dat ik hier een <a href=
+  "../week2/week2_2.html#relatief">relatieve hyperlink</a> gebruikt
+  heb.<br />
+  <br />
+  <br />
+
+  <h3>Overige zaken</h3>Er zijn nog meer protocollen die binnen de
+  anchor-tag gebruikt kunnen worden, zoals <i>gopher</i>, <i>news</i>,
+  <i>wais</i>, <i>telnet</i>, maar die behandelen we hier niet
+  verder.<br />
+  <br />
+  Daarnaast zijn ook de 3 kleuren die een link kan hebben, nl voor
+  <i>nog niet gebruikte</i>, <i>actieve</i> en <i>gebruikte</i>
+  toestand, aan te passen via het <i>link</i>, <i>alink</i> en
+  <i>vlink</i> atriubuut van de <i>body</i>-tag.<br />
+  Tegenwoordig kan ook de gebruiker de kleuren voor deze toestanden
+  instellen via b.v. de Opties binnen IE.<br />
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Websites Bouwen 1 - Week 1 - Basistags</title>
+  <link href="../css/active.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>Basistags van HTML</h2>
+  <hr />
+  Een webpagina is dus opgebouwd uit tekst en HTM-tags.<br />
+  <b>Tekst</b> wordt i.h.a. exact zo weergegeven als in de editor
+  ingegeven is m.u.v. speciale tekens (zie verderop) en extra
+  spaties/tabs/enter&#39;s. Deze laatste worden genegeerd door de
+  browser, maar je kunt ze wel gebruiken om wat meer structuur in de
+  HTML-code aan te brengen.<br />
+  Iedere <b>HTML-tag</b> bestaat uit een naam van de tag en een
+  <i>optionele</i> lijst van <b>attributen</b>, de eigenschappen die
+  bij die tag horen.<br />
+  <br />
+  De meeste HTML-tags zijn zogenaamde <b>container tags</b>, dat wil
+  zeggen dat ze een <b>begin- en een eindtag hebben.</b> De wijze
+  waarop de inhoud (tekst, plaatjes etc.) die tussen de begin- en
+  eindtag staat, wordt weergegeven, is afhankelijk van de eigenschappen
+  van deze tag (=<b>attributen</b>).<br />
+  <br />
+  Bijvoorbeeld:<br />
+  &nbsp;&lt;b&gt;&lt;/b&gt;<br />
+  &nbsp;&nbsp;In de onderstaande zin wordt &lt;b&gt;deze
+  tekst&lt;/b&gt; vet afgedrukt.<br />
+  &nbsp;&nbsp;In deze zin wordt <b>deze tekst</b> vet afgedrukt<br />
+  <br />
+  Een eindtag heeft dus dezelfde naam als de begintag, maar wordt
+  voorafgegaan door <b>een slash (/)</b>.<br />
+  <br />
+  Een aantal tags heeft geen eindtag. Deze worden ook wel <b>open</b>
+  tags genoemd.<br />
+  Een voorbeeld is de &lt;hr&gt;-tag, die een horizontale lijn
+  afdrukt.<br />
+  <i>NB: In XHTML liggen de zaken iets anders, daar komen we verderop
+  in de module nog op terug.</i><br />
+  <br />
+  <b>Attributen</b> worden binnen een tag geplaatst om het gedrag van
+  een tag uit te breiden of aan te passen. Attributen komen na de
+  tag-naam te staan (in de openingstag), gescheiden door een spatie. De
+  waarde die de attributen krijgen volgt op een is-gelijk (=) teken na
+  de naam van het attribuut. Deze waarde zet je tussen dubbele
+  aanhalingstekens (&quot;&quot;).<br />
+  <br />
+  Bijvoorbeeld:
+<br />&nbsp;&nbsp;<code>In deze zin wordt &lt;span style=&quot;color:red&quot;&gt; dit stuk tekst &lt;/span&gt; rood.</code>
+<br />&nbsp;&nbsp;In deze zin wordt <font color="red">dit stuk tekst</font> rood.
+  <hr />
+
+  <h3>De basistags die in iedere webpagina voorkomen</h3>
+  <code>&lt;html&gt; &lt;/html&gt;  </code>: tussen deze tags staat de volledige webpagina.<br />
+  <code>&lt;head&gt; &lt;/head&gt;  </code>: deze tag bevat de &lt;title&gt;&lt;/title&gt;tag en de zogenaamde meta tags.<br />
+  <code>&lt;title&gt; &lt;/title&gt;</code>: deze tag bevat de titel van de webpagina; wordt in de titelbak van de browser getoond.<br />
+  <code>&lt;body&gt; &lt;/body&gt;  </code>: tussen deze tags komt de inhoud te  staan die door de browser op het scherm zal worden getoond.<br />
+  <br />
+  De meeste tags kunnen een aantal <b>attributen</b> bevatten, zoals:
+
+  <ul>
+    <li><code>&lt;img src=&quot;naamplaatje.gif&quot;&gt;</code> img-tag met als attribuut de bron-url van een afbeeelding.</li>
+    <li><code>style=&quot;color:#RRGGBB&quot;</code> bepaalt de tekstkleur van een element</li>
+    <li><code>style="background-color=#RRGGBB&quot;</code> bepaalt de achtergrondkleur van een element</li>
+  </ul>
+
+  <p><font color="#808080" size="2" face="arial">SPIJ20120827</font></p>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- UTF-8 zónder BOM -->
+<html> 
+<head>
+    <title>Validatie</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style type="text/css">
+    textarea {
+        border-width: 0px;
+        overflow: auto;
+        color: blue;
+        background-color: #DDDDFF;
+        font-family: Courier New, Courier, monospace;
+        font-size: 10pt;
+        readonly: readonly;
+    }
+    </style>
+</head>
+
+<body>
+<h1>Validatie</h1>
+<p>
+Als je pagina's wilt valideren, bijvoorbeeld met de <a href="http://validator.w3.org">validator</a> van W3C,
+moet je er de juiste DOCTYPE en character-encoding in aangeven. Hieronder een paar voorbeelden.</p>
+
+<h2>HTML 4.01 Transitional</h2>
+<textarea readonly="readonly" rows="11" cols="80"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+<head>
+    <title>HTML 4.01 Transitional</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body>
+    <h1>HTML 4.01 Transitional</h1>
+</body>
+</html></textarea>
+
+<h2>HTML 4.01 Strict</h2>
+<textarea readonly="readonly" rows="11" cols="80"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>HTML 4.01 Strict</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+<body>
+    <h1>HTML 4.01 Strict</h1>
+</body>
+</html></textarea>
+
+<h2>XHTML 1.0 Transitional - versie a</h2>
+<p>Als je geen xml-specificatie opneemt, moet je Content-type gebruiken voor de character-encoding.</p>
+<textarea readonly="readonly" rows="11" cols="80"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>XHTML 1.0 Transitional</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+<body>
+    <h1>XHTML 1.0 Transitional</h1>
+</body>
+</html></textarea>
+
+<h2>XHTML 1.0 Transitional - versie b</h2>
+<p>Als je een xml-specificatie opneemt, kun je de character-encoding daarin opnemen.</p>
+<textarea readonly="readonly" rows="11" cols="80"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>HTML 4.01 Transitional</title>
+</head>
+<body>
+    <h1>HTML 4.01 Transitional</h1>
+</body>
+</html></textarea>
+<h2>XHTML 1.0 Strict - versie a</h2>
+<p>Als je geen xml-specificatie opneemt, moet je Content-type gebruiken voor de character-encoding.</p>
+<textarea readonly="readonly" rows="11" cols="80"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>XHTML 1.0 Strict</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+</head>
+<body>
+    <h1>XHTML 1.0 Strict</h1>
+</body>
+</html></textarea>
+
+<h2>XHTML 1.0 Strict - versie b</h2>
+<p>Als je een xml-specificatie opneemt, kun je de character-encoding daarin opnemen.</p>
+<textarea readonly="readonly" rows="11" cols="80"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>XHTML 1.0 Strict</title>
+</head>
+<body>
+    <h1>XHTML 1.0 Strict</h1>
+</body>
+</html></textarea>
+
+<h2>XHTML 1.1</h2>
+<textarea readonly="readonly" rows="11" cols="80"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>XHTML 1.1</title>
+</head>
+<body>
+    <h1>XHTML 1.1</h1>
+</body>
+</html></textarea>
+
+<h2>HTML 5</h2>
+<textarea readonly="readonly" rows="11" cols="80">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HTML 5</title>
+</head>
+<body>
+    <h1>HTML 5</h1>
+</body>
+</html></textarea>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<!ELEMENT LEDEN ( LID+ ) >
+<!ELEMENT LID ( Naam, Adres, Plaats ) >
+<!ATTLIST LID lidnummer CDATA #REQUIRED>
+<!ELEMENT Naam ( Voornaam, Achternaam ) >
+<!ELEMENT Voornaam ( #PCDATA ) >
+<!ELEMENT Achternaam ( #PCDATA ) >
+<!ELEMENT Adres ( #PCDATA ) >
+<!ELEMENT Plaats ( #PCDATA ) >

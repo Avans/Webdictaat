@@ -1,0 +1,115 @@
+<html>
+
+	<head>
+		<title>Menu</title>
+		<link rel="stylesheet" href="menu.css"  type="text/css" />
+	</head>
+
+	<body>
+	<div class="menu">
+		<div class="category">
+			<div class="title">Menu 1</div>
+			<div class="item"><a href="#">Item 1,1</a></div>
+			<div class="item"><a href="#">Item 1,2</a></div>
+			<div class="item"><a href="#">Item 1,3</a></div>
+		</div>
+
+		<div class="category">
+			<div class="title">Menu 2</div>
+			<div class="item"><a href="#">Item 2,1</a></div>
+			<div class="item"><a href="#">Item 2,2</a></div>
+			<div class="item"><a href="#">Item 2,3</a></div>
+			<div class="item"><a href="#">Item 2,4</a></div>
+			<div class="item"><a href="#">Item 2,5</a></div>
+			<div class="item"><a href="#">Item 2,6</a></div>
+		</div>
+
+		<div class="category">
+			<div class="title">Menu 3</div>
+			<div class="item"><a href="#">Item 3,1</a></div>
+			<div class="item"><a href="#">Item 3,2</a></div>
+			<div class="item"><a href="#">Item 3,3</a></div>
+			<div class="item"><a href="#">Item 3,4</a></div>
+		</div>
+
+	</div>
+	
+	<div class="inhoud">
+	  <h2>Stylesheets - 1</h2>
+	  <hr />
+
+	  <h3>Vooraf</h3>In de voorgaande weken hebben we de belangrijkste
+	  basismogelijkheden besproken die HTML biedt om informatie te ordenen,
+	  op te maken en aan te bieden in de vorm van webpagina&#39;s.
+	  <br />
+	  Waar in het begin van het web de nadruk lag op verbonden hypertext en
+	  minder op opmaak, is dit inmiddels veranderd, doordat (vrijwel)
+	  iedereen beschikt over grafisch georienteerde systemen. Opmaak is dus
+	  belangrijk(er) geworden.
+	  <br />
+	  Om splitsing tussen inhoud en opmaak van pagina&#39;s aan te kunnen
+	  brengen, heeft het <a href="http://www.w3c.org">W3C</a> stylesheets
+	  ontwikkeld.
+	  <br />
+	  <br />
+	  <hr />
+
+	  <h3>Waarom stylesheets</h3>
+
+	  <ul>
+	    <li>Vermenging van inhoud en opmaak door W3C als &#39;abject&#39;
+	    (=afkeurenswaardig) benoemd</li>
+
+	    <li>Betere consistentie &amp; onderhoudbaarheid: op 1 plaats
+	    definieren hoe een element eruit ziet</li>
+
+	    <li>Meer opmaakmogelijkheden dan direct via HTML-tags</li>
+	  </ul>M.a.w. <i>&#39;vergeet wat je tot nu toe geleerd hebt
+	  ;-)!&#39;</i>
+	  <br />
+	  <br />
+	  Stylesheets lijken erg op de opmaakprofielen uit Word; het idee wordt
+	  dus breder gebruikt!
+	  <br />
+	  <br />
+	  <hr />
+
+	  <h3>Typen stylesheets</h3>Er zijn 3 verschillende typen stylesheets
+	  die elkaar kunnen aanvullen en &#39;overrulen&#39;:
+
+	  <ol>
+	    <li><b>Linked stylesheets</b>
+	    <br />
+	    In een webpagina kan een link naar een (extern) stylesheet-bestand
+	    op de webserver worden opgenomen. Zo kan hetzelfde
+	    stylesheetbestand in vele HTML-documenten gebruikt worden
+	    (hergebruik, dus consistentie en onderhoudbaarheid).
+	    <br />
+	    Syntax: <i>&lt;link rel=&quot;stylesheet&quot;
+	    type=&quot;text/css&quot;
+	    href=&quot;mijnstylesheet.css&quot;&gt;</i></li>
+
+	    <li><b>Embedded stylesheets</b>
+	    <br />
+	    Kunnen binnen webpagina gedefinieerd worden mbv de
+	    &lt;style&gt;-tag. Deze tag moet binnen de header van de pagina
+	    worden opgenomen (kan meerdere keren). Kunnen bv gebruikt worden om
+	    (een deel van) linked stylesheets &#39;lokaal&#39; te
+	    overschrijven.
+	    <br />
+	    Syntax: <i>&lt;style&gt; ... &lt;/style&gt;</i></li>
+
+	    <li><b>Inline stylesheets</b>
+	    <br />
+	    Kan aan <i>iedere</i> tag binnen een webpagina worden toegevoegd
+	    door het &quot;style&quot;-attribuut. Hiermee kan het uiterlijk van
+	    (een groep van) tag(s) worden overschreven (nog &#39;lokaler&#39;
+	    dus).
+	    <br />
+	    Syntax (met h1-tag als voorbeeld): <i>&lt;h1
+	    style=&quot;...&quot;&gt;...&lt;/h1&gt;</i></li>
+	  </ol>
+	</div>
+
+	</body>
+</html>

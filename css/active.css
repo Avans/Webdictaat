@@ -1,0 +1,13 @@
+/*body {
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}*/
+pre, code
+{
+	color: blue;
+}
+.stamp {
+    font-size: 8pt;
+    font-family: Arial;
+    color: gray;
+}
+

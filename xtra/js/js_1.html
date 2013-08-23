@@ -1,0 +1,277 @@
+<html>
+<head>
+
+</head>
+
+
+
+
+<body>
+
+
+
+<h2>JavaScript, een inleiding</h2>
+<hr>
+
+
+
+<h3>Vooraf</h3>
+<p>Zoals de naam al doet vermoeden is JavaScript een scripttaal. Dit betekent o.a. dat de JavaScript code niet gecompileerd wordt naar een binaire code maar wordt "geïnterpreteerd" door de browser van de client en vervolgens wordt uitgevoerd. Dit in tegenstelling tot bijvoorbeeld java applets die platform onafhankelijk gecompileerd zijn en zonder verdere "interpretatie" van de browser uitgevoerd worden. 
+</p>
+
+<p>
+Zowel Java als JavaScript zijn objectgeoriënteerde talen. Dit betekent dat je in JavaScript de code schrijft voor het manipuleren van objecten. De standaardobjecten die JavaScript kent, hebben o.a. betrekking op de componenten waaruit een webpagina is opgebouwd. Door met behulp van JavaScript opdrachten voor deze objecten te schrijven kun je de functionaliteit en het uiterlijk van webpagina's beïnvloeden. Naast het manipuleren van bestaande objecten kun je in JavaScript ook zelf objecten maken.
+</p>
+
+<p>
+Zoals we weten uit Java zijn objecten opgebouwd uit methoden en eigenschappen. De methoden die bij een object horen specificeren wat je met dat object kunt doen. De eigenschappen hebben betrekking op de verschijningsvorm, de karakteristieken van het object. Een voorbeeld van een JavaScript object is het object window. Dit object kent een aantal eigenschappen zoals <b>status</b> en <b>name</b> en een aantal methoden waaronder <b>alert</b>.
+</p>
+
+<p>
+Met de eigenschap <i>status</i> kun je aangeven wat voor een tekst er in de statusbalk van het browservenster moet verschijnen. Hiermee beïnvloed je dus de verschijningsvorm (wel of geen tekst in de statusbalk) van het actuele venster. (Om het ingewikkeld te maken: een eigenschap van een bepaald object kan zelf ook een object zijn met zijn eigen methoden en eigenschappen. Hierop komen we later terug.) 
+</p>
+
+<p>
+Met de methode <i>alert</i> van het object window kun je een waarschuwingsvenster openen en in het actuele browservenster weergeven. In tegenstelling tot een eigenschap kun je met een methode dus iets doen, iets uitvoeren of iets maken en niet alleen maar invloed uitoefenen op de verschijningsvorm of de karakteristieken die een object heeft.
+</p>
+<p>&nbsp;</p>
+
+
+
+
+
+<h3>JavaScript, de taal in het (heel) kort</h3>
+<p>
+Syntax-eigenschappen:
+<ol>
+  <li>Case-sensitive</li>
+  <li>Statements scheiden door puntkomma, maar is niet verplicht aan einde van regel</li>
+  <li>Statements groeperen met accolades</li>
+  <li>Commentaar als Java: // of /* ... */</li>
+</ol>	 
+</p>
+
+<p>
+Gegevenstypes:
+<ol>
+  <li>String</li>
+  <li>Getal</li>
+  <li>Boolean</li>
+  <li>Null: volledig zonder waarde</li>
+  <li>NaN: Not a Number</li>
+  <li>Object</li>
+  <li>Functie: functiedefinitie</li>
+</ol>
+</p>
+
+<p>
+Variabelen:
+<ol>
+  <li>Declareren en (evt) initialiseren via <i>var</i>, niet verplicht maar wel aan te bevelen</li>
+  <li>Geen declaratie van type (i.t.t. b.v. Java)</li>
+  <li>Variabelen mogen van type veranderen (!!): lekker flexibel, maar ook foutgevoelig</li>
+</ol>
+</p>
+
+<p>
+Expressies & Operatoren: zie <a href="js_evaluator.html">js_evaluator.html</a>.
+</p>
+
+<p>
+Controle-structuren:
+<ol>
+  <li>if (voorwaarde) {statement(s)}</li>
+  <li>if (voorwaarde) {statement(s)} else {statement(s)}</li>
+  <li> switch (expression) {<br>
+       case label: statement; break;<br>
+       case label : statement; break;<br>
+       default : statement;}</li>
+  <li>for ([beginexpressie];[voorwaarde];[bijwerkexpressie]) {statement(s)}</li>
+  <li>do {statement(s)} while (condition)</li>
+  <li>label/break/continue</li>
+  <li>for (variable in object) {statement(s)}</li>
+  <li>with (object) {statement(s)}</li>
+</ol>
+</p>
+
+<p>
+Functies:
+<ol>
+  <li>Definitie: function <i>functieNaam</i> ([parm1]...[parmN]) {statement(s)}</li>
+  <li>Parameters zonder type-opgave</li>
+  <li>Parameters worden doorgegeven by value, behalve objecten (by reference)</li>
+  <li>Variabelen gedefinieerd binnen functie zijn lokaal, erbuiten globaal</li>
+</ol>
+</p>
+
+<p>
+Arrays:
+<ol>
+  <li>Declaratie: var a = new Array(5) --> arrays zijn objecten</li>
+  <li>Array literal: coffees = ["French Roast", "Columbian", "Kona"]</li>
+  <li>Index start bij 0</li>
+</ol>
+</p>
+<p>&nbsp;</p>
+
+
+
+
+<h3>JavaScript in een webpagina opnemen</h3>
+<p>
+Er is een aantal manieren waarop je JavaScript code in je pagina kan opnemen.
+<ol>
+  <li>Als statements en functies tussen de &lt;script&gt; en &lt;/script&gt; tags.<br><br></li>
+  <li>Door te verwijzen naar een bestand met de JavaScript code <br>
+      &lt;script src=&quot;http://www.mijnwebsite.nl/javascript.js&quot;&gt;<br><br></li>
+  <li>Als event handler binnen html tags<br>
+      &lt;form ... onSubmit=&quot;mijnFunctie(); &quot;&gt;<br>
+      &lt;a href=&quot;http://mijnURL&quot; onClick=&quot;mijnFunctie();&quot;&gt;<br><br></li>
+   <li>Door een JavaScript expressie op te nemen als waarde voor een  html attribuut.<br>
+       &lt;form ... onReset=&quot;javascript:expressie;&quot;&gt;</li>
+</ol>	 
+</p>
+
+<p>
+De eerste methode gebruik je als je JavaScript code alleen van toepassing is voor een enkele HTML pagina van je website. De JavaScript code neem je op tussen de script tags &lt;script&gt; en &lt;/script&gt;. De script tags kunnen op iedere plaats en zo vaak als je wilt in je html-document opgenomen worden. Waar je de script tags in je document opneemt is afhankelijk van wat de code moet doen. Het is wel een goede gewoonte om de JavaScript functies die je schrijft  in de head van je html-document op te nemen.
+</p>
+
+<p>
+De tweede methode gebruik je als je JavaScript code van toepassing is op meerdere html-pagina's van je website. De JavaScript functies die je gebruikt kun je in een apart bestand op de server plaatsen. In de HTML pagina's waarin je die functies nodig hebt, hoef je dan slechts een verwijzing naar dat bestand op te nemen. 
+</p>
+
+<p>
+De derde methode gebruik je om een JavaScriptfunctie aan te roepen nadat een event heeft plaatsgevonden. Zie voor een toelichting van events en eventhandlers de paragraaf hieronder.
+</p>
+
+<p>
+Vanwege de leesbaarheid van je HTML en JavaScript code wordt de vierde manier om JavaScript in je document op te nemen afgeraden.
+</p>
+<p>&nbsp;</p>
+
+
+
+
+
+<h3>Events, eventhandlers </h3>
+<p>
+JavaScript functies worden nooit zomaar uitgevoerd. Er moet altijd een gebeurtenis (<i>event</i>) zijn die de opdracht veroorzaakt/aanroept. Voor het detecteren van deze events kennen we zogenaamde <b>event handlers</b>. Dit zijn de specifieke gebeurtenissen die kunnen optreden waarmee een stuk JavaScript aangeroepen cq in werking gesteld kan worden. Gebeurtenissen kunnen bijvoorbeeld het klikken van de muis op een knop zijn of het laden van een webpagina. Met behulp van de <b>event-handler onload</b> kun je dus bijvoorbeeld onmiddelijk een stuk JavaScript uitvoeren nog voordat de pagina geladen is. De eventhandler is een attribuut van het HTML-element waarop je met JavaScript wilt reageren.
+</p>
+
+<p>
+Zoals we in de inleiding al gezien hebben wordt JavaScript nooit zomaar uitgevoerd. Aan de uitvoering van JavaScript ligt altijd een gebeurtenis (<i>event</i>) ten grondslag. Om te detecteren of een <i>event</i> zich voordoet en om vervolgens een JavaScript op te starten kent HTML zogenaamde <i>event handlers</i>. Event handlers zijn eigenschappen van HTML elementen en je neemt ze derhalve op als attributen van de relevante HTML tag.
+</p>
+
+<p>
+Hieronder vind je een overzicht van de meest voorkomende <i>events</i> en <i>event handlers</i> met een omschrijving van de gebeurtenis waarop ze van toepassing zijn.
+</p>
+<table style="font-size: 12pt; cellspacing=" cellpadding="3" border="5" bgcolor="#C0C0C0">
+<tr>
+    <td valign="top"><b>Event</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top"><b>Event handler</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top"><b>Omschrijving gebeurtenis</b></td>
+</tr>
+<tr>
+    <td valign="top"><b>Abort</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onAbort</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het onderbreken van het laden van een afbeelding</td>
+</tr>
+<tr>
+    <td valign="top"><b>Blur</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onBlur</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Naar een ander venster, frame of formulierelement gaan. </td>
+</tr>
+<tr>
+    <td valign="top"><b>Change</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onChange</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">De wijziging van een waarde van een formulier element </td>
+</tr>
+<tr>
+    <td valign="top"><b>Click</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onClick</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het klikken op een hyperlink, knop, aankruisvakje of radiobutton.</td>
+</tr>
+<tr>
+    <td valign="top"><b>Error</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onError</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het optreden van een fout bij het laden van een pagina of afbeelding.</td>
+</tr>
+<tr>
+    <td valign="top"><b>Focus</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onFocus</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het actief worden van een venster, frame of formulierelement.</td>
+</tr>
+<tr>
+    <td valign="top"><b>Load</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onLoad</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het laden van een webpagina. </td>
+</tr>
+<tr>
+    <td valign="top"><b>MouseOut</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onMouseOut</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het verlaten van de muis van een hyperlink.</td>
+</tr>
+<tr>
+    <td valign="top"><b>MouseOver</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onMouseOver</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het over een hyperlink bewegen van de muis.</td>
+</tr>
+<tr>
+    <td valign="top"><b>Reset</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onReset</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het klikken op de reset knop van een formulier.</td>
+</tr>
+<tr>
+    <td valign="top"><b>Select</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onSelect</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het selecteren van een stuk tekst in een tekstveld van een formulier. </td>
+</tr>
+<tr>
+    <td valign="top"><b>Submit</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onSubmit</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het klikken op de submit knop van een formulier.</td>
+</tr>
+<tr>
+    <td valign="top"><b>Unload</b></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">onUnload</td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td valign="top">Het verlaten van een webpagina</td>
+</tr>	
+</table>
+</p>
+
+<p>
+Een voorbeeld van wat events zie je in <a href="js_events.html" target="_blank">js_events.html</a>.
+</p>
+
+
+
+</body>
+</html>

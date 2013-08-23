@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<vragenlijst>
+  <vraag>
+     <nummer>1</nummer>
+     <inhoud>Wie is de uitvinder van het dynamiet?</inhoud>
+     <antwoord>Alfred Nobel</antwoord>
+     <letter>N</letter>
+  </vraag>
+  <vraag>
+     <nummer>2</nummer>
+     <inhoud>In welke plaats werd de wedstrijd Nederland - Duitsland gespeeld tijdens het EK 1988?</inhoud>
+     <antwoord>Hamburg</antwoord>
+     <letter>H</letter>
+  </vraag>
+</vragenlijst>

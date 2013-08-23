@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- UTF-8 zónder BOM -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Websites Bouwen 1 - Week 6 - Seacrh Engines</title>
+  <link href="../css/active.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>Search Engines</h2>
+  <hr />
+
+  <p>Search engines zijn, naast directory's, het eerste
+  onderdeel van een strategie om op het web gevonden te worden. Een
+  bekend voorbeeld is natuurlijk <a href="http://www.google.com"
+  target="_blank">Google</a>.</p>
+
+  <p>Search engines voeren 3 taken uit:</p>
+
+  <ul>
+    <li>Search engine <b>spiders</b> zoeken web pagina&rsquo;s en halen
+    ze op, een proces dat <b>crawling</b> of <b>spidering</b> genoemd
+    wordt. Daarmee bouwen ze lijsten van woorden en zinnen die op
+    iedere pagina gevonden worden.</li>
+
+    <li>Search engines houden een <b>index</b> (of database) bij van
+    deze woorden en zinsneden. Dit deel van search engine heet
+    <b>indexer</b></li>
+
+    <li>Search engines maken het gebruikers mogelijk om te zoeken naar
+    keywords en keyword zinsneden zoals opgeslagen in de
+    indices/databses. Search engines proberen daarbij om de opgegeven
+    woorden te matchen met de web pagina die het de hoogste
+    waarschijnlijkheid heeft om de informatie te bevatten waarnaar de
+    gebruiker op zoek is. Dit deel van de search engine heet de
+    <b>query processor</b></li>
+  </ul>
+
+  <p>Het plaatje hieronder geeft het proces weer:</p><img src=
+  "sev_01.jpg" width="431" height="341" />
+  <br clear="all" />
+  <br />
+  <br />
+
+  <p><b>Hoe vinden search engines web pagina&rsquo;s?</b>
+  <br />
+  Meestal beginnen ze met lijsten van veel gebruikte servers van major
+  ISPs (America Online, etc) en van de meest bezochte web sites
+  (Yahoo!), en van de major directory's (Open Directory, LookSmart,
+  enz). Search engines indexeren woorden op iedere pagina van deze
+  sites en beginnen dan alle links binnen die sites na te lopen. Merk
+  op, dat het dus belangrijk is dat een web site ook in de major
+  directory's opgenomen is (zie verderop).
+  <br />
+  Search engines updaten hun indices in <b>ca. 4-6 weken, en
+  continu.</b></p>
+
+  <p>De search engine index dus bevat <b>full-text indices van web
+  pagina&rsquo;s</b>. Als men zoekt via een search engine, dan
+  doorzoekt men in feite deze full-text index van nagelopen web
+  pagina&#39;s, en <b>niet het web zelf.</b></p>
+
+  <p>Om de meest relevante URL te bepalen n.a.v. een search query,
+  hangen de meeste search een <b>gewicht (weight) aan de woorden en
+  zinsneden in de tekstuele informatie</b> op een web pagina. Iedere
+  engine doet dat op z&rsquo;n eigen (en geheime!) manier, b.v. door
+  rekening te houden met de frequentie van een woord binnen een pagina,
+  of door meer belang te hechten aan title-tags, meta-tags, en
+  headings, of door b.v. meer gewicht toe te kennen aan de woorden die
+  in de top van een document voorkomen. Dit toekennen van het gewicht
+  is onderdeel van het algoritme van de search engine. Deze
+  mathematische formule bepaalt de volgorde (ranking) van de web
+  pagina&rsquo;s. <b>De algoritmes veranderen vrijwel iedere
+  dag!</b></p>
+
+  <p><b>De sleutel om SEO (search engine optimization) te begrijpen zit
+  in bovenstaande figuur. Alles dat het lastig c.q. onmogelijk maakt
+  tekst op web pagina&rsquo;s te indexeren en om via links van
+  webpagina/site naar webpagina/site te crawlen, zal een negatieve
+  impact hebben de positie die de site binnen de search engine inneemt.
+  Als een search engine spider geen toegang krijgt tot jouw web
+  pagina&rsquo;s, dan zullen deze niet goed &lsquo;ranken&rsquo;. Als
+  een search engine wel toegang heeft tot jouw web pagina&rsquo;s maar
+  de beoogde keywords of zinsneden niet kan vinden op die
+  pagina&rsquo;s, dan zullen ze evenmin goed
+  &lsquo;ranken&rsquo;.</b></p>
+  <hr />
+
+  <h2>SEO (Search Engine Optimization) Strategie&euml;n</h2>
+
+  <p>SEO moet (eigenlijk) vooraf gebeuren, dus voordat de website
+  ontworpen en gebouwd wordt, en niet achteraf. Het heeft immers grote
+  impact op de eisen die aan het ontwerp en de implementatie gelegd
+  worden!</p>
+
+  <p>Om de beste overall, lange termijn search engine visibility te
+  verkrijgen moeten de volgende componenten op een web pagina aanwezig
+  zijn:</p>
+
+  <ul>
+    <li>Text component</li>
+
+    <li>Link component</li>
+
+    <li>Popularity component</li>
+  </ul>
+
+  <p>Alle major search engines (Google, FAST Search, MSN Search en
+  andere Inktomi-based engines) gebruiken deze 3 componenten als
+  onderdeel van hun search engine algoritme.</p><img src="sev_02.jpg"
+  width="364" height="273" />
+  <br clear="all" />
+
+  <h3>Text component</h3>
+
+  <p>Het belangrijkste onderdeel is <b>keyword selection</b>: de
+  pagina&rsquo;s moet op 1 of andere manier de keywords/zinsneden
+  bevatten die gebruikers zullen intikken bij search queries. Dus moet
+  je zelf bepalen op welke keywords je gevonden wilt worden.
+  <br />
+  Daarna moet je ze ergens in HTML-pagina&rsquo;s stoppen.
+  Verschillende zoekmachines leggen daarbij de nadruk op verschillende
+  elementen (helaas), dus is het verstandig om keywords in alle door de
+  zoekmachines gebruikte HTML-tags te stoppen (zonder overigens aan
+  keyword stuffing te gaan doen!).</p>
+
+  <p>De belangrijkste plaatsen om keywords te plaatsen zijn:</p>
+
+  <ul>
+    <li>Title-tags</li>
+
+    <li>Zichtbare body-tekst</li>
+
+    <li>Meta-tags</li>
+
+    <li>ALTernatieve tekst voor images</li>
+  </ul>
+
+  <p>Alle zoekmachines gebruiken de title-tag en de zichtbare
+  body-tekst (<b>primary text</b>); meta-tags en alternatieve tekst
+  worden ook wel <b>secondary text</b> genoemd, omdat niet alle search
+  engines hier wat mee doen.</p>
+
+  <p>Tekst moet zo veel mogelijk aan de volgende requirements
+  voldoen:</p>
+
+  <ul>
+    <li>De tekst moet zichtbaar zijn binnen een standaard browser
+    zonder dat de bezoeker aanvullende acties van welk type ook moet
+    doen (b.v. View Source om meta-tags te zien).</li>
+
+    <li>Je moet de tekst kunnen knippen en plakken van de browser naar
+    een text editor (b.v. Notepad).</li>
+  </ul>
+  <br />
+  <br />
+  <hr />
+
+  <h3>Keyword selection</h3>
+
+  <p>De kunst is om keywords te bepalen die <b>potenti&euml;le
+  bezoekers/klanten</b> zouden intikken in een search engine,
+  <b>niet</b> de woorden die <b>jij</b> daar zou gebruiken om te
+  zoeken.
+  <br />
+  Kijk door het al beschikbare geprinte materiaal en zoek naar woorden
+  die steeds opnieuw gebruikt worden. Gooi wel alle sales-termen en
+  marketing hype weg, en wat je overhoudt zijn kandidaat keywords.
+  <br />
+  Aandachtspunten:</p>
+
+  <ul>
+    <li>Woorden en woordcombinaties</li>
+
+    <li>Lowercase?</li>
+
+    <li>Enkelvoud of meervoud</li>
+
+    <li>Misspellings?</li>
+
+    <li>Filter words/stop words eruit</li>
+
+    <li>...</li>
+  </ul>
+  <br />
+  <br />
+
+  <p>Als je eenmaal een keyword list hebt vastgesteld, bepaalt die mede
+  <b>hoe je de website moet inrichten</b>, omdat het in feite de
+  onderwerpen aangeeft die in of als webpagina&rsquo;s moeten
+  terugkomen. Er ontstaan ook vaak thema&rsquo;s, die je steeds ziet
+  terugkomen en consistente idee&euml;n bevatten die door de website
+  zouden moeten worden weergegeven. Door de keyword list in te perken
+  tot ca 20-50 specifieke woorden/zinsneden ontstaan de <b>natuurlijke
+  thema&rsquo;s</b> haast vanzelf, vaak ook in een hi&euml;rarchische
+  vormen (primaire/secundaire thema&rsquo;s).</p>
+
+  <p>De keyword list kan ook een indicatie voor Frequently Asked
+  Questions (FAQs) pagina&rsquo;s zijn, waarin uitleg gegeven wordt
+  over onderwerpen die door de keyword list getriggered worden. Het
+  aanmaken van keyword-rich FAQs pagina&rsquo;s is meteen een manier
+  search engine traffic te genereren!</p>
+  <hr />
+
+  <h3>Keyword placement - Title-tags</h3><b>Het schrijven van
+  effectieve title-tags is erg belangrijk</b>, omdat:
+
+  <ul>
+    <li>Alle search engines beschouwen title-tag text als <b>primary
+    text</b>.</li>
+
+    <li>De title-tag text is i.h.a. de <b>1e tekst die in search
+    resultaten</b> wordt getoond, en wel als een hyperlink naar je
+    website. Deze hyperlink is een <b>call to action</b> &ndash; het
+    laat de lezer weten dat het een link is naar informatie die de
+    woorden bevat van hun search query.</li>
+
+    <li>Title-tag text is de tekst die <b>Bookmarks en Favorites</b>
+    getoond wordt.</li>
+  </ul>
+
+  <p>Als algemene regel geldt dat je een unieke, descriptieve titel van
+  5-10 woorden (of 69-75 characters) moet aanhouden. Verwijder zo veel
+  mogelijk filter words. Titels moeten de belangrijkste keywords en
+  zinsneden bevatten en op een accurate manier de inhoud van je
+  webpagina&rsquo;s weergeven.
+  <br />
+  Tenzij de bedrijfsnaam wijd bekend is en een excellente branding kent
+  of een keyword bevat, is het het beste om die niet in de title-tag op
+  te nemen.</p>
+
+  <p>De beste manier om een titel met beoogde keywords te maken, is om
+  de zgn. power combination strategy, of <b>Power Combo</b>, strategie
+  te hanteren. Indien mogelijk zouden de 1e 3 woorden in de title- tag
+  moeten bestaan uit woorden die, in welke combinatie ook ingegeven in
+  een search query, een keyword phrase zijn. De bezoeker zal immers de
+  inhoud van de title-tag in de search resultaten zien, en hebben dan
+  behoefte aan een kort, duidelijke en accurate beschrijving van de
+  webpagina.</p>
+  <hr />
+
+  <h3>Keyword placement - Zichtbare Body text</h3>
+
+  <p>De zichtbare body text van een webpagina is de HTML text tussen
+  de body-tags die je direct kunt &lsquo;copy and paste&rsquo;-en van
+  de browser naar een text editor. Dit behelst o.a. text binnen
+  headings, paragraphs, ordered lists, unordered lists en tabellen.
+  <b>Zichtbare body-text is de andere component die altijd door search
+  engines wordt gebruikt, dus uitermate belangrijk</b>. Overigens
+  vari&euml;ren search engines constant de tags waar ze de nadruk op
+  leggen.
+  <br />
+  <br />
+
+  <p>Alle search engines beschouwen de woorden bovenaan een webpagina -
+  <b>above the fold</b> &ndash; als belangrijker dan de woorden op de
+  rest van de webpagina. Hoe &lsquo;hoog&rsquo; een keyword op een
+  pagina staat, wordt <i>keyword prominence</i> genoemd. Een simpele
+  manier om belangrijke keywords bovenaan de webpagina&rsquo;s op te
+  nemen is altijd een heading met die keywords op te nemen. Gebruik dan
+  een variatie op de title-tag.</p>
+
+  <p>De 1e paragraaf van de pagina moet op een accurate manier de
+  inhoud van die pagina beschrijven, daarbij de bealngrijkste keywords
+  toepassend. Als de page groter is above the fold past, laat dan aan
+  het begin van de pagina weten dat de informatie die bezoekers zoeken
+  op die pagina beschikbaar is (b.v. via interne links). Daarnaast
+  moeten keywords door de gehele tekst voorkomen voor goede search
+  engine visibility. Het kan ook handig zijn om een concluderende
+  paragraaf of zin op te nemen die voorzien is van keywords.
+  <br />
+  Voorbeeld: <a href="http://www.greenpeace.nl/campaigns"
+  target=
+  "_blank">http://www.greenpeace.nl/campaigns</a></p>
+
+  <p>Het bereiken van een goede search engine visibility is de helft
+  van de &lsquo;strijd&rsquo;. Daarna moet je de (potenti&euml;le)
+  bezoekers ervan overtuigen om de link naar je site ook echt te
+  gebruiken, en idem als ze eenmaal op de site beland zijn. Je moet een
+  zgn. <b>call to action</b> doen. Een van de simpelste vormen van een
+  call to action is een hypertext link.
+  <br />
+  Hypertext links hebben de volgende voordelen:</p>
+
+  <ul>
+    <li>Veel search engines beschouwen de text in en rond de anchor-tag
+    als belangrijk omdat je i.h.a. niet zult linken naar pagina&rsquo;s
+    die niet belangrijk zijn.</li>
+
+    <li>Daarnaast is een hypertext link een natuurlijke call to action:
+    de bezoeker dat het blauwe, onderstreepte woord een directe link is
+    naar de info &lsquo;achter&rsquo; dat woord. Zo kun je i.p.v. enkel
+    &quot;learn more&quot; als hyperlink ook &ldquo;learn more about
+    productX&rdquo; opnemen.</li>
+  </ul>
+  <hr />
+
+  <h3>Keyword placement - Meta-tags</h3>
+
+  <p>Een meta-tag is een HTML tag die informatie geeft over de inhoud
+  van een webpagina, zoals welke HTML-specs de webpagina gebruikt of
+  een beschrijving van de inhoud van die webpagina. Een meta-tag
+  verandert echter niet hoe een webpagina getoond wordt in een browser.
+  Voor search engine visibility zijn de meest gebruikte
+  <b>meta-tags</b> die met de <b>keyword, description, en robots
+  exclusion attributen</b>.</p>
+
+  <p>Een van de meest verspreide <b>misverstanden</b> over meta-tags is
+  dat zij het geheim voor een optimale search engine ranking zijn. In
+  werkelijkheid gebruiken slechts enkele major search engines meta-tag
+  content voor ranking. Sommige search engines gebruiken meta-tags bij
+  het tonen search query resultaten. Andere (en vrijwel alle
+  directory's) gebruiken meta-tags niet. Ze zijn dus niet het geheime
+  ingredi&euml;nt. Ze zijn, zoals eerder gezegd, <b>secondary text</b>,
+  bedoeld de positie van je site in de pagina&rsquo;s met search
+  resultaten te verbeteren.</p>
+
+  <p>De <b>meta-tag description</b> wordt in het head-deel van een
+  HTML-bestand geplaatst, en ziet er als volgt uit:</p>
+  <pre>
+  &lt;meta name=&quot;description&quot; content=&quot;Page description goes here.&quot;&gt;
+</pre>
+
+  <p>Selecteer de 4-5 belangrijkste keywords (per pagina) en maak in
+  totaal 200-250 tekens lange zinnen en zinsnede waarin deze keywords
+  voorkomen. Elimineer zo veel mogelijk filler/filter words als
+  mogelijk om plek te maken voor de keywords.</p>
+
+  <p>De <b>meta-tag keywords</b> wordt ook in het head-deel van een
+  HTML-bestand geplaatst, en ziet er als volgt uit:</p>
+  <pre>
+  &lt;meta name=&quot;keywords&quot; content=&quot;keyword1 keyword2 &hellip; keywordN&quot;&gt;
+</pre>
+
+  <p>Ook hier geldt weer: gebruik in de meta-tag de keyword die ook in
+  de inhoud van de pagina voorkomen; anders loop het risico van een
+  <b>spam penalty</b> door de search engines.</p>
+
+  <p>De <b>meta-tag robots</b> wordt ook in het head-deel van een
+  HTML-bestand geplaatst, en ziet er als volgt uit:</p>
+  <pre>
+  &lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;
+</pre>
+
+  <p>In bovenstaande vorm vertelt een website-eigenaar search engine
+  spiders om de inhoud van de pagina niet te indexeren (meta-tag robots
+  exclusion attribuut). Niet alle search engines honoreren deze
+  meta-tag echter. Je zou dan het <b>ROBOTS.TXT-file</b> moeten
+  gebruiken (zie verderop).
+  <br />
+  <br />
+  Een andere vorm van deze tag is:</p>
+  <pre>
+  &lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot;&gt;
+</pre>
+
+  <p>Search engines worden nu geacht om de text op deze pagina te
+  indexeren en de links op deze pagina te volgen. Ook deze tag is
+  (meestal) <i>nutteloos</i>: search engines doen dit nl.
+  automatisch.</p>
+  <hr />
+
+  <h3>Keyword placement - ALTernatieve text</h3>
+
+  <p>Dit is de text die als een attribuut bij graphic images in de HTML
+  code worden opgenomen. Het vertelt de browser o.a. dat als het image
+  niet geladen kan worden, om dan de opgegeven text te tonen.
+  <br />
+  Een andere situatie waar de alternatieve text wordt gebruikt is bij
+  <i>screen readers</i>. Deze devices vertalen de inhoud van een
+  webpagina naar Braille of gesproken text, en daarbij speelt de
+  alternatieve text uiteraard een belangrijke rol.</p>
+
+  <p>Sommige search engines indexeren de ALT-text, waardoor je graphic
+  images ook een plek worden om op strategische wijze keywords te
+  plaatsen. Als je echter probeert door zoveel mogelijk keywords in te
+  plaatsen, dan wordt dit beschouwd als een spam tactiek die <b>keyword
+  stuffing</b> heet.</p>
+  <hr />
+  <i>Laten we aan het einde van de text-component eens even kijken hoe
+  de maker van het boek waaruit deze info komt het gedaan heeft in dit
+  opzicht: <a href="http://www.searchenginesbook.com/" target=
+  "_blank">http://www.searchenginesbook.com/</a>.</i>
+  <hr />
+
+  <h3>Link component</h3>
+
+  <p>De strategie om &lsquo;keyword-rich&rsquo; tekst in je
+  webpagina&rsquo;s op te nemen is <b>nutteloos, als</b> de search
+  engine spiders geen manier hebben om die tekst te vinden, m.a.w. de
+  manier waarop de pagina&rsquo;s gelinked zijn en de manier waarop
+  jouw web site gelinked is aan andere web sites, heeft grote impact op
+  de search engine visibility.</p>
+
+  <p>De link component wordt ook wel <b>site architectuur</b> genoemd.
+  Site architectuur omvat een website&#39;s navigatieschema, de layout
+  van individuele pagina&rsquo;s, and hoe directory's opgezet zijn op
+  de web server.</p>
+
+  <p>Zaken die <b>(negatieve) invloed hebben op de
+  &lsquo;navigeerbaarheid&rsquo;</b> zijn o.a.:</p>
+
+  <ul>
+    <li>Slechte HTML coding bij de gekozen navigatie: browsers zijn
+    vergevingsgezind, spiders veel minder</li>
+
+    <li>Image maps: worden door veel search engines niet
+    &lsquo;gevolgd&rsquo;</li>
+
+    <li>Frames: links worden soms gevolgd (bv Google, Inktomi, Lycos),
+    maar getoonde resultaten zijn niet ideaal</li>
+
+    <li>JavaScript: links via b.v. mouseovers/rollovers, arrays en
+    navigatie-menus die met JavaScript gemaakt zijn, worden vaak niet
+    gevolgd</li>
+
+    <li>Dynamic or database-driven web pages: pagina&rsquo;s met ?,
+    &amp;, $, =, +, of % in de URL zijn problematisch voor spiders,
+    evenals URLs met CGI-BIN</li>
+
+    <li>Flash: sommige (Google, FAST Search) kunnen links in Flash
+    documents volgen, andere vaak niet</li>
+  </ul>
+
+  <p>Hoe pak je dergelijke &lsquo;problemen&rsquo; dan aan? B.v. door
+  <b>(&gt;=) 2 navigatie-schema&rsquo;s</b> te maken: 1 die grafisch
+  aansprekend is voor het publiek en 1 die door (o.a.) spiders gevolgd
+  kan worden.</p>
+
+  <p><b>Navigatie schema&rsquo;s</b> omvatten vaak:</p>
+
+  <ul>
+    <li>Hypertext links:
+    <br />
+    Alle search engine spiders &ldquo;love&rdquo; text links, omdat ze
+    de text in en om de link kunnen registreren en de links kunnen
+    volgen. Veel search engines vinden anchor text relevant, omdat
+    links i.h.a. zullen leiden naar informatie die voor de bezoeker
+    interessant is.
+    <br />
+    Usability experts vaak om <i>breadcrumb links</i> te gebruiken, en
+    het liefst aan de bovenkant van de pagina</li>
+
+    <li>Navigatie buttons:
+    <br />
+    Vaak visueel aantrekkelijk; kunnen eenvoudig aandacht van de
+    bezoeker trekken; kunnen gekozen lettertype exact weergeven.
+    <br />
+    Moeten wel ALT-tekst bevatten en (het liefst) zo min mogelijk
+    JavaSacript. Extra navigatie via textuele links (b.v. onderaan
+    pagina).</li>
+
+    <li>Image maps:
+    <br />
+    Eigenlijk idem aan buttons, maar slechter voor spiders en wellicht
+    beter voor performance. Gebruik ook alternatief
+    navigatieschema.</li>
+
+    <li>Drop-down/pull-down menus:
+    <br />
+    Worden vaak m.b.v DHTML en/of JavaScript gemaakt. Belangrijk
+    voordeel: winst voor &lsquo;screen real estate&rsquo;: er blijft
+    meer plek over op het scherm voor b.v. de body-text above the fold.
+    Ook hier alternatief navigatieschema.</li>
+
+    <li>Animation/Flash buttons: idem</li>
+
+    <li>Dynamisch gegenereerde URLs, b.v. door een site search.: Search
+    engines zien tekens als &ldquo;?&rdquo;, &ldquo;&amp;&rdquo;, enz
+    als indicatoren van dynamisch gegenereerde content. Omdat dit kan
+    leiden tot opname in indexen van steeds dezelfde adressen, vinden
+    search engines dat niet fijn.</li>
+  </ul>
+  <hr />
+
+  <h3>Link component - Robots Exclusion protocol</h3>
+
+  <p>Het Robots Exclusion Protocol is een text file die je op de server
+  plaatst om search engine spiders te informeren om informatie in
+  bepaalde delen van je website niet te scannen. Die delen kunnen
+  individuele webpagina&rsquo;s, subdirectory's, of zelfs en hele site
+  zijn.
+  <br />
+  De instructies kunnen ook toegesneden worden op individuele search
+  engines om bv seacrh engines die geen Flash kunnen
+  &lsquo;lezen&rsquo; te instrueren om deze buiten beschouwing te
+  laten; idem voor CGI-bestanden e.d.
+  <br />
+  Andere soorten pagina&rsquo;s die je wilt uitsluiten zijn de
+  &ldquo;under construction&rdquo; pagina&rsquo;s of dynamische
+  gegenereerde pagina&rsquo;s. Zorg er wel voor dat het Robots
+  Exclusion Protocol op je server actief is voordat je excluded content
+  plaatst!</p>
+
+  <p>Een manier search engines te informeren over exclusions is door de
+  al genoemde <b>meta-tag robots</b> op elke uit te sluiten pagina op
+  te nemen.
+  <br />
+  Een andere manier is het gebruik van een <b>robots.txt file</b>: een
+  simpel text file dat search engines vertelt om sommige delen van je
+  website niet te indexeren. Robots.txt moet standaard de server&#39;s
+  root directory geplaatst worden, d.w.z. in dezelfde dir als waar je
+  homepage staat. Een search engine die robots.txt gebruikt, zal nl.
+  eerst naar dit file zoeken voordat hij een site gaat indexeren.
+  <br />
+  <br />
+  In robots.txt neem je regels op die er b.v. als volgt uitzien:</p>
+  <pre>
+  User-agent: * 
+  Disallow: / 
+</pre>
+
+  <p>De User-agent regel stelt je in staat om aan te geven welke
+  spiders de aanwijzingen in de 2e regel moeten opvolgen. Gebruik een *
+  om alle search engines aan te spreken.
+  <br />
+  Met de Disallow regel kun je directory's en filenamen op de server
+  aangeven die je wilt laten overslaan door de spider(s). Gebruik /
+  voor de root directory. Als je meerdere subdirs wilt uitsluiten, kun
+  je meerdere Disallow-regels opnemen, b.v.:</p>
+  <pre>
+  User-agent: * 
+  Disallow: /cgi-bin/ 
+  Disallow: /scripts/ 
+</pre>
+
+  <p>Als je er nu b.v. voor gezorgd hebt, dat al je JavaScript in de
+  scripts-dir staat, dan wordt hiermee al je JavaScript-code
+  uitgesloten van spidering.</p>
+  <hr />
+  <i>Laten we aan het einde van de link-component eens even kijken hoe
+  de maker van het boek waaruit deze info komt het gedaan heeft in dit
+  opzicht: <a href="http://www.searchenginesbook.com/" target=
+  "_blank">http://www.searchenginesbook.com/</a>.</i>
+  <hr />
+
+  <h3>Popularity component: Link populariteit</h3>
+
+  <p>Een optimale popularity component is niet hetzelfde als het
+  verkrijgen van zo veel mogelijk <b>links naar je website</b>. De
+  kwaliteit van de linkende sites is veel belangrijker dan de
+  kwantiteit. Een link van b.v. Yahoo (als een veelbezochte site)
+  is veel gewichtiger dan een link van een kleinere, minder
+  bezochte site, maar ook het feit dat een directory geassocieerd is
+  met een search engine (b.v. LookSmart en MSN Search) heeft invloed.
+  De kwantiteit en kwaliteit van deze links samen leveren de link
+  popularity op.</p>
+
+  <p>Plaatsing in directory's, zeker de major directory's en zeker als
+  het lukt om verschillende pagina&rsquo;s in meerdere catagorie&euml;n
+  te krijgen, draagt bij tot meer link populariteit.
+  <br />
+  Hetzelfde geldt voor plaatsing op serieuze websites die specifiek
+  zijn voor de betreffende &lsquo;industrie&rsquo; of andere
+  professionele organisaties. Ook onderwijsinstellingen zijn
+  betrouwbare partners in deze, en bovendien doe je nog een branding
+  (studenten onthouden je naam). Om dergelijke sites te vinden gebruik
+  je natuurlijk &hellip; search engines en directory's. Kijk ook bij
+  niet concurrerende sites die in dezelfde branche opereren wat zij op
+  hun Links of Resources pagina hebben staan. Probeer het plaatsen van
+  links uit te wisselen.
+  <br />
+  Alle search engines zijn erg duidelijk in het feit linking naar
+  &quot;bad neighborhoods&quot; negatieve gevolgen heft op je link
+  populariteit. Hoewel je in theorie geen controle hebt over wie naar
+  jouw site linkt, geldt dat andersom wel. Neem in ieder geval geen
+  deel aan free-for-all (FFA) websites of aan webrings die op
+  kunstmatige manier je link populariteit zouden moeten opkrikken.</p>
+
+  <h3>Popularity component: Click-through- of click-populariteit</h3>
+
+  <p>Het verkrijgen van links van andere sites is niet genoeg. Major
+  search engines en directory's meten hoe vaak gebruikers klikken op de
+  links naar jouw web site en hoe lang de gebruikers <b>op de site
+  blijven</b>. Ook meten ze hoe vaak gebruikers <b>terugkeren op je
+  site</b>. Al deze metingen bij elkaar leveren de click-through
+  popularity van een site op.</p>
+
+  <p>Webpage en website popularity is niet hetzelfde. Als meer
+  webpagina&rsquo;s populair zijn, zal de populariteit van de site
+  toenemen en daarmee de online visibility. De website&rsquo;s home
+  page is belangrijker dan andere webpages, o.a. omdat search engines
+  er een hoger gewicht aan toekenne. Tenslotte zal de home page de URL
+  zijn die b.v. in major directory's getoond wordt, en de home page
+  heeft veel links ernaartoe binnen de web site.</p>
+
+  <p>Search engine marketing campagnes zouden moeten beginnen met de
+  popularity component, omdat alle major search engines die gebruiken
+  in hun algorithmes. De snelste manier om een initi&euml;le,
+  effectieve popularity component te verkrijgen is je site op te laten
+  nemen in de major directory's, want die worden door search engines
+  als betrouwbare bronnen beschouwd.</p><img src="sev_02.jpg" width=
+  "364" height="273" />
+  <br clear="all" />
+</body>
+</html>

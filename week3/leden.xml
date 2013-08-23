@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE LEDEN SYSTEM "LEDEN.DTD">
+<LEDEN>
+   <LID lidnummer="12345">
+      <Naam>
+         <Voornaam>Jan</Voornaam>
+         <Achternaam>Janssen</Achternaam>
+      </Naam>
+      <Adres>Annastraat 123</Adres>
+      <Plaats>Nijmegen</Plaats>
+   </LID>
+   <LID lidnummer="13579">
+      <Naam>
+         <Voornaam>Els</Voornaam>
+         <Achternaam>Pietersen</Achternaam>
+      </Naam>
+      <Adres>Molenweg 33</Adres>
+      <Plaats>Nijmegen</Plaats>
+   </LID>
+</LEDEN>

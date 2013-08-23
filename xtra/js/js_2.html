@@ -1,0 +1,245 @@
+<html>
+<head>
+
+<script type="text/javascript"> 
+function venster(kleur){
+  window.document.bgColor=kleur;
+  }
+
+function apestaartje(emailadres){
+  if (emailadres == "" || emailadres.indexOf("@") == -1)
+    alert("Dit is geen geldig e-mail adres")
+   else
+    alert("Bedankt voor het invullen van uw e-mail adres")
+  }
+
+function berekenEuro(){
+  var getal=document.euro.invoer.value;
+  var euros=getal/2.20;
+  euros=Math.round(euros*100)/100
+  document.euro.uitvoer.value=euros;
+}
+
+function berekenGulden(){
+  var getal=document.gulden.invoer.value;
+  var guldens=getal*2.20
+  guldens=Math.round(guldens*100)/100
+  document.gulden.uitvoer.value=guldens;
+}
+
+function controleerInvoer() {
+  allesOk = true;
+
+  var nm = document.inschrijfForm.naam.value;
+  if (nm == "") {
+    allesOk = false;
+    alert("Vul een naam in!");
+  }
+
+  var strt = document.inschrijfForm.straat.value;
+  if (strt == "") {
+    allesOk = false;
+    alert("Vul een straat en huisnummer in!");
+  }
+
+  var pc = document.inschrijfForm.postcode.value;
+  if (pc == "") {
+    allesOk = false;
+    alert("Vul een postcode in!");
+  }
+
+  var wplts = document.inschrijfForm.plaats.value;
+  if (wplts == "") {
+    allesOk = false;
+    alert("Vul een woonplaats in!");
+  }
+
+  var lftd = document.inschrijfForm.leeftijd.value;
+  if (lftd == ""){
+    allesOk = false;
+    alert("Vul je leeftijd in!")
+  }
+  else if (lftd < 18) {
+    allesOk = false;
+    alert("Alleen voor 18 jaar en ouder!");
+  }
+
+  return allesOk;	  
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>JavaScript: objecten, formulieren</h2>
+<hr>
+
+<h3>JavaScript standaardobjecten </h3>
+<p>
+Ten aanzien van de standaardobjecten die JavaScript kent, kunnen we een onderscheid maken in zogenaamde navigator en core objecten. De navigator objecten zijn van toepassing op de windows, frames en documenten van je website. De core objecten als <i>string</i>, <i>date</i> en <i>math</i> kennen respectievelijk eigenschappen en methoden m.b.t. strings, datums en mathematische bewerkingen.
+</p>
+
+<p>
+De standaard navigatorobjecten kennen een hierarchische structuur. Dat betekent dat de eigenschap van het ene object ook zelf een object kan zijn. Schematisch ziet dit er als volgt uit:
+<br><br>
+<img src="js_objectmodel.gif" width="528" height="444">
+<br clear="all">
+<br>
+Uit het schema kunnen we aflezen dat Window het "ouderobject" is en dat Document een eigenschap van Window is. Document is echter zelf ook een object en heeft onder andere de eigenschap Form. Form kent op haar beurt weer de eigenschappen button, radio etc..
+</p>
+
+<p>
+Voor een overzicht van de objecten-structuur en de properties van objecten kun je ook de <a href="js_evaluator.html">js_evaluator.html</a> gebruiken.
+</p>
+
+<p>
+Bekijk het voorbeeld hieronder om de hierbovengenoemde aspecten in actie te zien.
+</p>
+
+<p>
+<b>Voorbeeld wijzigen achtergrondkleur HTML document</b>.
+<br><br>
+In dit voorbeeld maken we vier knoppen waarmee de bezoekers van onze website zelf de achtergrondkleur kunnen instellen.<br>
+Allereerst maken we een functie die de achtergrondkleur van ons document wijzigt. Deze functie plaatsen we in de head van ons document.<br><br>
+<i>&lt;script type="text/javascript"&gt;<br>
+function achtergrondkleur(kleur){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.document.bgColor=kleur;<br>
+}<br>
+&lt;/script&gt;<br></i>
+</p>
+
+<p>
+Zoals je ziet staat deze functie tussen de script tags. Verder zie je dat wij onze functie "achtergrondkleur" genoemd hebben en dat de functie &eacute;&eacute;n parameter heeft. Deze parameter hebben wij kleur genoemd.<br>
+Verder zien we dat de functie "achtergrondkleur" slechts een regeltje code bevat om de waarde van de achtergrondkleur van het huidige document in te stellen. Deze code is als volgt tot stand gekomen:<br><br>
+Omdat we de achtergrondkleur willen wijzigen moeten we aan de eigenschap "bgcolor" een waarde toekennen. De waarde die toegekend wordt is de "parameterwaarde" van onze functie. Dat is de waarde die aan de parameter "kleur" is meegegeven bij de aanroep van de functie. Doordat "bgColor" een eigenschap is van het object document plaatsen we in de code een <b>punt</b> tussen de eigenschap "bgColor" en het object "document". Omdat document op haar beurt weer een eigenschap is van het object window plaatsen we tussen de eigenschap document en het object window nogmaals een punt. In gewoon nederlands hebben we in JavaScript nu opgeschreven dat we de achtergrondkleur van het huidige document van het huidige venster willen wijzigen.
+</p>
+
+<p>
+Nu we onze functie geschreven hebben om de achtergrondkleur te wijzigen hoeven we alleen nog maar een paar knoppen in ons document op te nemen waarop de gebruiker kan klikken om de kleur te wijzigen.<br>De code hiervoor ziet er als volgt uit:
+<br><br>
+<i>&lt;Form&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;input type="button" name="javascript functie" value="Rood" onClick="achtergrondkleur('red')"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;input type="button" name="javascript functie" value="Geel" onClick="achtergrondkleur('yellow')"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;input type="button" name="javascript functie" value="Blauw" onClick="achtergrondkleur('blue')"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;input type="button" name="javascript functie" value="Wit" onClick="achtergrondkleur('white')"&gt;<br>
+&lt;/Form&gt;<br></i>
+</p>
+
+<p>
+Vergelijkbare code als hierboven hebben eerder ook gezien behalve dat we nu de <i>eventhandler</i> <i>onClick</i> als attribuut van de <i>input</i> tag opgenomen hebben. Achter de eventhandler hebben we aangegeven wat er moet gebeuren als er op de knop gekikt wordt. De eventhandler roept de functie achtergrondkleur aan en geeft de gekozen kleur als parameterwaarde mee.
+</p>
+
+<p>
+Klik op een van de knoppen hieronder om e.e.a. uit te proberen.
+<br><br>
+<Form>
+<input type="button" name="javascript functie" value="Rood" onClick="venster('red')">
+<input type="button" name="javascript functie" value="Geel" onClick="venster('yellow')">
+<input type="button" name="javascript functie" value="Blauw" onClick="javascript:document.bgColor='blue'">
+<input type="button" name="javascript functie" value="Wit" onClick="venster('white')">
+</Form>
+</p>
+
+<p>&nbsp;</p>
+
+
+
+
+
+
+<h3>Gegevensvalidatie in formulieren</h3>
+Een van de meest gebruikte toepassingen van JavaScript is het controleren op juistheid van de ingevulde gegevens van formulieren voordat deze verstuurd worden voor verwerking op de server.<br>Zo kunnen we bijvoorbeeld controleren of bij een ingevuld e-mail adres wel een apestaartje (@) voorkomt. Hieronder zullen we dit aan de hand van een voorbeeld uitwerken.
+<br><br>
+Allereerst nemen we een tekstinvoerveld in ons document op waarin we de bezoeker vragen om zijn e-mail adres in te voeren. Bij dit tekstinvoerveld nemen we tevens de eventhandler <i>onChange</i> op. Deze eventhandler komt in actie zodra de bezoeker het e-mail adres heeft ingevuld en/of gewijzigd. De eventhandler onChange roep tensotte de functie apestaartje aan die het e-mail adres controleert. De code voor het formulier en de functie ziet er als volgt uit:
+<br><br>
+<i>&lt;Form name="emailform"&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;input type="text" name="emailveld" value="Vul hier uw e-mail adres in"<br> onChange="apestaartje(window.emailform.emailveld.value)"&gt;<br>
+&lt;/Form&gt;<br>
+<br> 
+&lt;Script&gt;<br>
+function apestaartje(emailadres){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (emailadres == "" || emailadres.indexOf("@") == -1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Dit is geen geldig e-mail adres")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("Bedankt voor het invullen van uw e-mail adres")<br>
+}<br>
+&lt;/Script&gt;<br></i>
+<br><br>
+<b>Op het scherm verschijnt dit:</b>
+<br>
+<Form name="emailform" >
+<input type="text" name="emailveld" value="Vul hier uw e-mail adres in" size="40" maxlength="40" onChange="apestaartje(window.emailform.emailveld.value)"><br><br>
+</FORM>
+Komt er geen apestaartje in het ingevulde adres voor dan verschijnt een alert window met de mededeling: Dit is geen geldig e-mail adres. Komt er wel een apestaartje voor in het e-mail adres dan verschijnt een alert window met de mededeling: Bedankt voor het invullen van uw e-mail adres.<br> Probeer dit eens uit!
+<br><br>
+In het voorbeeld hierboven hebben we gezien dat we de invoer kunnen controleren en onze bezoekers middels een alert window kunnen attenderen op een gemaakte fout nog voordat de bezoeker de gegevens wil versturen. Naast het controleren van de gegevens en het al dan niet waarschuwen van onze bezoekers kunnen we ook bewerkingen en berekeningen uitvoeren met de ingevoerde gegevens. Tevens kunnen we het resultaat van een bewerking en/of een berekening bijvoorbeeld in een tekstveld van een formulier plaatsen.<br>
+<br>
+Probeer het voorbeeld hieronder uit en bestudeer de code!
+<br><br>
+<b>De Eurocalculator; Guldens naar Euro&acute;s</b>
+<form STYLE="font-size:12pt" name="euro">
+<table STYLE="font-size:12pt" border=0>
+<tr>
+<td>Welk bedrag in guldens wilt u omrekenen naar Euro&acute;s?</td>
+<td><input name="invoer" size=20></td>
+<td><input type=button value="Bereken" onClick="berekenEuro()"></td>
+</tr>
+<tr>
+<td>Het aantal Euro&acute;s is:</td>
+<td><input name="uitvoer" size=20</td>
+</tr>
+</table>
+</form>
+<b>De Eurocalculator; Euro&acute;s naar guldens</b>
+<form STYLE="font-size:12pt" name="gulden">
+<table STYLE="font-size:12pt" border=0>
+<tr>
+<td>Welk bedrag in Euro&acute;s wilt u omrekenen naar guldens?</td>
+<td><input name="invoer" size=20></td>
+<td><input type=button value="Bereken" onClick="berekenGulden()"></td>
+</tr>
+<tr>
+<td>Het aantal Euro&acute;s is:</td>
+<td><input name="uitvoer" size=20</td>
+</tr>
+</table>
+</form>
+<br><br>
+Tenslotte bekijken we nog een voorbeeld waarin <b>alle</b> velden van een formulier gecontroleerd worden alvorens de gegevens opgestuurd worden. Hiervoor schrijven we een functie die alle velden op invoer controleert en de gegevens pas verstuurd als ze allemaal ingevuld zijn.
+<br><br>
+Het aanroepen van de functie kunnen we doen met behulp van de eventhandler <i>onSubmit</i> die geactiveerd wordt als de bezoeker op de knop Submit klikt om de gegevens te versturen.
+<br><br>
+Probeer het voorbeeld uit en bekijk de code.
+<br><br>
+<b>Vul hieronder svp uw naam en adres gegevens in</b>.
+<form name="inschrijfForm"  action="mailto:jhoffs@hsbos.nl" onsubmit="return controleerInvoer()">
+<table STYLE="font-size:12pt" border=0>
+<tr>
+	<td>Naam:</td>
+	<td><input type=text size="40" name="naam"></td>
+</tr>
+<tr>
+	<td>Straat + huisnummer:</td>
+	<td><input type=text size="40" name="straat"></td>
+</tr>
+<tr>
+	<td>Postcode:</td>
+	<td><input type="text" name="postcode" size="6" maxlength="6"></td>
+</tr>
+<tr>
+	<td>Woonplaats:</td>
+	<td><input type=text size="40" name="plaats"></td>
+</tr>
+<tr>
+	<td>Leeftijd:</td>
+	<td><input type=text size="4" maxlength="4" name="leeftijd"></td>
+</tr>
+<tr>
+	<td><input type=submit value="Verstuur gegevens"></td>
+</tr>
+</form>
+
+</body>
+</html>

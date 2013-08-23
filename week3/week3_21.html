@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Websites Bouwen 1 - Week 4 - XHTML, deel 1</title>
+  <link href="../css/active.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>XHTML, deel 1</h2>
+  <hr />
+
+  <h3>Inleiding</h3>
+
+  <p>HTML verkeert momenteel in versie 4.01. Het W3C is nog niet klaar met
+  de mogelijke opvolger: HTML 5. Maar wel is HTML inmiddels
+  omgezet naar &#39;een toepassing&#39; van <b>XML (eXtensible Markup
+  Language)</b>, waarbij het de nieuwe naam <b>XHTML</b> krijgt wat
+  staat voor <b>eXtensible Hypertext Markup Language</b>.</p>
+
+  <p>Het W3C realiseerde zich namelijk, dat - net als in het verleden
+  gebeurd is - men met HTML nooit in staat zou zijn om aan de vragen
+  vanuit de web community te voldoen naar (steeds weer) meer en nieuwe
+  manieren om documenten te distribueren, verwerken en tonen.
+  <br />
+  HTML kent maar een beperkte set aan mogelijkheden om documenten te
+  maken.
+  <br />
+  Probleemgebieden zijn b.v.:</p>
+
+  <ul>
+    <li>niet-traditionele content
+
+      <ul>
+        <li>chemische formules</li>
+
+        <li>wiskundige expressies</li>
+
+        <li>muziek-notatie</li>
+      </ul>
+    </li>
+
+    <li>alternatieve display media
+
+      <ul>
+        <li>handheld computers</li>
+
+        <li>intelligente telefoons</li>
+      </ul>
+    </li>
+  </ul>
+  <br />
+  <br />
+
+  <p>In plaats van zelf steeds nieuwe uitbreidingen op HTML te
+  formuleren en te standaardiseren, heeft het W3C ervoor gekozen om
+  HTML te <i>herformuleren</i> en het daarbij te laten voldoen aan de
+  XML-standaard, omdat het XML ziet als de basis voor de toekomst van
+  het Web.
+  <br />
+  We willen echter niet de massa aan bestaande HTML-documenten
+  &quot;weggooien&quot; - of ze nu netjes in elkaar gezet zijn of niet
+  -, net zo min als de bestaande kennis, tools en technologie&euml;n
+  die HTML ondersteunen. Aan de andere kant willen we de mogelijkheden
+  van XML ook gaan benutten.
+  <br />
+  XHTML is een beetje de brug tussen beide werelden. Het gebruikt de
+  features van XML om een markup language te defini&euml;ren die
+  vrijwel identiek is aan standaard HTML 4.01 en die ons toch laat
+  beginnen met XML.</p>
+
+  <h3>XML-intro</h3>
+
+  <p>Een XML document bevat character data, die uit rechttoe rechtaan
+  inhoud bestaat en uit markup (opmaak) in de vorm van tags en XML
+  declaraties.
+  <br />
+  <br /></p>
+  <pre>
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;blah&gt;harrumph&lt;/blah&gt;
+</pre>De regels hierboven vormen in principe een <b>well-formed</b> XML
+document.
+  <br />
+  Well-formed XML documenten volgen bepaalde regels, zoals de
+  verplichting dat iedere (begin-)tag een sluit-tag moet hebben en dat
+  je tags netjes moet nesten.
+  <br />
+  Bovendien zie je dat XML documenten beginnen met een regel waarin
+  aangegeven wordt dat er XML in het document staat, welke versie XML
+  het is (hier 1.0) en dat de 8-bit Unicode character set gebruikt
+  wordt (&eacute;&eacute;n van de meest gebruikte).
+  <br />
+  <br />
+  Een ander voorbeeld: zie <a href="vragen_01.xml">vragen_01.xml</a>.
+  <br />
+  <br />
+
+  <p>Om een <b>valid</b> XML document te zijn moet de inhoud naast
+  well-formed zijn ook nog aan een soort <i>XML declaratie</i> voldoen.
+  Die XML declaratie legt vast hoe de tags en de inhoud er (ongeveer)
+  uit moeten zien.
+  <br />
+  Deze declaratie(s) kunnen in het XML-document zelf opgenomen zijn,
+  maar - zoals zo vaak - is het i.v.m. herbruikbaarheid handiger om ze
+  in een apart bestand op te nemen.
+  <br />
+  Er zijn 2 smaken van dergelijke declaratie bestanden: een
+  <b>Schema</b> of een <b>DTD</b>. We kijken hier alleen naar een DTD:
+  een <b>Document Type Definition</b>.</p>
+
+  <p>Verwijzing naar een DTD bestand regel je door (bijna) vooraan in
+  het XML-bestand een regel als de volgende op te nemen:
+  <br /></p>
+  <pre>
+  &lt;!DOCTYPE blah SYSTEM &quot;blah.dtd&quot;&gt;
+</pre>Zie het volgende <a href="leden.xml">leden.xml</a> bestand voor
+een voorbeeld.
+  <br />
+  Hier hoort <a href="leden.dtd">leden.dtd</a> als Document Type
+  Definition bij.
+  <br />
+
+  <h3>XHTML Document Type Definitions</h3>
+
+  <p>XHTML kent 3 variantenen, die eigenlijk overeenkomen met 3
+  varianten die ook voor HTML 4.01 bestaan, maar waar we het nooit over
+  gehad hebben. Bij iedere variant hoort een eigen DTD.
+  <br />
+  Om een XHTML document te maken moet je 1 van deze 3 DTDs kiezen en
+  dan het document vullen volgens de regels van de gekozen DTD.
+  <br />
+  De volgende 3 DTDs zijn mogelijk:</p>
+
+  <ol>
+    <li>strict</li>
+
+    <li>transitional</li>
+
+    <li>frames</li>
+  </ol>
+
+  <p>De 1e XHTML DTD correspondeert dus met de <b>strict</b> HTML DTD.
+  <br />
+  Deze strikte definitie sluit alle <i>deprecated</i> elementen (tags
+  and attributes) in HTML 4.01 uit en dwingt de maker om alleen die
+  features te gebruiken die volledig ondersteund worden in HTML.
+  <br />
+  Veel van de HTML elementen en attributen die met presentatie en
+  voorkomen te maken hebben, zoals de <i>&lt;font&gt;</i> tag en het
+  <i>align</i>-attribuut, mogen dan niet gebruikt worden. In plaats
+  daarvan moeten de tegenhanger uit het CSS model gebruikt worden.</p>
+
+  <p>Je geeft als volgt in een XHTML document aan dat de strict DTD
+  gebruikt moet worden:
+  <br /></p>
+  <pre>
+  &lt;!DOCTYPE html 
+     PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
+     &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+</pre>Met dit statement declareer je dat het root element van je
+document <i>html</i> is, zoals die gedefinieerd wordt in de DTD wiens
+publieke identifier <i>&quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;</i>
+is. De browser weet wellicht hoe de DTD te vinden die overeenkomt met
+deze publieke identifier, en als dat niet het geval is, dan kan het de
+URL gebruken die daarna opgegeven wordt als een alternatieve locatie
+voor de DTD.
+  <br />
+  <br />
+
+  <p>Veel HTML auteurs vinden de strict XHTML DTD te beperkend, omdat
+  veel van de deprecated elementen en attributen nog frequent gebruikt
+  worde. Sterker nog, de populaire browsers ondersteunen soms nog niet
+  alle standaard elementen, terwijl alle deprecated elementen wel
+  volledig ondersteund worden.
+  <br />
+  Het enige echte voordeel van de strict XHTML DTD is dat die
+  documenten gegarandeerd volledig ondersteund zullen worden in
+  toekomstige versies van XHTML.</p>
+
+  <p>Veel auteurs zullen derhalve kiezen voor de <b>transitional</b>
+  XHTML DTD. Deze staat het dichtste bij de huidige HTML standaard en
+  bevat toch al die mooie maar deprecated features die het leven van
+  een HTML auteur soms zo makkelijk maken. Met de transitional XHTML
+  DTD kun je langzaamaan de overstap naar de XML familie maken (vandaar
+  de naam transitional) en ondertussen toch de huidige browsers ten
+  volle gebruiken.</p>
+
+  <p>Je geeft als volgt in een XHTML document aan dat de transitional
+  DTD gebruikt moet worden:
+  <br /></p>
+  <pre>
+  &lt;!DOCTYPE html 
+     PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+     &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+</pre>
+  <br />
+  <br />
+
+  <p>De 3e DTD is voor <b>frames</b>. Deze is identiek aan de
+  transitional DTD, behalve dat de document body vervangen wordt door
+  frame-elementen.
+  <br />
+  Je zou mogelijk verwachten, dat er voor &quot;completeness&quot;s
+  sake&quot;, ook een strict en een transitional frame DTD zouden zijn,
+  maar het W3C heeft besloten dat als je frames gebruikt, dan mag je
+  net zo goed alle deprecated elementen gebruiken.</p>
+
+  <p>Je geeft als volgt in een XHTML document aan dat de transitional
+  DTD gebruikt moet worden:
+  <br /></p>
+  <pre>
+  &lt;!DOCTYPE html 
+     PUBLIC &quot;-//W3C//DTD XHTML 1.0 Frameset//EN&quot;
+     &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd&quot;&gt;
+</pre>
+  <br />
+  <br />
+
+  <p>Een minimaal XHTML document ziet er dus als volgt uit:</p>
+  <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE html 
+    PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+    &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Every document must have a title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...your content goes here...
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</body>
+</html>

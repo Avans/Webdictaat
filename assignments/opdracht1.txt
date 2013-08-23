@@ -1,0 +1,45 @@
+WEBS1 - Week 1
+
+Websites Bouwen 1 - Opdracht 1
+
+Hoofdstuk 1. Het begin
+
+Een hoofdstuk heeft vaak een aantal paragrafen. Paragrafen bestaan weer 
+uit(sub)paragrafen en alinea's. De koppen boven hoofdstukken en paragrafen 
+kun je het best tussen H-tags plaatsen.
+
+Paragraaf 1.1 Opmaak
+
+Onderdeel 1. Alinea of paragraaf?
+
+Een groepje bij elkaar horende zinnen noemen wij in het Nederlands een alinea.
+In het Engels heet dat paragraph. Daarom staan er om alinea's altijd P-tags.
+Een groep alinea's noemen wij in het Nederlands een paragraaf (verwarrend).
+Die wordt in het Engels meestal section genoemd.
+
+Rondom alinea's staat altijd wat wit-ruimte en elke alinea begint op een nieuwe regel.
+Om binnen een alinea een regeleinde te forceren, wordt wel de BR-tag gebruikt.
+In de uitwerking van deze opdracht heb ik die niet gebruikt.
+
+Onderdeel 2. Lettertypes en opmaak
+
+De opmaak van deze opdracht doen we hier met ouderwetse HTML, zonder stylesheets. 
+Later leren we dit weer af, maar je moet weten dat het op deze manier kan en 
+dat dit in veel websites nog gebruikt wordt.
+
+Als het goed is, heb je hierboven alleen H-tags alleen gebruikt voor de opmaak 
+van de titels, maar er zijn nog meer manieren om met de grootte van tekst om te gaan.
+Zo is deze tekst een beetje kleiner dan normaal, en deze juist wat groter.
+
+Dit is zo groen als een limoen en dit is purper en cursief.
+
+Dit stukje tekst wordt hopelijk in Lucida Sans getoond.  
+Maar als dat lettertype niet op de computer van de kijker staat, dan graag in Arial.
+
+Deze alinea staat in Courier New.
+
+Onderdeel 3. Even puzzelen
+
+Dit is de formule van <vul de naam in>: H2SO4.
+
+Wie was de ouwe Griek die beweerde dat a2+b2=c2 ?

@@ -1,0 +1,2036 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Cascading Style Sheets</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="css_files/cursus.css">
+<style>
+p.xborder {padding: 0px 4px; margin: 3px; border-width: 5px; border-color: #c0c0c0; font-family: Arial; display: inline; width: 70px}
+</style><style>
+input.cursus {
+	border: 2px solid navy;
+	font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: navy;
+	background-color: cornsilk;
+}
+</style><style>
+h2 i {color: red; font-style: normal}
+</style><style type="text/css">
+a.vb {color: orange}
+a.vb:visited {color: red}
+a.vb:active {color: blue; font-weight: bold}
+a.vb:hover {background-color: lightgrey}
+</style></head><body>
+
+<h4>Met dank aan Edwin Martin ...</h4>
+<br>
+<br>
+
+
+<h1 class="cursus">Cascading Style Sheets (CSS)</h1>
+
+<p>Copyright © 2001 - 2006 <a href="http://www.bitstorm.org/edwin/">Edwin Martin</a> &lt;<a href="mailto:edwin@bitstorm.nl">edwin@bitstorm.nl</a>&gt;</p>
+
+<p>Laatst aangepast: 2 januari 2006.</p>
+
+<p>Bij veel voorbeelden in de cursus wordt gebruik gemaakt van style sheets.
+Het spreekt vanzelf dat deze cursus bekeken dient te worden met een recente browser.
+Browsers met een goede style sheet-ondersteuning zijn Internet Explorer 6,
+Netscape 6, Mozilla en Firefox.</p>
+
+<p>Onbekende woorden en kleuren kunnen worden opgezocht in deze lijsten:</p>
+
+<ul>
+<li><a href="http://www.bitstorm.org/edwin/cursus/terminologie.html">Terminologie</a>
+</li><li><a href="http://www.bitstorm.org/edwin/cursus/kleuren.html">Kleuren</a>
+</li></ul>
+
+<p>Indien gewenst, kan deze cursus ook als PDF-bestand worden gedownload:</p>
+
+<ul>
+<li><a href="http://www.bitstorm.org/edwin/cursus/Cursus%20Cascading%20Style%20Sheets.pdf">Cursus Cascading Style Sheets.pdf</a> (152 kB)
+</li></ul>
+
+<p>Informatie over je browser vind je op <a href="http://www.browserreport.com/">Browser Report</a>.</p>
+
+
+<h3 class="cursus">Een beetje geschiedenis</h3>
+
+<p>Wie wel eens de specificaties van <a href="http://www.w3.org/MarkUp/html-spec/html-spec_toc.html">HTML 2.0</a>
+heeft bekeken, zal het opgevallen zijn dat er haast geen mogelijkheden zijn
+om een pagina vorm te geven.</p>
+
+<p>Gek genoeg was dat precies de bedoeling. We konden aangeven wat de titel was, wat de kopjes
+in een tekst waren en welke stukken tekst benadrukt moesten worden.
+Hoe de tekst uiteindelijk werd vormgegeven, viel buiten het bestek van HTML.</p>
+
+<p>Maar met het populairder worden van het Internet heeft toenmalig marktleider Netscape
+op een gegeven moment besloten om tags te verzinnen waarmee we onder andere
+teksten verschillende kleuren konden geven en een plaatje als achtergrond van een
+pagina konden gebruiken. Webmasters over de hele wereld waren hier zo van verrukt,
+dan in een mum van tijd het halve Internet was voorzien van achtergrondplaatjes
+en gekleurde teksten.</p>
+
+<p>Duidelijk werd dat men webpagina's mooi wil vormgeven.
+Duidelijk werd echter ook dat HTML daar helemaal niet geschikt voor is.
+Wie wel eens de frustraties heeft aangehoord van een DTP-er die voor het eerst
+een webpagina poogt vorm te geven, weet wat bedoeld wordt.</p>
+
+<p>Al snel werd duidelijk dat het slimmer is om de vormgeving in een
+style sheet (stijlblad) onder te brengen.
+In een style sheet kan onder andere worden vastgelegd dat een kopje tussen
+&lt;H2&gt; en &lt;/H2&gt; een 24-punts vette Helvetica moest zijn.</p>
+
+<p>Ook werd duidelijk dat de vormgever aan een webpagina een style sheet wil
+koppelen, maar dat de browser ook een ingebakken style sheet heeft en
+dat de bezoeker ook zo zijn voorkeuren heeft en een eigen style sheet
+aan de browser kan koppelen.</p>
+
+<p>Om al deze style sheets bij elkaar te kunnen voegen werd een taal bedacht
+die style sheets beschreef en dit mogelijk maakte: Cascading Style Sheets
+(Overlappende stijlbladen).
+Met CSS is het mogelijk om allerlei HTML-elementen van vorm-kenmerken te voorzien.</p>
+
+<p>In december 1996 werd <a href="http://www.w3.org/TR/REC-CSS1">Cascading Style Sheets, level 1 (CSS1)</a>
+een 'W3C Recommendation' (aanbeveling).</p>
+
+<p>Rond deze tijd komen Netscape Navigator 4 en Internet Explorer 3 uit met gedeeltelijke
+style sheets ondersteuning.
+Latere versies van deze browsers ondersteunen style sheets steeds beter.
+De versies 6 van beide browsers ondersteunen CSS1 volledig.</p>
+
+<p>Een van de belangrijkste voordelen van style sheets is dat het backwards compatible is.
+Oudere browsers en eenvoudige browsers op bijvoorbeeld handcomputers, die geen
+CSS ondersteunen, laten alleen de eenvoudige HTML zien en nieuwere browsers
+laten mooiere en betere pagina's zien.</p>
+
+<h3 class="cursus">HTML terminologie: element en attribuut</h3>
+
+<p>Voordat we echt van start gaan, eerst nog wat terminologie die in deze
+tekst gebruikt wordt, namelijk <i>element</i> en <i>attribuut</i>.</p>
+
+<p>Als voorbeeld nemen we onderstaande HTML-code:</p>
+
+<div class="code">
+<pre>
+&lt;<span style="color: red;">h2</span>&gt;Vakantie in Carvoeiro&lt;/<span style="color: red;">h2</span>&gt;
+
+&lt;<span style="color: red;">img</span> <span style="color: blue;">src</span>="carvoeiro.jpg" <span style="color: blue;">width</span>="200" <span style="color: blue;">height</span>="140"&gt;
+
+&lt;<span style="color: red;">p</span>&gt;Onze vakantie in &lt;<span style="color: red;">a</span> <span style="color: blue;">href</span>="http://www.carvoeiro.com/"&gt;Carvoeiro&lt;/<span style="color: red;">a</span>&gt;&lt;/<span style="color: red;">p</span>&gt;
+
+</pre>
+</div>
+
+<p>Een <b>element</b> is de HTML-open tag, de eventueel aanwezige sluit tag en de eventueel aanwezige inhoud.
+Zo is &lt;<span style="color: red;">h2</span>&gt;Vakantie in Carvoeiro&lt;/<span style="color: red;">h2</span>&gt; een H2-element en &lt;<span style="color: red;">img</span> <span style="color: blue;">src</span>="carvoeiro.jpg" <span style="color: blue;">width</span>="200" <span style="color: blue;">height</span>="140"&gt; een img-element.
+</p><p>Een <b>attribuut</b> is een parameter van een element (HTML-tag), in dit voorbeeld <span style="color: blue;">src</span>, <span style="color: blue;">width</span>, <span style="color: blue;">height</span> of <span style="color: blue;">href</span>.</p>
+
+<h3 class="cursus">Een eerste style sheet</h3>
+
+<p>Stel, we hebben voor Katja de volgende webpagina gemaakt:</p>
+
+<div class="code">
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mijn homepage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+
+&lt;h1&gt;Katja's homepage&lt;/h1&gt;
+
+Deze bands vind ik ongeloofelijk &lt;i&gt;cool&lt;/i&gt;:
+
+&lt;ul&gt;
+&lt;li&gt;Destiny's Child
+&lt;li&gt;Anouk
+&lt;li&gt;Krezip
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>Deze pagina zal er zo uitzien:</p>
+
+<div class="code">
+<h1>Katja's homepage</h1>
+
+Deze bands vind ik ongeloofelijk <i>cool</i>:
+<ul>
+<li>Destiny's Child
+</li><li>Anouk
+</li><li>Krezip
+</li></ul>
+</div>
+
+<p>Stel, we willen de kop met de tekst 'Katja's homepage' oranje hebben, want
+dat is Katja's lievelingskleur. De tekst tussen <tt>&lt;H1&gt;</tt> en <tt>&lt;/H1&gt;</tt>
+moet dus oranje (orange) worden. Met Cascading style sheets wordt dit
+als volgt weergegeven:</p>
+
+<div class="code"><pre>h1 {color: orange}
+</pre></div>
+
+<p>Eenvoudig, niet? Eerst de naam van de HTML-tag en daarachter, tussen accolades,
+de stijlkenmerken.</p>
+
+<p>Hoe nemen we deze stijl nu in een HTML pagina op?</p>
+<p>We gebruiken daarvoor
+de <tt>&lt;style&gt;</tt>-tag. Om aan te geven dat het om CSS gaat, geven we als
+attribuut <tt>type="text/css"</tt> mee.</p>
+
+<div class="code"><pre>&lt;style type="text/css"&gt;
+h1 {color: orange}
+&lt;/style&gt;
+</pre></div>
+
+<p>Het is gebruikelijk om styles in de head van het document te plaatsen.
+Katja's homepage komt er dan als volgt uit te zien:</p>
+
+<div class="code"><pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mijn homepage&lt;/title&gt;
+<em>&lt;style type="text/css"&gt;
+h1 {color: orange}
+&lt;/style&gt;</em>
+&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+
+&lt;h1&gt;Katja's homepage&lt;/h1&gt;
+
+Deze bands vind ik ongeloofelijk &lt;i&gt;cool&lt;/i&gt;:
+&lt;ul&gt;
+&lt;li&gt;Destiny's Child
+&lt;li&gt;Anouk
+&lt;li&gt;Krezip
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+
+<p>In een browser wordt dit dan:</p>
+
+<div class="code">
+<h1 style="color: orange;">Katja's homepage</h1>
+
+Deze bands vind ik ongeloofelijk <i>cool</i>:
+<ul>
+<li>Destiny's Child
+</li><li>Anouk
+</li><li>Krezip
+</li></ul>
+</div>
+
+<p>Zoals zichbaar is, neemt het de kopkenmerken van de browser over (vet en groot)
+en voegt het daar onze kenmerken aan toe (oranje). Dit wordt met cascading
+(overlappend) bedoeld.</p>
+
+<h3 class="cursus">Een iets uitgebreidere style sheet</h3>
+
+<p>Natuurlijk kunnen we meerdere stijlkenmerken geven. We willen bijvoorbeeld
+de kop helemaal niet vet, maar normaal (<tt>font-weight: normal</tt>) en
+we willen de kop 20 pixels laten inspringen (<tt>margin-left: 20px</tt>).
+Als we ook nog schuine tekst willen onderstrepen (<tt>text-decoration: underline</tt>),
+dan wordt de uiteindelijke pagina als volgt:</p>
+
+<div class="code">
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mijn homepage&lt;/title&gt;
+<em>&lt;style type="text/css"&gt;
+h1 {color: orange; font-weight: normal; margin-left: 20px}
+i {text-decoration: underline}
+&lt;/style&gt;</em>
+&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+
+&lt;h1&gt;Katja's homepage&lt;/h1&gt;
+
+Deze bands vind ik ongeloofelijk &lt;i&gt;cool&lt;/i&gt;:
+&lt;ul&gt;
+&lt;li&gt;Destiny's Child
+&lt;li&gt;Anouk
+&lt;li&gt;Krezip
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>Het resultaat in een browser:</p>
+
+<div class="code">
+<h1 style="color: orange; font-weight: normal; margin-left: 20px;">Katja's homepage</h1>
+
+Deze bands vind ik ongeloofelijk <i style="text-decoration: underline;">cool</i>:
+<ul>
+<li>Destiny's Child
+</li><li>Anouk
+</li><li>Krezip
+</li></ul>
+</div>
+
+<p>Het resultaat is duidelijk: de kop is ingesprongen en niet meer vet en
+cursieve tekst is nu ook onderstreept.</p>
+
+<p>Tussen de accolades kunnen dus meerdere stijlkenmerken geplaatst worden.
+Ze worden gescheiden door de punt-komma (;).</p>
+
+<h2 class="cursus">CSS terminologie</h2>
+
+<p>CSS kent zijn eigen terminologie, die aan de hand van een voorbeeld wordt uitgelegd:</p>
+
+<img src="css_files/css-terminologie.gif" height="150" width="300">
+
+<p>Bovenstaand voorbeeld "H1 {color: orange}" is een eenvoudige <b>CSS rule</b> (regel).
+Een CSS rule bestaat uit een <b>selector</b> 'H1' en een <b>declaration</b> (declaratie) 'color: orange'.
+De declaration bestaat weer uit een <b>property</b> (eigenschap) 'color' en <b>value</b> (waarde) 'orange'.</p>
+
+<h2 class="cursus">De paragraaf-tag &lt;p&gt;</h2>
+
+<p>Als we niet alleen het kopje willen laten inspringen, maar ook de normale
+paragraaf-tekst, dan kan dat vanzelfsprekend ook.
+We zetten daarvoor elke paragraaf tussen <tt>&lt;p&gt;</tt> en <tt>&lt;/p&gt;</tt>.</p>
+
+<p>Een voorbeeld van de paragraaf 20 pixels laten inspringen:</p>
+
+<div class="code"><pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mijn homepage&lt;/title&gt;
+&lt;style type="text/css"&gt;
+H1 {color: orange; font-weight: normal; margin-left: 20px}
+I {text-decoration: underline}
+<em>P {margin-left: 20px}</em>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body bgcolor="white"&gt;
+
+&lt;h1&gt;Katja's homepage&lt;/h1&gt;
+
+<em>&lt;p&gt;</em>Deze bands vind ik ongeloofelijk &lt;i&gt;cool&lt;/i&gt;:<em>&lt;/p&gt;</em>
+&lt;ul&gt;
+&lt;li&gt;Destiny's Child
+&lt;li&gt;Anouk
+&lt;li&gt;Krezip
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+
+<p>Het resultaat in een browser:</p>
+
+<div class="code">
+<h1 style="color: orange; font-weight: normal; margin-left: 20px;">Katja's homepage</h1>
+
+<p style="margin-left: 20px;">Deze bands vind ik ongeloofelijk <i style="text-decoration: underline;">cool</i>:</p>
+<ul>
+<li>Destiny's Child
+</li><li>Anouk
+</li><li>Krezip
+</li></ul>
+</div>
+
+<p>Om HTML-documenten zo style sheet-vriendelijk te maken, is het slim om
+voortaan alle paragrafen tussen <tt>&lt;p&gt;</tt> en <tt>&lt;/p&gt;</tt>-tags te zetten.</p>
+
+<h2 class="cursus">De body-tag &lt;body&gt;</h2>
+
+<p>Als we nu in het hele document één bepaald lettertype willen gebruiken,
+dan kunnen we dat in de style sheet aangeven voor de paragraaftekst, de kopjes en
+alle andere gebruikte elementen.
+Het is veel handiger om dit voor het hele document tegelijk te doen.
+We gebruiken hiervoor het body-element.
+Met het body-element veranderen we eigenschappen voor het hele document.
+Bijvoorbeeld ook de achtergrondkleur. We halen dan natuurlijk de '<tt>bgcolor="white"</tt>' uit de
+<tt>&lt;body&gt;</tt>-tag.</p>
+
+<div class="code">
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mijn homepage&lt;/title&gt;
+&lt;style type="text/css"&gt;
+H1 {color: orange; font-weight: normal; margin-left: 20px}
+I {text-decoration: underline}
+P {margin-left: 20px}
+<em>BODY {font-family: Helvetica; background-color: mistyrose}</em>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Katja's homepage&lt;/h1&gt;
+
+&lt;p&gt;Deze bands vind ik ongeloofelijk &lt;i&gt;cool&lt;/i&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Destiny's Child
+&lt;li&gt;Anouk
+&lt;li&gt;Krezip
+&lt;/ul&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>Het resultaat in een browser:</p>
+
+
+<div class="code" style="font-family: Helvetica; background-color: mistyrose;">
+
+<h1 style="color: orange; font-weight: normal; margin-left: 20px;">Katja's homepage</h1>
+
+<p style="margin-left: 20px;">Deze bands vind ik ongeloofelijk <i style="text-decoration: underline;">cool</i>:</p>
+<ul>
+<li>Destiny's Child
+</li><li>Anouk
+</li><li>Krezip
+</li></ul>
+</div>
+
+<p>Het lettertype is nu Helvetica en de achtergrondkleur zacht roze.</p>
+
+<h2 class="cursus">CSS1 Stijlkenmerken</h2>
+
+<p>Er zijn erg veel kenmerken die we kunnen veranderen. Hieronder staat een lijst met de CSS1-kenmerken.
+Ze zullen allemaal worden besproken.</p>
+
+<p>De laatste browsers ondersteunen ook een aantal kenmerken van het nieuwere CSS2.
+Aan het einde worden de belangrijkste vernieuwingen besproken.</p>
+
+<table>
+<tbody><tr>
+<th>Font properties</th>
+<td>
+  font-family<br>
+  font-style<br>
+  font-variant<br>
+  font-weight<br>
+  font-size<br>
+  font
+</td>
+</tr>
+<tr>
+<th>Color and background properties</th>
+<td>
+  color<br>
+  background-color<br>
+  background-image<br>
+  background-repeat<br>
+  background-attachment<br>
+  background-position<br>
+  background
+</td>
+</tr>
+<tr>
+<th>Text properties</th>
+<td>
+  word-spacing<br>
+  letter-spacing<br>
+  text-decoration<br>
+  vertical-align<br>
+  text-transform<br>
+  text-align<br>
+  text-indent<br>
+  line-height
+</td>
+</tr>
+<tr>
+<th>Box properties</th>
+<td>
+  margin-top<br>
+  margin-right<br>
+  margin-bottom<br>
+  margin-left<br>
+  margin<br>
+  padding-top<br>
+  padding-right<br>
+  padding-bottom<br>
+  padding-left<br>
+  padding<br>
+  border-top-width<br>
+  border-right-width<br>
+  border-bottom-width<br>
+  border-left-width<br>
+  border-width<br>
+  border-color<br>
+  border-style<br>
+  border-top<br>
+  border-right<br>
+  border-bottom<br>
+  border-left<br>
+  border<br>
+  width<br>
+  height<br>
+  float<br>
+  clear
+</td>
+</tr>
+<tr>
+<th>Classification properties</th>
+<td>
+  display<br>
+  white-space<br>
+  list-style-type<br>
+  list-style-image<br>
+  list-style-position<br>
+  list-style
+</td>
+</tr>
+</tbody></table>
+
+<h2 class="cursus">Lettertypes (fonts)</h2>
+
+<p>Wat kan met de &lt;font&gt;-tag, kan natuurlijk ook met style sheets.
+De verschillende font-eigenschappen zijn:</p>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>font-family</th>
+<td>
+Lijst van lettertypes
+</td>
+<td>
+Zie hieronder.
+</td>
+</tr>
+<tr>
+<th>font-style</th>
+<td>
+<b>normal<br>
+italic<br>
+oblique<b>
+</b></b></td>
+<td>
+Cursief of schuin schrift.
+</td>
+</tr>
+<tr>
+<th>font-variant</th>
+<td>
+<b>normal<br>
+small-caps</b>
+</td>
+<td>
+Bij small-caps worden onderkast (kleine) letters weergegeven als
+kapitalen (hoofdletters), maar iets kleiner.
+Voorbeeld: <span style="font-variant: small-caps;">Sophia</span>.
+(Internet Explorer ondersteunt dit correct vanaf versie 6).
+</td>
+</tr>
+<tr>
+<th>font-weight</th>
+<td>
+<b>normal<br>
+bold<br>
+bolder<br>
+lighter</b><br>
+<b>100</b> - <b>1000</b>
+</td>
+<td>
+Geeft mate van vetheid aan. De gangbare browsers ondersteunen enkel normal en bold.
+</td>
+</tr>
+<tr>
+<th>font-size</th>
+<td>
+<b>xx-small<br>
+x-small<br>
+small<br>
+medium<br>
+large<br>
+x-large<br>
+xx-large<br>
+larger<br>
+smaller</b><br>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage
+</td>
+<td>
+Geeft de grootte van een font aan.
+</td>
+</tr>
+<tr>
+<th>font</th>
+<td colspan="2">
+Meerdere eigenschappen tegelijk:<br>
+font-style font-variant font-weight font-size font-family
+</td>
+</tr>
+</tbody></table>
+
+<p>Bij <tt>font-family</tt> kunnen we, net als met de <tt>&lt;font&gt;</tt>-tag,
+een lijstje met lettertypes opgeven, gescheiden door komma's.
+De eerste font in het lijstje dat beschikbaar is, wordt gebruikt.
+Als de naam van een font een spatie bevat, dient de naam tussen aanhalingstekens te staan.
+</p>
+
+<p>Aan het einde van de lijst kan een generiek font toegevoegd
+worden, die zal worden gebruikt als geen van de andere fonts beschikbaar is.
+De generieke fonts zijn:</p>
+
+<ul>
+<li>serif
+</li><li>sans-serif
+</li><li>cursive
+</li><li>fantasy
+</li><li>monospace
+</li></ul>
+
+<p>Voorbeeld met meerdere lettertypen:</p>
+
+<div class="code"><pre>H1 {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif}
+</pre></div>
+
+<p>Voorbeeld met meerdere eigenschappen:</p>
+
+<div class="code"><pre>H1 {font: italic normal normal x-large "Trebuchet MS", Arial, Helvetica, sans-serif}
+</pre></div>
+
+<h2 class="cursus">Kleur en achtergronden</h2>
+
+<p>De bekende '<tt>background</tt>' en '<tt>bgcolor</tt>'-attributen hebben natuulijk ook een
+CSS-evenknie. Hieronder staat een lijstje met de verschillende mogelijkheden.</p>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>color</th>
+<td>
+<a href="#kleuren">kleur</a>
+</td>
+<td>
+Tekstkleur.
+</td>
+</tr>
+<tr>
+<th>background-color</th>
+<td>
+<a href="#kleuren">kleur</a>
+</td>
+<td>
+Achtergrondkleur.
+</td>
+</tr>
+<tr>
+<th>background-image</th>
+<td>
+<b>none</b><br>
+<b>url(</b>path<b>)</b>
+</td>
+<td>
+Achtergrondplaatje.
+</td>
+</tr>
+<tr>
+<th>background-repeat</th>
+<td>
+<b>repeat<br>
+repeat-x<br>
+repeat-y<br>
+no-repeat</b>
+</td>
+<td>
+Achtergrond herhalen, alleen horizontaal herhalen,
+ alleen vertikaal herhalen en niet herhalen.
+</td>
+</tr>
+<tr>
+<th>background-attachment</th>
+<td>
+<b>fixed<br>
+scroll</b>
+</td>
+<td>
+Vaste of meescrollende achtergrond.
+</td>
+</tr>
+<tr>
+<th>background-position</th>
+<td>
+y x<br>
+y:<br>
+<b>top<br>
+center<br>
+bottom</b><br>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage<br>
+x:<br>
+<b>left<br>
+center<br>
+right</b><br>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage<br>
+</td>
+<td>
+Geeft de positie van het achtergrondplaatje weer met twee waarden
+y x, waarbij y de waarden top, center of bottom en x de waarden left, center of right kan hebben.
+Ook kan voor beiden een percentage of lengte worden opgegeven.
+</td>
+</tr>
+<tr>
+<th>background</th>
+<td colspan="2">
+Alle achtergrondeigenschappen kunnen ook in één keer worden opgegeven:<br>
+background-attachment background-color background-image background-position background-repeat
+</td>
+</tr>
+</tbody></table>
+
+<p>Voorbeeld:</p>
+
+<div class="code"><pre>body {
+	background-color: #006600;
+	background-image: url(circle_bg.gif);
+	background-position: bottom center;
+}
+</pre></div>
+
+<p>In tegenstelling tot onze eerdere notatie, staan hier de kenmerken onder elkaar.
+Dit is veel overzichtelijker dan als de kermerken achter elkaar staan.</p>
+
+<img src="css_files/circle_bg.gif" height="70" width="70">
+
+<p>Met bovenstaande afbeelding en code wordt het resultaat als volgt:</p>
+
+<div style="background-color: rgb(0, 102, 0); background-image: url(circle_bg.gif); background-position: center bottom; width: 390px; height: 120px;">
+</div>
+
+<p>Dit voorbeeld laat zien dat een achtergrondafbeelding niet altijd linksboven hoeft te beginnen,
+maar bijvoorbeeld ook midden-onder kan beginnen.</p>
+
+<h2 class="cursus">Tekstkenmerken</h2>
+
+<p>Met CSS kan, net als in HTML, tekst vet, cursief en onderstreept worden weergegeven.
+Met CSS kan ook de ruimte tussen regels, woorden en zelfs letters worden bepaald.</p>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>word-spacing</th>
+<td>
+<b>normal</b><br>
+<a href="#grootte-eenheden">grootte</a>
+</td>
+<td>
+De ruimte tussen woorden.<br>
+<span style="word-spacing: 15px;">Dit is een voorbeeld</span>.<br>
+(Werkt in Internet Explorer vanaf versie 6).
+</td>
+</tr>
+<tr>
+<th>letter-spacing</th>
+<td>
+<b>normal</b><br>
+<a href="#grootte-eenheden">grootte</a>
+</td>
+<td>
+De ruimte tussen letters.<br>
+<span style="letter-spacing: 4px;">Dit is een voorbeeld</span>.
+</td>
+</tr>
+<tr>
+<th>text-decoration</th>
+<td>
+<b>none<br>
+underline<br>
+overline<br>
+line-through<br>
+blink</b>
+</td>
+<td>
+Voorbeelden:<br>
+<span style="text-decoration: underline;">underline</span>.
+<span style="text-decoration: overline;">overline</span>,
+<span style="text-decoration: line-through;">line-through</span> en
+<span style="text-decoration: blink;">blink</span>.<br>
+Een browser kan <b>blink</b> (knipperen) negeren.
+</td>
+</tr>
+<tr>
+<th>vertical-align</th>
+<td>
+<b>baseline<br>
+sub<br>
+super<br>
+top<br>
+text-top<br>
+middle<br>
+bottom<br>
+text-bottom</b><br>
+percentage
+</td>
+<td>
+Er zijn drie soorten verticale uitlijning:
+<ul>
+<li><span style="background-color: cornsilk;">baseline <img style="vertical-align: baseline;" src="css_files/kleinblokje.gif" height="12" width="10">,
+text-top <img style="vertical-align: text-top;" src="css_files/kleinblokje.gif" height="12" width="10"> en
+text-bottom <img style="vertical-align: text-bottom;" src="css_files/kleinblokje.gif" height="12" width="10"> zijn afhankelijk van de huidige tekstregel.</span>
+</li><li>top, middle, bottom en percentage zijn afhankelijk van de box waarin het element zich bevindt.
+</li><li>Een voorbeeld van sub: H<span style="vertical-align: sub;">2</span>O
+en van super: 25 m<span style="vertical-align: super;">2</span>.
+</li></ul>
+</td>
+</tr>
+<tr>
+<th>text-transform</th>
+<td>
+<b>none<br>
+capitalize<br>
+lowercase<br>
+uppercase</b>
+</td>
+<td>
+Voorbeelden:
+<span style="text-transform: capitalize;">capitalize</span>,
+<span style="text-transform: lowercase;">lowercase</span> en
+<span style="text-transform: uppercase;">uppercase</span>.
+</td>
+</tr>
+<tr>
+<th>text-align</th>
+<td>
+<b>center<br>
+left<br>
+right<br>
+justify</b>
+</td>
+<td>
+Uitlijning. Justify is het zowel links als rechts uitlijnen.
+</td>
+</tr>
+<tr>
+<th>text-indent</th>
+<td>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage
+</td>
+<td>
+Laat de eerste regel van een tekst inspringen.
+Met een negatieve waarde zal de eerste regel uitspringen.
+</td>
+</tr>
+<tr>
+<th>line-height</th>
+<td>
+<b>normal</b><br>
+getal<br>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage
+</td>
+<td>
+Regelhoogte. Omdat er witruimte tussen regels zit, is <b>normal</b>
+gewoonlijk niet gelijk aan 100%, maar aan bijvoorbeeld 120%.
+</td></tr>
+</tbody></table>
+
+<p>Hieronder staat een voorbeeld style sheet en een voorbeeld van de toepassing van de style sheet.</p>
+
+<div class="code"><pre>p {
+	text-align: justify;
+	text-indent: 4em;
+	line-height: 170%;
+}
+</pre></div>
+
+<p style="text-align: justify; text-indent: 4em; line-height: 170%; width: 400px;">
+Dit is een voorbeeldtekstje dat laat zien dat u met cascading style sheets
+typografische mogelijkheden aan HTML-pagina's kunt toevoegen die eerder niet
+mogelijk waren.
+De opmaakmogelijkheden van een HTML-pagina komen zo steeds dichter in de
+buurt van de opmaakmogelijkheden van een DTP-programma.
+Misschien komt het nog zo ver dat documentformaten als PDF door CSS overbodig worden.
+</p>
+
+<h2 class="cursus">Box kenmerken</h2>
+
+<p>De verschillende box-kenmerken op een rijtje:</p>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>margin (-top, -right, -bottom, -left)</th>
+<td>
+<b>auto</b><br>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage
+</td>
+<td>
+De marge. Zie hieronder.
+</td>
+</tr>
+<tr>
+<th>padding (-top, -right, -bottom, -left)</th>
+<td>
+<a href="#grootte-eenheden">grootte</a><br>
+percentage
+</td>
+<td>
+De opvulling. Zie hieronder.
+</td>
+</tr>
+<tr>
+<th>border (-width, -top-width, -right-width, -bottom-width, -left-width)</th>
+<td>
+<b>medium<br>
+thin<br>
+thick</b><br>
+<a href="#grootte-eenheden">grootte</a>
+</td>
+<td>
+De randdikte, zie de uitleg hieronder.
+</td>
+</tr>
+<tr>
+<th>border-color</th>
+<td>
+<a href="#kleuren">kleur</a>
+</td>
+<td>
+De randkleur.
+</td>
+</tr>
+<tr>
+<th>border-style</th>
+<td>
+<b>none<br>
+dotted<br>
+dashed<br>
+solid<br>
+double<br>
+groove<br>
+ridge<br>
+inset<br>
+outset</b>
+</td>
+<td>
+De randstijl, zie de uitleg hieronder.
+</td>
+</tr>
+<tr>
+<th>border (-top, -right, -bottom, -left)</th>
+<td colspan="2">
+Meerdere eigenschappen achter elkaar:<br>
+width style color
+</td>
+</tr>
+<tr>
+<th>width</th>
+<td>
+<a href="#grootte-eenheden">grootte</a>
+</td>
+<td>
+Breedte van de box
+</td>
+</tr>
+<tr>
+<th>height</th>
+<td>
+<a href="#grootte-eenheden">grootte</a>
+</td>
+<td>
+Hoogte van de box
+</td>
+</tr>
+<tr>
+<th>float</th>
+<td>
+<b>none<br>
+left<br>
+right</b>
+</td>
+<td rowspan="2">
+Zie de tekst onder het kopje <i>Float en clear</i>.
+</td>
+</tr>
+<tr>
+<th>clear</th>
+<td>
+<b>none<br>
+left<br>
+right<br>
+both</b>
+</td>
+</tr>
+</tbody></table>
+<a name="textinabox"></a>
+<p>Elk HTML-element bevind zich in een denkbeeldige box.
+Deze box heeft een marge (margin), een rand (border) en een opvulling (padding).
+Van deze drie kenmerken kan de 'dikte' voor alle vier de zijden worden bepaald.</p>
+
+<img src="css_files/model.gif" height="227" width="484">
+
+<p>Als voorbeeld nemen we een h2-kop, waarvan we de opvulling 10 pixels maken,
+de rand 5 pixels dik maken en een marge aan alle kanten nemen van 30 pixels.
+Voor de duidelijkheid maken we ook nog de achtergrond geel en de rand groen.</p>
+
+<div class="code"><pre>h2 {
+	background-color: yellow;
+	padding: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: green;
+	margin: 30px;
+}
+</pre></div>
+
+<p>Wat opvalt is dat een border-style moet worden opgegeven om een rand
+zichtbaar te maken.</p><p></p>
+
+<div class="code">
+&lt;h2&gt;Text in a box&lt;/h2&gt;
+</div>
+
+<p>wordt dan:</p>
+
+<div class="code">
+<h2 style="border: 5px solid green; margin: 30px; padding: 10px; background-color: yellow;">Text in a box</h2>
+</div>
+
+<img src="css_files/css-box1.png" height="75" vspace="2" width="159">
+
+<p>Duidelijk is dat de rand 5 pixels dik is, de afstand van de tekst tot de rand 10 pixels is
+en de ruimte om de box 30 pixels groot is. Het dunne zwarte lijntje is overigens geen
+onderdeel van deze style sheet, maar is toegevoegd om de marge te illustreren.</p>
+
+<p>Stel nu dat we niet boven, onder, links en rechts dezelfde marges willen. We willen bijvoorbeeld
+boven 10 pixels, links 20 pixels, rechts 30 pixels en onder 50 pixels. In CSS wordt dit dan:</p>
+
+<div class="code"><pre>h2 {
+	background-color: yellow;
+	padding: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: green;
+	<em>margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 30px;
+	margin-bottom: 50px;</em>
+}
+</pre></div>
+
+<p>Dit kan echter veel korter geschreven worden:</p>
+
+<div class="code"><pre>h2 {
+	background-color: yellow;
+	padding: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: green;
+	<em>margin: 10px 30px 50px 20px;</em>
+}
+</pre></div>
+
+<p>Achter margin kunnen we gelijk de vier gewenste waarden zetten. De volgorde is natuurlijk wel
+belangrijk: top, right, bottom, left (boven, rechts, onder, links). Ook is het belangrijk dat tussen de waarden geen komma's
+geplaatst mogen worden.</p>
+
+<p>Hoe dan ook, het resultaat is:</p>
+
+<div class="code">
+<h2 style="border: 5px solid green; margin: 10px 30px 50px 20px; padding: 10px; background-color: yellow;">Text in a box</h2>
+</div>
+
+<p>Vaak is de marge links en rechts gelijk en ook onder en boven. We kunnen dan eerst
+de verticale en dan de horizontale marge opgeven, bijvoorbeeld:</p>
+
+<div class="code"><pre>	margin: 10px 20px;
+</pre></div>
+
+<p>Zijn alle marges gelijk, dan volstaat een enkele waarde. Zie het eerste voorbeeld van box-kenmerken.</p>
+
+<p>Al deze verschillende notaties gelden natuurlijk ook voor padding en border.</p>
+
+<p>Omdat border meerdere kenmerken heeft (width, style en color), werkt dit bij border iets anders.
+Achter border kunnen we gelijk de drie kenmerken opgeven. Het bovenstaande voorbeeld wordt dan:</p>
+
+<div class="code"><pre>h2 {
+	background-color: yellow;
+	padding: 10px;
+	<em>border: 5px solid green;</em>
+	margin: 10px 30px 50px 20px;
+}
+</pre></div>
+
+<p>We kunnen ook eigenschappen voor alleen de bovenrand van de box opgeven:</p>
+
+<div class="code"><pre>	border-top: 5px solid green;
+</pre></div>
+
+<p>Willen we, net als bij margin en padding mogelijk is, vier diktes in één
+keer opgeven, dan gebruiken we border-width:</p>
+
+<div class="code"><pre>	border-width: 10px 10px 20px 30px;
+</pre></div>
+
+<p>In het voorbeeld hierboven gebruikten we <tt>border-style: solid</tt>. Er zijn echter
+nog veel meer verschillende randstijlen:</p>
+
+
+
+<table class="noborder">
+<tbody><tr>
+<td><p class="border" style="border: 5px solid green; padding: 0px 4px;">solid</p></td>
+<td><p class="border" style="border: 5px inset green; padding: 0px 4px;">inset</p></td>
+<td><p class="border" style="border: 5px outset green; padding: 0px 4px;">outset</p></td>
+<td><p class="border" style="border: 5px double green; padding: 0px 4px;">double</p></td>
+</tr>
+<tr>
+<td><p class="border" style="border: 5px groove green; padding: 0px 4px;">groove</p></td>
+<td><p class="border" style="border: 5px ridge green; padding: 0px 4px;">ridge</p></td>
+<td><p class="border" style="border: 5px dashed green; padding: 0px 4px;">dashed</p></td>
+<td><p class="border" style="border: 5px dotted green; padding: 0px 4px;">dotted</p></td>
+</tr>
+</tbody></table>
+
+<p>Met de kenmerken width en height kunnen we de breedte en hoogte van een box bepalen.</p><p>
+
+</p><p>Voorbeeld:</p>
+
+<div class="code"><pre>h2 {
+	background-color: yellow;
+	padding: 10px;
+	border: 5px solid green;
+	margin: 10px;
+	width: 30px;
+	height: 30px;
+}
+</pre></div>
+
+<p>De HTML-code</p>
+
+<div class="code">
+&lt;h2&gt;A&lt;/h2&gt;
+</div>
+
+<p>wordt dan:</p>
+
+<div class="code">
+<h2 style="border: 5px solid green; margin: 10px; padding: 10px; background-color: yellow; width: 30px; height: 30px;">A</h2>
+</div>
+
+<p>Het h2-kopje heeft nu niet alleen een achtergrondkleur en een rand, maar de
+inhoud heeft nu ook een grootte van 30 bij 30 pixels.</p>
+
+<p>De width en height bepalen de grootte van de inhoud van de box, niet van de box zelf.
+<b>De diktes van de padding, border en margin komen dus bovenop de width en height!</b>
+Anders gezegd: de width en height is <b>exclusief</b> de padding, border en margin.</p>
+
+<p>Er is een probleem: Internet Explorer 5.5 en eerder houdt zich niet aan deze specificatie en
+probeert de complete box in de width en height te stoppen.
+Explorer 6, Netscape 6 en Mozilla houden zich wel aan de specificatie.</p>
+
+<p>Hieronder een voorbeeld van het probleem. Internet Explorer 5.5 trekt de border
+van het achtergrondplaatje af, zoals het niet hoort, waardoor de meeuw zijn kop en poten
+verliest. Internet Explorer 6, Netscape 6 en Mozilla laten wel het hele achtergrondplaatje zien.</p>
+
+<div class="code">
+<p style="border: 15px solid green; margin: 0px; padding: 0px; background-image: url(meeuw.jpg); width: 200px; height: 138px;"></p>
+</div>
+
+<h3 class="cursus">Float en clear</h3>
+
+<p>Block-elementen zoals <tt>p</tt>, <tt>table</tt> en <tt>h2</tt>
+worden gewoonlijk onder elkaar geplaatst.
+Met float (Engels voor drijven) kunnen we block-elementen naast elkaar
+plaatsen en zelfs tekst om een element laten heenlopen. Met clear
+kunnen we dat weer teniet doen.</p>
+
+<p>Float is vergelijkbaar met het <tt>align</tt>-attribuut van bijvoorbeeld de <tt>&lt;img&gt;</tt>-tag. Clear is vergelijkbaar met <tt>&lt;br clear="..."&gt;</tt>.</p>
+
+<p>Voorbeeld:</p>
+
+<div class="code"><pre>&lt;style type="text/css"&gt;
+h1 {
+	width: 5em;
+	float: left;
+	margin: 0;
+}
+img {
+	float: right;
+	padding-left: 3px;
+}
+p {
+	margin-top: 0;
+}
+&lt;/style&gt;
+
+&lt;h1&gt;De maan&lt;/h1&gt;
+&lt;img src="maansverduistering.jpg"&gt;
+&lt;p&gt;Elke 29,5 dagen draait de maan een rondje om de aarde.
+We kunnen de maand zien omdat deze door de zon wordt verlicht.
+Maar heel soms valt de maan in de schaduw van de aarde.
+De maan krijgt dan geen zonlicht meer en wordt verduisterd.
+We spreken dan van een maansverduistering.
+Als we tijdens een maansverduistering op de maan zouden staan,
+zouden we getuige zijn van een zonsverduistering!&lt;/p&gt;
+</pre></div>
+
+<p>Het resultaat is een h1-kop met een vaste breedte, drijvend aan de
+linkerkant, een foto drijvend aan de rechterkant en de tekst die
+daartussenin loopt:</p>
+
+<div class="code" style="width: 500px;">
+<h1 style="margin: 0pt; width: 5em; float: left;">De maan</h1>
+<img src="css_files/maansverduistering.jpg" style="float: right; padding-left: 3px;">
+<p style="margin-top: 0pt;">Elke 29,5 dagen draait de maan een rondje om de aarde.
+We kunnen de maand zien omdat deze door de zon wordt verlicht.
+Maar heel soms valt de maan in de schaduw van de aarde.
+De maan krijgt dan geen zonlicht meer en wordt verduisterd.
+We spreken dan van een maansverduistering.
+Als we tijdens een maansverduistering op de maan zouden staan,
+zouden we getuige zijn van een zonsverduistering!</p>
+</div>
+
+<p>Het volgende voorbeeld toont het gebruik van clear. De bedoeling is
+dat de list niet in de tekstomloop (naast de foto) wordt opgenomen,
+maar onder de voorgaande code.</p>
+
+<div class="code"><pre>&lt;style type="text/css"&gt;
+img {
+	float: left;
+	padding-right: 5px;
+}
+p {
+	margin-top: 0;
+}
+ul {
+	clear: both;
+}
+&lt;/style&gt;
+
+&lt;img src="maansverduistering.jpg"&gt;
+&lt;p&gt;De maan draait rond de aarde en de aarde draait weer rond de zon.
+Een maansverduistering treed op als deze drie hemellichamen precies in een
+lijn staan met de aarde in het midden.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.mira.be/articles/sterrenkunde/maansverduistering/"&gt;Maansverduisteringen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.knmi.nl/voorl/nader/maanenweer.htm"&gt;Maansverduisteringen en het weer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre></div>
+
+<p>Het resultaat, met de list <i>onder</i> de foto. De float van het img-element wordt hier opgeheven:</p>
+
+<div class="code" style="width: 500px;">
+<img src="css_files/maansverduistering.jpg" style="float: left; padding-right: 5px;">
+<p style="margin-top: 0pt;">De maan draait rond de aarde en de aarde draait weer rond de zon.
+Een maansverduistering treed op als deze drie hemellichamen precies in een
+lijn staan met de aarde in het midden.</p>
+
+<ul style="clear: both;">
+<li><a href="http://www.mira.be/articles/sterrenkunde/maansverduistering/">Maansverduisteringen</a></li>
+<li><a href="http://www.knmi.nl/voorl/nader/maanenweer.htm">Maansverduisteringen en het weer</a></li>
+</ul>
+</div>
+
+
+<h2 class="cursus">Classificatie kenmerken</h2>
+
+<p>Dit is een categorie van niet echt verwante kenmerken: <tt>display</tt>, <tt>white-space</tt> en <tt>list-kenmerken</tt>.</p>
+
+<a name="display"></a>
+<h3 class="cursus">display</h3>
+
+<p>Display kent vier verschillende waarden:</p>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>display</th>
+<td>
+<b>none<br>
+inline<br>
+block<br>
+list-item</b>
+</td>
+<td>
+Zie hieronder.
+</td>
+</tr>
+</tbody></table>
+
+<p>De verschillende waarden hebben de volgende betekenissen:</p>
+
+<table>
+<tbody><tr>
+<th>none</th>
+<td>Het element wordt niet weergegeven</td>
+</tr>
+<tr>
+<th>inline</th>
+<td>Het element wordt in de 'tekststroom' opgenomen, bijvoorbeeld vette tekst.</td>
+</tr>
+<tr>
+<th>block</th>
+<td>Het element komt los van de omliggende tekst te staan, bijvoorbeeld kopjes en tabellen</td>
+</tr>
+<tr>
+<th>list-item</th>
+<td>Het element is een list-item, gewoonlijk &lt;ul&gt;, &lt;ol&gt; en &lt;dl&gt;</td>
+</tr>
+</tbody></table>
+
+<p>Voorbeeld van block-elementen zijn de h1, p en hr-tags. Alle tekst binnen bijvoorbeeld <tt>&lt;h1&gt;</tt> en <tt>&lt;/h1&gt;</tt>
+komt los van de omliggende tekst te staan. Voorbeeld van inline elementen zijn de b, a en tt-tags.
+Alles tussen bijvoorbeeld <tt>&lt;b&gt;</tt> en <tt>&lt;/b&gt;</tt> wordt in de omliggende tekst opgenomen.</p>
+
+<p>Ter illustratie gebruiken we een tekst met een vet gedeelte.</p>
+
+<p>Vette tekst heeft als <tt>display</tt>-eigenschap <tt>inline</tt>.
+Voor de duidelijkheid wordt dit toch in de volgende style sheet opgenomen, samen met
+en blauwe kleur:</p>
+
+<div class="code"><pre>b {
+	display: inline;
+	background-color: turquoise;
+}
+</pre></div>
+
+<p>De voorbeeldtekst ziet er als volgt uit. Niets bijzonders eigenlijk.</p>
+
+<div class="code" style="width: 480px;">
+Seneca Lucilio suo salutem. <b style="background-color: turquoise;">Epistulas ad me perferendas
+tradidisti, ut scribes, amico tuo; deinde admones me, ne
+omnia cum eo ad te pertinentia communicem, quia non
+soleas ne ipse quidem id facere.</b> Ita eadem epistula illum et
+dixisti amicum et negasti. Sed si aliquem amicus existimas,
+cui non tandundem credis quantum tibi, vehementer erras et
+non satis nosti vim verae amicitiae.
+</div>
+
+<p>Door vette tekst nu als <tt>display</tt>-eigenschap <tt>block</tt>
+te geven, wordt het verschil met <tt>inline</tt> duidelijk.
+</p>
+
+<div class="code"><pre>b {
+	display: block;
+	background-color: turquoise;
+}
+</pre></div>
+
+<p>De voorbeeldtekst ziet er nu zo uit:</p>
+
+<div class="code" style="width: 480px;">
+Seneca Lucilio suo salutem. <b style="display: block; background-color: turquoise;">Epistulas ad me perferendas
+tradidisti, ut scribes, amico tuo; deinde admones me, ne
+omnia cum eo ad te pertinentia communicem, quia non
+soleas ne ipse quidem id facere.</b> Ita eadem epistula illum et
+dixisti amicum et negasti. Sed si aliquem amicus existimas,
+cui non tandundem credis quantum tibi, vehementer erras et
+non satis nosti vim verae amicitiae.
+</div>
+
+<p>Een element met als <tt>display</tt> <tt>inline</tt> wordt dus in de omliggende tekst
+opgenomen en een element met <tt>block</tt> komt los van de omliggende tekst te staan,
+in de vorm van een rechthoek.
+
+</p><h3 class="cursus">white-space</h3>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>white-space</th>
+<td>
+<b>normal<br>
+nowrap<br>
+pre</b>
+</td>
+<td>
+Zie hieronder.
+</td>
+</tr>
+</tbody></table>
+
+<p>De verschillende waarden hebben de volgende betekenissen:</p>
+
+<table>
+<tbody><tr>
+<th>normal</th>
+<td>Normal is normale HTML-formattering.</td>
+</tr>
+<tr>
+<th>nowrap</th>
+<td>Nowrap zorgt dat tekst niet wordt afgebroken, net als bijvoorbeeld de <tt>nowrap=yes</tt> in een &lt;td&gt;-tag.</td>
+</tr>
+<tr>
+<th>pre</th>
+<td>Pre geeft hetzelfde resultaat als het plaatsen tussen &lt;pre&gt; en &lt;/pre&gt;-tags:
+spaties en regeleindes worden zonder wijziging getoond.</td>
+</tr>
+</tbody></table>
+
+<p>Voorbeeld van pre:</p>
+
+<div class="code"><pre>&lt;style type="text/css"&gt;
+h4 {white-space: pre}
+&lt;style&gt;
+
+
+&lt;h4&gt;      Deze zomer
+wordt heel    erg    mooi&lt;/h4&gt;
+</pre></div>
+
+<p>Wordt:</p>
+
+<div class="code">
+<h4 style="white-space: pre;">      Deze zomer
+wordt heel    erg    mooi</h4>
+</div>
+
+<p>Deze eigenschap wordt in Internet Explorer 6, Netscape 6 en Mozilla ondersteund.</p>
+
+<h3 class="cursus">list-style</h3>
+
+<p>Met list-style kunnen we het uiterlijk van lijsten &lt;ol&gt;, &lt;ul&gt; en &lt;dl&gt; bepalen.</p>
+
+<table>
+<tbody><tr><th>Eigenschap</th><th>Waarde</th><th>Betekenis</th></tr>
+<tr>
+<th>list-style-type</th>
+<td>
+<b>circle<br>
+disc<br>
+square<br>
+decimal<br>
+lower-alpha<br>
+lower-roman<br>
+upper-alpha<br>
+upper-roman<br>
+none</b>
+</td>
+<td>
+Geeft aan wat voor elk list-item wordt getoond.<br>
+</td>
+</tr>
+<tr>
+<th>list-style-image</th>
+<td>
+<b>none</b><br>
+<b>url(</b>path<b>)</b>
+</td>
+<td>
+Geef de lokatie van een plaatje op dat voor elk list-item wordt getoond.
+</td>
+</tr>
+<tr>
+<th>list-style-position</th>
+<td>
+<b>inside<br>
+outside</b>
+</td>
+<td>
+Outside is de gebruikelijke, ingesprongen
+weergave, bij inside wordt niet ingesprongen.
+</td>
+</tr>
+<tr>
+<th>list-style</th>
+<td colspan="2">
+Meerdere eigenschappen achter elkaar:<br>
+list-style-type list-style-position list-style-image
+</td>
+</tr>
+</tbody></table>
+
+<p>Voorbeeld:</p>
+
+<div class="code">
+<pre>ol { list-style: lower-alpha inside }
+</pre>
+</div>
+
+<p>Geeft (met de betekenis van <i>hamster</i> uit de <a href="http://www.tuxedo.org/%7Eesr/jargon/html/The-Jargon-Lexicon-framed.html">Jargon File</a>):</p>
+
+<div class="code">
+<ol style="list-style-type: lower-alpha; list-style-image: none; list-style-position: inside;">
+<li>[Fairchild] A particularly slick little piece
+of code that does one thing well; a small, self-contained hack.
+The image is of a hamster {happily} spinning its exercise wheel.
+</li><li>A tailless mouse; that is, one with an infrared link to a
+receiver on the machine, as opposed to the conventional cable.
+</li><li>[UK] Any item of hardware made by Amstrad, a company famous for
+its cheap plastic PC-almost-compatibles.
+</li></ol>
+</div>
+
+<p>Een voorbeeld van het gebruik van list-style-image:</p>
+
+<div class="code">
+<pre>ol {list-style-image: url(pijltje.gif)}
+</pre>
+</div>
+
+<p>Geeft:</p>
+
+<div class="code">
+<ol style="list-style-image: url(pijltje.gif);">
+<li>Gebruik geen hoofdletters in de subjectregel van een e-mail
+</li><li>Houd de subjectregel zo kort mogelijk
+</li></ol>
+</div>
+
+<p>Let op: de URL in <tt>list-style-image</tt> staat <b>niet</b> tussen aanhalingstekens,
+maar <b>wel</b> tussen <tt>url(</tt> en <tt>)</tt>.</p>
+
+<a name="kleuren"></a>
+<h2 class="cursus">Kleuren</h2>
+
+Tot nu toe hebben we als kleur steeds de naam van een kleur gebruikt, zoals orange en green.
+Natuurlijk kunnen we, net als in HTML, de kleur ook als RGB-waarde opgeven.
+Daar zijn drie verschillende notaties voor:<p></p>
+<pre>color: #00FF00
+color: rgb(0, 255, 0)
+color: rgb(0%, 100%, 0%)
+</pre>
+<p>Deze drie voorbeelden hebben dezelfde groene kleur als resultaat. Het eerste voorbeeld is de
+hexadecimale kleurnotatie, dezelfde als in HTML, het tweede en derde voorbeeld geven de rood/groen/blauw-waarden
+apert op: eerst steeds als een waarde tussen 0 en 255, daarna als een percentage.</p>
+
+<a name="grootte-eenheden"></a>
+<h2 class="cursus">Grootte eenheden</h2>
+
+Tot nu tot werd als grootte-eenheid steeds de pixel gebruikt, als in <tt>padding: 10px</tt>.
+Naast de pixel zijn nog een aantal manieren om de grootte op te geven.<p></p>
+
+
+<table>
+<tbody><tr>
+<th>px</th>
+<td>Aantal pixels<br>
+Voorbeeld <tt>height: 20px</tt>:
+<p style="width: 30px; height: 20px; background-color: blue;"></p>
+</td>
+</tr>
+<tr>
+<th>mm, cm</th>
+<td>Aantal millimeters of centimeters<br>
+Voorbeeld <tt>height: 1cm</tt>:
+<p style="width: 30px; height: 1cm; background-color: blue;"></p>
+</td>
+</tr>
+<tr>
+<th>em, ex</th>
+<td>Aantal ems of exes. De em is de hoogte van het huidige lettertype en
+ex is de hoogte van de huidige onderkast 'x'<br>
+Voorbeeld <tt>height: 1ex</tt>:
+<p style="width: 30px; height: 1ex; background-color: blue;"></p>
+</td>
+</tr>
+<tr>
+<th>pt, pi</th>
+<td>Aantal points of picas. Een point is 1/72 van een inch en een pica is 12 points.
+Deze termen uit de drukkerswereld kunnen we ook in webpagina's gebruiken<br>
+Voorbeeld <tt>height: 12pt</tt>:
+<p style="width: 30px; height: 12pt; background-color: blue;"></p>
+</td>
+</tr>
+</tbody></table>
+
+<p>Hoewel geen grootte, kunnen we in plaats van een grootte vaak ook een percentage opgeven.<br>
+Voorbeeld:</p>
+
+<div class="code"><pre>font-size: 120%
+</pre></div>
+
+<p>Geeft:</p>
+
+<div class="code">
+<p style="font-size: 120%;">Voorbeeldtekst</p>
+</div>
+
+<p>Tegenwoordig hebben veel browsers de mogelijkheid om de tekst te vergroten
+of te verkleinen. Dit is zeer handig voor slechtzienden.
+Dit heeft echter geen invloed op tekst waarvan de grootte
+in pixels of millimeters is opgegeven.
+Om tekst te laten meegroeien of -krimpen, dient de grootte in punten of een percentage
+opgegeven te worden. Bijvoorbeeld 150% voor grote tekst of 80% voor kleine tekst.</p>
+
+<h2 class="cursus">Formulieren</h2>
+
+<p>Met style sheets is het niet alleen mogelijk om het uiterlijk van tekst te veranderen,
+maar ook van formulieren.</p>
+
+<p>In dit voorbeeld gaan we uit van het volgende formulier:</p>
+
+<div class="code"><pre>&lt;form action="http://www.google.com/search"&gt;
+&lt;input name="q" type="text" value="dhtml" size="40"&gt;
+&lt;input type="submit" value="zoek"&gt;
+&lt;/form&gt;
+</pre></div>
+
+<p>Dit geeft gewoonlijk het volgende 'formulier':</p>
+
+<div class="code">
+<form action="http://www.google.com/search">
+<input name="q" value="dhtml" size="40" type="text">
+<input value="zoek" type="submit">
+</form>
+</div>
+
+<p>Nu zullen we aan het element <tt>&lt;input&gt;</tt> de volgende style sheet koppelen:</p>
+
+<div class="code"><pre>input {
+	border: 2px solid navy;
+	font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: navy;
+	background-color: cornsilk;
+}
+</pre></div>
+
+<p>Het resulterende formulier is nu zachtgeel met blauwe tekst:</p>
+
+
+
+<div class="code">
+<form action="http://www.google.com/search">
+<input class="cursus" name="q" value="dhtml" size="40" type="text">
+<input class="cursus" value="zoek" type="submit">
+</form>
+</div>
+
+<p>Het gebruik van style sheets met formulieren werkt niet in elke browser
+even goed. Netscape 4 verandert alleen het lettertype en Netscape 6 verandert
+de voor- en achtergrondkleur. Internet Explorer 5 past de hele style sheet toe.</p>
+
+<h2 class="cursus">Groeperen</h2>
+
+<p>Het komt vaak voor dat we meerdere elementen van dezelfde stijl
+willen voorzien. Bijvoorbeeld alle kopjes willen we blauw hebben.
+We kunnen dan de koppen groeperen. De style sheet wordt dan als volgt:</p>
+
+<div class="code">
+<pre>h1, h2, h3, h4, h5, h6 {color: blue}
+</pre>
+</div>
+
+<h2 class="cursus">Contextuele selectie</h2>
+
+<p>Een andere interessante mogelijkheid is om een stijl te bepalen voor
+elementen in een ander element.
+We kunnen bijvoorbeeld aangeven dat een cursieve tekst in een h2-kop
+niet cursief, maar rood moet worden. We schrijven dan de i achter de h2, zonder komma.</p>
+
+<div class="code">
+<pre>&lt;style  type="text/css"&gt;
+h2 i {color: red; font-style: normal}
+&lt;/style&gt;
+
+&lt;h2&gt;Dit is een &lt;i&gt;knappe&lt;/i&gt; kop&lt;/h2&gt;
+&lt;i&gt;Met een cursieve tekst.&lt;/i&gt;
+</pre>
+</div>
+
+<p>Geeft dit als resultaat:</p>
+
+<div class="code">
+
+<h2>Dit is een <i>knappe</i> kop</h2>
+<i>Met een cursieve tekst.</i>
+</div>
+
+<p>Een dergelijke construktie is handig om bijvoorbeeld de stijl van een
+lijst binnen een lijst te bepalen (een ul in een ul, dus).</p>
+
+<p>Let op: bij groeperen worden de elementen door komma's gescheiden,
+bij contextuele selectie niet.</p>
+
+<h2 class="cursus">Classes</h2>
+
+<p>Tot nu toe hebben we steeds gezien hoe de stijl van een HTML-tag kan worden veranderd.
+Maar wat als we &lt;p&gt; in meerdere stijl-varianten willen hebben? Bijvoorbeeld een zwarte
+op een witte achtergrond, maar ook een witte voor op een blauwe achtergrond?
+Of een speciale, opvallende variant?</p>
+
+<p>Dit is mogelijk door gebruik te maken van classes.
+Als voorbeeld voegen we aan &lt;h2&gt; en &lt;p&gt; een zelfbedachte class 'opvallend' toe,
+die de tekst rood en cursief maakt.</p>
+
+<p>In de style sheet schrijven we dan <tt>p.opvallend&nbsp;{...}</tt> in plaats van <tt>p&nbsp;{...}</tt>.
+In de HTML schrijven we dan <tt>&lt;p&nbsp;class="opvallend"&gt;</tt> in plaats van <tt>&lt;p&gt;</tt>.</p>
+
+<div class="code">
+<pre>&lt;style type="text/css"&gt;
+<em>h2.opvallend {color: red; font-style: italic}
+p.opvallend {color: red; font-style: italic}</em>
+&lt;/style&gt;
+
+&lt;h2&gt;Normaal&lt;/h2&gt;
+&lt;p&gt;Dit is normale tekst.&lt;/p&gt;
+
+&lt;<em>h2 class="opvallend"</em>&gt;Opvallend&lt;/h2&gt;
+&lt;<em>p class="opvallend"</em>&gt;Dit is opvallende tekst.&lt;/p&gt;
+</pre>
+</div>
+
+<p>Dit wordt in de browser:</p>
+
+<div class="code">
+<h2>Normaal</h2>
+<p>Dit is normale tekst.</p>
+<h2 style="color: red; font-style: italic;">Opvallend</h2>
+<p style="color: red; font-style: italic;">Dit is opvallende tekst.</p>
+</div>
+
+<p>Een class hoeft niet per se aan een element gekoppeld te zijn.
+In de style sheet schrijft men dan gelijk de punt en class-naam.
+De twee regels in de style sheet hierboven hadden we dus ook kunnen schrijven
+als:</p>
+
+<div class="code"><pre>.opvallend {color: red; font-style: italic}
+</pre></div>
+
+<p>De style sheet geldt dan voor alle elementen met als attribuut <tt>class="opvallend"</tt>.</p>
+
+<h2 class="cursus">Meerdere classes opgeven</h2>
+
+<p>Het is mogelijk om in het class-attribuut meerdere classnamen op te
+nemen. De classnamen dienen gescheiden te worden door een spatie.</p>
+
+<div class="code">
+<pre>&lt;style type="text/css"&gt;
+<em>.opvallend {color: red}
+.groot {font-size: large}</em>
+&lt;/style&gt;
+
+
+&lt;p <em>class="opvallend groot"</em>&gt;Opvallend en groot&lt;/p&gt;
+</pre>
+</div>
+
+<p>Dit wordt in de browser:</p>
+
+<div class="code">
+<p style="color: red; font-size: large;">Opvallend en groot</p>
+</div>
+
+<p>Het is duidelijk dat de tekst zowel de eigenschappen van de <i>opvallend</i>-class als van de <i>groot</i>-class overneemt.</p>
+
+<h2 class="cursus">Pseudo-classes</h2>
+
+<p>In HTML kunnen we met <tt>&lt;body link=orange vlink=red&gt;</tt> de kleuren vastleggen
+van de hyperlinks en bezochte hyperlinks.
+We weten inmiddels dat we met <tt>a {color:orange}</tt> de hyperlinks oranje
+kunnen maken. Maar hoe veranderen we de kleur van een bezochte hyperlink?</p>
+
+<p>Met pseudo-classes is dat mogelijk.
+Achter de a schrijven we een dubbele punt en daarachter de naam van de pseudo-class.
+Naast een pseudo-class voor bezochte hyperlinks zijn er ook pseudo-classes
+voor het klikken op een link en voor een mouse-over.</p>
+
+<table>
+<tbody><tr>
+<th>a:link</th><th>
+</th><td>Gewone (onbezochte) hyperlink</td>
+</tr>
+<tr>
+<th>a:visited</th><th>
+</th><td>Bezochte hyperlink</td>
+</tr>
+<tr>
+<th>a:active</th><th>
+</th><td>Actieve hyperlink (er wordt op geklikt)</td>
+</tr>
+<tr>
+<th>a:hover</th><th>
+</th><td>Hover hyperlink (de muis beweegt zich boven de link).<br>
+<b>Hover</b> hoort eigenlijk bij CSS2.
+</td>
+</tr>
+</tbody></table>
+
+<p>Een voorbeeld:</p>
+
+<div class="code">
+<pre>&lt;style type="text/css"&gt;
+a {color: orange}
+a:visited {color: red}
+a:active {color: blue; font-weight: bold}
+a:hover {background-color: lightgrey}
+&lt;/style&gt;
+
+Ik zoek met &lt;a href="http://www.google.com/linux"&gt;Google&lt;/a&gt;.
+
+</pre>
+</div>
+
+<p>Wordt:</p>
+
+
+
+<div class="code">
+<p>Ik zoek met <a class="vb" href="http://www.google.com/linux">Google</a>.</p>
+</div>
+
+<p>Er zijn ook twee typografische pseudo-classes:</p>
+
+<table>
+<tbody><tr>
+<th>P:first-line</th><th>
+</th><td>Eerste regel van een tekst.</td>
+</tr>
+<tr>
+<th>P:first-letter</th><th>
+</th><td>Eerste letter van een tekst.</td>
+</tr>
+</tbody></table>
+
+<p>Typografische pseudo-classes kunnen we ook op andere elementen dan &lt;p&gt;
+toepassen.</p>
+
+<h2 class="cursus">Id selecteren</h2>
+
+<p>Soms willen we de stijl van één enkel element wijzigen.
+Dit is mogelijk door dat element een 'id' te geven.
+In de style sheet verwijzen we naar dit element met een hekje (#). Een voorbeeld:</p>
+
+
+<div class="code"><pre>&lt;style type="text/css"&gt;
+ul {border: 1px solid orange}
+<em>#nummer1 {color: purple}</em>
+&lt;/style&gt;
+
+&lt;ul&gt;
+&lt;li <em>id="nummer1"</em>&gt;Internet Explorer 5 (76%)
+&lt;li&gt;Netscape 4 (8%)
+&lt;li&gt;AOL (6%)
+&lt;/ul&gt;
+</pre></div>
+
+<p>Geeft dit resultaat:</p>
+
+<div class="code">
+<ul style="border: 1px solid orange;">
+<li style="color: purple;">Internet Explorer 5 (76%)
+</li><li>Netscape 4 (8%)
+</li><li>AOL (6%)
+</li></ul>
+</div>
+
+<p>Elke HTML-tag kunnen we op deze manier een id geven. Id's dienen wel altijd uniek te zijn,
+geen twee tags kunnen dezelfde id hebben.
+Het is daarom niet nodig om in de bovenstaande style sheet <tt>li#nummer1</tt> te schrijven.</p>
+
+<h2 class="cursus">Het style-attribuut</h2>
+
+<p>Het mooie van style sheets is dat inhoud en vorm van elkaar worden gescheiden.
+Speciaal voor de mensen die dat onzin vinden, is het style-attribuut
+uitgevonden. Daarmee kan de stijl direct in de HTML-tag worden opgenomen.
+Het bovenstaande voorbeeld had volgens deze zondaars net zo goed geschreven kunnen worden als:</p>
+
+<div class="code"><pre>&lt;ul <em>style="border: 1px solid orange"</em>&gt;
+&lt;li <em>style="color: purple"</em>&gt;Internet Explorer 5 (76%)
+&lt;li&gt;Netscape 4 (8%)
+&lt;li&gt;AOL (6%)
+&lt;/ul&gt;
+</pre></div>
+
+<h2 class="cursus">Span en div</h2>
+
+<p>Met span en div is het mogelijk om een heel stuk HTML van een stijl te voorzien.
+Zo kunnen we bijvoorbeeld een kopje en een paragraaf in een blauwe box zetten:</p>
+
+<div class="code"><pre>&lt;style type="text/css"&gt;
+<em>div.blauw {border: 3px solid aqua; background-color: aquamarine}</em>
+&lt;/style&gt;
+
+<em>&lt;div class="blauw"&gt;</em>
+&lt;h2&gt;Yet another limeric&lt;/h2&gt;
+&lt;p&gt;
+There once was a man from the stix,&lt;br&gt;
+Who liked to write limerics.&lt;br&gt;
+But he failed at the sport,&lt;br&gt;
+Because he wrote them too short.
+&lt;/p&gt;
+<em>&lt;/div&gt;</em>
+</pre></div>
+
+<p>Wordt:</p>
+
+<div style="border: 3px solid aqua; background-color: aquamarine;">
+<h2>Yet another limeric</h2>
+<p>There once was a man from the stix,<br>
+Who liked to write limerics.<br>
+But he failed at the sport,<br>
+Because he wrote them too short.</p>
+</div>
+
+<p>Maar waarom kent HTML div én span? Div heeft als stijl <tt>display: block</tt>
+en span heeft als stijl <tt>display: inline</tt>.
+Gebruik <tt>div</tt> voor elementen die losstaan van de omliggende tekst, net als
+<tt>&lt;h2&gt;</tt> en <tt>&lt;table&gt;</tt>.
+Gebruik <tt>span</tt> voor elementen binnen een tekst, net als <tt>&lt;b&gt;</tt> en <tt>&lt;a...&gt;</tt>.</p>
+
+<p>Zie <a href="#display">display</a> voor een uitgebreide uitleg.</p>
+
+<h2 class="cursus">Commentaar</h2>
+
+<p>In HTML kunnen we commentaar tussen '&lt;!--' en '--&gt;' zetten, maar dat werkt
+niet in style sheets.
+In style sheets zetten we commentaar tussen '/*' en '*/', net als in de programmeertaal C.</p>
+
+<p>Een voorbeeld van commentaar:</p>
+
+<div class="code"><pre>h2 { <em>/* definitie sub-kopje */</em>
+	background-color: yellow;
+	padding: 10px;	<em>/* ruime padding is belangrijk */</em>
+	border: 5px solid green;
+	margin: 10px 30px 50px 20px;
+}
+</pre></div>
+
+<h2 class="cursus">Import</h2>
+
+<p>Eén van de handige eigenschappen van CSS is dat de style sheet ook
+in een apart bestand kan staan.
+Op deze manier kunnen alle pagina's van een website gebruik maken van dezelfde
+style sheet. Een kleurtje of maatje hoeft dan nog maar in één
+bestand te worden gewijzigd en de hele site verandert mee. Een voorbeeld:</p>
+
+<p>Het bestand stijl.css:</p>
+
+<div class="code"><pre>body {background-color: yellow}
+h2 {font-family: arial, helvetica, sans-serif}
+</pre></div>
+
+<p>Het HTML-document:</p>
+
+<div class="code"><pre>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mijn document&lt;/title&gt;
+<em>&lt;link rel="stylesheet" type="text/css" href="/styles/stijl.css"&gt;</em>
+&lt;/head&gt;
+&lt;body&gt;
+
+... de tekst van het document ...
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+
+<p>Meerdere style sheets achter elkaar laden is ook mogelijk. Zo kunnen we bijvoorbeeld
+een style sheet laden die over de hele website wordt gebruikt en een style sheet
+voor een gedeelte van de website, bijvoorbeeld een discussie forum.</p>
+
+<p>Een style sheet vanuit een andere style sheet laden is ook mogelijk.
+Om vanuit stijl.css het bestand inhoud.css te laden wordt <tt>@import</tt> gebruikt:</p>
+
+<div class="code">
+<pre><em>@import url(/styles/inhoud.css);</em>
+body {background-color: yellow}
+h2 {font-family: arial, helvetica, sans-serif}
+</pre>
+</div>
+
+<h2 class="cursus">!important</h2>
+
+<p>Soms komt het voor dat we een style sheet hebben, waarvan eigenschappen
+later worden 'overschreven', bijvoorbeeld bij het importeren van een
+andere style sheet.</p>
+
+<p>Dit is te veranderen door de eerdere eigenschap belangrijker te maken.
+Dit doen we door achter de eigenschap '<tt>!important</tt>' te zetten.</p>
+
+<p>Bijvoorbeeld:</p>
+
+<div class="code"><pre>p { font-size: 20pt !important }  /* Paragraaftekst altijd in 20-punts letter */
+</pre></div>
+
+<p>Paragraaftekst is nu altijd 20 punts tekst, zelfs als later een
+andere grootte wordt gespecificeerd.</p>
+
+<h2 class="cursus">DOCTYPE SGML-declaratie</h2>
+
+<p>Om style sheets goed weer te geven, moesten de browsermakers soms
+de manier veranderen waarop browsers pagina's weergegeven.
+Dit zou weer tot gevolg hebben dat de browsers al bestaande pagina's ineens
+anders (en soms verkeerd) weergegeven.</p>
+
+<p>Om dit probleem op te lossen, is de 'standards mode' en
+'compatibility mode' bedacht.
+In standards mode werkt de browser volgens de standaard en in
+compatibility mode werkt de browser op de oude, niet-standaard manier.</p>
+
+<p>Standards mode is in te schakelen door bovenin de HTML-pagina een
+SGML-declaratie op te nemen. Is deze niet aanwezig, dan schakelt de
+browser over naar compatibility mode.
+Dit principe werkt in Internet Explorer 6, Netscape 6 en Mozilla.
+</p>
+
+<p>De volgende SGML-declaratie op de eerste regel van een HTML-document
+schakelt standards mode in:</p>
+
+<div class="code">
+<tt>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</tt>
+</div>
+
+<p>Er zijn nog meer doctypes die standards mode inschakelen. Microsoft
+heeft een lijst gemaakt bij welke doctypes Internet Explorer naar de
+standards mode overschakelt.</p>
+
+<ul>
+	<li><a href="http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/DOCTYPE.asp">HTML and DHTML Reference: !doctype</a></li>
+</ul>
+
+<h2 class="cursus">Browsers en CSS-ondersteuning</h2>
+
+<p>Cascading Style Sheets bestaan nu al meer dan zes jaar.
+De meest recente browsers ondersteunen style sheets vrij goed.
+Voorbeelden daarvan zijn:</p>
+
+<ul>
+<li><a href="http://www.microsoft.com/windows/ie/download/ie55.htm">Microsoft Internet Explorer</a>
+</li><li><a href="http://www.mozilla.org/products/firefox/">Firefox</a>
+</li><li><a href="http://www.mozilla.org/releases/">Mozilla</a>
+</li><li><a href="http://home.netscape.com/computing/download/">Netscape 6</a>
+</li></ul>
+
+<p>Netscape 4 ondersteunt CSS maar voor een gedeelte.
+Dat was altijd erg jammer, want soms zagen pagina's met geldige style sheets er in
+Netscape 4 mismaakt uit. Hierdoor waren websitebouwers nooit gretig om
+style sheets te gebruiken.</p>
+
+<p>Nu wordt Netscape 4 nog amper gebruikt en is het nauwelijks nog een
+argument om geen style sheets te gebruiken.</p>
+
+<p>Het door een kleine groep geroemde <a href="http://www.opera.com/download/">Opera</a>
+ondersteunt style sheets ook nog niet volledig, hoewel het met elke versie wel een
+stuk beter wordt.</p>
+
+<p>Bij het maken van pagina's met style sheets zullen we voorlopig
+onze creaties in meerdere browsers moeten testen.
+Om precies te zien wat wel en wat niet in welke browsers ondersteund
+wordt, heeft Eric Meyer een erg handig overzicht gemaakt:</p>
+<ul>
+<li><a href="http://www.bitstorm.org/edwin/cursus/css_master_compatibility_chart/">Master Compatibility Chart</a>
+</li></ul>
+
+<h3 class="cursus">Cascading Style Sheets, level 2 (CSS2)</h3>
+
+<p>Sinds mei 1998 bestaat er een opvolger van CSS1, namelijk CSS2.
+De belangrijkste toevoegingen zijn:</p>
+<ul>
+<li>Style sheets voor verschillende media, zoals TV, monitor en printer.
+</li><li>Style sheets voor gesproken documenten voor blinden,
+waarmee aangegeven kan worden hoe een tekst moet worden uitgesproken.
+</li><li>Betere ondersteuning voor verschillende schriften, bijvoorbeeld Arabisch en Chinees.
+</li></ul>
+
+<p>Browsers beginnen nu ook CSS2 steeds beter te ondersteunen. Alleen
+Internet Explorer ondersteunt nog erg weinig van deze specificatie.
+Daardoor is het nog steeds weinig aantrekkelijk om CSS 2 te gebruiken.
+Dat is erg jammer.
+De specificatie van CSS2 is ook bij het W3C te vinden:</p>
+<ul>
+<li><a href="http://www.w3.org/TR/REC-CSS2/">Cascading Style Sheets, level 2</a>
+</li></ul>
+
+</body></html>

@@ -1,0 +1,71 @@
+<html>
+
+<head>
+
+</head>
+
+<body onLoad="alert('onLoad')" onUnload="alert('onUnload')">
+
+<h1> event-handlers</h1>
+
+<h3>onLoad & onUnload</h3>
+Tijdens het laden van het window moet een boodschap verschenen zijn met de tekst 'onLoad'.
+<br>
+Voor het ontladen van het window moet een boodschap verschijnen met de tekst 'onUnload'.
+<br>
+
+<h3>onMouseOver & onMouseOut; onClick</h3>
+Als de muis over de onderstaande tekst 'hier' wordt bewogen, wordt dit in de statusbalk aangegeven; idem voor het verlaten van het stukje tekst.<br>
+Bovendien kun je op 'hier' clicken endan wordt dat ook in de statusbalk aangegeven!
+<br>
+<span
+  onClick="window.status='onClick'"
+  onMouseOver="window.status='onMouseOver'"
+  onMouseOut="window.status='onMouseOut'">
+<b><i>hier</i></b>
+</span>
+
+<h3>onFocus & onBlur; onChange; onSelect; onSubmit & onReset</h3>
+
+Bij de focus plaatsen op en verwijderen uit de textboxen t1 en t2 wordt dit in de statusbalk weer.<br>
+Bij het wijzigen van t1 en die verlaten wordt een boodschap getoond.<br>
+Bij het selecteren van (een deel van) de tekst in t2 wordt dit in de statusbalk getoond.<br>
+Bij het klikken op de submit-button geeft eerst de button een boodschap en dan het form via zijn onSubmit; idem voor de reset-button.
+
+<form
+  onSubmit="alert('form: onSubmit')"
+  onReset="alert('form: onReset')">
+
+t1:
+<input
+  type="text"
+  name="t1"
+  onFocus="window.status='t1:onFocus'"
+  onBlur="window.status='t1:onBlur'"
+  onChange="alert('t1:onChange')">
+<br>
+
+t2:
+<input
+  type="text"
+  name="t2"
+  onFocus="window.status='t2:onFocus'"
+  onBlur="window.status='t2:onBlur'"
+  onSelect="window.status='t2:onSelect'">
+<br>
+
+<input
+  type="submit"
+  value="submit"
+  onClick="alert('submit-button: onClick')">
+
+<input
+  type="reset"
+  value="reset"
+  onClick="alert('reset-button: onClick')">
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+
+  body { background: fixed url(../images/matrix_blur.jpg) 0 0 repeat; }
+
+  ul p { margin: 0 }
+  ul blockquote { margin: 0 1em; font-style: italic }
+
+  #menu
+    {position: fixed;
+     top: 2%;
+     left: 5%;
+     width: 15%;
+     text-align: center;
+     border: 1px solid white;
+     background: url(../images/matrix_blur.jpg) fixed 0 0 #ACA;
+    }
+
+  #inhoud
+    {position: absolute;
+     top: 2%;
+     left: 25%;
+     width: 70%;
+     border: 1px solid white;
+     background: url(../images/matrix_blur.jpg) fixed 0 0 #ACA;
+  }
