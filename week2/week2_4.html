@@ -16,35 +16,27 @@
   afbeeldingen tegen. Dat is niet verwonderlijk want met een goed
   gebruik van afbeeldingen kun je een website veel aan duidelijkheid en
   aantrekkelijkheid laten winnen.</p>
-  
+
   <p>Mits goed gebruikt zijn afbeeldingen een uitstekend middel om de
   tekst te verduidelijken en de aandacht van je bezoekers te
   trekken.</p>
 
-  <p>De keerzijde hiervan is dat als je afbeeldingen niet goed gebruikt,
+  <p>De keerzijde hiervan is dat als je afbeeldingen niet goed gebruikt
   het effect juist tegengesteld kan zijn. De bezoekers worden door de
   veelheid aan kleuren, plaatjes en animaties op het scherm afgeleid en
   zien door de bomen het bos niet meer.</p>
 
-  <p>Enkele richtlijen:
+  <p>Enkele richtlijnen:
 
   <ul>
     <li>Stem het gebruik van afbeeldingen altijd zo goed mogelijk af op
     de doelgroep(en) waar je een website voor maakt. Jongeren van
-    tussen de 15 en 25 jaar zijn b.v. veel meer gewend aan snelle en
+    tussen de 15 en 25 jaar zijn bijvoorbeeld veel meer gewend aan snelle en
     flitsende beelden dan senioren van 65 jaar en ouder.</li>
 
     <li>Bedenk ook dat afbeeldingen een pagina groter maken en dat het
-    langer duurt voordat de browser deze geladen heeft. Bovendien
-    moeten afbeeldingen uitgepakt worden door de browser, omdat ze
-    meestal in een gecomprimeerd formaat worden overgehaald. Al met al
-    duurt het dus (een stuk) langer voor de pagina op het scherm te
+    langer duurt voordat de browser deze geladen heeft. Het duurt dan ook langer voordat de pagina goed op het scherm te
     zien is.</li>
-
-    <li>Tenslotte moet je er rekening meehouden dat de weergave van
-    afbeeldingen sterk afhankelijk is van de configuratie van de
-    computer van de bezoekers van je website. Dit geldt met name voor
-    de resolutie en het aantal kleuren dat weergegeven kan worden.</li>
   </ul>
   </p>
 
@@ -57,40 +49,39 @@
   <ul>
     <li>GIF (Graphics Interchange Format)</li>
     <li>JPEG (Joint Photographic Expert Group)</li>
-    <li>PNG (JPortable Network Graphics</li>
+    <li>PNG (JPortable Network Graphics)</li>
   </ul>
-  <p>Het <i>GIF-formaat</i> wordt veel gebruikt en door vrijwel alle
+  <p>Het <i>GIF-formaat</i> wordt veel gebruikt en door alle
   grafische browsers ondersteund. Een speciale vorm van het GIF formaat
   is <i>Animated GIF</i>. Met behulp van dit formaat kunnen eenvoudige
   animaties als een bestand opgeslagen en afgespeeld worden. De
   bewegende logo&#39;s die je vaak ziet zijn b.v. vrijwel altijd
   &quot;animated gifjes&quot;.</p>
-  
+
   <p>Het GIF-formaat is vooral geschikt voor afbeeldingen waar het aantal
   kleuren beperkt is (max 256). Vaak wordt dit formaat gebruikt voor
   logo&#39;s en dergelijke. Door de beperking in het aantal kleuren dat
   weergegeven kan worden is dit formaat minder geschikt voor foto&#39;s
   die er levensecht uit moeten zien.</p>
-  
+
   <p>GIF afbeeldingen worden in een gecomprimeerd formaat opgeslagen,
   zodat ze nog maar een fractie van de originele afbeelding die b.v. in
   BMP-formaat opgeslagen is, innemen.</p>
 
   <p>Voor het weergeven van fotorealistische afbeeldingen is het
   <i>JPEG-formaat</i> erg geschikt, omdat een JPEG afbeelding 16,7
-  miljoen kleuren kan bevatten. De meeste moderne browsers kunnen ook
-  met JPEG overwerg.</p>
-  
+  miljoen kleuren kan bevatten.</p>
+
   <p>De PNG-indeling is een vervanger van het aloude GIF, met betere compressie
-  en veel meer kleuren. PNG ondersteunt geen animaties</p>
+  en veel meer kleuren. Bij een PNG afbeelding is er geen verlies in kwaliteit bij het opslaan. Daarom worden PNG afbeeldingen tegenwoordig veel gebruikt voor grafische elementen van een website, zoals knopjes en ikoontjes (die blijven dan scherp en mooi van kleur). Foto's zijn op een website juist vaak in de JPG indeling omdat dat minder grootte bestanden zijn.</p>
 
   <h3>Afbeeldingen in een webpagina opnemen</h3>
-  
+
   <p>Om plaatjes in een
   pagina op te nemen gebruiken we de tag <b>&lt;img&gt;</b> (image) met
   in ieder geval het attribuut <b>src</b> (source). De img-tag is een
   open tag en heeft dus geen sluittag.</p>
-  
+
   <p>De meest eenvoudige code om een plaatje in je document op te nemen
   ziet er dan als volgt uit:
 <pre>
@@ -128,17 +119,15 @@ Met behulp van attributen kun je
   <br />
 
   <h4>alt</h4>Met behulp van het attribuut <b>alt</b> kun je een
-  alternatieve tekst voor het plaatje oppgeven. Dit attribuut is an
+  alternatieve tekst voor het plaatje opgeven. Dit attribuut is van
   origine bedoeld voor browsers die geen plaatjes kunnen weergeven. In
   plaats van een plaatje op het scherm te zetten, geven zij dan de
   tekst die bij alt is opgegeven weer.<br />
-  De moderne grafische browsers laten de tekst ook zien als je met de
-  muis over het plaatje heen beweegt, of als je in de browser het tonen
-  van plaatjes hebt uigezet vanwege performance overwegingen (sneller
-  laden). Door slim gebruik te maken van deze eigenschap kun je
+
+  <h4>title</h4> De title wordt weergegeven als de gebruiker een seconde met de muis boven het plaatje blijft staan. Door slim gebruik te maken van deze eigenschap kun je
   bijvoorbeeld ook een toelichting geven op een mogelijke actie die de
   gebruiker uit kan voeren als hij op het plaatje klikt.<br />
-  <img src="../images/avans.gif" alt="Logo van Hogeschool" /><br />
+  <img src="../images/avans.gif" title="Logo van Hogeschool" /><br />
   <br />
   <br />
 
@@ -162,27 +151,26 @@ Met behulp van attributen kun je
   attributen <b>width</b> en <b>height</b> tegenkomen. Deze attributen
   vertellen de browser hoe groot het plaatje is en dit helpt de browser
   om de pagina sneller op te bouwen, doordat de browser al weet hoeveel
-  ruimte hij moet reservere voor het plaatje. Het wordt derhalve
+  ruimte hij moet reserveren voor het plaatje. Het wordt derhalve
   aangeraden om deze attributen altijd op te nemen!<br />
-  De afmetingen van een plaatje kun je vinden met behulp van een
-  grafisch programma als bijvoorbeeld Photoshop of Paintshop Pro. Je
-  kunt echter ook afwijkende maten opggeven; dan zal de brwoser het
+  De afmetingen van een plaatje kan je vinden door in Windows Verkenner of Finder de eigenschappen van een afbeelding op te vragen. Je
+  kunt echter ook afwijkende maten opgeven; dan zal de browser het
   plaatje verkleinen of vergroten tot de opgegeven omvang.<br />
-  Hieronder zie je het logo in 3 formaten: oorspronkelijk, 50% en
+  Hieronder zie je het logo in 3 formaten: 50%, oorspronkelijk en
   200%.<br />
-  <img src="../images/avans.gif" width="213" height="71" /> <img src=
-  "../images/avans.gif" width="106" height="35" /> <img src=
-  "../images/avans.gif" width="426" height="142" /><br />
+  <img src="../images/avans.gif" width="72" height="28" /> <img src=
+  "../images/avans.gif" width="125" height="57" /> <img src=
+  "../images/avans.gif" width="250" height="114" /><br />
   <br />
   <br />
   <br />
 
   <h4>border</h4>Met behulp van het attribuut <b>border</b> kun je
   aangeven of er een kader om het plaatje moet komen en hoeveel pixels
-  dik dat kader moet zijn. Met de waarde <i>border=0</i> geef je aan
+  dik dat kader moet zijn. Met de waarde <i>border="0"</i> geef je aan
   dat er geen kader om het plaatje geplaatst moet worden.<br />
   Hieronder vind je voorbeeld met een kader van 5 pixels:<br />
-  <img src="../images/avans.gif" width="213" height="71" border=
+  <img src="../images/avans.gif" width="250" height="114" border=
   "5" /><br />
   <br />
   <br />
@@ -192,17 +180,12 @@ Met behulp van attributen kun je
   heel vaak gebruikt als <a href=
   "../week2/week2_2.html">hyperlinks</a>. Zo is het logo op een
   webpagina vaak een hyperlink naar de homepage van het bedrijf of
-  instelling. Als je van een afbeelding een hyperlink maakt, wordt er
-  standaard een (blauwe) rand om de afbeelding geplaatst ter
-  verduidelijking dat het hier om een hyperlink gaat. Wil je geen rand
-  dan kun je dit aangeven met het attribuut border (zie vorige
-  paragraaf).<br />
+  instelling.<br />
   Hieronder heb ik de code geplaatst om van het logo van de Hogeschool
   een hyperlink te maken naar de homepage van de Hogeschool die in een
   nieuw venster geopend wordt. Bekijk de code eens!<br />
   <a href="http://www.avans.nl/" target="_blank"><img src=
-  "../images/avans.gif" align="left" width="213" height="71" border=
-  "0" /></a><br />
+  "../images/avans.gif" align="left" width="250" height="114" /></a><br />
   <br />
   <br />
   <br />
@@ -228,7 +211,7 @@ Met behulp van attributen kun je
   nog ruimte is, wordt de tekst tussen de plaatjes in geplaatst.<br />
   <br />
   <br />
-  <img src="../images/avans.gif" align="right" width="213" height="71"
+  <img src="../images/avans.gif" align="right" width="125" height="57"
   border="0" /> <img src="../images/uitroepteken.gif" align="left"
   width="74" height="70" border="0" /> <i>Doordat er tussen de plaatjes
   nog ruimte op het scherm is, wordt de tekst die volgt op de codes
@@ -246,7 +229,7 @@ of &lt;br clear=&quot;all&quot;&gt;
 browser de tekst die volgt op de plaatjes in het document pas mag
 plaatsen nadat de marge links, de marge rechts of de marges aan beide
 zijden van de afbeelding vrij zijn.<br />
-  <img src="../images/avans.gif" align="right" width="213" height="71"
+  <img src="../images/avans.gif" align="right" width="125" height="57"
   border="0" /> <img src="../images/uitroepteken.gif" align="left"
   width="74" height="70" border="0" /><br clear="all" />
   <i>Merk het verschil op met deze tekst die na het tweede plaatje is

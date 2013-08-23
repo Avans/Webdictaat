@@ -19,24 +19,24 @@ Je kunt style-tags gebruiken voor het be&iuml;nvloeden van de opmaak van tekst.
 Voeg een style-tag toe aan een p-tag om een hele alinea te veranderen.
 Gebruik een span-tag met een style-attribute als je binnen een alinea even iets ander wil.
 </p>
-<p><code>style="font-family:..."</code>
+<p><code>style="font-family: ..."</code>
 Met behulp van dit attribuut kun je het lettertype van een element aangeven.</p>
 
-<p><code>style="font-size:..."</code>
+<p><code>style="font-size: ..."</code>
 Met behulp van dit attribuut kun je het lettergrootte in een element aangeven.</p>
 
-<p><code>style="color:..."</code>
+<p><code>style="color: ..."</code>
 Met behulp van dit attribuut kun je de tekstkleur in een element aangeven.</p>
 
 <p>
-<span style="font-size:20pt">Deze tekst staat in <code>&lt;span style=&quot;font-size:20pt&quot;&gt;&nbsp;</code></span><span style="font-size:small">en deze in <code>&lt;span style=&quot;font-size:small&quot;&gt;&nbsp;</code></span>
+<span style="font-size: 20pt">Deze tekst staat in <code>&lt;span style=&quot;font-size: 20pt&quot;&gt;&nbsp;</code></span><span style="font-size:small">en deze in <code>&lt;span style=&quot;font-size: small&quot;&gt;&nbsp;</code></span>
 </p>
 
 <p><b>Kleur</b><br>
 <p>
 Hier wordt een <b>#RRGGBB</b>-notatie voor de kleur gebruikt. Voor
 255 voorgedefinieerde kleuren bestaat ook een kleuromschrijving,
-zoals <b>&quot;blue&quot;</b>.<br> 
+zoals <b>&quot;blue&quot;</b>.<br>
 Zie <a href="http://www.handleidinghtml.nl/divers/kleuren/kleuren01.html"
 target="_blank">http://www.handleidinghtml.nl/divers/kleuren/kleuren01.html</a>
 voor een overzicht van kleurencode en informatie over kleurgebruik.</p>
@@ -44,20 +44,18 @@ voor een overzicht van kleurencode en informatie over kleurgebruik.</p>
 <p><b>Lettertype</b><br>
 Met behulp van de style-value <code>font-family</code> kun je het lettertype
 veranderen. Het is gebruikelijk om meer dan &eacute;&eacute;n lettertype op
-te geven, gescheiden door een komma, omdat verschillende besturingsystemen verschillende
-lettertypen kennen (voor Windows wordt meestal Arial gebruikt, voor
-Unix en de Mac Helvetica). Als het lettertype niet op de machine
+te geven, gescheiden door een komma. De browser probeert eerst het eerste lettertype te gebruiken, als deze niet aanwezig het tweede, enzovoort. Als het lettertype niet op de machine
 van de browser aanwezig is, wordt meestal een standaardlettertype
 door de browser gekozen. Dit kan effect hebben op hoe je webpagina
 wordt weergegeven in de browser. Hou hier rekening mee als je
 afwijkende fonts gebruikt. Bijvoorbeeld:<br>
 
-<span style="font-family:Courier New, monospace">Deze tekst staat in <code>&lt;span style=&quot;font-family:Courier New, monospace&quot;&gt;&nbsp;</code></span>
+<span style="font-family:Courier New, monospace">Deze tekst staat in <code>&lt;span style=&quot;font-family: Courier New, monospace&quot;&gt;&nbsp;</code></span>
 
 
 <p><b>Font: algemeen</b><br>
 Je mag ook meerdere style-values samenvoegen, zoals hier:<br>
-<span style="font-family:Courier New, monospace; color:red">Deze tekst staat in <code>&lt;span style=&quot;font-family:Courier New, monospace; color:red&quot;&gt;&nbsp;</code></span>
+<span style="font-family:Courier New, monospace; color:red">Deze tekst staat in <code>&lt;span style=&quot;font-family: Courier New, monospace; color: red&quot;&gt;&nbsp;</code></span>
 
 
 <h3>Overige opmaak van tekst</h3>
@@ -82,7 +80,7 @@ tags lukt dit niet altijd.</td></tr></table>
 <h4>Nog wat tags om mee te experimenteren</h4>
 <p>
 <pre>
-    &lt;u&gt;           <span style="color:black;font-family:times new roman">ondestreept</span>
+    &lt;u&gt;           <span style="color:black;font-family:times new roman">onderstreept</span>
     &lt;sub&gt;         <span style="color:black;font-family:times new roman">subscript</span>
     &lt;sup&gt;         <span style="color:black;font-family:times new roman">superscript</span>
     &lt;code&gt;        <span style="color:black;font-family:times new roman">programmacode</span>
@@ -113,7 +111,7 @@ tags lukt dit niet altijd.</td></tr></table>
   <p>Zoals je kunt zien, begint iedere entiteitsnaam met een
   <code><b>&amp;</b></code> (ampersand) en eindigt die op een <code><b>;</b></code>
   (puntkomma).</p>
-  
+
   <p>Niet alle tekens hebben een entiteitsnaam waarmee ze aangeduid
   worden. Sommige tekens worden ook aangeduid met een cijfercode,
   bijvoorbeeld <code>&quot;&amp;#177;&quot;</code>. Met deze code kun je het
@@ -121,10 +119,10 @@ tags lukt dit niet altijd.</td></tr></table>
   <br>
   Zie <a href="http://www.handleidinghtml.nl/html/karakters/karakters01.html"
   target="_blank">www.handleidinghtml.nl/html/karakters/karakters01.html</a>
-  voor een compleet ovzicht van de speciale tekens.</p>
+  voor een compleet overzicht van de speciale tekens.</p>
 
   <h3>Unicode</h3>
-  
+
   <p>Als je netjes in Unicode en UTF werkt, kun je ook zonder veel van deze speciale tekens werken.
   Daarover volgt later meer.</p>
 
