@@ -21,3 +21,7 @@ textarea {
     list-style-type: decimal;
     list-style-position:inside;
 }
+
+#theory > li > a{
+    color: blue !important;
+}
