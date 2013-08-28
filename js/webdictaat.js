@@ -67,7 +67,7 @@ $(function() {
         }
     };
     $('.nav a').click(function() {
-        navigate($(this).attr('href'))
+        window.location.hash = '/' + $(this).attr('href');
         return false;
     })
 
@@ -76,6 +76,11 @@ $(function() {
 
     navigate(window.location.hash.replace('#/', ''))
 
+    $(window).on('hashchange', function(e) {
+        navigate(window.location.hash.substring(2))
+        console.log(window.location.hash)
+        //console.log(window.);
+    });
 
     $.fn.getStyles = function(only, except){
 
