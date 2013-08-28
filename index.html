@@ -8,79 +8,14 @@
     <meta name="author" content="">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-
-    </style>
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/webdictaat.css" rel="stylesheet">
     <link rel="shortcut icon" href="http://www.avans.nl/favicon.64.png">
 
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/webdictaat.js"></script>
     <base href="#" />
-
-    <script type="text/javascript">
-    $(function() {
-
-        var accordion = $('#theory').accordion({
-            collapsible: true,
-            active: false,
-            heightStyle: "content",
-            navigation: true
-        });
-
-        // Function to navigate to another (external) page
-        // Please use for all internal navigation
-        function navigate(url) {
-            if(url.match("^https?://")) {
-                // Navigate to external page
-                window.location = url;
-            } else if(url.length > 1) {
-                // Load content
-                var dir_name = url.substring(0, url.lastIndexOf('/'));
-                $('base').attr('href', window.location.pathname + 'assignments' + '/');
-
-                $('#content').load(window.location.pathname + url);
-                $('html, body').scrollTop(0);
-
-                // Update navigation
-                $('.nav li').removeClass('active')
-                $('.nav li:has(> a[href="'+url+'"])').addClass('active');
-
-                menu_index = $('#theory > li:has(a[href="'+url+'"])').index() - 1;
-                if(menu_index >= 0)
-                    accordion.accordion('option', 'active', menu_index);
-
-                // Add to url
-                window.location.hash = '/' + url;
-            }
-        }
-        $('.nav a').click(function() {
-            navigate($(this).attr('href'))
-            return false;
-        })
-
-        // Add little down arrows to menus with submenus
-        $('.nav li:has(ol)').children('a').append('<i class="icon-chevron-down pull-right"></i>');
-
-        navigate(window.location.hash.replace('#/', ''))
-
-
-    });
-
-
-    //
-    </script>
-
-    <style>
-        .nav ol {
-            list-style-type: decimal;
-            list-style-position:inside;
-        }
-    </style>
   </head>
 
   <body>
