@@ -28,12 +28,55 @@
   <br />
 
   <h3>Ongenummerde lijsten</h3>De syntax ziet er als volgt uit:<br />
-  <pre>
+  <pre id="t">
 &lt;ul&gt;
   &lt;li&gt;Dit stukje tekst staat naast de eerste stip&lt;/li&gt;
   &lt;li&gt;Dit stukje tekst staat naast de tweede stip&lt;/li&gt;
-&lt;/ul&gt;
-</pre>Een ongenummerde lijst begint met &lt;ul&gt; en eindigt met
+&lt;/ul&gt;</pre>
+
+  <style>
+  .preview {
+      border: 0;
+  }
+  </style>
+  <script>
+  $(function() {
+      var code = $('#t');
+
+      //Make a copy of the code element as a textarea
+      var textarea = $('<textarea></textarea>');
+      code.after(textarea)
+      textarea.copyCSS(code)
+      textarea.text(code.text());
+
+
+
+      // Create a live preview of the textarea
+      var preview = $('<iframe class="preview"></iframe>');
+
+      // Place them next to eachother
+      preview.css('height', textarea.css('height'));
+
+      preview.css('float', 'right');
+      preview.css('border', '1px solid rgba(0, 0, 0, 0.14902)')
+
+      textarea.before(preview);
+      //code.after(preview);
+      function update(e) {
+          textarea = this;
+          if(textarea.length)
+            textarea = textarea[0];
+
+          preview.contents().find('body').html(textarea.value);
+      }
+      textarea.keyup(update);
+      textarea.change(update);
+      update.call(textarea);
+  });
+  //$('#t').remove();
+  </script>
+
+Een ongenummerde lijst begint met &lt;ul&gt; en eindigt met
 &lt;/ul&gt;.<br />
   Ieder onderdeel van de lijst plaats je tussen de codes &lt;li&gt; en
   &lt;/li&gt; (li = listitem).<br />
