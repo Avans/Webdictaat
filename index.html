@@ -13,26 +13,70 @@
         padding-top: 60px;
         padding-bottom: 40px;
       }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
 
-      @media (max-width: 980px) {
-        /* Enable use of floated navbar text */
-        .navbar-text.pull-right {
-          float: none;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      }
     </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="http://www.avans.nl/favicon.64.png">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(function() {
+
+        var accordion = $('#theory').accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content",
+            navigation: true
+        });
+
+        // Function to navigate to another (external) page
+        // Please use for all internal navigation
+        function navigate(url) {
+            if(url.match("^https?://")) {
+                // Navigate to external page
+                window.location = url;
+            } else if(url.length > 1) {
+                // Load content
+                $('#content').load(url);
+
+                // Update navigation
+                $('.nav li').removeClass('active')
+                $('.nav li:has(> a[href="'+url+'"])').addClass('active');
+
+                menu_index = $('#theory > li:has(a[href="'+url+'"])').index() - 1;
+                accordion.accordion('option', 'active', menu_index);
+
+                // Add to url
+                window.location.hash = '/' + url;
+            }
+        }
+        $('.nav a').click(function() {
+            navigate($(this).attr('href'))
+            return false;
+        })
+
+        // Add little down arrows to menus with submenus
+        $('.nav li:has(ol)').children('a').append('<i class="icon-chevron-down pull-right"></i>');
+
+        navigate(window.location.hash.replace('#/', ''))
+
+
+    });
+
+
+    //
+    </script>
+
+    <style>
+
+    </style>
   </head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -40,7 +84,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Webdictaat</a>
+          <a class="brand" href="#">Webdictaat Avans</a>
         </div>
       </div>
     </div>
@@ -49,9 +93,9 @@
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
+            <ul class="nav nav-list" id="theory">
               <li class="nav-header">Theorie</li>
-              <li><a href="#">Week 1. Inleiding</a>
+              <li><a href="#">Week 1. Inleiding </a>
                   <ol class="nav nav-list">
                     <li><a href="week1/week1_2.html">Het World Wide Web</a></li>
                     <li><a href="week1/week1_3.html">Geschiedenis van het Internet</a></li>
@@ -59,7 +103,7 @@
                     <li><a href="week1/week1_5.html">Basisstructuur van een webpagina</a></li>
                     <li><a href="week1/week1_6.html">Basistags van (X)HTML</a></li>
                     <li><a href="week1/week1_7.html">Tags voor tekstindeling</a></li>
-                    <li><a href="week1/week1_8.html":>Tags voor tetkstopmaak</a></li>
+                    <li><a href="week1/week1_8.html":>Tags voor tekstopmaak</a></li>
                   </ol>
               </li>
               <li><a href="#">Week 2. Lijsten, links, plaatjes</a>
@@ -73,7 +117,7 @@
               </li>
               <li><a href="#">Week 3. Stylesheets (CSS)</a>
                   <ol class="nav nav-list">
-                    <li><a href="week3/week3_1.html">Tabellen</a></li>
+                    <li class="active"><a href="week3/week3_1.html">Tabellen</a></li>
                     <li><a href="week3/week3_2.html">Frames</a></li>
                     <li><a href="week3/week3_3.html">Formulieren</a></li>
                     <li><a href="week3/week3_11.html">Stylesheets 1</a></li>
@@ -107,56 +151,40 @@
                     <li><a href="xtra/nospam/mail_encrypt.html">No Spam!</a></li>
                   </ol>
               </li>
-
+            </ul>
+            <ul class="nav nav-list" id="assignments">
               <li class="nav-header">Opdrachten</li>
               <li><a href="assignments/opdracht1.html">Opdrachten week 1</a></li>
               <li><a href="assignments/opdracht2.html">Opdrachten week 2</a></li>
               <li><a href="assignments/opdracht3.html">Opdrachten week 3</a></li>
               <li><a href="assignments/opdrachtE1.html">Eindopdracht deel 1</a></li>
               <li><a href="assignments/opdrachtE2.html">Eindopdracht deel 2</a></li>
-
+            </ul>
+            <ul class="nav nav-list" id="links">
               <li class="nav-header">Links</li>
-              <li><a href="http://www.handleidinghtml.nl" target="_blank">Handleiding HTML</a></li>
-              <li><a href="http://www.w3schools.com" target="_blank">W3Schools</a></li>
-              <li><a href="http://www.w3.org" target="_blank">W3C</a></li>
-              <li><a href="http://www.w3.org/TR/" target="_blank">Standaards/</a></li>
-              <li><a href="http://www.w3.org/TR/xhtml1/" target="_blank">W3C XHTML 1.0 specificatie</a></li>
-              <li><a href="http://www.w3.org/TR/xhtml11/" target="_blank">W3C XHTML 1.1 specificatie</a></li>
-              <li><a href="http://www.w3.org/TR/html5/" target="_blank">W3C HTML 5 <b>Candidate</b></a></li>
-              <li><a href="http://www.bitstorm.org/edwin/cursus/css.html" target="_blank">CSS tutorial (Edwin Martin)</a></li>
+              <li><a href="http://www.handleidinghtml.nl">Handleiding HTML</a></li>
+              <li><a href="http://www.w3schools.com">W3Schools</a></li>
+              <li><a href="http://www.w3.org">W3C</a></li>
+              <li><a href="http://www.w3.org/TR/">Standaards/</a></li>
+              <li><a href="http://www.w3.org/TR/xhtml1/">W3C XHTML 1.0 specificatie</a></li>
+              <li><a href="http://www.w3.org/TR/xhtml11/">W3C XHTML 1.1 specificatie</a></li>
+              <li><a href="http://www.w3.org/TR/html5/">W3C HTML 5 <b>Candidate</b></a></li>
+              <li><a href="http://www.bitstorm.org/edwin/cursus/css.html">CSS tutorial (Edwin Martin)</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <article class="content span9">
+        <article class="span9" id="content">
 
-            Hoi
+            Welkom in het webdictaat. Kies iets in het menu
         </article><!--/span-->
       </div><!--/row-->
 
       <hr>
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>2013 Avans</p>
       </footer>
 
     </div><!--/.fluid-container-->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/bootstrap-transition.js"></script>
-    <script src="../assets/js/bootstrap-alert.js"></script>
-    <script src="../assets/js/bootstrap-modal.js"></script>
-    <script src="../assets/js/bootstrap-dropdown.js"></script>
-    <script src="../assets/js/bootstrap-scrollspy.js"></script>
-    <script src="../assets/js/bootstrap-tab.js"></script>
-    <script src="../assets/js/bootstrap-tooltip.js"></script>
-    <script src="../assets/js/bootstrap-popover.js"></script>
-    <script src="../assets/js/bootstrap-button.js"></script>
-    <script src="../assets/js/bootstrap-collapse.js"></script>
-    <script src="../assets/js/bootstrap-carousel.js"></script>
-    <script src="../assets/js/bootstrap-typeahead.js"></script>
-
   </body>
 </html>
