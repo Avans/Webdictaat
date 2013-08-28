@@ -17,7 +17,7 @@ $(function() {
                 if(text_area.length)
                   text_area = text_area[0];
 
-                preview.contents().find('body').html(text_area.value);
+                preview.contents().find('body').html('<base target="_top" />' + text_area.value);
             };
 
             textarea.keyup(update);
