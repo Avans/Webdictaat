@@ -37,7 +37,9 @@ $(function() {
         heightStyle: "content",
         navigation: true
     });
-
+    function dirname(path) {
+        return path.substring(0, path.lastIndexOf('/'));
+    }
     // Function to navigate to another (external) page
     // Please use for all internal navigation
     function navigate(url) {
@@ -46,11 +48,16 @@ $(function() {
             window.location = url;
         } else if(url.length > 1) {
             // Load content
-            var dir_name = url.substring(0, url.lastIndexOf('/'));
-            $('base').attr('href', window.location.pathname + 'assignments' + '/');
 
-            $('#content').load(window.location.pathname + url, function() {
+            $('#content').load(url, function() {
                 livepreview();
+
+                // Prepend the directory name to all links in the content
+                function prependBase(index, value) {
+                    return dirname(url) + '/' + value;
+                };
+                $('#content img').attr('src', prependBase);
+                $('#content a:not([href*="://"],[href^="mailto:"],[href^="#"])').attr('href', prependBase);
             });
             $('html, body').scrollTop(0);
 
@@ -69,18 +76,18 @@ $(function() {
     $('.nav a').click(function() {
         window.location.hash = '/' + $(this).attr('href');
         return false;
-    })
-
-    // Add little down arrows to menus with submenus
-    $('.nav li:has(ol)').children('a').append('<i class="icon-chevron-down pull-right"></i>');
+    });
 
     navigate(window.location.hash.replace('#/', ''))
 
     $(window).on('hashchange', function(e) {
         navigate(window.location.hash.substring(2))
-        console.log(window.location.hash)
-        //console.log(window.);
     });
+
+    // Add little down arrows to menus with submenus
+    $('.nav li:has(ol)').children('a').append('<i class="icon-chevron-down pull-right"></i>');
+
+
 
     $.fn.getStyles = function(only, except){
 
