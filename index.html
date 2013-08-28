@@ -20,6 +20,7 @@
 
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <base href="#" />
 
     <script type="text/javascript">
     $(function() {
@@ -39,14 +40,19 @@
                 window.location = url;
             } else if(url.length > 1) {
                 // Load content
-                $('#content').load(url);
+                var dir_name = url.substring(0, url.lastIndexOf('/'));
+                $('base').attr('href', window.location.pathname + 'assignments' + '/');
+
+                $('#content').load(window.location.pathname + url);
+                $('html, body').scrollTop(0);
 
                 // Update navigation
                 $('.nav li').removeClass('active')
                 $('.nav li:has(> a[href="'+url+'"])').addClass('active');
 
                 menu_index = $('#theory > li:has(a[href="'+url+'"])').index() - 1;
-                accordion.accordion('option', 'active', menu_index);
+                if(menu_index >= 0)
+                    accordion.accordion('option', 'active', menu_index);
 
                 // Add to url
                 window.location.hash = '/' + url;
@@ -70,7 +76,10 @@
     </script>
 
     <style>
-
+        .nav ol {
+            list-style-type: decimal;
+            list-style-position:inside;
+        }
     </style>
   </head>
 
