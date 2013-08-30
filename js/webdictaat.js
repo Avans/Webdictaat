@@ -23,6 +23,9 @@ $(function() {
             textarea.keyup(update);
             textarea.change(update);
             update.call(textarea);
+            window.setTimeout(function() {
+                update.call(textarea);
+            }, 100);
 
             textarea.after($('<p style="clear: both"></p>'));
 
