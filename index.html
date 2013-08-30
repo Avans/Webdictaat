@@ -1,19 +1,133 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Webdictaat Avans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <title>Module Websites Bouwen 1</title>
-  <link href="css/active.css" rel="stylesheet" type="text/css" />
-</head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/webdictaat.css" rel="stylesheet">
+    <link rel="shortcut icon" href="http://www.avans.nl/favicon.64.png">
 
-<frameset rows="100,*">
-  <frame src="titel.html" name="titel" id="titel" />
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/webdictaat.js"></script>
+  </head>
 
-  <frameset cols="300,*">
-    <frame src="navigatie.html" name="navigatie" id="navigatie" />
-    <frame name="inhoud" id="inhoud" />
-  </frameset>
-</frameset>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Webdictaat Avans</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list" id="theory">
+              <li class="nav-header">Theorie</li>
+              <li><a href="#">Week 1. Inleiding </a>
+                  <ol class="nav nav-list">
+                    <li><a href="week1/week1_2.html">Het World Wide Web</a></li>
+                    <li><a href="week1/week1_3.html">Geschiedenis van het Internet</a></li>
+                    <li><a href="week1/week1_4.html">Ontwerpen van websites</a></li>
+                    <li><a href="week1/week1_5.html">Basisstructuur van een webpagina</a></li>
+                    <li><a href="week1/week1_6.html">Basistags van (X)HTML</a></li>
+                    <li><a href="week1/week1_7.html">Tags voor tekstindeling</a></li>
+                    <li><a href="week1/week1_8.html":>Tags voor tekstopmaak</a></li>
+                  </ol>
+              </li>
+              <li><a href="#">Week 2. Lijsten, links, plaatjes</a>
+                  <ol class="nav nav-list">
+                    <li><a href="week2/week2_1.html">Lijsten</a></li>
+                    <li><a href="week2/week2_2.html">Hyperlinks</a></li>
+                    <li><a href="week2/week2_3.html">Hyperlinks II</a></li>
+                    <li><a href="week2/week2_4.html">Afbeeldingen</a></li>
+                    <li><a href="week2/week2_5.html">Image maps</a></li>
+                   </ol>
+              </li>
+              <li><a href="#">Week 3. Stylesheets (CSS)</a>
+                  <ol class="nav nav-list">
+                    <li><a href="week3/week3_1.html">Tabellen</a></li>
+                    <li><a href="week3/week3_2.html">Frames</a></li>
+                    <li><a href="week3/week3_3.html">Formulieren</a></li>
+                    <li><a href="week3/week3_11.html">Stylesheets 1</a></li>
+                    <li><a href="week3/week3_13.html">Stylesheets 3</a></li>
+                    <li><a href="week3/week3_21.html">HTML of XHTML</a></li>
+                    <li><a href="week3/week3_22.html">Validatie van XHMTL</a></li>
+                    <li><a href="week3/week3_23.html">Tools</a></li>
+                    <li><a href="sjablonen.html">Sjablonen (valid &amp; well-formed)</a></li>
+                  </ol>
+              </li>
+              <li><a href="#">Week 4-5. Ontwerpen</a>
+                  <ol class="nav nav-list">
+                      <li><a href="week5/week5_1.html">Het plan</a></li>
+                      <li><a href="week5/week5_2.html">Functioneel ontwerp</a></li>
+                      <li><a href="week5/week5_3.html">Technisch ontwerp</a></li>
+                  </ol>
+              </li>
+              <li><a href="#">Week 6. Zoeken en zo</a>
+                  <ol class="nav nav-list">
+                    <li><a href="week6/week6_1.html">Zoeken naar een site</a></li>
+                    <li><a href="week6/week6_2.html">Search engines</a></li>
+                    <li><a href="week6/week6_3.html">Directory's</a></li>
+                    <li><a href="week6/week6_4.html">Zoeken: diversen</a></li>
+                  </ol>
+              </li>
+              <li><a href="#">Extra: Javascript</a>
+                  <ol class="nav nav-list">
+                    <li><a href="xtra/js/js_1.html">Inleiding Javascript</a></li>
+                    <li><a href="xtra/js/js_2.html">Objecten en formulieren in Javascript</a></li>
+                    <li><a href="xtra/js/js_xp.html">Ook mooi</a></li>
+                    <li><a href="xtra/nospam/mail_encrypt.html">No Spam!</a></li>
+                  </ol>
+              </li>
+            </ul>
+            <ul class="nav nav-list" id="assignments">
+              <li class="nav-header">Opdrachten</li>
+              <li><a href="assignments/opdracht1.html">Opdrachten week 1</a></li>
+              <li><a href="assignments/opdracht2.html">Opdrachten week 2</a></li>
+              <li><a href="assignments/opdracht3.html">Opdrachten week 3</a></li>
+              <li><a href="assignments/opdrachtE1.html">Eindopdracht deel 1</a></li>
+              <li><a href="assignments/opdrachtE2.html">Eindopdracht deel 2</a></li>
+            </ul>
+            <ul class="nav nav-list" id="links">
+              <li class="nav-header">Links</li>
+              <li><a href="http://www.handleidinghtml.nl">Handleiding HTML</a></li>
+              <li><a href="http://www.w3schools.com">W3Schools</a></li>
+              <li><a href="http://www.w3.org">W3C</a></li>
+              <li><a href="http://www.w3.org/TR/">Standaards/</a></li>
+              <li><a href="http://www.w3.org/TR/xhtml1/">W3C XHTML 1.0 specificatie</a></li>
+              <li><a href="http://www.w3.org/TR/xhtml11/">W3C XHTML 1.1 specificatie</a></li>
+              <li><a href="http://www.w3.org/TR/html5/">W3C HTML 5 <b>Candidate</b></a></li>
+              <li><a href="http://www.bitstorm.org/edwin/cursus/css.html">CSS tutorial (Edwin Martin)</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <article class="span9" id="content">
+
+            Welkom in het webdictaat. Kies iets in het menu
+        </article><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>2013 Avans</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+  </body>
 </html>

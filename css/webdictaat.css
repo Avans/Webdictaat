@@ -1,0 +1,27 @@
+textarea.live_preview {
+    width: 50% !important;
+}
+
+iframe.live_preview {
+    border: 0;
+    width: 45%;
+    float: right;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+textarea {
+    color: blue !important;
+}
+
+.nav ol {
+    list-style-type: decimal;
+    list-style-position:inside;
+}
+
+#theory > li > a{
+    color: purple !important;
+}
