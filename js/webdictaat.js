@@ -10,7 +10,7 @@ $(function() {
 
             // Create a live preview of the textarea
             var preview = $('<iframe class="live_preview"></iframe>');
-            textarea.before(preview);
+            textarea.after(preview);
             preview.height(textarea.height());
             function update(e) {
                 text_area = this;
@@ -27,7 +27,7 @@ $(function() {
                 update.call(textarea);
             }, 100);
 
-            textarea.after($('<p style="clear: both"></p>'));
+            preview.after($('<p style="clear: both"></p>'));
 
             // Remove original element
             code.detach();

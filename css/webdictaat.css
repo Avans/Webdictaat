@@ -1,11 +1,22 @@
 textarea.live_preview {
     width: 50% !important;
+    float: left !important;
+}
+
+pre, code, iframe.live_preview {
+    padding: 6px;
 }
 
 iframe.live_preview {
-    border: 0;
     width: 45%;
-    float: right;
+    float: left;
+    border: 1px solid rgb(225, 225, 232);
+    border-left-width: 0;
+}
+
+code.pre {
+    white-space: pre;
+    display: block;
 }
 
 body {
