@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Websites Bouwen 1 - Stylesheets</title>
+<style type="text/css">
+/*<![CDATA[*/
+h3.verdana {font-family: Verdana}
+h3.arial {font-family: Arial}
+.memo {color: orange; margin-left: 20px}
+/*]]>*/
+</style>
+</head>
+
+<body>
+  <img src="paintbrush.png" class="pull-right">
+  <h2>Stylesheets</h2>
+
+  <h3>Vooraf</h3>
+
+  <p>In de voorgaande weken hebben we tags gezien die we kunnen gebruiken om aan tekst een betekenis te geven.
+      Zo kunnen we aangeven welke stukken tekst paragrafen vormen en wat voor soort headers daar tussen staan.
+      De browser probeert automatisch al een toepasselijke opmaak voor te verzinnen.</p>
+
+  <p></p>
+
+  <code class="livepreview">&lt;h1&gt;In je browser ziet deze tekst er automatisch groot uit!&lt;/h1&gt;&nbsp;</code>
+
+  <p>Nu gaan we kijken hoe we webpagina's mooier kunnen maken door een <em>style</em> aan elementen van de pagina toe te voegen. Op die manier kunnen we bijvoorbeeld kleuren, fonts en randen van elementen aanpassen.</p>
+
+  <p>In het onderstaande voorbeeld hebben we alle h1 tags van een nieuwe style voorzien!</p>
+
+  <code class="livepreview" style="white-space: pre; display: block;">&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      h1 {
+          color: #404853;
+          font-size: 26px;
+          font-family: Arial;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hoofdstuk 1&lt;/h1&gt;
+    &lt;p&gt;Deze kopjes zien er mooier uit dan
+       hoe de browser het standaard opmaakt.&lt;/p&gt;
+    &lt;h1&gt;Hoofdstuk 2&lt;/h1&gt;
+    &lt;p&gt;En het werkt automatisch op alle h1
+       tags in de hele webpagina!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+
+  <img src="css.png" class="pull-right">
+  <p>Deze style regels die we kunnen toepassen op html elementen heten <strong>Cascading Style Sheets</strong> (css).
+      Met css kunnen we de opmaak van pagina's veranderen zonder dat we de html hoeven te veranderen.<br />
+      We zeggen ook wel dat we met stylesheets de <strong>inhoud</strong> van de <strong>opmaak</strong> scheiden</p>
+
+  <h3>Typen stylesheets</h3>
+
+  <p>Er zijn 3 verschillende soorten manieren om stylesheets op je html toe te passen.
+
+  <dl>
+    <dt>Linked stylesheets</dt>
+    <dd>In een webpagina kan een link naar een (extern) stylesheet-bestand
+    op de webserver worden opgenomen. Zo kan hetzelfde
+    stylesheetbestand in vele HTML-documenten gebruikt worden
+    (hergebruik, dus consistentie en onderhoudbaarheid).
+    <br />
+    Zet bijvoorbeeld deze tag in de head om het 'mijnstylesheet.css' op de pagina toe te passen <code>&lt;link rel=&quot;stylesheet&quot;
+    type=&quot;text/css&quot;
+    href=&quot;mijnstylesheet.css&quot;&gt;</code></dd>
+
+    <dt>Embedded stylesheets</dt>
+    <dd>Kunnen binnen webpagina gedefinieerd worden met behulp van de
+    &lt;style&gt;-tag. Deze tag moet binnen de head van de pagina
+    worden opgenomen. Deze kunnen bijvoorbeeld gebruikt worden om
+    style regels te definiëren
+    <br />
+    Syntax: <code>&lt;style&gt; ... &lt;/style&gt;</code></dd>
+
+    <dt>Inline stylesheets</dt>
+    <dd>Kan aan <em>iedere</em> tag binnen een webpagina worden toegevoegd
+    door het "style"-attribuut. De style die je op deze manier meegeeft is dan alleen van toepassing op <em>dat</em> element
+    <br />
+    Syntax (met h1-tag als voorbeeld):
+    <code>&lt;h1 style=&quot;...&quot;&gt;...&lt;/h1&gt;</code></dd>
+
+  </dl>
+
+
+
+  <h3>Syntax van stylesheets</h3>
+  Linked en embedded stylesheets
+  bevatten <b>stijldefinities</b>. Deze bestaan uit:
+
+  <ul>
+    <li>de HTML-tag die aangepast moet worden</li>
+
+    <li>een openingsaccolade ({)</li>
+
+    <li>lijst van eigenschappen/properties die aangepast moeten worden
+    met per eigenschap/property de volgende elementen
+
+      <ul>
+        <li>naam van de eigenschap/property</li>
+
+        <li>dubbele punt (:)</li>
+
+        <li>waarde van de eigenschap/property</li>
+
+        <li>puntkomma als separator bij meerdere properties (;)</li>
+      </ul>
+    </li>
+
+    <li>de sluitaccolade (})</li>
+  </ul>
+
+  <p>Een voorbeelddefinitie om de h1-tag in 16-punts grootte, vet en
+  blauw te laten afdrukken, ziet er als volgt uit:</p>
+  <code style="white-space: pre; display: block;">h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    color: blue;
+}</code>
+
+  <p>Commentaarregels worden omgeven met <i>/*</i> en <i>*/</i>,
+  vergelijkbaar met Java en C++.</p>
+
+  <h3>Stylesheets toepassen</h3>
+  <h4>Linked stylesheets</h4>
+  <p>Hiervoor moet je CSS-bestand aanmaken, bv mbv NotePad/Kladblok,
+  waarin je de stijldefinities opneemt.</p>
+
+  <h4>Embedded stylesheets</h4>
+  <p>Hiervoor wordt dus de &lt;style&gt;-tag gedefinieerd in het
+  headerdeel van het huidige HTML document. De invloed van deze tag is
+  beperkt tot het huidige document.</p>
+
+  <h4>Inline stylesheets</h4>
+  <p>Deze gebruikt u als u in een beperkt deel van een (1) webpagina een
+  aparte opmaak wilt hanteren, b.v. tekst wilt laten inspringen. Aan de
+  betreffende HTML-tag geef je dan het style-attribuut mee.
+  <br />
+  Voor toepassing van de stijl op een wat bredere sectie gebruik je de
+  &lt;span&gt;-tag of de &lt;div&gt;-tag (div staat voor division), die
+  je voorziet van een style-attribuut. Deze stijl is dan van kracht tot
+  de eindtag &lt;/span&gt;-tag of &lt;/div&gt;-tag.</p>
+
+  Zie <a href="week3_style.html">week3_style.html</a> voor een
+  toepassing van deze styles!</p>
+
+  <h3>Classes binnen stylesheets</h3>
+  <p>Als je voor 1 tag (toch) meerdere
+  stijldefinities zou willen toepassen, dan moet je volgens het
+  bovenstaande even zo vele inline styles definieren. Met behulp van
+  <i>classes</i> kan dit eenvoudiger en bovendien kun je die classes,
+  indien gewenst, meteen voor verschillende typen tags definiëren.</p>
+
+  Stel dat we alle h3 tags <span style="color: blue;">blauw</span> willen hebben, behalve tags die belangrijk zijn, die willen we <span style="color: red;">rood</span> hebben. Dan kunnen we de volgende style toepassen:
+
+  <code class="livepreview pre">&lt;style&gt;
+  h3 {
+    color: blue;
+  }
+  .belangrijk {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;h3&gt;Onderwerp&lt;/h3&gt;
+&lt;h3&gt;Nog een onderwerp&lt;/h3&gt;
+&lt;h3 class="belangrijk"&gt;Belangrijk onderwerp!&lt;/h3&gt;
+&lt;h3&gt;Laatste onderwerp&lt;/h3&gt;</code>
+
+<img src="style_conflict.png" class="pull-right" style="border: 1px solid #EEE">
+<p>Merk op dat op de derde h3 tag <strong>twee</strong> stijlen van toepassing zijn:
+    <ul>
+        <li>De stijl die op <em>alle h3 elementen</em> van toepassing is die de tekst <span style="color: blue">blauw</span> maakt</li>
+        <li>De stijl die op <em>alle elementen met de class "belangrijk"</em> van toepassing is, die de tekst <span style="color: red">rood</span> maakt</li>
+    </ul>
+
+    De tekst wordt uiteindelijk rood omdat de tweede stijlregel <em>specifieker</em> is. De meest specifieke regel bepaalt welke stijl van toepassing is in het geval er meerdere stijlregels met elkaar conflicteren.</p>
+
+<h3>Selectors</h3>
+<p>We hebben al twee manieren gezien om aan te geven op welke elementen we een bepaalde stijl van toepassing willen laten zijn. Namelijk via een class (<code>.belangrijk</code>) en via de tagname (<code>h3</code>). Deze patronen waarmee je aangeeft welke elementen je 'selecteert' om een bepaalde stijl te hebben hebben noemen we <strong>selectors</strong></p>
+
+<img src="selection.png" class="pull-right">
+<p>Hieronder geven we een lijst van voorbeelden van veel gebruikte selectors:</p>
+
+<ul>
+    <li><code>*</code> Selecteert alle elementen</li>
+    <li><code>.belangrijk</code> Selecteert alle elementen met het attribuut <code>class="belangrijk"</code></li>
+    <li><code>#content</code> Selecteert het element met het attribuut <code>id="content"</code></li>
+    <li><code>h3</code> Selecteert alle h3 elementen</li>
+    <li><code>h3, h4</code> Selecteert alle h3 en h4 elementen</li>
+    <li><code>article h3</code> Selecteert alle h3 elementen die zich <em>binnen</em> een article element bevinden</li>
+    <li><code>article > h3</code> Selecteert alle h3 elementen die zich <em>direct binnen</em> een article element bevinden. De h3 mag bijvoorbeeld niet in een div in een article staan, maar moet direct in de article staan.</li>
+</ul>
+
+<p>We kunnen de verschillende selectors ook combineren:</p>
+
+<code>div#content p</code>
+
+<p>Deze regel betekent bijvoorbeeld: Alle p elementen die zich binnen een div met het attribuut <code>id="content"</code> bevinden.</p>
+
+<p>Vind je het nog lastig? Oefen dan hieronder met selectors. Nu wordt alles rood, maar probeer eens alleen de aangegeven header rood te maken.<br />
+    <strong>Hint:</strong><br />
+    Probeer eerst alleen alle elementen met de class "belangrijk" rood te maken.<br />
+    Probeer daarna het element met id="blokje1" rood te maken.<br />
+    Allebei voor elkaar gekregen? Dan kan je deze twee selectors combineren om alleen elementen met class="belangrijk" <em>binnen</em> het element met id="blokje1" rood te maken.</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  * {
+    color: red;
+  }
+&lt;/style&gt;
+
+&lt;div id="blokje1"&gt;
+  &lt;h3 id="eerste"&gt;Eerste onderwerp&lt;/h3&gt;
+  &lt;h3&gt;Tweede onderwerp&lt;/h3&gt;
+  &lt;h3 class="belangrijk"&gt;Belangrijk! Maak alleen mij rood&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+&lt;div id="blokje2"&gt;
+  &lt;h3 id="eerste"&gt;Eerste onderwerp in blokje twee&lt;/h3&gt;
+  &lt;h3 class="belangrijk"&gt;Belangrijk in blokje 2&lt;/h3&gt;
+  &lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
+&lt;/div&gt;</code>
+
+Kom je er echt niet uit? <a href="#" onclick="$('#antwoord').toggle(); return false;">Bekijk dan het antwoord</a>
+<code style="display: none;" id="antwoord">#blokje1 .belangrijk</code>
+</body>
+</html>
