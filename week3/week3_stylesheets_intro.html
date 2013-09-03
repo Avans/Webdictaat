@@ -180,55 +180,5 @@ h3.arial {font-family: Arial}
 
     De tekst wordt uiteindelijk rood omdat de tweede stijlregel <em>specifieker</em> is. De meest specifieke regel bepaalt welke stijl van toepassing is in het geval er meerdere stijlregels met elkaar conflicteren.</p>
 
-<h3>Selectors</h3>
-<p>We hebben al twee manieren gezien om aan te geven op welke elementen we een bepaalde stijl van toepassing willen laten zijn. Namelijk via een class (<code>.belangrijk</code>) en via de tagname (<code>h3</code>). Deze patronen waarmee je aangeeft welke elementen je 'selecteert' om een bepaalde stijl te hebben hebben noemen we <strong>selectors</strong></p>
-
-<img src="selection.png" class="pull-right">
-<p>Hieronder geven we een lijst van voorbeelden van veel gebruikte selectors:</p>
-
-<ul>
-    <li><code>*</code> Selecteert alle elementen</li>
-    <li><code>.belangrijk</code> Selecteert alle elementen met het attribuut <code>class="belangrijk"</code></li>
-    <li><code>#content</code> Selecteert het element met het attribuut <code>id="content"</code></li>
-    <li><code>h3</code> Selecteert alle h3 elementen</li>
-    <li><code>h3, h4</code> Selecteert alle h3 en h4 elementen</li>
-    <li><code>article h3</code> Selecteert alle h3 elementen die zich <em>binnen</em> een article element bevinden</li>
-    <li><code>article > h3</code> Selecteert alle h3 elementen die zich <em>direct binnen</em> een article element bevinden. De h3 mag bijvoorbeeld niet in een div in een article staan, maar moet direct in de article staan.</li>
-</ul>
-
-<p>We kunnen de verschillende selectors ook combineren:</p>
-
-<code>div#content p</code>
-
-<p>Deze regel betekent bijvoorbeeld: Alle p elementen die zich binnen een div met het attribuut <code>id="content"</code> bevinden.</p>
-
-<p>Vind je het nog lastig? Oefen dan hieronder met selectors. Nu wordt alles rood, maar probeer eens alleen de aangegeven header rood te maken.<br />
-    <strong>Hint:</strong><br />
-    Probeer eerst alleen alle elementen met de class "belangrijk" rood te maken.<br />
-    Probeer daarna het element met id="blokje1" rood te maken.<br />
-    Allebei voor elkaar gekregen? Dan kan je deze twee selectors combineren om alleen elementen met class="belangrijk" <em>binnen</em> het element met id="blokje1" rood te maken.</p>
-
-<code class="livepreview pre">&lt;style&gt;
-  * {
-    color: red;
-  }
-&lt;/style&gt;
-
-&lt;div id="blokje1"&gt;
-  &lt;h3 id="eerste"&gt;Eerste onderwerp&lt;/h3&gt;
-  &lt;h3&gt;Tweede onderwerp&lt;/h3&gt;
-  &lt;h3 class="belangrijk"&gt;Belangrijk! Maak alleen mij rood&lt;/h3&gt;
-&lt;/div&gt;
-
-&lt;hr&gt;
-
-&lt;div id="blokje2"&gt;
-  &lt;h3 id="eerste"&gt;Eerste onderwerp in blokje twee&lt;/h3&gt;
-  &lt;h3 class="belangrijk"&gt;Belangrijk in blokje 2&lt;/h3&gt;
-  &lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
-&lt;/div&gt;</code>
-
-Kom je er echt niet uit? <a href="#" onclick="$('#antwoord').toggle(); return false;">Bekijk dan het antwoord</a>
-<code style="display: none;" id="antwoord">#blokje1 .belangrijk</code>
 </body>
 </html>

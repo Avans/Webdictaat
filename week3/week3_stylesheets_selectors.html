@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Websites Bouwen 1 - Stylesheets</title>
+<style type="text/css">
+/*<![CDATA[*/
+h3.verdana {font-family: Verdana}
+h3.arial {font-family: Arial}
+.memo {color: orange; margin-left: 20px}
+/*]]>*/
+</style>
+</head>
+
+<body>
+  <h2>Stylesheets Selectors</h2>
+  <p>We hebben al twee manieren gezien om aan te geven op welke elementen we een bepaalde stijl van toepassing willen laten zijn. Namelijk via een class (<code>.belangrijk</code>) en via de tagname (<code>h3</code>). Deze patronen waarmee je aangeeft welke elementen je 'selecteert' om een bepaalde stijl te hebben hebben noemen we <strong>selectors</strong></p>
+
+  <img src="selection.png" class="pull-right">
+  <p>Hieronder geven we een lijst van voorbeelden van veel gebruikte selectors:</p>
+
+  <ul>
+      <li><code>*</code> Selecteert alle elementen</li>
+      <li><code>.belangrijk</code> Selecteert alle elementen met het attribuut <code>class="belangrijk"</code></li>
+      <li><code>#content</code> Selecteert het element met het attribuut <code>id="content"</code></li>
+      <li><code>h3</code> Selecteert alle h3 elementen</li>
+      <li><code>h3, h4</code> Selecteert alle h3 en h4 elementen</li>
+      <li><code>article h3</code> Selecteert alle h3 elementen die zich <em>binnen</em> een article element bevinden</li>
+      <li><code>article > h3</code> Selecteert alle h3 elementen die zich <em>direct binnen</em> een article element bevinden. De h3 mag bijvoorbeeld niet in een div in een article staan, maar moet direct in de article staan.</li>
+  </ul>
+
+  <p>We kunnen de verschillende selectors ook combineren:</p>
+
+  <code>div#content p</code>
+
+  <p>Deze regel betekent bijvoorbeeld: Alle p elementen die zich binnen een div met het attribuut <code>id="content"</code> bevinden.</p>
+
+  <h4>Even oefenen</h4>
+  <p>Vind je het nog lastig? Probeer dan eens de volgende selectors te maken.<br />
+
+      <ul>
+          <li>Maak alleen de elementen met de class 'belangrijk' rood</li>
+          <li>Maak alleen de elementen met de class 'eerste' rood</li>
+          <li>Maak alleen blokje1 rood</li>
+          <li>Maak alleen de belangrijke header binnen blokje1 rood. <b>Hint:</b> Combineer twee selectors uit de vorige opgave</li>
+      </ul>
+  </p>
+
+  <code class="livepreview pre">&lt;style&gt;
+    /* Verander de '*' selector om de opdracht te maken */
+    * {
+      color: red;
+    }
+  &lt;/style&gt;
+
+  &lt;div id="blokje1"&gt;
+    &lt;h3 class="eerste"&gt;Eerste onderwerp&lt;/h3&gt;
+    &lt;h3&gt;Tweede onderwerp&lt;/h3&gt;
+    &lt;h3 class="belangrijk"&gt;Belangrijk! Maak alleen mij rood&lt;/h3&gt;
+  &lt;/div&gt;
+
+  &lt;hr&gt;
+
+  &lt;div id="blokje2"&gt;
+    &lt;h3 class="eerste"&gt;Eerste onderwerp in blokje twee&lt;/h3&gt;
+    &lt;h3 class="belangrijk"&gt;Belangrijk in blokje 2&lt;/h3&gt;
+    &lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
+  &lt;/div&gt;</code>
+
+  Kom je niet uit de laatste oefening? <a href="#" onclick="$('#antwoord').toggle(); return false;">Bekijk dan het antwoord</a>
+  <code style="display: none;" id="antwoord">#blokje1 .belangrijk</code>
+</body>
+</html>
