@@ -1,0 +1,84 @@
+body {
+    background-color: #f2f2f7;
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+#content {
+    background-color: #FFF;
+    border: 1px solid #ebebe9;
+    width: 982px;
+    font-family: Arial,Sans-Serif;
+    font-size: 1.417em;
+    color: #383838;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 20px;
+}
+
+h2, h4, a {
+    color: #007bdd;
+}
+
+h2, h4 {
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 2.667em;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.vraag {
+    font-size: 15px;
+}
+
+aside {
+    line-height: 1.3em;
+}
+
+aside h4 {
+    font-weight: bold;
+}
+
+.aside_box {
+    padding: 10px 0 1px 20px;
+    margin-top: 45px;
+    margin-left: 70px;
+    border-left: 2px solid #e9e9f2;
+}
+
+.small {
+    color: #6e6e6e;
+    font-size: 0.9em;
+}
+
+.call {
+    font-size: 16px;
+    padding-left: 22px;
+}
+
+/* Layout */
+article {
+    width: 703px;
+}
+aside {
+    float: right;
+    width: 340px;
+}
+
+.vraag img {
+    float: left;
+}
+.vraag_content {
+    margin-left: 120px;
+}
