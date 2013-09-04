@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Websites Bouwen 1 - Stylesheets</title>
+</head>
+
+<body>
+  <h2>Borders, paddings &amp; margins</h2>
+
+  <p>We hebben nu gezien hoe we met behulp van css (Cascading Style Sheets) kleuren en lettergrootte kunnen bepalen.
+      Nu gaan we kijken wat voor soort dingen we nog meer kunnen doen.</p>
+
+  <h3>Border</h3>
+
+  <p>We kunnen bijvoorbeeld een element een <code>border</code> geven. In onderstaand voorbeeld hebben we een div element een zwarte rand gegeven die 1 pixel dik is. Dat geven we altijd in die volgorde aan: Eerst de dikte, dan het lijnsoort en als laatste de kleur. We kunnen ook <code>dotted</code> of <code>dashed</code> als lijnsoort gebruiken. Probeer deze uit in onderstaand voorbeeld.</p>
+
+
+  <code class="livepreview pre">&lt;style&gt;
+  #content {
+    border: 1px solid black;
+    background-color: yellow;
+  }
+&lt;/style&gt;
+
+&lt;div id="content"&gt;
+Banaan
+&lt;/div&gt;
+</code>
+
+<p>Met <code>border</code> geven we alle vier de randen tegelijk dezelfde stijl. Maar we kunnen ook de randen individueel een kleur geven:</p>
+
+  <code class="livepreview pre">&lt;style&gt;
+  #content {
+    border-left: 3px solid red;
+    border-right: 3px solid green;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid yellow;
+  }
+&lt;/style&gt;
+
+&lt;div id="content"&gt;
+Kleurtjes
+&lt;/div&gt;</code>
+
+  <h3 style="clear: both;">Padding</h3>
+
+  <p>Nu staan de randjes heel dicht om de tekst heen. Om wat meer ruimte te scheppen tussen de inhoud van de div en het randje gebruiken we <code>padding</code>. Daarmee geven we aan hoeveel ruimte er tussen de <em>inhoud</em> van de div en de <em>rand</em> van de div moet komen.
+</p>
+
+  <code class="livepreview pre">&lt;style&gt;
+  h4 {
+    border: 1px solid black;
+    padding: 30px;
+  }
+&lt;/style&gt;
+
+&lt;h4&gt;
+Hier heb ik meer ruimte.
+&lt;/h4&gt;
+</code>
+
+  <h3>Margin</h3>
+  <p>Op dezelfde manier als padding de ruimte definieert tussen de inhoud en de rand. Kunnen we met <code>margin</code> ruimte maken tussen de rand en de rest van de pagina.</p>
+
+    <code class="livepreview pre">&lt;style&gt;
+    h4 {
+      border: 1px solid black;
+      margin: 40px;
+    }
+  &lt;/style&gt;
+
+  &lt;h4&gt;
+  Hier geef ik meer ruimte.
+  &lt;/h4&gt;
+  </code>
+
+  <h3>Width &amp; height</h3>
+
+<p>Standaard zijn alle elementen groot genoeg om wat er in staat goed weer te geven. Maar we kunnen ook expliciet de hoogte en de breedte aangeven in een stylesheet. Dit doen we met de <code>width</code> en <code>height</code>. Dit is de grootte <em>zonder</em> de padding, border en margin. Dus alleen de grootte van de <em>inhoud</em></p>
+
+  <code class="livepreview pre">&lt;style&gt;
+  #content {
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+  }
+&lt;/style&gt;
+
+&lt;div id="content"&gt;
+Ik ben een vaste grootte
+&lt;/div&gt;</code>
+
+  <p>
+        <img src="box_model.gif" alt="CSS Box Model" class="pull-right">
+    De manier waarop margins, paddings and borders werken in CSS noemen we ook wel het 'CSS Box Model'. Net zoals we de border aan alle vier de kanten individueel kunnen veranderen. Kunnen we dat met margin en padding ook doen, bijvoorbeeld met <code>margin-top</code> of <code>padding-left</code>.
+  </p>
+
+
+</body>
+</html>

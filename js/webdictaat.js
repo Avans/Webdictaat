@@ -27,7 +27,7 @@ $(function() {
                 update.call(textarea);
             }, 100);
 
-            preview.after($('<p style="clear: both"></p>'));
+            preview.after($('<p class="live_preview"></p>'));
 
             // Remove original element
             code.detach();

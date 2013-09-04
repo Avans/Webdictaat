@@ -14,6 +14,11 @@ iframe.live_preview {
     border-left-width: 0;
 }
 
+p.live_preview {
+    clear: both;
+    margin-bottom: 15px;
+}
+
 code.pre {
     white-space: pre;
     display: block;
