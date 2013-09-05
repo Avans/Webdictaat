@@ -16,21 +16,21 @@
 
 
   <code class="livepreview pre">&lt;style&gt;
-  #content {
+  #banaan {
     border: 1px solid black;
     background-color: yellow;
   }
 &lt;/style&gt;
 
-&lt;div id="content"&gt;
-Banaan
+&lt;div id="banaan"&gt;
+Bananen
 &lt;/div&gt;
 </code>
 
 <p>Met <code>border</code> geven we alle vier de randen tegelijk dezelfde stijl. Maar we kunnen ook de randen individueel een kleur geven:</p>
 
   <code class="livepreview pre">&lt;style&gt;
-  #content {
+  .vrolijk {
     border-left: 3px solid red;
     border-right: 3px solid green;
     border-top: 3px solid blue;
@@ -38,8 +38,8 @@ Banaan
   }
 &lt;/style&gt;
 
-&lt;div id="content"&gt;
-Kleurtjes
+&lt;div class="vrolijk"&gt;
+Vrolijke kleurtjes
 &lt;/div&gt;</code>
 
   <h3 style="clear: both;">Padding</h3>
@@ -48,13 +48,13 @@ Kleurtjes
 </p>
 
   <code class="livepreview pre">&lt;style&gt;
-  h4 {
+  .lekker-ruim {
     border: 1px solid black;
     padding: 30px;
   }
 &lt;/style&gt;
 
-&lt;h4&gt;
+&lt;h4 class="lekker-ruim"&gt;
 Hier heb ik meer ruimte.
 &lt;/h4&gt;
 </code>
@@ -63,13 +63,13 @@ Hier heb ik meer ruimte.
   <p>Op dezelfde manier als padding de ruimte definieert tussen de inhoud en de rand. Kunnen we met <code>margin</code> ruimte maken tussen de rand en de rest van de pagina.</p>
 
     <code class="livepreview pre">&lt;style&gt;
-    h4 {
+    .ruimte {
       border: 1px solid black;
       margin: 40px;
     }
   &lt;/style&gt;
 
-  &lt;h4&gt;
+  &lt;h4 class="ruimte"&gt;
   Hier geef ik meer ruimte.
   &lt;/h4&gt;
   </code>
@@ -79,14 +79,14 @@ Hier heb ik meer ruimte.
 <p>Standaard zijn alle elementen groot genoeg om wat er in staat goed weer te geven. Maar we kunnen ook expliciet de hoogte en de breedte aangeven in een stylesheet. Dit doen we met de <code>width</code> en <code>height</code>. Dit is de grootte <em>zonder</em> de padding, border en margin. Dus alleen de grootte van de <em>inhoud</em></p>
 
   <code class="livepreview pre">&lt;style&gt;
-  #content {
+  #vierkantje {
     border: 1px solid black;
     width: 200px;
-    height: 100px;
+    height: 200px;
   }
 &lt;/style&gt;
 
-&lt;div id="content"&gt;
+&lt;div id="vierkantje"&gt;
 Ik ben een vaste grootte
 &lt;/div&gt;</code>
 
