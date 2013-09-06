@@ -163,12 +163,9 @@ er automatisch groot uit!&lt;/h1&gt;
   <i>classes</i> kan dit eenvoudiger en bovendien kun je die classes,
   indien gewenst, meteen voor verschillende typen tags definiëren.</p>
 
-  Stel dat we alle h3 tags <span style="color: blue;">blauw</span> willen hebben, behalve tags die belangrijk zijn, die willen we <span style="color: red;">rood</span> hebben. Dan kunnen we de volgende style toepassen:
+  Stel dat we alle belangrijke elementen <span style="color: red;">rood</span> willen maken. Dan kunnen we de belangrijke dingen de class "belangrijk" geven. Met css kunnen we deze class dan rood maken.
 
   <code class="livepreview pre">&lt;style&gt;
-  h3 {
-    color: blue;
-  }
   .belangrijk {
     color: red;
   }
@@ -177,16 +174,10 @@ er automatisch groot uit!&lt;/h1&gt;
 &lt;h3&gt;Onderwerp&lt;/h3&gt;
 &lt;h3&gt;Nog een onderwerp&lt;/h3&gt;
 &lt;h3 class="belangrijk"&gt;Belangrijk onderwerp!&lt;/h3&gt;
-&lt;h3&gt;Laatste onderwerp&lt;/h3&gt;</code>
+&lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
 
-<img src="style_conflict.png" class="pull-right" style="border: 1px solid #EEE">
-<p>Merk op dat op de derde h3 tag <strong>twee</strong> stijlen van toepassing zijn:
-    <ul>
-        <li>De stijl die op <em>alle h3 elementen</em> van toepassing is die de tekst <span style="color: blue">blauw</span> maakt</li>
-        <li>De stijl die op <em>alle elementen met de class "belangrijk"</em> van toepassing is, die de tekst <span style="color: red">rood</span> maakt</li>
-    </ul>
-
-    De tekst wordt uiteindelijk rood omdat de tweede stijlregel <em>specifieker</em> is. De meest specifieke regel bepaalt welke stijl van toepassing is in het geval er meerdere stijlregels met elkaar conflicteren.</p>
+&lt;div class="belangrijk"&gt;Dit is een div. Maar wel een belangrijke div.&lt;/div&gt;
+</code>
 
 </body>
 </html>
