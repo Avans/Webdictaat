@@ -7,17 +7,17 @@
 <body>
   <h2>Borders, paddings &amp; margins</h2>
 
-  <p>We hebben nu gezien hoe we met behulp van css (Cascading Style Sheets) kleuren en lettergrootte kunnen bepalen.
+  <p>We hebben nu gezien hoe we met behulp van css (Cascading Stylesheets) kleuren en lettergrootte kunnen bepalen.
       Nu gaan we kijken wat voor soort dingen we nog meer kunnen doen.</p>
 
   <h3>Border</h3>
 
-  <p>We kunnen bijvoorbeeld een element een <code>border</code> geven. In onderstaand voorbeeld hebben we een div element een zwarte rand gegeven die 1 pixel dik is. Dat geven we altijd in die volgorde aan: Eerst de dikte, dan het lijnsoort en als laatste de kleur. We kunnen ook <code>dotted</code> of <code>dashed</code> als lijnsoort gebruiken. Probeer deze uit in onderstaand voorbeeld.</p>
+  <p>We kunnen bijvoorbeeld een element een <code>border</code> geven. In onderstaand voorbeeld hebben we een div element een zwarte rand gegeven die 1 pixel dik is. Dat geven we altijd in die volgorde aan: Eerst de dikte, dan het lijnsoort en als laatste de kleur. We kunnen naast <code>solid</code> ook <code>dotted</code> of <code>dashed</code> als lijnsoort gebruiken. Probeer deze uit in onderstaand voorbeeld.</p>
 
 
   <code class="livepreview pre">&lt;style&gt;
   #banaan {
-    border: 1px solid black;
+    border: 6px solid brown;
     background-color: yellow;
   }
 &lt;/style&gt;
@@ -41,9 +41,14 @@ Bananen
 Vrolijke kleurtjes
 &lt;/div&gt;</code>
 
+  <h4>Tip</h4>
+  Als je bezig bent met de layout van de pagina is het handig om elementen tijdelijk een border te geven.
+  Dan zie je namelijk hoe groot ze zijn!
+
+
   <h3 style="clear: both;">Padding</h3>
 
-  <p>Nu staan de randjes heel dicht om de tekst heen. Om wat meer ruimte te scheppen tussen de inhoud van de div en het randje gebruiken we <code>padding</code>. Daarmee geven we aan hoeveel ruimte er tussen de <em>inhoud</em> van de div en de <em>rand</em> van de div moet komen.
+  <p>Nu staan de randjes heel dicht om de tekst heen. Om wat meer ruimte te maken tussen de inhoud van de div en het randje gebruiken we <code>padding</code>. Daarmee geven we aan hoeveel ruimte er tussen de <em>inhoud</em> van een element en de <em>rand</em> van een element moet komen.
 </p>
 
   <code class="livepreview pre">&lt;style&gt;
@@ -58,7 +63,7 @@ Hier heb ik meer ruimte.
 &lt;/h4&gt;</code>
 
   <h3>Margin</h3>
-  <p>Op dezelfde manier als padding de ruimte definieert tussen de inhoud en de rand. Kunnen we met <code>margin</code> ruimte maken tussen de rand en de rest van de pagina.</p>
+  <p>Op dezelfde manier als padding de ruimte definieert tussen de inhoud en de rand kunnen we met <code>margin</code> de ruimte aangeven tussen de rand en de rest van de pagina.</p>
 
     <code class="livepreview pre">&lt;style&gt;
     .ruimte {

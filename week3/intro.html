@@ -33,7 +33,7 @@ er automatisch groot uit!&lt;/h1&gt;
 
   <p>Nu gaan we kijken hoe we webpagina's mooier kunnen maken door een <em>style</em> aan elementen van de pagina toe te voegen. Op die manier kunnen we bijvoorbeeld kleuren, fonts en randen van elementen aanpassen.</p>
 
-  <p>In het onderstaande voorbeeld hebben we alle h1 tags van een nieuwe style voorzien!</p>
+  <p>In het onderstaande voorbeeld hebben we alle h1 tags van een nieuwe style voorzien.</p>
 
   <code class="livepreview" style="white-space: pre; display: block;">&lt;html&gt;
   &lt;head&gt;
@@ -56,7 +56,7 @@ er automatisch groot uit!&lt;/h1&gt;
 &lt;/html&gt;</code>
 
   <img src="css.png" class="pull-right">
-  <p>Deze style regels die we kunnen toepassen op html elementen heten <strong>Cascading Style Sheets</strong> (css).
+  <p>Deze style regels die we kunnen toepassen op html elementen heten <strong>Cascading Stylesheets</strong> (css).
       Met css kunnen we de opmaak van pagina's veranderen zonder dat we de html hoeven te veranderen.<br />
       We zeggen ook wel dat we met stylesheets de <strong>inhoud</strong> van de <strong>opmaak</strong> scheiden</p>
 
@@ -69,9 +69,9 @@ er automatisch groot uit!&lt;/h1&gt;
     <dd>In een webpagina kan een link naar een (extern) stylesheet-bestand
     op de webserver worden opgenomen. Zo kan hetzelfde
     stylesheetbestand in vele HTML-documenten gebruikt worden
-    (hergebruik, dus consistentie en onderhoudbaarheid).
+    (hergebruik, dus consistentie en onderhoudbaarheid). Dit is op internet de meest gebruikte methode.
     <br />
-    Zet bijvoorbeeld deze tag in de head om het 'mijnstylesheet.css' op de pagina toe te passen <code>&lt;link rel=&quot;stylesheet&quot;
+    Als je het css bestand 'mijnstylesheet.css' wilt toepassen op de pagina kan je dat doen door de volgende code in de head te zetten: <code>&lt;link rel=&quot;stylesheet&quot;
     type=&quot;text/css&quot;
     href=&quot;mijnstylesheet.css&quot;&gt;</code>
     <p><a href="voorbeeld-css.zip">Download hier een voorbeeld van een linked stylesheet</a></p>
@@ -122,8 +122,8 @@ er automatisch groot uit!&lt;/h1&gt;
     <li>de sluitaccolade (})</li>
   </ul>
 
-  <p>Een voorbeelddefinitie om de h1-tag in 16-punts grootte, vet en
-  blauw te laten afdrukken, ziet er als volgt uit:</p>
+  <p>Een voorbeelddefinitie om alle h1 elementen in 16-punts grootte, vet en
+  blauw te laten afdrukken ziet er als volgt uit:</p>
   <code style="white-space: pre; display: block;">h1 {
     font-size: 16pt;
     font-weight: bold;
@@ -133,37 +133,10 @@ er automatisch groot uit!&lt;/h1&gt;
   <p>Commentaarregels worden omgeven met <i>/*</i> en <i>*/</i>,
   vergelijkbaar met Java en C++.</p>
 
-  <h3>Stylesheets toepassen</h3>
-  <h4>Linked stylesheets</h4>
-  <p>Hiervoor moet je CSS-bestand aanmaken, bv mbv NotePad/Kladblok,
-  waarin je de stijldefinities opneemt.</p>
-
-  <h4>Embedded stylesheets</h4>
-  <p>Hiervoor wordt dus de &lt;style&gt;-tag gedefinieerd in het
-  headerdeel van het huidige HTML document. De invloed van deze tag is
-  beperkt tot het huidige document.</p>
-
-  <h4>Inline stylesheets</h4>
-  <p>Deze gebruikt u als u in een beperkt deel van een (1) webpagina een
-  aparte opmaak wilt hanteren, b.v. tekst wilt laten inspringen. Aan de
-  betreffende HTML-tag geef je dan het style-attribuut mee.
-  <br />
-  Voor toepassing van de stijl op een wat bredere sectie gebruik je de
-  &lt;span&gt;-tag of de &lt;div&gt;-tag (div staat voor division), die
-  je voorziet van een style-attribuut. Deze stijl is dan van kracht tot
-  de eindtag &lt;/span&gt;-tag of &lt;/div&gt;-tag.</p>
-
-  Zie <a href="week3_style.html">week3_style.html</a> voor een
-  toepassing van deze styles!</p>
-
   <h3>Classes binnen stylesheets</h3>
-  <p>Als je voor 1 tag (toch) meerdere
-  stijldefinities zou willen toepassen, dan moet je volgens het
-  bovenstaande even zo vele inline styles definieren. Met behulp van
-  <i>classes</i> kan dit eenvoudiger en bovendien kun je die classes,
-  indien gewenst, meteen voor verschillende typen tags definiëren.</p>
+  <p>Als je dezelfde stijl wilt geven aan bepaalde elementen en je kan het niet doen met de tagname dan kan je dat ook via een class doen.</p>
 
-  Stel dat we alle belangrijke elementen <span style="color: red;">rood</span> willen maken. Dan kunnen we de belangrijke dingen de class "belangrijk" geven. Met css kunnen we deze class dan rood maken.
+  Stel dat we alle belangrijke elementen <span style="color: red;">rood</span> willen maken. Dan kunnen we deze de class "belangrijk" geven. Met css kunnen we deze class dan rood maken. De punt voor de naam in css geeft aan dat we alleen de elementen met de juiste 'class' willen hebben.
 
   <code class="livepreview pre">&lt;style&gt;
   .belangrijk {
@@ -176,8 +149,10 @@ er automatisch groot uit!&lt;/h1&gt;
 &lt;h3 class="belangrijk"&gt;Belangrijk onderwerp!&lt;/h3&gt;
 &lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
 
-&lt;div class="belangrijk"&gt;Dit is een div. Maar wel een belangrijke div.&lt;/div&gt;
-</code>
+&lt;div class="belangrijk"&gt;
+  Dit is een div.
+  Maar wel een belangrijke div.
+&lt;/div&gt;</code>
 
 </body>
 </html>
