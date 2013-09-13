@@ -51,8 +51,10 @@ $(function() {
             window.location = url;
         } else if(url.length > 1) {
             // Load content
-
-            $('#content').load(url, function() {
+            $('#content').load(url, function(responseText, textStatus, req) {
+                if(textStatus == 'error') {
+                    window.location = url;
+                }
                 livepreview();
 
                 // Prepend the directory name to all links in the content
