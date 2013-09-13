@@ -9,67 +9,96 @@
 </head>
 
 <body>
-  <h2>Tags voor tekstindeling</h2>
-  <hr />
-  <!-- hieronder volgt een dtukje uitleg over het toevoegen van commentaar aan je HTML-code -->
-  <code>&lt;!--</code> en <code>--&gt;</code><br />
-  Met behulp van deze tags kun je <b>commentaar</b> in je document
-  opnemen. Alles wat tussen deze tags staat wordt door de browser
-  genegeerd, al zullen we later zien dat hier wel enkele uitzonderingen
-  op zijn.<br />
-  Hoewel je met deze tag de tekstindeling niet kunt be&iuml;nvloeden,
-  kun je hiermee de indeling voor jezelf en anderen wel verduidelijken.
-  Het is een goed gebruik om (zeker bij websites die uit veel
-  pagina&rsquo;s bestaan) je webpagina&rsquo;s van commentaar te
-  voorzien. In ieder geval is dit noodzakelijk als iemand anders het
-  werk later over zal nemen of als je met anderen tegelijk aan een
-  website werkt.<br />
-  Wees wel voorzichtig met het opnemen van persoonlijk commentaar. De
-  broncode van je webpagina is immers door iedereen te lezen!<br />
-  <br />
-  <code>&lt;p&gt;</code><br />
-  Je kunt met deze tag je tekst opdelen in <b>p</b>aragrafen.<br />
-  De tekst die in een &lt;p&gt; tag staat wordt afgedrukt als een alinea. Er wordt dan ruimte voor en na de alinea vrijgelaten. Tekst na de p tag begint daarna weer op een nieuwe regel.<br />
-  <br />
-  <code>&lt;br&gt;</code><br />
-  De tekst die na deze tag komt begint op een nieuwe regel
-  (<b>br</b>eak). Deze tag heeft geen eindtag.<br />
-  <br />
-  <code>&lt;div&gt;</code><br />
-  Je kunt met deze tag je tekst opdelen in logische betekenisvolle
-  eenheden (<b>div</b>ision&#39;s), waaraan je vervolgens m.b.v. de
-  attributen die bij deze tag horen een bepaalde opmaak kunt
-  toekennen.<br />
-  <br />
-  <code>&lt;span&gt;</code><br />
-  Deze tag is vergelijkbaar met de div-tag, d.w.z. dat er tekst mee
-  kunt opdelen in eenheden. Het verschil met de div-tag is echter dat
-  de div-tag een zgn. &#39;box&#39;-tag is (dwz betrekking hebben op
-  een rechthoekig gebied), terwijl de span-tag regel- of
-  tekengeori&euml;nteerd is.<br />
-  Als je div-tag van inspringing voorziet, geldt dat voor het hele
-  gebied, terwijl dat bij een span-tag voor de 1<sup>e</sup> regel zou gelden. Dit
-  komt later bij het gebruik van stylesheets aan de orde.<br />
-  <br />
-  <code>&lt;hr&gt;</code><br />
-  Met behulp van deze tag kun je een horizontale lijn
+  <img src="sketch.png" alt="Paper sketch" class="pull-right">
+
+  <h2>Tekstindeling</h2>
+
+  <h3>Headers</h3>
+
+  <p>Met <code>&lt;h1&gt;</code> tot en met <code>&lt;h6&gt;</code>
+      voeg je kopjes toe aan je pagina.
+    Met behulp van de tags kun je &quot;koppen&quot; in je tekst opnemen
+    (<b>h</b>eader).</p>
+
+<code class="livepreview pre">&lt;h1&gt;Belangrijkste kop&lt;/h1&gt;
+&lt;h2&gt;Onderwerp kop&lt;/h2&gt;
+&lt;h3&gt;Subkopje&lt;/h3&gt;
+&lt;h4&gt;Sub-subkopje&lt;/h4&gt;
+&lt;h5&gt;Sub-sub-subkopje&lt;/h5&gt;
+&lt;h6&gt;Nauwelijks nog een kopje&lt;/h6&gt;</code>
+
+
+  <h3>Paragraaf</h3>
+  <p>Je kunt met deze tag je tekst opdelen in <b>p</b>aragrafen.</p>
+
+  <p>De tekst die in een <code>&lt;p&gt;</code> tag staat wordt afgedrukt als een alinea.
+  Er wordt dan ruimte voor en na de alinea vrijgelaten. Tekst na de p tag begint daarna weer op een nieuwe regel.
+  Lopende tekst zoals artikelen, nieuwsberichten, blog-posts, verhalen en andere inhoud staat bijna altijd binnen paragraaf tags.
+  </p>
+
+  <code class="livepreview pre">&lt;p&gt;Deze tekst staat in een paragraaf&lt;/p&gt;
+&lt;p&gt;En deze staat in een volgende paragraaf&lt;/p&gt;
+
+</code>
+
+
+  <h3>Div</h3>
+  <p>Je kunt met de <code>&lt;div&gt;</code> tag je tekst opdelen in logische betekenisvolle
+  eenheden (<b>div</b>ision's). Met behulp van stylesheets kunnen we dan layout toevoegen
+  aan de div's. Volgende week gaan we zien hoe we dat kunnen doen.</p>
+
+  <code class="livepreview pre">&lt;div&gt;
+  Deze tekst staat in een div.
+  Zonder stylesheets voegt een div weinig toe.
+&lt;/div&gt;</code>
+
+
+  <h3>Span</h3>
+  <p>De <code>&lt;span&gt;</code> is vergelijkbaar met de div-tag. We kunnen er tekst mee
+  kunt opdelen in eenheden. Het verschil is dat
+  de div-tag een 'block'-tag is, deze hebben altijd een rechthoekige vorm op de pagina.</p>
+
+  <p>De span tag is een 'inline'-tag. Inline tags zijn niet rechthoekig en juist geschikt om stukken tekst mee te markeren</p>
+
+  <p>Net zoals de div tag voegt de span tag van zichzelf geen opmaak toe aan de pagina. Dat gaan we later doen met css</p>
+
+  <code class="livepreview pre">Met de span tag kunnen
+we &lt;span&gt;gedeeltes van de pagina&lt;/span&gt; aangeven
+zonder de flow van de tekst te onderbreken.</code>
+
+
+  <h3>Horizontal Ruler</h3>
+  <p>Met de <code>&lt;hr&gt;</code> tag kun je een horizontale lijn
   (<b>h</b>orizontal <b>r</b>uler) in je document plaatsen en daarmee
   de verschillende onderdelen van een pagina duidelijk van elkaar
-  onderscheiden. Dit gebruik je als je bijvoorbeeld in een artikel van onderwerp verandert.<br />
-  <br />
-  <code>&lt;h1&gt;</code> tot en met <code>&lt;h6&gt;</code>;<br />
-  Met behulp van de tags kun je &quot;koppen&quot; in je tekst opnemen
-  (<b>h</b>eader).<br />
+  onderscheiden. Dit gebruik je als je bijvoorbeeld in een artikel van onderwerp verandert.</p>
 
-  <h1>Deze tekst staat tussen <code>&lt;h1&gt;</code></h1>
-  <h2>Deze tekst staat tussen <code>&lt;h2&gt;</code></h2>
-  <h3>Deze tekst staat tussen <code>&lt;h3&gt;</code></h3>
-  <h4>Deze tekst staat tussen <code>&lt;h4&gt;</code></h4>
-  <h5>Deze tekst staat tussen <code>&lt;h5&gt;</code></h5>
-  <h6>Deze tekst staat tussen <code>&lt;h6&gt;</code></h6><br />
-  <br />
+  <code class="livepreview">&lt;hr&gt;</code>
 
-    <p><font color="#808080" size="2" face="arial">SPIJ20120827</font></p>
+
+    <h3>Commentaar</h3>
+
+    <p>Met behulp van <code>&lt;!--</code> en <code>--&gt;</code> kun je commentaar in je document
+    opnemen. Alles wat tussen deze tags staat wordt door de browser
+    genegeerd, al zullen we later zien dat hier wel enkele uitzonderingen
+    op zijn.</p>
+
+    <p>Hoewel je met deze tag de tekstindeling niet kunt be&iuml;nvloeden,
+    kun je hiermee de indeling voor jezelf en anderen wel verduidelijken.
+    Het is een goed gebruik om (zeker bij websites die uit veel
+    pagina's bestaan) je webpagina's van commentaar te
+    voorzien. In ieder geval is dit noodzakelijk als iemand anders het
+    werk later over zal nemen of als je met anderen tegelijk aan een
+    website werkt.</p>
+
+    <p>Wees wel voorzichtig met het opnemen van persoonlijk commentaar. De
+    broncode van je webpagina is immers door iedereen te lezen!</p>
+
+    <code class="livepreview pre">Een stukje tekst.
+&lt;!-- Commentaar.
+Dit zie je niet terug op de pagina! --&gt;
+Nog een stukje tekst.</code>
+
 
 </body>
 </html>
