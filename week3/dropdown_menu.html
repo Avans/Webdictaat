@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img src="dropdown.png" class="pull-right" style="margin: 15px;">
+  <h2>CSS toegepast: Dropdown menu</h2>
+
+  <p>In je navigatiestructuur zitten vaak meerdere niveau's. Om bij een pagina te komen moet de gebruiker eerst een paar submenu's hebben gekozen. Een mooie manier om dit weer te geven is met een dropdown menu. De gebruiker kan dan met de muis boven een categorie hangen en dan verschijnt er vanzelf een submenu waarin de gebruiker verder kan navigeren.</p>
+
+  <p>Een menu kunnen we opbouwen uit lijsten. Elk menu is een lijst en elk menu item is een lijst item. Submenu's staan op dezelfde manier dan weer binnen deze lijst items.</p>
+
+  <p>Dat komt er dan bijvoorbeeld zoals hieronder uit te zien. Let goed op hoe de &lt;li&gt; open en sluit tags geplaatst zijn.</p>
+
+<code class="livepreview pre">&lt;ul&gt;
+  &lt;li&gt;Home&lt;/li&gt;
+  &lt;li&gt;Tutorials
+    &lt;ul&gt;
+      &lt;li&gt;Photoshop&lt;/li&gt;
+      &lt;li&gt;Illustrator&lt;/li&gt;
+      &lt;li&gt;Webdesign
+        &lt;ul&gt;
+          &lt;li&gt;HTML&lt;/li&gt;
+          &lt;li&gt;CSS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Articles&lt;/li&gt;
+  &lt;li&gt;Inspiration&lt;/li&gt;
+&lt;/ul&gt;</code>
+
+<p>Dit kan je uiteraard nog mooier maken met CSS, maar dat mag jij zelf doen!</p>
+
+<p>Als we willen dat alleen de submenu's getoond moeten worden als je met de muis er overheen beweegt
+    moeten twee CSS regels toevoegen. In onderstaande code zie je welke twee.</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  /* Alle submenu's zijn niet zichtbaar */
+  li > ul {
+      display: none;
+  }
+
+  /* Alle submenu's waar over gehoverd wordt zijn wel zichtbaar */
+  li:hover > ul {
+      display: block;
+  }
+&lt;/style&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Home&lt;/li&gt;
+
+  &lt;li&gt;Tutorials
+    &lt;ul&gt;
+      &lt;li&gt;Photoshop&lt;/li&gt;
+      &lt;li&gt;Illustrator&lt;/li&gt;
+      &lt;li&gt;Webdesign
+        &lt;ul&gt;
+          &lt;li&gt;HTML&lt;/li&gt;
+          &lt;li&gt;CSS&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;Articles&lt;/li&gt;
+
+  &lt;li&gt;Inspiration&lt;/li&gt;
+&lt;/ul&gt;
+
+Ga met de muis over de items om de verschillende submenu's te zien.</code>
+
+<p>De eerste css regel zegt dat alle submenu's normaal niet zichtbaar zijn. <code>li > ul</code> zijn alle menu's die binnen een li zitten (dat zijn dus alle submenu's, maar niet het hoofdmenu!). Deze hebben de regel <code>display: none</code> wat betekent dat ze niet worden weergegeven. Alsof ze helemaal niet in de HTML aanwezig zijn.</p>
+
+<p>De volgende regel zegt iets over <code>li:hover > ul</code>. Dit zijn weer alle submenu's, maar dit keer alleen de submenu's die in een menu item zitten waar de muis boven zweeft (<code>:hover</code>). Over deze elementen wordt gezegd dat ze <code>display: block</code> hebben, wat betekent dat ze juist wel zichtbaar zijn. Deze regel is iets specifieker. Dus hoewel op submenu's beide regels van toepassing kunnen zijn (maak onzichtbaar, maak zichtbaar), wint deze het van de vorige regel.</p>
+
+</body>
+</html>
