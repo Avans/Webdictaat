@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img src="columns.png" class="pull-right" style="margin: 15px">
+  <h2>CSS toegepast: Twee kolommen</h2>
+  <p>Veel websites hebben een paginalayout die bestaat uit twee of drie kolommen. Dit zijn
+      gebieden op de website die horizontaal naast elkaar staan en ieder hun eigen soort inhoud bevat.</p>
+
+  <p>Vaak zie je dat websites bijvoorbeeld een menu naast de content van de . Dit dictaat is daar een mooi voorbeeld van, deze website heeft twee kolommen. Eén kolom met het menu en één kolom met de inhoud.</p>
+
+  <h3>Met tabellen</h3>
+  <p>Vroeger deden we dit met <b>tabellen</b>. Je kan vrij makkelijk een venster vullende tabel maken met één rij en twee kolommen. Dan kan je deze tabel gebruiken voor de kolommen van je website. Dit werkt goed, maar wordt tegenwoordig gezien als een <b>bad practice</b>. Deze techniek moet je dus eigenlijk niet meer gebruiken.</p>
+
+  <p>We moeten dus eigenlijk CSS gebruiken voor kolommen, maar waarom gebruiken we niet een &lt;table&gt; als deze vaak makkelijker is?</p>
+
+  <ul>
+      <li><h5>Dit is semantisch niet correct.</h5>
+          <p>Aan elke HTML tag kleeft ook een betekenis. Een &lt;p&gt; gebruiken we voor paragrafen en &lt;h1&gt; gebruiken we voor headers. We kunnen deze tags ook andersom gebruiken, maar dan gaan we voorbij aan waar we ze voor zouden moeten gebruiken.</p>
+
+          <p>Zo ook voor een &lt;table&gt;, deze moeten we eigenlijk alleen voor <b>tabulaire data</b> gebruiken. Data die je bijvoorbeeld ook in een spreadsheet zou kunnen zetten. Een tabel met twee cellen met een volledige website daarin is dat dat duidelijk niet.</p></li>
+
+      <li>
+        <h5>In HTML hoort geen layout informatie te staan.</h5>
+        <p>In de HTML staat alleen maar de inhoud van de webpagina. Alle tags geven aan wat alle gedeeltes betekenen, maar geven niet aan waar op de pagina dit hoort te staan. Dit is de taak van CSS. Als we het menu op een dag aan de rechterkant willen zetten zouden we niet de HTML hoeven aan te passen.</p></li>
+
+    <li>
+        <h5>Het is minder flexibel.</h5>
+        <p>Het meest praktische argument om geen tabellen te gebruiken is omdat je er simpelweg minder mee kan. Probeer deze website maar eens smaller te maken, als je hem smal genoeg maakt gaat het menu boven de inhoud staan. Je kan in de CSS aangeven dat bepaalde kolommen niet geprint mogen worden, of op een andere plek getoond worden op mobiele apparaten. Dat zijn dingen die je niet met tabellen kan doen</p></li>
+  </ul>
+
+<h3>Met CSS</h3>
+
+<p>
+  We hebben met CSS al gezien hoe je elementen naast tekst kan laten 'floaten'. Als je dit vergeten bent kijk dan snel nog even bij het hoofdstukje 'Float'. Dit floaten kunnen we ook gebruik om twee kolommen naast elkaar te zetten. Stel we hebben de volgende HTML die we in twee kolommen willen zetten:
+</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  #kolom1 {
+    border: 1px solid red;
+  }
+
+  #kolom2 {
+      border: 1px solid blue;
+  }
+&lt;/style&gt;
+
+&lt;div id="kolom1"&gt;Kolom 1&lt;/div&gt;
+&lt;div id="kolom2"&gt;
+ Kolom 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mi ut elementum ultricies, turpis velit facilisis ante, vitae luctus nunc erat non sem.
+&lt;/div&gt;</code>
+
+<p>Standaard zijn blok elementen zoals div zo breed als ze maar kunnen zijn. Deze twee div's gaan zoals je ziet nooit naast elkaar passen. Laten we ze eerst de juiste breedte geven:</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  #kolom1 {
+    border: 1px solid red;
+    width: 30%;
+  }
+
+  #kolom2 {
+      border: 1px solid blue;
+      width: 60%;
+  }
+&lt;/style&gt;
+
+&lt;div id="kolom1"&gt;Kolom 1&lt;/div&gt;
+&lt;div id="kolom2"&gt;
+ Kolom 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mi ut elementum ultricies, turpis velit facilisis ante, vitae luctus nunc erat non sem.
+&lt;/div&gt;</code>
+
+<p>Dat gaat waarschijnlijk wel passen. We voegen nu een <code>float: left</code> toe aan de eerste kolom. Met float kunnen we ervoor zorgen dat de eerste kolom links van de tweede kolom komt te staan.</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  #kolom1 {
+    border: 1px solid red;
+    width: 30%;
+    float: left;
+  }
+
+  #kolom2 {
+      border: 1px solid blue;
+      width: 60%;
+  }
+&lt;/style&gt;
+
+&lt;div id="kolom1"&gt;Kolom 1&lt;/div&gt;
+&lt;div id="kolom2"&gt;
+ Kolom 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mi ut elementum ultricies, turpis velit facilisis ante, vitae luctus nunc erat non sem.
+&lt;/div&gt;</code>
+
+<p>De div's gedragen zich nu zoals de balon en de tekst in het hoofdstuk 'Float'. De tweede kolom loopt nu om de eerste heen. Dat is niet wat we willen. We willen dat de tweede div er volledig naast staat.</p>
+
+<p>Om dit te doen kunnen we een eigenschap van floats gebruiken: <b>Twee floatende elementen dezelfde ruimte willen innemen gaan naast elkaar staan.</b> Dit doen ze wel alleen als er horizontaal ruimte genoeg is, anders gaan ze alsnog onder elkaar staan.</p>
+
+<p>Als we ze allebei dus left laten floaten gaan ze als twee kolommen naast elkaar staan:</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  #kolom1 {
+    border: 1px solid red;
+    width: 30%;
+    float: left;
+  }
+
+  #kolom2 {
+      border: 1px solid blue;
+      width: 60%;
+      float: left;
+  }
+&lt;/style&gt;
+
+&lt;div id="kolom1"&gt;Kolom 1&lt;/div&gt;
+&lt;div id="kolom2"&gt;
+ Kolom 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur, mi ut elementum ultricies, turpis velit facilisis ante, vitae luctus nunc erat non sem.
+&lt;/div&gt;</code>
+
+<p>Het zal je misschien opvallen dat de percentages niet tot 100% optellen. Dit is omdat de width de inhoud van een div aangeeft, exclusief de border. Als we ze wel tot 100% laten optellen is de totale inhoud (100%) plus die paar pixels die nodig zijn voor de border breder dan de beschikbare horizontale ruimte. De twee floatende elementen gaan dan juist weer onder elkaar staan.</p>
+
+<p>Probeer maar eens hierboven de width tot 100% op te laten tellen. En daarna de border weg te halen. Als het goed is past het dan juist weer wel.</p>
+
+<p>Je ziet dat de eerste kolom niet zo hoog is als de tweede kolom. Je kan met <code>min-height</code> deze hoger maken, maar het is in CSS niet mogelijk om te zeggen dat een element 'even hoog' moet zijn als een ander element.</p>
+</body>
+</html>
