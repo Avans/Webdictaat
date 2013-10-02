@@ -3,22 +3,27 @@ $(function() {
         $('.livepreview').each(function(i, code) {
             code = $(code);
             var css_span = code.find('.css');
-            css_span.html(css_span.html().trim())
-            var css_height = css_span.height() + 10;
-            css_span.detach();
+            var has_css = css_span.length > 0;
+
+            if(has_css) {
+                css_span.html(css_span.html().trim())
+                var css_height = css_span.height() + 10;
+                css_span.detach();
+            }
 
             code.html(code.html().trim());
-
 
             var textareas = $('<div></div>');
             code.after(textareas);
 
             //Make a copy of the code element as a textarea
-            var css_textarea = $('<textarea class="live_preview css"></textarea>');
-            textareas.append(css_textarea);
-            css_textarea.copyCSS(code);
-            css_textarea.text(css_span.text().trim())
-            css_textarea.height(css_height);
+            if(has_css) {
+                var css_textarea = $('<textarea class="live_preview css"></textarea>');
+                textareas.append(css_textarea);
+                css_textarea.copyCSS(code);
+                css_textarea.text(css_span.text().trim())
+                css_textarea.height(css_height);
+            }
 
             var html_textarea = $('<textarea class="live_preview html"></textarea>');
             textareas.append(html_textarea);
@@ -27,30 +32,44 @@ $(function() {
 
             html_textarea.data('html_textarea', html_textarea);
             html_textarea.data('css_textarea', css_textarea);
-            css_textarea.data('html_textarea', html_textarea);
-            css_textarea.data('css_textarea', css_textarea);
+
+            if(has_css) {
+                css_textarea.data('html_textarea', html_textarea);
+                css_textarea.data('css_textarea', css_textarea);
+            }
 
             // Create a live preview of the textarea
             var preview = $('<iframe class="live_preview"></iframe>');
             textareas.after(preview);
-            preview.height(html_textarea.height() + css_textarea.height() + 14);
+
+            var height = html_textarea.height();
+            if(has_css)
+                height += css_textarea.height() + 14
+            preview.height(height);
+
             function update(e) {
-                var html = '<base target="_top" />'
-                    + '<style>' + $(this).data('css_textarea')[0].value + '</style>'
-                    + $(this).data('html_textarea')[0].value;
+                var html = '<base target="_top" />';
+
+                if($(this).data('css_textarea'))
+                    html += '<style>' + $(this).data('css_textarea')[0].value + '</style>';
+
+                html += $(this).data('html_textarea')[0].value;
 
                 preview.contents().find('body').html(html);
             };
 
             html_textarea.keyup(update);
             html_textarea.change(update);
-            css_textarea.keyup(update);
-            css_textarea.change(update);
             update.call(html_textarea);
-            update.call(css_textarea);
+
+            if(has_css) {
+                css_textarea.keyup(update);
+                css_textarea.change(update);
+                 update.call(css_textarea);
+            }
+
             window.setTimeout(function() {
                 update.call(html_textarea);
-                update.call(css_textarea);
             }, 100);
 
             preview.after($('<p class="live_preview"></p>'));
