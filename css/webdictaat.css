@@ -9,7 +9,6 @@ pre, code, iframe.live_preview {
 
 iframe.live_preview {
     width: 45%;
-    float: left;
     border: 1px solid rgb(225, 225, 232);
     border-left-width: 0;
 }
