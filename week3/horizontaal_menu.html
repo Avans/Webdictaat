@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img src="floating_ducks.png" class="pull-right" style="margin: 15px;">
+  <h2>CSS toegepast: Horizontaal menu</h2>
+
+  <p>Een mooie manier van een menu maken is om deze horizontaal bovenaan de pagina te plaatsen. We hebben al geleerd om een menu met &lt;ul&gt; en &lt;li&gt; te maken. Maar dit soort lijsten worden standaard verticaal weergegeven.</p>
+
+  <p>We kunnen een menu horizontaal maken met behulp van de <code>float</code> property. Als floats dezelfde ruimte in beslag nemen gaan ze namelijk naast elkaar staan. Dit kunnen we gebruiken om de menu items naast elkaar te plaatsen.</p>
+
+  <p>We moeten wel opletten dat we alleen de menu items van het hoofdmenu horizontaal plaatsen, als we alle menu items horizontaal neerzetten wordt het juist weer verwarrend (probeer maar eens).</p>
+
+  <p>In onderstaand voorbeeld hebben we dat gedaan met de <code>nav > ul > li</code> selector, die zegt dat alleen de li die in een ul zit die binnen de nav zit. Dit geldt wel voor de hoofdmenu items maar niet voor de submenu items</p>
+
+  <p>Let op dat we hier de <code>></code> selector moeten gebruiken. Als we enkel spaties gebruiken selecteren we alle li elementen in plaats van enkel de items van het hoofdmenu.</p>
+
+<code class="livepreview pre">&lt;style&gt;
+  nav > ul > li {
+      float: left;
+      border: 1px solid black;
+  }
+&lt;/style&gt;
+
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Home&lt;/li&gt;
+    &lt;li&gt;Tutorials
+      &lt;ul&gt;
+        &lt;li&gt;Photoshop&lt;/li&gt;
+        &lt;li&gt;Illustrator&lt;/li&gt;
+        &lt;li&gt;Webdesign&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Articles&lt;/li&gt;
+    &lt;li&gt;Inspiration&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code>
+
+
+</body>
+</html>
