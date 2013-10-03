@@ -7,14 +7,23 @@ textarea.live_preview {
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
     padding: 8px;
     font-size: 12px;
+
+    color: #d14;
+    background-color: #f7f7f9;
+
+    background-repeat: no-repeat;
+    background-position: right top;
 }
 
 .live_preview.css {
     border-bottom-width: 0;
+    background-image: url(../img/css.png);
+    color: #bc0000;
 }
 
 .live_preview.html {
-    background-image: url(../img/htmfl.gif);
+    background-image: url(../img/html.png);
+    color: red;
 }
 
 pre, code, iframe.live_preview {
@@ -41,10 +50,6 @@ body {
     padding-top: 60px;
     padding-bottom: 40px;
   }
-
-textarea {
-    color: blue !important;
-}
 
 .nav ol {
     list-style-type: decimal;

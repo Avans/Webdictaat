@@ -7,7 +7,7 @@ $(function() {
 
             if(has_css) {
                 css_span.html(css_span.html().trim())
-                var css_height = css_span.height() + 10;
+                var css_height = css_span.height() + 5;
                 css_span.detach();
             }
 
