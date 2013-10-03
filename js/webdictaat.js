@@ -20,15 +20,14 @@ $(function() {
             if(has_css) {
                 var css_textarea = $('<textarea class="live_preview css"></textarea>');
                 textareas.append(css_textarea);
-                css_textarea.copyCSS(code);
                 css_textarea.text(css_span.text().trim())
                 css_textarea.height(css_height);
             }
 
             var html_textarea = $('<textarea class="live_preview html"></textarea>');
             textareas.append(html_textarea);
-            html_textarea.copyCSS(code)
             html_textarea.text(code.text().trim());
+            html_textarea.height(code.height());
 
             html_textarea.data('html_textarea', html_textarea);
             html_textarea.data('css_textarea', css_textarea);

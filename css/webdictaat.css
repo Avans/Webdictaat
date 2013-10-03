@@ -1,10 +1,24 @@
 textarea.live_preview {
     width: 50% !important;
     float: left !important;
+    margin: 0;
+    border: 1px solid rgb(225, 225, 232);
+    box-shadow: none;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.live_preview.css {
+    border-bottom-width: 0;
+}
+
+.live_preview.html {
+    background-image: url(../img/htmfl.gif);
 }
 
 pre, code, iframe.live_preview {
-    padding: 6px;
+    padding: 8px;
 }
 
 iframe.live_preview {
