@@ -31,26 +31,29 @@
   <h4>Sterretje selector</h4>
   <p>Met de sterretje selecteer je alle elementen. Je kan dus aan alle elementen tegelijk dezelfde stijlregels geven. Deze selector wordt niet veel gebruikt.</p>
 
-  <code class="livepreview pre">&lt;style&gt;
-  * {
-    color: red;
-  }
-&lt;/style&gt;
+  <code class="livepreview pre">
+<span class="css">
+* {
+  color: red;
+}
+</span>
 
 &lt;p&gt;Sterretje selecteert alle elementen! Waaronder:&lt;/p&gt;
 &lt;div&gt;Een div&lt;/div&gt;
 &lt;h3&gt;Een header&lt;/h3&gt;
-&lt;p&gt;En een paragraaf&lt;/p&gt;</code>
+&lt;p&gt;En een paragraaf&lt;/p&gt;
+</code>
 
   <h4>Element selector</h4>
 
   <p>Ok, sterretje is misschien wat te breed. Maar we kunnen ook alle elementen van een bepaalde tag selecteren met behulp van de element selector.</p>
 
-    <code class="livepreview pre">&lt;style&gt;
-  div {
-    color: red;
-  }
-&lt;/style&gt;
+    <code class="livepreview pre">
+<span class="css">
+div {
+  color: red;
+}
+</span>
 
 &lt;p&gt;De element selector is wat specifieker
   en selecteert alle elementen van een
@@ -71,16 +74,18 @@
 
   <p>Elementen kunnen meerdere classes hebben</p>
 
-    <code class="livepreview pre">&lt;style&gt;
-  .belangrijk {
-    color: red;
-  }
-&lt;/style&gt;
+    <code class="livepreview pre">
+<span class="css">
+.belangrijk {
+  color: red;
+}
+</span>
 
 &lt;div&gt;Een div&lt;/div&gt;
 &lt;div class="belangrijk"&gt;Een belangrijke div&lt;/div&gt;
 &lt;h3&gt;Een header&lt;/h3&gt;
-&lt;h3 class="belangrijk"&gt;Een belangrijke header&lt;/h3&gt;</code>
+&lt;h3 class="belangrijk"&gt;Een belangrijke header&lt;/h3&gt;
+</code>
 
 
   <h4>ID selector</h4>
@@ -90,39 +95,44 @@
 
   <p>In de CSS geven we ID selectors aan met een <code>#</code> gevolgd door de naam van de id</p>
 
-    <code class="livepreview pre">&lt;style&gt;
-  #anders {
-    color: red;
-  }
-&lt;/style&gt;
+    <code class="livepreview pre">
+<span class="css">
+#anders {
+  color: red;
+}
+</span>
 
 &lt;div&gt;Een div&lt;/div&gt;
 &lt;div id="anders"&gt;Een div met een id "anders"&lt;/div&gt;
-&lt;div id="nogeentje"&gt;Nog een div&lt;/div&gt;</code>
+&lt;div id="nogeentje"&gt;Nog een div&lt;/div&gt;
+</code>
 
   <h4>Komma selector</h4>
 
   <p>Als we de element selector voor meerdere soorten elementen willen gebruiken kunnen we deze combineren met de komma selector:</p>
 
-    <code class="livepreview pre">&lt;style&gt;
-  h2, h3 {
-    color: red;
-  }
-&lt;/style&gt;
+    <code class="livepreview pre">
+<span class="css">
+h2, h3 {
+  color: red;
+}
+</span>
 
 &lt;h1&gt;Grote header&lt;/h1&gt;
 &lt;h2&gt;Minder grote header&lt;/h2&gt;
-&lt;h3&gt;Kleine header&lt;/h3&gt;</code>
+&lt;h3&gt;Kleine header&lt;/h3&gt;
+</code>
 
   <h4>Spatie selector</h4>
 
   <p>Met de spatie selector kunnen we een groep elementen selecteren die zich <em>binnen</em> een bepaald element bevinden. Bijvoorbeeld alle lijst items in een menu </p>
 
-    <code class="livepreview pre">&lt;style&gt;
-  #hoofdmenu li {
-    list-style-type: square;
-  }
-&lt;/style&gt;
+    <code class="livepreview pre">
+<span class="css">
+#hoofdmenu li {
+  list-style-type: square;
+}
+</span>
 
 &lt;ul id="hoofdmenu"&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
@@ -139,11 +149,12 @@
 
   <p>De <code>></code> selector werkt bijna hetzelfde als de spatie selector. Maar selecteert alleen elementen die zich <em>direct</em> binnen een ander element bevindt. Vergelijk onderstaand voorbeeld eens met het bovenstaande.</p>
 
-    <code class="livepreview pre">&lt;style&gt;
-  #hoofdmenu > li {
-    list-style-type: square;
-  }
-&lt;/style&gt;
+    <code class="livepreview pre">
+<span class="css">
+#hoofdmenu > li {
+  list-style-type: square;
+}
+</span>
 
 &lt;ul id="hoofdmenu"&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
@@ -163,19 +174,20 @@
       Hieronder staan een paar voorbeelden. Als je zoekt op internet vind je er nog meer.
       </p>
 
-  <code class="livepreview pre">&lt;style&gt;
-  li:first-child {
-    color: red;
-  }
+  <code class="livepreview pre">
+<span class="css">
+li:first-child {
+  color: red;
+}
 
-  li:last-child {
-      color: blue;
-  }
+li:last-child {
+  color: blue;
+}
 
-  li:hover {
-      color: yellow;
-  }
-&lt;/style&gt;
+li:hover {
+  color: yellow;
+}
+</span>
 
 &lt;ul&gt;
   &lt;li&gt;Ga met de muis over de items heen&lt;/li&gt;
@@ -200,27 +212,29 @@
       </ul>
   </p>
 
-  <code class="livepreview pre">&lt;style&gt;
-    /* Verander '.eerste' in een andere
-       selector om de opdracht te maken */
-    .eerste {
-      color: red;
-    }
-  &lt;/style&gt;
+  <code class="livepreview pre">
+<span class="css">
+/* Verander '.eerste' in een andere
+   selector om de opdracht te maken */
+.eerste {
+  color: red;
+}
+</span>
 
-  &lt;div id="blokje1"&gt;
-    &lt;h3 class="eerste"&gt;Eerste onderwerp&lt;/h3&gt;
-    &lt;h3&gt;Tweede onderwerp&lt;/h3&gt;
-    &lt;h3 class="belangrijk"&gt;Belangrijk! Maak alleen mij rood&lt;/h3&gt;
-  &lt;/div&gt;
+&lt;div id="blokje1"&gt;
+  &lt;h3 class="eerste"&gt;Eerste onderwerp&lt;/h3&gt;
+  &lt;h3&gt;Tweede onderwerp&lt;/h3&gt;
+  &lt;h3 class="belangrijk"&gt;Belangrijk! Maak alleen mij rood&lt;/h3&gt;
+&lt;/div&gt;
 
-  &lt;hr&gt;
+&lt;hr&gt;
 
-  &lt;div id="blokje2"&gt;
-    &lt;h3 class="eerste"&gt;Eerste onderwerp in blokje twee&lt;/h3&gt;
-    &lt;h3 class="belangrijk"&gt;Belangrijk in blokje 2&lt;/h3&gt;
-    &lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
-  &lt;/div&gt;</code>
+&lt;div id="blokje2"&gt;
+  &lt;h3 class="eerste"&gt;Eerste onderwerp in blokje twee&lt;/h3&gt;
+  &lt;h3 class="belangrijk"&gt;Belangrijk in blokje 2&lt;/h3&gt;
+  &lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
+&lt;/div&gt;
+</code>
 
   Kom je niet uit de laatste oefening? <a href="#" onclick="$('#antwoord').toggle(); return false;">Bekijk dan het antwoord</a>
   <code style="display: none;" id="antwoord">#blokje1 .belangrijk</code>

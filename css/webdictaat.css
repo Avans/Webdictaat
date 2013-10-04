@@ -1,15 +1,42 @@
 textarea.live_preview {
     width: 50% !important;
     float: left !important;
+    margin: 0;
+    border: 1px solid rgb(225, 225, 232);
+    box-shadow: none;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    padding: 8px;
+    font-size: 12px;
+
+    color: #d14;
+    background-color: #f7f7f9;
+
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+code.livepreview {
+    display: block;
+    white-space: pre-wrap;
+    min-height: 2.5em;
+}
+.live_preview.css {
+    border-bottom-width: 0;
+    background-image: url(../img/css.png);
+    color: #bc0000;
+}
+
+.live_preview.html {
+    background-image: url(../img/html.png);
+    color: #d14;
 }
 
 pre, code, iframe.live_preview {
-    padding: 6px;
+    padding: 8px;
 }
 
 iframe.live_preview {
     width: 45%;
-    float: left;
     border: 1px solid rgb(225, 225, 232);
     border-left-width: 0;
 }
@@ -19,19 +46,15 @@ p.live_preview {
     margin-bottom: 15px;
 }
 
-code.pre {
-    white-space: pre;
+.pre {
     display: block;
+    white-space: pre-wrap;
 }
 
 body {
     padding-top: 60px;
     padding-bottom: 40px;
   }
-
-textarea {
-    color: blue !important;
-}
 
 .nav ol {
     list-style-type: decimal;

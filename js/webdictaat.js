@@ -2,29 +2,75 @@ $(function() {
     function livepreview() {
         $('.livepreview').each(function(i, code) {
             code = $(code);
+            var css_span = code.find('.css');
+            var has_css = css_span.length > 0;
+
+            if(has_css) {
+                css_span.html(css_span.html().trim())
+                var css_height = css_span.height() + 5;
+                css_span.detach();
+            }
+
+            code.html(code.html().trim());
+
+            var textareas = $('<div></div>');
+            code.after(textareas);
+
             //Make a copy of the code element as a textarea
-            var textarea = $('<textarea class="live_preview"></textarea>');
-            code.after(textarea)
-            textarea.copyCSS(code)
-            textarea.text(code.text());
+            if(has_css) {
+                var css_textarea = $('<textarea class="live_preview css"></textarea>');
+                textareas.append(css_textarea);
+                css_textarea.text(css_span.text().trim())
+                css_textarea.height(css_height);
+            }
+
+            var html_textarea = $('<textarea class="live_preview html"></textarea>');
+            textareas.append(html_textarea);
+
+            html_textarea.text(code.text().trim());
+            code.width(html_textarea.width());
+            html_textarea.height(code.height());
+
+            html_textarea.data('html_textarea', html_textarea);
+            html_textarea.data('css_textarea', css_textarea);
+
+            if(has_css) {
+                css_textarea.data('html_textarea', html_textarea);
+                css_textarea.data('css_textarea', css_textarea);
+            }
 
             // Create a live preview of the textarea
             var preview = $('<iframe class="live_preview"></iframe>');
-            textarea.after(preview);
-            preview.height(textarea.height());
-            function update(e) {
-                text_area = this;
-                if(text_area.length)
-                  text_area = text_area[0];
+            textareas.after(preview);
 
-                preview.contents().find('body').html('<base target="_top" />' + text_area.value);
+            var height = html_textarea.height();
+            if(has_css)
+                height += css_textarea.height() + 17;
+            preview.height(height);
+
+            function update(e) {
+                var html = '<base target="_top" />';
+
+                if($(this).data('css_textarea'))
+                    html += '<style>' + $(this).data('css_textarea')[0].value + '</style>';
+
+                html += $(this).data('html_textarea')[0].value;
+
+                preview.contents().find('body').html(html);
             };
 
-            textarea.keyup(update);
-            textarea.change(update);
-            update.call(textarea);
+            html_textarea.keyup(update);
+            html_textarea.change(update);
+            update.call(html_textarea);
+
+            if(has_css) {
+                css_textarea.keyup(update);
+                css_textarea.change(update);
+                 update.call(css_textarea);
+            }
+
             window.setTimeout(function() {
-                update.call(textarea);
+                update.call(html_textarea);
             }, 100);
 
             preview.after($('<p class="live_preview"></p>'));

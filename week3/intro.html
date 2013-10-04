@@ -2,13 +2,6 @@
 <html>
 <head>
   <title>Websites Bouwen 1 - Stylesheets</title>
-<style type="text/css">
-/*<![CDATA[*/
-h3.verdana {font-family: Verdana}
-h3.arial {font-family: Arial}
-.memo {color: orange; margin-left: 20px}
-/*]]>*/
-</style>
 </head>
 
 <body>
@@ -27,15 +20,15 @@ h3.arial {font-family: Arial}
 er automatisch groot uit!&lt;/h1&gt;
 
 
-
-
+&zwnj;
 </code>
 
   <p>Nu gaan we kijken hoe we webpagina's mooier kunnen maken door een <em>style</em> aan elementen van de pagina toe te voegen. Op die manier kunnen we bijvoorbeeld kleuren, fonts en randen van elementen aanpassen.</p>
 
   <p>In het onderstaande voorbeeld hebben we alle h1 tags van een nieuwe style voorzien.</p>
 
-  <code class="livepreview" style="white-space: pre; display: block;">&lt;html&gt;
+  <code class="livepreview pre">
+&lt;html&gt;
   &lt;head&gt;
     &lt;style&gt;
       h1 {
@@ -47,11 +40,9 @@ er automatisch groot uit!&lt;/h1&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;h1&gt;Hoofdstuk 1&lt;/h1&gt;
-    &lt;p&gt;Deze kopjes zien er mooier uit dan
-       hoe de browser het standaard opmaakt.&lt;/p&gt;
+    &lt;p&gt;Deze kopjes zien er mooier uit dan hoe de browser het standaard opmaakt.&lt;/p&gt;
     &lt;h1&gt;Hoofdstuk 2&lt;/h1&gt;
-    &lt;p&gt;En het werkt automatisch op alle h1
-       tags in de hele webpagina!&lt;/p&gt;
+    &lt;p&gt;En het werkt automatisch op alle h1 tags in de hele webpagina!&lt;/p&gt;
   &lt;/body&gt;
 &lt;/html&gt;</code>
 
@@ -138,11 +129,12 @@ er automatisch groot uit!&lt;/h1&gt;
 
   Stel dat we alle belangrijke elementen <span style="color: red;">rood</span> willen maken. Dan kunnen we deze de class "belangrijk" geven. Met css kunnen we deze class dan rood maken. De punt voor de naam in css geeft aan dat we alleen de elementen met de juiste 'class' willen hebben.
 
-  <code class="livepreview pre">&lt;style&gt;
-  .belangrijk {
-    color: red;
-  }
-&lt;/style&gt;
+  <code class="livepreview pre">
+<span class="css">
+.belangrijk {
+  color: red;
+}
+</span>
 
 &lt;h3&gt;Onderwerp&lt;/h3&gt;
 &lt;h3&gt;Nog een onderwerp&lt;/h3&gt;
