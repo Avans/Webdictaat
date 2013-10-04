@@ -15,6 +15,11 @@ textarea.live_preview {
     background-position: right top;
 }
 
+code.livepreview {
+    display: block;
+    white-space: pre-wrap;
+    min-height: 2.5em;
+}
 .live_preview.css {
     border-bottom-width: 0;
     background-image: url(../img/css.png);
@@ -23,7 +28,7 @@ textarea.live_preview {
 
 .live_preview.html {
     background-image: url(../img/html.png);
-    color: red;
+    color: #d14;
 }
 
 pre, code, iframe.live_preview {
@@ -41,9 +46,9 @@ p.live_preview {
     margin-bottom: 15px;
 }
 
-code.pre {
-    white-space: pre;
+.pre {
     display: block;
+    white-space: pre-wrap;
 }
 
 body {

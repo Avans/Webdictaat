@@ -33,17 +33,18 @@
 <p>Als we willen dat alleen de submenu's getoond moeten worden als je met de muis er overheen beweegt
     moeten twee CSS regels toevoegen. In onderstaande code zie je welke twee.</p>
 
-<code class="livepreview pre">&lt;style&gt;
-  /* Alle submenu's zijn niet zichtbaar */
-  li > ul {
-      display: none;
-  }
+<code class="livepreview pre">
+<span class="css">
+/* Alle submenu's zijn niet zichtbaar */
+li > ul {
+  display: none;
+}
 
-  /* Alle submenu's waar over gehoverd wordt zijn wel zichtbaar */
-  li:hover > ul {
-      display: block;
-  }
-&lt;/style&gt;
+/* Alle submenu's waar over gehoverd wordt zijn wel zichtbaar */
+li:hover > ul {
+  display: block;
+}
+</span>
 
 &lt;ul&gt;
   &lt;li&gt;Home&lt;/li&gt;

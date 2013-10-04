@@ -26,7 +26,9 @@ $(function() {
 
             var html_textarea = $('<textarea class="live_preview html"></textarea>');
             textareas.append(html_textarea);
+
             html_textarea.text(code.text().trim());
+            code.width(html_textarea.width());
             html_textarea.height(code.height());
 
             html_textarea.data('html_textarea', html_textarea);
@@ -43,7 +45,7 @@ $(function() {
 
             var height = html_textarea.height();
             if(has_css)
-                height += css_textarea.height() + 14
+                height += css_textarea.height() + 17;
             preview.height(height);
 
             function update(e) {
