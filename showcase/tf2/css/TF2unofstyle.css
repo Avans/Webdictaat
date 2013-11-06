@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+body {
+background-color:#3b3b3b;
+min-width:600px;
+}
+
+a:link {color:#ff8d33;}
+a:visited {color:#666666;}
+a:hover {color:#ff8d33;}
+a:active {color:#f2d191;}
+
+p { 
+	color: #dddddd;
+	font-family: arial;
+}
+ul {
+	color: #dddddd;
+	font-family: arial;
+	font-size: 14px;
+}
+
+
+h1 {
+	color: #dddddd;
+	font-family: arial;
+	font-size: 40px;
+	margin: 0px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+h2 {
+	color: #dddddd;
+	font-family: arial;
+	font-size: 30px;
+	margin: 0px;
+	text-shadow: 2px 2px 2px #000;
+}
+
+p {
+	font-family: arial;
+	font-size: 14px;
+}
+
+#banner {
+	position: center;
+}
+
+.main {
+	min-width:450px;
+    width:80.5%;
+	float: right;
+	border : 2px solid #dddddd;
+	border-radius: 8px;
+	background-color:#2c2c2c;
+	padding : 10px;
+}
+
+#ad {
+	width : auto;
+	min-width:12%;
+	max-width:12%;
+	float : left;
+	border : 2px solid #dddddd;
+	border-radius: 8px;
+	background-color: #2c2c2c;
+	padding : 3px;
+	margin-top: 0px;	/*IDK.. But somewhere theres some margin going on, so we need to override that*/
+}
+
+#classplaatje {
+	width: 15%;
+    float : right;
+	border :2px solid #dddddd;
+	border-radius: 8px;
+	background-color : #3b3b3b;	
+	padding-top: 10px;
+	padding-left: 10px; 
+	padding-right: 10px;
+	margin : 3px;
+	margin-left: 10px;
+}
+#classplaatje p {
+text-align: center; 
+}
+
+.infoplaatje {
+	width: 30%;
+    float : right;
+	border :2px solid #dddddd;
+	border-radius: 8px;
+	background-color : #3b3b3b;	
+	padding-top: 10px;
+	padding-left: 10px; 
+	padding-right: 10px;
+	margin : 3px;
+	margin-left: 10px;
+}
+
+.infoplaatje p {
+text-align: center; 
+}
+
+#infoplaatje p {
+text-align: center; 
+}
+	
+.classnavi 
+{
+height:auto;
+border: 1px; 
+float:left;
+min-width:7%;
+width:7%;
+height:25%;
+margin-right:5px;
+}
+
+.classnavi p 
+{
+font-size:80%;
+text-align: center;
+text-shadow: 1px 1px 1px #000;
+}	
+	
+hr {
+	height : 1px;
+	border-width: 0;
+	background-color : #ff8d33;
+	-moz-box-shadow:    1px 1px 2px #ff8d33;
+	-webkit-box-shadow: 1px 1px 2px #ff8d33;
+	box-shadow:         1px 1px 2px #ff8d33;
+}
+  
+#navMenu {
+	background-color: #505;
+	width: 82%;
+	height: 60%;
+	float: right;
+    /*margin-left: 20.2%;*/
+    padding: 0;
+}
+  
+#navMenu ul {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+  
+#navMenu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    position: relative;
+    background: #2c2c2c;
+	
+	width: 12.5%;
+}
+  
+#navMenu ul li a {
+    text-align: center;
+    font-family: "Arial";
+	font-size: 80%;
+    text-decoration: none;
+    height: 30px;
+    /*width: 150px;*/
+	width: 100%;
+	margin-left: -1px;
+    display: block;
+    color: #dddddd;
+    border: 1px solid #dddddd;
+    text-shadow: 1px 1px 1px #000;
+}
+  
+#navMenu ul ul {
+    position: absolute;
+    visibility: hidden;
+    /*top: 32px;*/
+	/*top: 100%;*/
+}
+
+#navMenu ul ul li {
+	width: 99.7%;
+}
+  
+#navMenu ul li:hover ul {
+    visibility: visible;
+}
+  
+/**  Horizontal Extra Menu Behavior  **//** TODO: AUTOMATIC SIZING **/
+#navMenu ul ul ul {
+    position: absolute;
+    left: 100%;
+	margin-left: 1px;
+    top: 0px;
+	width: 100%
+}
+#navMenu ul ul ul li {
+    display: none           /** Invisible **/
+}
+#navMenu ul ul li:hover ul li {
+    display: inline;        /** Default **/
+}
+  
+  
+/**  Hover Colors  **/
+  
+#navMenu li:hover {
+    background: #ff8d33;
+}
+  
+#navMenu ul li:hover ul li a:hover {
+    background: #f2d191;
+    color: #000;
+}
+  
+#navMenu a:hover {
+    color: #000;
+}
+/** Correct vertical div size **/
+.clearFloat {
+    clear: both;
+    margin: 0;
+    padding: 0;
+} 
+
+#nav_main_divider {
+	width: 100%;
+	height: 30px;
+	background-color: #909;
+	float: left;
+	visibility: hidden;
+}
+
+
+
