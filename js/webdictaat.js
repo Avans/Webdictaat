@@ -124,8 +124,15 @@ $(function() {
             window.location.hash = '/' + url;
         }
     };
-    $('.nav a').click(function() {
-        window.location.hash = '/' + $(this).attr('href');
+    $('.nav a').click(function(e) {
+        var hash_part = '/' + $(this).attr('href');
+        if(e.which == 2) {
+            // Middle mouse button
+            window.open(window.location.origin + window.location.pathname + '#' + hash_part, '_blank');
+        } else {
+            // Normal mouse button
+            window.location.hash = hash_part;
+        }
         return false;
     });
 
