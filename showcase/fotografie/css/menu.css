@@ -1,0 +1,64 @@
+/* Main Drop Down Menu */
+/* Gebaseerd op unordered lists in unordered lists */
+
+ul#menu{ /* Alle lijsten hebben geen stijl en een bepaalde achtergrond kleur. Maten aangeven zodat menu past in geheel */
+	width: 860px;
+	height: 20px;
+	background-color: #444;
+	height: 30px;
+	list-style: none;
+}
+
+
+li > ul{ /* alle unordered lists onder hoofd unordered list standaard verborgen. de margin/padding op 0 en juiste breedte van de knopjes zodat ze mooi passen. */
+	display: none;
+	float: none;
+	width: 120px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+li:hover > ul{ /* Als muis op hoofd knop komt verschijnt de sub lijst er onder. */
+	display: block;
+}
+
+#menu li{ /* Alle lijst kopjes krijgen deze opmaak. Zodat ze op hun plaats blijven en ze boven de content uitkomen */
+	position: relative;
+	z-index: 2;
+	width: 160px;
+	float: left;
+	list-style: none;
+	height: 30px;
+	margin-left: 0px;
+	background-color: #444;
+}
+
+#menu li:hover { /* Als je op een knopje komt wordt hij wit van achtergrond, dit gedrag krijgt elk <li> element */
+	background-color: white;
+}
+
+
+ul.sub_sub_menu { /* Bij 1 knop is er nog een extra sub sub menu dat aan de zijkant verschijnt. */
+	background-color: #444;
+	padding-left: 100px;
+	margin: -35px 0px 0px 60px;
+}
+
+li.sub-item { /* Zorgt ervoor dat tekst mooi in het midden staat bij de verschijnende knopjes */
+ 	background-color: #444;
+ 	padding: 5px 0px 5px;
+}
+
+/* Fixed Side Menu Bij Sub Pagina's */
+
+ul.sub_side { /* De lijst met links */
+	list-style: none;
+	padding-left: 10px;
+}
+
+.extra_sub { /* Voor extra sub links onder merken */
+	list-style: none;
+	display:block;
+}
+
+

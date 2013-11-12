@@ -1,0 +1,54 @@
+ul.enlarge { /* Er wordt een lijst gebruikt om alle plaatjes te ordenen */
+	list-style-type:none;
+	margin-left:0;
+}
+
+ul.enlarge li { /* Alle plaatjes worden netjes op een rij gezet */
+	display:inline-block;
+	position:relative;
+	z-index:0;
+	margin:10px 40px 0px 20px;
+}
+
+ul.enlarge img { /* Opmaak thumbnail */
+	background-color:#c7c7c7;
+	padding:6px;
+	border-radius:4px;
+}
+
+ul.enlarge span { /* Plaatjes die verschijnen zijn ver uit scherm geplaatst */
+	position:absolute;
+	left:-9999px;
+	background-color:#1C1C1C;
+	padding:10px;
+	border-radius:8px;
+}
+
+ul.enlarge li:hover { /* Als cursor over een thumbnail gaat dan veranderd deze in een pointer en er wordt gezorgt dat wat verschijnt altijd boven alles staat */
+	z-index:100;
+	cursor:pointer;
+}
+
+ul.enlarge span img { /* Opmaak pop-up image */
+	padding:2px;
+	background:#ccc;
+}
+
+ul.enlarge li:hover span {
+	top:-50px;
+	/*De afstand van de onderkant van de thumbnail naar de bovenkant van het verschijnende plaatje*/
+	left:-20px;
+	/*De afstand van de linkerkant van de thumbnail naar de linkerkant van het verschijnende plaatje*/
+}
+
+.foto_show { /* De foto die je ziet als je over de kleine foto gaat met je cursor (Opmaak pop-up image) */
+	width: 250px;
+}
+
+.foto_galerij { /* De foto die je ziet als je in de galerij pagina kijkt (thumbnail) */
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 0px 10px 10px 10px;
+	border: 2px solid #c7c7c7;
+}
