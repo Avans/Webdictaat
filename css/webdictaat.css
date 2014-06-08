@@ -20,10 +20,12 @@ code.livepreview {
     white-space: pre-wrap;
     min-height: 2.5em;
 }
-.live_preview.css {
+.css {
     border-bottom-width: 0;
     background-image: url(../img/css.png);
     color: #bc0000;
+    background-repeat: no-repeat;
+    background-position: right top;
 }
 
 .live_preview.html {

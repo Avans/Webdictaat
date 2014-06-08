@@ -101,10 +101,58 @@
 </code>
 
   <p>
-        <img src="box_model.gif" alt="CSS Box Model" class="pull-right">
     De manier waarop margins, paddings and borders werken in CSS noemen we ook wel het 'CSS Box Model'. Net zoals we de border aan alle vier de kanten individueel kunnen veranderen. Kunnen we dat met margin en padding ook doen, bijvoorbeeld met <code>margin-top</code> of <code>padding-left</code>.
   </p>
 
+  <h3>Alles tegelijk</h3>
+
+  <style type="text/css">
+  #boxmodel-css {
+      width: 50%;
+      float: left;
+  }
+
+  #boxmodel-output {
+      float: left;
+      width: 45%;
+      border: 1px solid #e1e1e8;
+      border-left-width: 0;
+
+  }
+
+  input.css-range {
+      float: right;
+      margin-right: 10px;
+  }
+  </style>
+
+<code class="pre css" id="boxmodel-css">div {
+    margin: <span id="margin"></span>px; <input type="range" class="css-range margin" value="0" min="0" max="50">
+    padding: <span id="padding"></span>px; <input type="range" class="css-range padding" value="0" min="0" max="50">
+
+    border: <span id="border-width"></span>px solid black; <input type="range" class="css-range border-width" value="1" min="0" max="20">
+
+    width: <span id="width"></span>px; <input type="range" class="css-range width" value="100" min="0" max="300">
+    height: <span id="height"></span>px; <input type="range" class="css-range height" value="100" min="0" max="300">
+}</code>
+<iframe id="boxmodel-output"></iframe>
+
+<script type="text/javascript">
+$(function() {
+    var update = function() {
+        $('#boxmodel-css span').each(function(i, el) {
+            var css_value = el.id;
+            var value = $('#boxmodel-css input.'+css_value).val();
+            $(el).text(value);
+        });
+        var css = $('#boxmodel-css').text();
+        $('#boxmodel-output').contents().find('body').html('<style>*{margin:0;padding:0;}'+css+'</style><div>Een div</div>')
+    };
+    $('.css-range').on('input', update);
+    $('#boxmodel-output').height($('#boxmodel-css').outerHeight());
+    update();
+});
+</script>
 
 </body>
 </html>
