@@ -1,3 +1,55 @@
+.assignment {
+    clear: both;
+}
+.assignment img.screenshot {
+    box-shadow: 0 0 30px #888;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    float: right;
+    margin: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 40%;
+}
+@media screen and (max-width: 1000px){
+    .assignment img.screenshot {
+        float: none;
+        max-width: 80%;
+    }
+}
+
+.tip {
+    float: right;
+    width: 30%;
+    font-size:  smaller;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.filename {
+    font-family: Courier, monospace;
+    background-color: #EEE;
+}
+
+.assignment {
+    padding-left: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 7px;
+}
+
+.assignment.easy {
+    border-left: 3px solid rgba(0,200,0,0.7);
+}
+
+.assignment.medium {
+    border-left: 4px solid rgba(240,240,0,0.7);
+}
+
+.assignment.hard {
+    border-left: 4px solid rgba(240,0,0,0.7);
+}
+
 textarea.live_preview {
     width: 50% !important;
     float: left !important;
