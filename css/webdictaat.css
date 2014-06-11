@@ -8,7 +8,7 @@
     float: right;
     margin: 40px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 40px;
     max-width: 40%;
 }
 @media screen and (max-width: 1000px){
@@ -38,15 +38,15 @@
     margin-bottom: 7px;
 }
 
-.assignment.easy {
+.easy {
     border-left: 3px solid rgba(0,200,0,0.7);
 }
 
-.assignment.medium {
+.medium {
     border-left: 4px solid rgba(240,240,0,0.7);
 }
 
-.assignment.hard {
+.hard {
     border-left: 4px solid rgba(240,0,0,0.7);
 }
 
