@@ -1,11 +1,7 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
   <title>Websites Bouwen 1 - Week 1 - Basisstructuur</title>
-  <link href="../css/active.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -22,25 +18,15 @@
   bijvoorbeeld niet ongebruikelijk dat dezelfde HTML pagina er
   in Chrome of Firefox er anders uitziet dan in Internet Explorer!</p>
 
-  <p>Een HTML-document is een bestand dat bestaat uit pure ASCII-tekst met
-    <b>html</b> als extensie. Een teksteditor zoals Notepad of Notepad++ is
-  dus een goede editor voor HTML-documenten! Een van de
-  doelen van deze module is de doorgronding van HTML als taal. Daarom
-  dient geen gebruik gemaakt te worden van Word, FrontPage, DreamWeaver
-  en dergelijke. Deze genereren ook vaak rommelige HTML.</p
-
   <p>Een webpagina is opgebouwd uit zogenaamde <b>HTML tags</b> die de
   browser vertellen hoe de inhoud van het document op het scherm gezet
   moet worden en hoe bijvoorbeeld <b>Hyperlinks</b> naar andere
   documenten gemaakt kunnen worden.</p>
 
-  <p>HTML-tags worden tussen haken (<code>&lt;</code> en <code>&gt;</code>) gezet, en
-  daarmee worden ze onderscheiden van gewone tekst.</p>
+  <p>Een tag schrijf je tussen een kleiner-dan en groter dan teken. Dit is bijvoorbeeld de img tag: <code>&lt;img&gt;</code>. Vele tags moet je ook weer afsluiten omdat ze om een stukje HTML heen staan, bijvoorbeeld de paragraaf tag: <code>&lt;p&gt;Dit staat in een paragraaf&lt;/p&gt;</code>.</p>
 
-  <p>HTML-tags worden bijna altijd met kleine letters geschreven (&lt;head&gt; in plaats van &lt;HEAD&gt;)
-  Iedere webpagina is opgebouwd volgens onderstaande
-  basisstructuur:<br />
-  <br />
+  <p>Iedere webpagina is opgebouwd volgens onderstaande basisstructuur:</p>
+
   <code class="pre">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -51,5 +37,27 @@
   &lt;/body&gt;
 &lt;/html&gt;</code>
 
-  </body>
+  <h3>Websites ontwikkelen</h3>
+
+  <p>Nu we weten hoe we HTML pagina's maken hoeven we alleen maar te weten hoe we ze ook daadwerkelijk kunnen <em>maken</em>. Om dat te doen heb je een teksteditor nodig om in te programmeren. Je kan hiervoor de standaard Windows kladblok gebruiken. Maar het is een stuk fijner om een uitgebreidere editor te gebruiken zoals TextMate of Notepad++.</p>
+
+  <p>HTML programmeren is zo simpel als de HTML opslaan in een .html bestand en dit bestand weer in een browser te openen. Let op dat wijzigingen die je in het bestand maakt niet automatisch in de browser zullen verschijnen. Die zul je eerst moeten opslaan en verversen in de browser.</p>
+
+  <figure>
+    <img src="ontwikkelen.png" class="screenshot">
+    <figcaption>Het leven van een HTML programmeur...</figcaption>
+  </figure>
+
+  <h3>Valideren</h3>
+
+  <p>Bij Programmeren 1 heb je misschien gemerkt dat Java klaagt over elke puntkomma en leesteken die je niet goed zet. HTML is op dat gebied precies het tegenovergestelde. Browsers proberen HTML die niet correct is weer tot iets te maken wat de programmeur waarschijnlijk had bedoeld. En dat laten ze dan vervolgens zien.</p>
+
+  <p>Dit is natuurlijk geen reden om slordige HTML te schrijven. Om te testen of jouw HTML zich 100% aan de standaard houd kan je gebruik maken van de <a href="http://validator.w3.org/">HMTL validator</a>. Met dit online tooltje kun je controleren of je geen fouten hebt gemaakt in je HTML.
+
+  <figure>
+    <img src="validator.png" class="screenshot">
+    <figcaption>Deze website is gelukkig goedgekeurde HTML!</figcaption>
+  </figure>
+
+</body>
 </html>
