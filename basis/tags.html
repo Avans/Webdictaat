@@ -5,62 +5,48 @@
 </head>
 
 <body>
-  <h2>Basistags van HTML</h2>
-
   <img src="coffee.png" alt="Coffee tag" class="pull-right">
 
-  <p>Een webpagina is dus opgebouwd uit tekst en HTML-tags.</p>
+  <h2>Basistags van HTML</h2>
 
-  <p><b>Tekst</b> wordt in het algemeen exact zo weergegeven als in de editor
-  ingegeven is met uitzondering van speciale tekens (zie verderop) en extra
-  spaties/tabs/enter's. Deze laatste worden genegeerd door de
-  browser, maar je kunt ze wel gebruiken om wat meer structuur in de
-  HTML-code aan te brengen.</p>
+  <p>We moeten in HTML naast de inhoudelijke tekst ook aangeven wat de <em>opmaak</em> van deze tekst is. Dit doen we met de HTML-tags. Zonder deze tags zou elke webpagina er uit zien als een muur van tekst!</p>
 
-  <p>Iedere <b>HTML-tag</b> bestaat uit een naam van de tag en een
-  <i>optionele</i> lijst van <b>attributen</b>, de eigenschappen die
-  bij die tag horen.</p>
+  <figure>
+    <img src="geentags.png" class="screenshot" style="max-height: 250px">
+    <figcaption>Een webpagina zonder tags</figcaption>
+  </figure>
 
-  <p>De meeste HTML-tags zijn zogenaamde <b>container tags</b>, dat wil
-  zeggen dat ze een <b>begin- en een eindtag hebben.</b> De wijze
-  waarop de inhoud (tekst, plaatjes etc.) die tussen de begin- en
-  eindtag staat, wordt weergegeven, is afhankelijk van de eigenschappen
-  van deze tag (=<b>attributen</b>).</p>
+  <p>Tags kunnen we gebruiken om een stukje tekst anders mee op te maken. Als we bijvoorbeeld een stukje tekst <b>vetgedrukt</b> willen hebben doen we dat met de <code>&lt;b&gt;</code> tag:</p>
 
-  <p>Bijvoorbeeld:</p>
   <code class="livepreview">In deze zin wordt &lt;b&gt;deze tekst&lt;/b&gt; vet afgedrukt</code>
 
-  <p>Een eindtag heeft dus dezelfde naam als de begintag, maar wordt
-  voorafgegaan door <b>een slash (/)</b>.</p>
+  <p>Zoals je ziet hebben tags een begin en een einde. Met de <code>&lt;/b&gt;</code> tag geven we aan waar de tekst niet meer vetgedrukt is.</p>
 
-  <p>Een aantal tags heeft geen eindtag. Deze worden ook wel <b>open</b>
-  tags genoemd.</p>
+  <h3>Tags zonder einde</h3>
 
-  <p>Een voorbeeld is de &lt;hr&gt;-tag, die een horizontale lijn
-  afdrukt.</p>
+  <p>Sommige speciale tags hoef je niet af te sluiten omdat ze niet om een stukje HTML heenstaan. De &lt;hr&gt; tag bijvoorbeeld:</p>
+
+  <code class="livepreview">
+De hr tag is een voorbeeld van een tag die je niet afsluit
+&lt;hr&gt;
+Maar de meeste tags moet je wel afsluiten!
+  </code>
 
   <h3>Attributen</h3>
 
-  <p><b>Attributen</b> worden binnen een tag geplaatst om het gedrag van
-  een tag uit te breiden of aan te passen. Attributen komen na de
-  tag-naam te staan (in de openingstag), gescheiden door een spatie. De
-  waarde die de attributen krijgen volgt op een is-gelijk (=) teken na
-  de naam van het attribuut. Deze waarde zet je tussen dubbele
-  aanhalingstekens (&quot;&quot;).</p>
+  <p>Aan tags kan je ook attributen toevoegen, dit zijn waardes die we aan een tag kunnen (of moeten) meegeven om hem iets te laten doen. Bijvoorbeeld:</p>
 
-  <p>Bijvoorbeeld:</p>
-  <code class="livepreview">Het 'href' attribuut van de a tag geeft aan waar een &lt;a href="http://google.nl/"&gt;link&lt;/a&gt; naar wijst.</code>
+  <code class="livepreview">Het 'href' attribuut van de a tag geeft aan waar
+een &lt;a href="http://google.nl/"&gt;link&lt;/a&gt; naar wijst.</code>
+
+  <p>Op internet kun je vinden welke attributen er allemaal bij een tag horen. <a href="http://www.w3schools.com/tags/tag_a.asp">Hier</a> is bijvoorbeeld een lijst te vinden van alle attributen die bij de &lt;a&gt; tag horen.
 
   <p>Sommige attributen kun je bij alle tags gebruiken. Zoals <code>class</code>, <code>id</code> of <code>style</code>.</p>
 
-  <p>De meeste attributen kun je maar bij een paar tags gebruiken. <code>href</code> gebruik je bijvoorbeeld alleen maar voor de <code>a</code> tag.</a>
-
-<h3>De basistags die in iedere webpagina voorkomen</h3>
-      <code>&lt;html&gt; &lt;/html&gt;  </code>: tussen deze tags staat de volledige webpagina.<br />
-      <code>&lt;head&gt; &lt;/head&gt;  </code>: deze tag bevat de &lt;title&gt;&lt;/title&gt;tag en de zogenaamde meta tags.<br />
-      <code>&lt;title&gt; &lt;/title&gt;</code>: deze tag bevat de titel van de webpagina; wordt in de titelbak van de browser getoond.<br />
-      <code>&lt;body&gt; &lt;/body&gt;  </code>: tussen deze tags komt de inhoud te  staan die door de browser op het scherm zal worden getoond.<br />
-      <br />
+  <div class="anatomy">
+    <span class="arch upper"><div>Element</div><span class="arch lower green"><div>Open-tag</div>&lt;a&nbsp;<span class="arch upper blue"><div>Attribuut</div><span class="arch upper purple"><div>Attribuut-naam</div>href</span>="<span class="arch upper purple"><div>Attribuut-waarde</div>http://avans.nl/</span>"</span>></span>Avans<span class="arch lower green"><div>Sluit-tag</div>&lt;/a&gt;</span>
+    </span>
+  </div>
 
 </body>
 </html>
