@@ -49,7 +49,8 @@ $(function() {
             preview.height(height);
 
             function update(e) {
-                var html = '<base target="_top" />';
+                var base = dirname(window.location.hash.substring(2));
+                var html = '<base target="_top" href="http://'+window.location.host+window.location.pathname+base+'/"/>';
 
                 if($(this).data('css_textarea'))
                     html += '<style>' + $(this).data('css_textarea')[0].value + '</style>';
@@ -57,6 +58,7 @@ $(function() {
                 html += $(this).data('html_textarea')[0].value;
 
                 preview.contents().find('body').html(html);
+                preview.contents().find('a').click(linkclick);
             };
 
             html_textarea.keyup(update);
@@ -124,17 +126,27 @@ $(function() {
             window.location.hash = '/' + url;
         }
     };
-    $('.nav a').click(function(e) {
-        var hash_part = '/' + $(this).attr('href');
-        if(e.which == 2) {
-            // Middle mouse button
-            window.open(window.location.origin + window.location.pathname + '#' + hash_part, '_blank');
+    var linkclick = function(e) {
+        // Check if it is a link to a local page
+        var regex = '^' + window.location.origin + window.location.pathname + '([/a-zA-Z0-9]+\\.html)$';
+
+        var match = this.href.match(regex);
+        if(match) {
+            var hash_part = '/' + match[1];
+            if(e.which == 2) {
+                // Middle mouse button
+                window.open(window.location.origin + window.location.pathname + '#' + hash_part, '_blank');
+            } else {
+                // Normal mouse button
+                window.location.hash = hash_part;
+            }
+            return false;
         } else {
-            // Normal mouse button
-            window.location.hash = hash_part;
+            return true;
         }
-        return false;
-    });
+    };
+
+    $('a').click(linkclick);
 
     navigate(window.location.hash.replace('#/', ''))
 

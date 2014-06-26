@@ -2,6 +2,10 @@ figure {
     clear: both;
 }
 
+.mono {
+    font-family: monospace;
+}
+
 .assignment {
     clear: both;
 }

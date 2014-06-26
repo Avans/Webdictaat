@@ -1,94 +1,65 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Websites Bouwen 1 - Week 2 - Lijsten</title>
-  <link href="../css/active.css" rel="stylesheet" type="text/css" />
+  <title>Lijsten</title>
 </head>
 
 <body>
   <h2>Lijsten</h2>
 
-<img src="bucketlist.png" alt="Bucket list" class="pull-right">
+  <img src="bucketlist.png" alt="Bucket list" class="pull-right">
 
-  In HTML worden drie typen lijsten onderscheiden:
+  <p>Lijsten zijn een belangrijk onderdeel onderdeel van HTML en zie je op bijna elke webpagina terug. Denk bijvoorbeeld maar eens aan:</p>
 
   <ul>
-    <li><b>ongenummerde lijsten</b> - tag: &lt;ul&gt; ... &lt;/ul&gt;
-    (unordered list)</li>
+    <li>Inhoudsopgave van een pagina</li>
+    <li>Items in een menu</li>
+    <li>Lijst van nieuwsberichtjes</li>
+    <li>Lijst van voorbeelden waar je lijsten voor kan gebruiken</li>
+  </ul>
 
-    <li><b>genummerde lijsten</b> - tag: &lt;ol&gt; ... &lt;/ol&gt;
-    (ordered list)</li>
+  <p>Er zijn twee soorten lijsten die we kunnen gebruiken, de <strong>genummerde lijst</strong> en de <strong>ongenummerde lijst</strong>. (Er is ook een <a href="http://www.w3schools.com/tags/tag_dt.asp">derde soort lijst</a>, maar die wordt in de praktijk weinig gebruikt)</p>
 
-    <li><b>definitielijsten</b> - tag: &lt;dl&gt; ... &lt;/dl&gt;
-    (definition list)</li>
-  </ul>De eerste twee lijsten worden het meest gebruikt.<br />
-  Lijsten kunnen binnen andere lijsten worden opgenomen.<br />
-  <br />
-  <br />
+  <h3>Genummerde lijst</h3>
 
-  <h3>Ongenummerde lijsten</h3>De syntax ziet er als volgt uit:<br />
-  <pre class="livepreview">
+  <p>De genummerde lijst maken we met de <code>&lt;ol&gt;</code> tag (<strong>o</strong>rdered <strong>l</strong>ist). De verschillende items binnen de lijst maken we vervolgens met de <code>&lt;li&gt;</code> tag (<b>l</b>ist <b>i</b>tem):</p>
+
+    <code class="livepreview">
+&lt;ol&gt;
+  &lt;li&gt;Dit is nummer 1&lt;/li&gt;
+  &lt;li&gt;Dit is nummer 2&lt;/li&gt;
+&lt;/ol&gt;
+    </code>
+
+  <h3>Ongenummerde lijst</h3>
+
+  <p>De ongenummerde lijst kan je maken met de <code>&lt;ul&gt;</code> tag (<b>u</b>nordered <b>l</b>ist) en werkt precies hetzelfde als de genummerde lijst:</p>
+
+  <code class="livepreview">
 &lt;ul&gt;
   &lt;li&gt;Dit stukje tekst staat naast de eerste stip&lt;/li&gt;
   &lt;li&gt;Dit stukje tekst staat naast de tweede stip&lt;/li&gt;
-&lt;/ul&gt;</pre>
+&lt;/ul&gt;
+  </code>
 
-Een ongenummerde lijst begint met &lt;ul&gt; en eindigt met
-&lt;/ul&gt;.<br />
-  Ieder onderdeel van de lijst plaats je tussen de codes &lt;li&gt; en
-  &lt;/li&gt; (li = listitem).<br />
-  Ieder onderdeel wordt op het scherm dan ingesprongen weergegeven
-  voorafgegaan door een opsommingsteken.
+  <h3>Nesten van lijsten</h3>
 
-  <h3>Genummerde lijsten</h3>De syntax ziet er als volgt uit:<br />
-  <pre class="livepreview">
-&lt;ol&gt;
-  &lt;li&gt; Dit is nummer 1&lt;/li&gt;
-  &lt;li&gt; Dit is nummer 2&lt;/li&gt;
-&lt;/ol&gt;</pre>
+  <p>Een krachtige feature van lijsten is dat ze makkelijk te gebruiken zijn om sublijsten te maken. Dit kan je doen door een lijst binnen een &lt;li&gt; van een andere lijst te plaatsen.</p>
 
-Een genummerde lijst begint met &lt;ol&gt; en eindigt met
-&lt;/ol&gt;.<br />
-  Ieder onderdeel van de lijst plaats je tussen &lt;li&gt; en
-  &lt;/li&gt;<br />
-  Ieder onderdeel wordt op het scherm dan ingesprongen weergegeven
-  voorafgegaan door een cijfer.<br />
+  <code class="livepreview">
+Todo:
+&lt;ul&gt;
+  &lt;li&gt;Was ophangen&lt;/li&gt;
+  &lt;li&gt;Boodschappen doen
+    &lt;ul&gt;
+      &lt;li&gt;Melk&lt;/li&gt;
+      &lt;li&gt;Brood&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Kamer opruimen&lt;/li&gt;
+&lt;/ul&gt;
+    </code>
 
-  <h3>Definitielijsten</h3>
-  Definitielijsten bestaan uit
-  termen(woorden en begrippen) en definities. De syntax ziet er als
-  volgt uit:<br />
-  <pre class="livepreview">
-&lt;dl&gt;
-  &lt;dt&gt;
-    Hier staat de term
-  &lt;/dt&gt;
-  &lt;dd&gt;
-    Hier staat de 1e definitie van de term
-  &lt;/dd&gt;
-  &lt;dd&gt;
-    Hier staat de 2e definitie van de term
-  &lt;/dd&gt;
-&lt;/dl&gt;</pre>
-
-Een definitielijst begint met &lt;dl&gt; en eindigt met
-&lt;/dl&gt; (dl= definition list).<br />
-  Iedere term van de lijst plaats je tussen &lt;dt&gt; en &lt;/dt&gt;
-  (dt= definition term).<br />
-  De definitie van de term plaats je tussen &lt;dd&gt; en &lt;/dd&gt;
-  (dd= definition description).<br />
-  <br />
-  Een voorbeeld is:<br />
-
-  <dl>
-    <dt>Medium:</dt>
-
-    <dd>Middel, hulpmiddel</dd>
-
-    <dd>Persoon door wie een geest zich uitspreekt</dd>
-  </dl>
+  <p>Let op dat je de sublijst <em>binnen</em> de &lt;li&gt; plaatst! Anders werkt het vaak niet zoals je zou verwachten en is het ook geen valide HTML.</p>
 </body>
 </html>
