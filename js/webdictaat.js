@@ -128,7 +128,7 @@ $(function() {
     };
     var linkclick = function(e) {
         // Check if it is a link to a local page
-        var regex = '^' + window.location.origin + window.location.pathname + '([/a-zA-Z0-9]+\\.html)$';
+        var regex = '^' + window.location.origin + window.location.pathname + '([/_a-zA-Z0-9]+\\.html)$';
 
         var match = this.href.match(regex);
         if(match) {
@@ -146,7 +146,7 @@ $(function() {
         }
     };
 
-    $('a').click(linkclick);
+    $('body').delegate('a', 'click', linkclick);
 
     navigate(window.location.hash.replace('#/', ''))
 
