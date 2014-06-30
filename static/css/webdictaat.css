@@ -48,9 +48,13 @@ p > code {
 }
 
 .assignment {
-    padding-left: 30px;
+    padding-left: 30px !important;
     padding-bottom: 20px;
     margin-bottom: 7px;
+}
+
+.easy, .medium, .hard {
+    padding-left: 3px;
 }
 
 .easy {
