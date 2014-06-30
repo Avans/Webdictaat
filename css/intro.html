@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Websites Bouwen 1 - Stylesheets</title>
+</head>
+
+<body>
+  <img src="paintbrush.png" class="pull-right">
+  <h2>Stylesheets</h2>
+
+  <h3>Vooraf</h3>
+
+  <p>In de voorgaande weken hebben we tags gezien die we kunnen gebruiken om aan tekst een betekenis te geven.
+      Zo kunnen we aangeven welke stukken tekst paragrafen vormen en wat voor soort headers daar tussen staan.
+      De browser probeert automatisch al een toepasselijke opmaak voor te verzinnen.</p>
+
+  <p></p>
+
+  <code class="livepreview pre">&lt;h1&gt;In je browser ziet deze tekst
+er automatisch groot uit!&lt;/h1&gt;
+
+
+&zwnj;
+</code>
+
+  <p>Nu gaan we kijken hoe we webpagina's mooier kunnen maken door een <em>style</em> aan elementen van de pagina toe te voegen. Op die manier kunnen we bijvoorbeeld kleuren, fonts en randen van elementen aanpassen.</p>
+
+  <p>In het onderstaande voorbeeld hebben we alle h1 tags van een nieuwe style voorzien.</p>
+
+  <code class="livepreview pre">
+<span class="css">
+h1 {
+    color: #404853;
+    font-size: 26px;
+    font-family: Arial;
+}
+</span>
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hoofdstuk 1&lt;/h1&gt;
+    &lt;p&gt;Deze kopjes zien er mooier uit dan hoe de browser het standaard opmaakt.&lt;/p&gt;
+    &lt;h1&gt;Hoofdstuk 2&lt;/h1&gt;
+    &lt;p&gt;En het werkt automatisch op alle h1 tags in de hele webpagina!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code>
+
+  <img src="css.png" class="pull-right">
+  <p>Deze style regels die we kunnen toepassen op html elementen heten <strong>Cascading Stylesheets</strong> (css). Met css kunnen we de opmaak van pagina's veranderen zonder dat we de html hoeven te veranderen.</p>
+
+  <p>We zeggen ook wel dat we met stylesheets de <strong>inhoud</strong> van de <strong>opmaak</strong> scheiden</p>
+
+  <h3>Typen stylesheets</h3>
+
+  <p>Er zijn 3 verschillende soorten manieren om stylesheets op je html toe te passen.
+
+  <dl>
+    <dt>Linked stylesheets</dt>
+    <dd><p>In een webpagina kan een link naar een (extern) stylesheet-bestand op de webserver worden opgenomen. Dit doe je met behulp van het <code>&lt;link&gt;</code> element in de <b>head</b> van de pagina. Dit is de <b>meest gebruikelijke methode</b> om stylesheets op te nemen in een pagina. Je kan namelijk makkelijk dezelfde stylesheet op meerdere pagina's gebruiken.</p>
+
+    <p>Als je het css bestand 'style.css' wilt toepassen op de pagina kan je dat doen op de volgende manier:</p>
+
+    <code class="livepreview">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Een header&lt;/h1&gt;
+    In dit bestand gebruiken we &lt;a href="style.css"&gt;deze&lt;/a&gt; stylesheet.
+  &lt;/body&gt;
+&lt;/html&gt;
+      </code>
+    </dd>
+
+    <dt>Embedded stylesheets</dt>
+    <dd>
+      <p>Soms heb je een stukje style maar op één pagina nodig, dan kan het juist onhandig zijn om dit in een apart bestand te moeten stoppen.</p>
+      <p>Embedded stylesheets kunnen binnen webpagina gedefinieerd worden met behulp van de <code>&lt;style&gt;</code>-tag. Deze tag moet binnen de head van de pagina worden opgenomen:</p>
+
+    <code class="livepreview">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      h1 {
+          color: blue;
+          font-family: Helvetica;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Een header&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </code>
+</dd>
+
+    <dt>Inline stylesheets</dt>
+    <dd>
+      <p>En soms slaat een stukje style maar op één element in één pagina. In dat geval kan je deze style toevoegen met het <b>style</b>-attribuut. Je zet dan alle style achter elkaar in het style attribuut.</p>
+
+      <p>Omdat je hiermee stijl-opmaak tussen de HTML plaatst zijn we eigenlijk vies bezig. We willen met CSS juist inhoud van opmaak kunnen scheiden. Gebruik deze techniek dus alleen tijdens het ontwikkelen van een website.</p>
+
+    <code class="livepreview">
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1 style="color: blue; font-family: Helvetica;"&gt;Een header&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+
+  </dl>
+
+
+
+  <h3>Syntax van stylesheets</h3>
+
+  <div class="anatomy">
+      <span class="arch upper"><div>rule</div><span class="arch upper green"><div>selector</div>body</span> { <span class="arch upper purple"><div>declaration</div><span class="arch upper blue"><div>property</div>color</span>: <span class="arch upper red"><div>value</div>red</span>;</span> }</span>
+  </div>
+
+  <p>Een stylesheet is niks meer dan een hele hoop <b>stijl-regels</b>. Deze regels geven aan hoe bepaalde HTML elementen er uit moeten zien. Zo kunnen we bijvoorbeeld de kleur en lettergrootte aanpassen. In de komende weken gaan we zien dat er een hele hoop verschillende stijl-regels zijn.</p>
+
+  <p>Een stijl-regel bestaat uit:
+
+  <ul>
+    <li>Een <b><a href="selectors.html">selector</a></b> waarmee je aangeeft op welke elementen de regel van toepassing is.</li>
+
+    <li>Een openingsaccolade <b>{</b></li>
+
+    <li>Een lijst van declaraties, de daadwerkelijke stijl die je wil toepassen. Per declaratie gebruik je:
+
+      <ul>
+        <li>De <b>naam</b> van de property</li>
+        <li>dubbele punt <b>:</b></li>
+        <li>De <b>waarde</b> van de property</li>
+        <li>puntkomma als separator bij meerdere properties <b>;</b></li>
+      </ul>
+    </li>
+
+    <li>de sluitaccolade <b>}</b></li>
+  </ul>
+
+  <p>Een voorbeelddefinitie om alle h1 elementen in 16-punts grootte, vet en blauw te laten afdrukken ziet er als volgt uit:</p>
+
+  <code style="white-space: pre; display: block;">h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    color: blue;
+}</code>
+
+  <p>Commentaarregels worden omgeven met <i>/*</i> en <i>*/</i>, vergelijkbaar met Java en C++.</p>
+
+  <h3>Classes binnen stylesheets</h3>
+  <p>Als je dezelfde stijl wilt geven aan bepaalde elementen en je kan het niet doen met de tagname dan kan je dat ook via een class doen.</p>
+
+  Stel dat we alle belangrijke elementen <span style="color: red;">rood</span> willen maken. Dan kunnen we deze de class "belangrijk" geven. Met css kunnen we deze class dan rood maken. De punt voor de naam in css geeft aan dat we alleen de elementen met de juiste 'class' willen hebben.
+
+  <code class="livepreview pre">
+<span class="css">
+.belangrijk {
+  color: red;
+}
+</span>
+
+&lt;h3&gt;Onderwerp&lt;/h3&gt;
+&lt;h3&gt;Nog een onderwerp&lt;/h3&gt;
+&lt;h3 class="belangrijk"&gt;Belangrijk onderwerp!&lt;/h3&gt;
+&lt;h3&gt;Laatste onderwerp&lt;/h3&gt;
+
+&lt;div class="belangrijk"&gt;
+  Dit is een div.
+  Maar wel een belangrijke div.
+&lt;/div&gt;</code>
+
+</body>
+</html>

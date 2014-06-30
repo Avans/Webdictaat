@@ -58,7 +58,7 @@ $(function() {
                 html += $(this).data('html_textarea')[0].value;
 
                 preview.contents().find('body').html(html);
-                preview.contents().find('a').click(linkclick);
+                preview.contents().find('a').mouseup(linkmouseup).click(function() {return this.doclick;});
             };
 
             html_textarea.keyup(update);
@@ -126,7 +126,7 @@ $(function() {
             window.location.hash = '/' + url;
         }
     };
-    var linkclick = function(e) {
+    var linkmouseup = function(e) {
         // Check if it is a link to a local page
         var regex = '^' + window.location.origin + window.location.pathname + '([/_a-zA-Z0-9]+\\.html)$';
 
@@ -140,13 +140,17 @@ $(function() {
                 // Normal mouse button
                 window.location.hash = hash_part;
             }
-            return false;
+            this.doclick = false;
         } else {
-            return true;
+            this.doclick = true;
         }
     };
 
-    $('body').delegate('a', 'click', linkclick);
+    $('body')
+        .delegate('a', 'mouseup', linkmouseup)
+        .delegate('a', 'click', function() {
+            return this.doclick;
+        });
 
     navigate(window.location.hash.replace('#/', ''))
 

@@ -167,6 +167,11 @@ figcaption {
       border-color: rgb(147, 108, 177);
   }
 
+  .anatomy .arch.red {
+      color: rgb(255, 0, 0);
+      border-color: rgb(255, 0, 0);
+  }
+
  .arch {
      display: inline-block;
      position: relative;
