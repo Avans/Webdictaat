@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neem contact op!</title>
+  </head>
+  <body>
+    <h1>Contactformulier</h1>
+    <p>Leuk dat je een reactie wilt achterlaten. We ontvangen graag uw feedback!</p>
+
+    <p>Vul onderstaand 100% waarheidsgetrouw in. Alle velden zijn verplicht.</p>
+
+    <form>
+      <div>
+        <label for="reactie">Uw reactie:</label>
+        <textarea name="reactie" cols="50" rows="10"></textarea>
+      </div>
+
+      <fieldset>
+        <legend>Persoonlijke details</legend>
+
+        <div>
+          <label for="naam">Naam:</label>
+          <input type="text" name="naam">
+        </div>
+
+        <div>
+          <label for="naam">Email adres:</label>
+          <input type="text" name="email">
+        </div>
+
+        <div>
+          <label for="naam">Geslacht:</label>
+          <input type="radio" name="geslacht">Man
+          <input type="radio" name="geslacht">Vrouw
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Favorieten</legend>
+
+        <div>
+          <label for="naam">Favoriete kleur:</label>
+          <input type="color" name="kleur">
+        </div>
+
+        <div>
+          <label for="naam">Favoriete bestand:</label>
+          <input type="file" name="bestand">
+        </div>
+
+        <div>
+          <label for="snack">Favoriete snack</label>
+          <select name="snack">
+            <optgroup label="Zoet">
+              <option value="appelflap">Appelflap</option>
+              <option value="muffin">Muffin</option>
+            </optgroup>
+
+            <optgroup label="Hartig">
+              <option value="saucijs">Saucijzenbroodje</option>
+            </optgroup>
+          </select>
+        </div>
+
+      </fieldset>
+
+      <div>
+        <label for="naam">Wachtwoord van je e-mail account:</label>
+        <input type="password" name="email_password">
+      </div>
+
+      <div>
+        <label for="nieuwsbrief">Wilt u zich ook inschrijven voor onze nieuwsbrief?</label>
+        <input type="checkbox" name="nieuwsbrief" checked>
+      </div>
+
+      <input type="submit">
+
+    </form>
+  </body>
+</html>
