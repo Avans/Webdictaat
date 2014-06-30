@@ -6,74 +6,80 @@ $(function() {
             var has_css = css_span.length > 0;
 
             if(has_css) {
-                css_span.html(css_span.html().trim())
+                css_span.html(css_span.html().trim().replace(/&nbsp;$/, ''))
                 var css_height = css_span.height() + 5;
                 css_span.detach();
             }
+            code.html(code.html().trim().replace(/&nbsp;$/, ''));
 
-            code.html(code.html().trim());
+            var editors = $('<div class="editors"></div>');
+            code.after(editors);
 
-            var textareas = $('<div></div>');
-            code.after(textareas);
+            var get_editor = function(element) {
+                var editor = ace.edit(element);
+                editor.setTheme("ace/theme/chrome");
+                editor.setHighlightActiveLine(false);
+                editor.setShowFoldWidgets(false);
+                editor.setShowPrintMargin(false);
+                editor.session.setUseWrapMode(true);
+                editor.renderer.setShowGutter(false);
+                editor.renderer.setScrollMargin(8, 8, 0, 0);
+                editor.renderer.setPadding(10);
+                return editor;
+            };
 
-            //Make a copy of the code element as a textarea
+            //Make a copy of the code element as an editor
             if(has_css) {
-                var css_textarea = $('<textarea class="live_preview css"></textarea>');
-                textareas.append(css_textarea);
-                css_textarea.text(css_span.text().trim())
-                css_textarea.height(css_height);
+                var css_editor = $('<code class="editor css"></code>')
+                    .height(css_height)
+                    .html(css_span.html());
+
+                editors.append(css_editor);
+                ace_css_editor = get_editor(css_editor[0]);
+                ace_css_editor.getSession().setMode("ace/mode/css");
+            } else {
+                ace_css_editor = undefined;
             }
 
-            var html_textarea = $('<textarea class="live_preview html"></textarea>');
-            textareas.append(html_textarea);
+            var html_editor = $('<code class="editor html"></code>')
+                .height(code.height())
+                .html(code.html());
+            editors.append(html_editor);
 
-            html_textarea.text(code.text().trim());
-            code.width(html_textarea.width());
-            html_textarea.height(code.height());
 
-            html_textarea.data('html_textarea', html_textarea);
-            html_textarea.data('css_textarea', css_textarea);
-
-            if(has_css) {
-                css_textarea.data('html_textarea', html_textarea);
-                css_textarea.data('css_textarea', css_textarea);
-            }
+            ace_html_editor = get_editor(html_editor[0]);
+            ace_html_editor.getSession().setMode("ace/mode/html");
 
             // Create a live preview of the textarea
             var preview = $('<iframe class="live_preview"></iframe>');
-            textareas.after(preview);
+            editors.after(preview);
 
-            var height = html_textarea.height();
+            var height = html_editor.height();
             if(has_css)
-                height += css_textarea.height() + 17;
+                height += css_editor.height() + 17;
             preview.height(height);
 
-            function update(e) {
-                var base = dirname(window.location.hash.substring(2));
-                var html = '<base target="_top" href="http://'+window.location.host+window.location.pathname+base+'/"/>';
+            function update_function(ace_html_editor, ace_css_editor, preview) {
+                return function() {
+                    var base = dirname(window.location.hash.substring(2));
+                    var html = '<base target="_top" href="http://'+window.location.host+window.location.pathname+base+'/"/>';
 
-                if($(this).data('css_textarea'))
-                    html += '<style>' + $(this).data('css_textarea')[0].value + '</style>';
+                    if(has_css)
+                        html += '<style>' + ace_css_editor.getSession().getValue() + '</style>';
 
-                html += $(this).data('html_textarea')[0].value;
+                    html += ace_html_editor.session.getValue();
 
-                preview.contents().find('body').html(html);
-                preview.contents().find('a').mouseup(linkmouseup).click(function() {return this.doclick;});
+                    preview.contents().find('body').html(html);
+                    preview.contents().find('a').mouseup(linkmouseup).click(function() {return this.doclick;});
+                }
             };
+            var update = update_function(ace_html_editor, ace_css_editor, preview);
+            ace_html_editor.on('change', update);
+            if(has_css)
+                ace_css_editor.on('change', update);
 
-            html_textarea.keyup(update);
-            html_textarea.change(update);
-            update.call(html_textarea);
-
-            if(has_css) {
-                css_textarea.keyup(update);
-                css_textarea.change(update);
-                 update.call(css_textarea);
-            }
-
-            window.setTimeout(function() {
-                update.call(html_textarea);
-            }, 100);
+            update();
+            window.setTimeout(update, 500);
 
             preview.after($('<p class="live_preview"></p>'));
 

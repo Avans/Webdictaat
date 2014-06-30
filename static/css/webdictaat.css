@@ -12,6 +12,10 @@ p > code {
 .assignment {
     clear: both;
 }
+
+.ace_hidden-cursors {
+    opacity:0;
+}
 .assignment img.screenshot {
     box-shadow: 0 0 30px #888;
     border: 1px solid #aaa;
@@ -61,19 +65,20 @@ p > code {
     border-left: 4px solid rgba(240,0,0,0.7);
 }
 
-textarea.live_preview {
+/* Live preview stuff */
+
+.editor {
     width: 50% !important;
     float: left !important;
     margin: 0;
     border: 1px solid rgb(225, 225, 232);
     box-shadow: none;
-    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
     padding: 8px;
     font-size: 12px;
     clear: right;
 
-    color: #d14;
-    background-color: #f7f7f9;
+    background-color: #f7f7f9 !important;
+    line-height: 20px !important;
 
     background-repeat: no-repeat;
     background-position: right top;
@@ -81,6 +86,7 @@ textarea.live_preview {
 
 code.livepreview {
     display: block;
+    width: 50%;
     white-space: pre-wrap;
     min-height: 2.5em;
 }
@@ -92,7 +98,7 @@ code.livepreview {
     background-position: right top;
 }
 
-.live_preview.html {
+.html {
     background-image: url(../img/html.png);
     color: #d14;
 }
