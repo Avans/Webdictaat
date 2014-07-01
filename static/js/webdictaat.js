@@ -72,14 +72,15 @@ $(function() {
             function update_function(ace_html_editor, ace_css_editor, preview) {
                 return function() {
                     var base = dirname(window.location.hash.substring(2));
-                    var html = '<base target="_top" href="http://'+window.location.host+window.location.pathname+base+'/"/>';
+                    var head = '<base target="_top" href="http://'+window.location.host+window.location.pathname+base+'/">';
 
                     if(has_css)
-                        html += '<style>' + ace_css_editor.getSession().getValue() + '</style>';
+                        head += '<style>' + ace_css_editor.getSession().getValue() + '</style>';
 
-                    html += ace_html_editor.session.getValue();
+                    var body = ace_html_editor.session.getValue();
 
-                    preview.contents().find('body').html(html);
+                    preview.contents().find('head').html(head);
+                    preview.contents().find('body').html(body);
                     preview.contents().find('a').mouseup(linkmouseup).click(function() {return this.doclick;});
                 }
             };
@@ -170,7 +171,7 @@ $(function() {
         var regex = '^' + window.location.protocol + '//' + window.location.host + window.location.pathname + '([/_a-zA-Z0-9]+\\.html)$';
 
         var match = this.href.match(regex);
-        if(match) {
+        if(match && !$(e.currentTarget).hasClass('no_ajax')) {
             var hash_part = '/' + match[1];
             if(e.which == 2) {
                 // Middle mouse button
