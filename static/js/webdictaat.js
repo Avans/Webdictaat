@@ -4,9 +4,19 @@ $(function() {
             code = $(code);
             var css_span = code.find('.css');
             var has_css = css_span.length > 0;
+            var inputs = $();
 
             if(has_css) {
-                css_span.html(css_span.html().trim().replace(/&nbsp;$/, ''))
+                css_span.html(css_span.html().trim().replace(/&nbsp;$/, ''));
+                inputs = css_span.find('select,input');
+
+                inputs.each(function(i, el) {
+                    $(el).parent().css('position', 'relative');
+                    $(el).css('top', $(el).position().top + 8);
+                    var placeholder = $('<span class="placeholder"></span>');
+                    placeholder.data('input', el);
+                    $(el).replaceWith(placeholder);
+                }).data('template', css_span);
                 var css_height = css_span.height() + 5;
                 css_span.detach();
             }
@@ -37,6 +47,7 @@ $(function() {
                 editors.append(css_editor);
                 ace_css_editor = get_editor(css_editor[0]);
                 ace_css_editor.getSession().setMode("ace/mode/css");
+                inputs.data('editor', ace_css_editor);
             } else {
                 ace_css_editor = undefined;
             }
@@ -45,7 +56,6 @@ $(function() {
                 .height(code.height())
                 .html(code.html());
             editors.append(html_editor);
-
 
             ace_html_editor = get_editor(html_editor[0]);
             ace_html_editor.getSession().setMode("ace/mode/html");
@@ -83,8 +93,27 @@ $(function() {
 
             preview.after($('<p class="live_preview"></p>'));
 
+            // Add event handlers to the inputs
+            function input_change() {
+                var editor = $(this).data('editor');
+                var template = $(this).data('template');
+                template = template.clone(true);
+                template.find('.placeholder').each(function(i, el) {
+                    $(this).replaceWith($($(this).data('input')).val());
+                });
+
+                editor.session.setValue(template.text());
+            }
+            inputs.on('input', input_change);
+            if(inputs.length > 0)
+                input_change.call(inputs[0]);
+
             // Remove original element
             code.detach();
+
+            if(has_css) {
+                css_editor.append(inputs);
+            }
         });
     };
 

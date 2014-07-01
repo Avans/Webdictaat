@@ -17,51 +17,95 @@
       <li><code>large</code></li>
       <li><code>x-large</code></li>
       <li><code>xx-large</code></li>
-      <li><code>10pt</code></li>
+      <li>Een expliciete grootte, bijvoorbeeld: <code>40pt</code></li>
 
   </ul>
   </p>
-  <code class="livepreview" style="height: 45pt;">
-      &lt;span style="font-size: 25pt"&gt;Grote tekst&lt;/span&gt;
+  <code class="livepreview">
+      <span class="css">
+p {
+    font-size: <select>
+          <option>xx-small</option>
+          <option>x-small</option>
+          <option>small</option>
+          <option>medium</option>
+          <option>large</option>
+          <option>x-large</option>
+          <option selected>xx-large</option>
+          <option>40pt</option>
+      </select>;
+}
+      </span>
+      &lt;p&gt;Een grote tekst&lt;/p&gt;
   </code>
 
   <h3>font-weight</h3>
   <p>Dikgedrukte text. Waardes: <code>bold</code>, <code>normal</code></p>
   <code class="livepreview">
-    &lt;h2 style="font-weight: normal"&gt;Header die niet bold is&lt;/h3&gt;
+    <span class="css">
+p {
+    font-weight: <select><option>normal</option><option selected>bold</option></select>;
+}
+    </span>
+    &lt;p&gt;Een vette tekst!&lt;/p&gt;
   </code>
 
   <h3>font-family</h3>
   <p>Lettertype</p>
   <code class="livepreview">
-      &lt;h2 style="font-family: Arial"&gt;Arial lettertype&lt;/h2&gt;
+      <span class="css">
+p {
+    font-family: "<select><option>Arial</option><option>Helvetica</option><option>Times New Roman</option><option>Courier New</option></select>";
+}
+      </span>
+      &lt;p&gt;Een ander lettertype...&lt;/p&gt;
   </code>
 
   <h3>color</h3>
   <p>De kleur van de tekst</p>
   <code class="livepreview">
-      &lt;span style="color: green"&gt;Mooie groene tekst&lt;/span&gt;
+      <span class="css">
+p {
+    color: <input type="color" value="#ff0000">;
+}
+      </span>
+      &lt;p&gt;Mooie rode tekst&lt;/p&gt;
   </code>
 
   <h3>text-decoration</h3>
   <p>Geeft aan of tekst onderstreept moet worden of niet. Waardes: <code>none</code>, <code>underline</code>, <code>line-through</code></p>
 
   <code class="livepreview">
-    &lt;a href="#" style="text-decoration: none"&gt;Deze link is niet onderstreept&lt;/a&gt;
+    <span class="css">
+p {
+    text-decoration: <select><option>none</option><option selected>underline</option><option>line-through</option></select>;
+}
+    </span>
+    &lt;p&gt;Tekst met een lijntje&lt;/p&gt;
   </code>
 
   <h3>text-shadow</h3>
   <p>Schaduw achter de tekst. Deze definieer je in de volgorde: ruimte naar links, ruimte naar beneden, blur, kleur.</p>
 
   <code class="livepreview">
-    &lt;span style="text-shadow: 5px 5px 10px #666666"&gt;Tekst met schaduw&lt;/span&gt;
+    <span class="css">
+p {
+    text-shadow: 5px 5px <input type="range" min="0" max="20" value="10">px #666666;
+}
+    </span>
+    &lt;p&gt;Tekst met schaduw&lt;/p&gt;
   </code>
 
   <h3>text-transform</h3>
   <p>Verandert de hoofdletters / kleine letters. Waardes: <code>lowercase</code>, <code>uppercase</code>, <code>capitalize</code></p>
 
   <code class="livepreview">
-    &lt;span style="text-transform: uppercase"&gt;Deze tekst wordt automatisch hoofdletters&lt;/span&gt;
+    <span class="css">
+p {
+    text-transform: <select><option>lowercase</option><option selected>uppercase</option><option>capitalize</option></select>;
+}
+    </span>
+    &lt;p&gt;Deze tekst wordt automatisch hoofdletters&lt;/p&gt;
   </code>
 
 </body>

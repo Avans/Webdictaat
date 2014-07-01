@@ -2,7 +2,7 @@ figure {
     clear: both;
 }
 
-p > code {
+p > code, li > code {
     padding: 0;
 }
 .mono {
@@ -72,6 +72,7 @@ p > code {
 /* Live preview stuff */
 
 .editor {
+    position: relative;
     width: 50% !important;
     float: left !important;
     margin: 0;
@@ -94,6 +95,20 @@ code.livepreview {
     white-space: pre-wrap;
     min-height: 2.5em;
 }
+
+code.livepreview select {
+    position: absolute;
+    vertical-align: middle;
+    width: 100px;
+}
+
+.editor select, .editor input {
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    width: 25%;
+}
+
 .css {
     border-bottom-width: 0;
     background-image: url(../img/css.png);
