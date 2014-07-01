@@ -12,34 +12,38 @@
 
   <h3>Border</h3>
 
-  <p>We kunnen bijvoorbeeld een element een <code>border</code> geven. In onderstaand voorbeeld hebben we een div element een bruine rand van 6 pixels gegeven. Dat geven we altijd in deze volgorde aan: Eerst de dikte, dan het lijnsoort en als laatste de kleur. We kunnen naast <code>solid</code> ook <code>dotted</code> of <code>dashed</code> als lijnsoort gebruiken. Probeer deze uit in onderstaand voorbeeld.</p>
+  <p>We kunnen bijvoorbeeld een element een <code>border</code> geven. In onderstaand voorbeeld hebben we een div element een bruine rand van 6 pixels gegeven. We kunnen naast <code>solid</code> ook <code>dotted</code> of <code>dashed</code> als lijnsoort gebruiken. Probeer deze uit in onderstaand voorbeeld.</p>
 
 
   <code class="livepreview pre">
 <span class="css">
-#banaan {
-    border: 6px solid brown;
+div {
+    border-width: <input type="range" value="6" min="0" max="10">px;
+    border-style: <select><option selected>solid</option><option>dashed</option><option>dotted</option></select>;
+    border-color: <input type="color" value="#a52a2a">;
     background-color: yellow;
 }
 </span>
 
-&lt;div id="banaan"&gt;
-  Bananen
+&lt;div&gt;
+  Banaan
 &lt;/div&gt;</code>
 
-<p>Met <code>border</code> geven we alle vier de randen tegelijk dezelfde stijl. Maar we kunnen ook de randen individueel een kleur geven:</p>
+  <p>We kunnen bovenstaande CSS ook in één regel neerzetten: <code>border: 6px solid #a52a2a</code>.</p>
+
+  <p>Met <b>border</b> geven we alle vier de randen tegelijk dezelfde stijl. Maar we kunnen ook de randen individueel een kleur geven:</p>
 
   <code class="livepreview pre">
 <span class="css">
-.vrolijk {
-  border-left: 3px solid red;
-  border-right: 3px solid green;
-  border-top: 3px solid blue;
-  border-bottom: 3px solid yellow;
+div {
+  border-left: <input type="range" value="3" min="0" max="10">px solid red;
+  border-right: <input type="range" value="3" min="0" max="10">px solid green;
+  border-top: <input type="range" value="3" min="0" max="10">px solid blue;
+  border-bottom: <input type="range" value="3" min="0" max="10">px solid yellow;
 }
 </span>
 
-&lt;div class="vrolijk"&gt;
+&lt;div&gt;
  Vrolijke kleurtjes
 &lt;/div&gt;</code>
 
@@ -55,13 +59,13 @@
 
   <code class="livepreview pre">
 <span class="css">
-.lekker-ruim {
+div {
   border: 1px solid black;
-  padding: 30px;
+  padding: <input type="range" value="30" min="0" max="50">px;
 }
 </span>
 
-&lt;h4 class="lekker-ruim"&gt;
+&lt;div&gt;
   Hier heb ik meer ruimte.
 &lt;/h4&gt;
 </code>
@@ -71,15 +75,15 @@
 
     <code class="livepreview pre">
 <span class="css">
-.ruimte {
+div {
   border: 1px solid black;
-  margin: 40px;
+  margin: <input type="range" value="40" min="0" max="50">px;
 }
 </span>
 
-&lt;h4 class="ruimte"&gt;
+&lt;div&gt;
   Hier geef ik meer ruimte.
-&lt;/h4&gt;
+&lt;/div&gt;
 </code>
 
   <h3>Width &amp; height</h3>
@@ -88,14 +92,14 @@
 
   <code class="livepreview pre">
 <span class="css">
-#vierkantje {
+div {
   border: 1px solid black;
-  width: 200px;
-  height: 150px;
+  width: <input type="range" value="200" min="0" max="300">px;
+  height: <input type="range" value="150" min="0" max="200">px;
 }
 </span>
 
-&lt;div id="vierkantje"&gt;
+&lt;div&gt;
   Ik ben een vaste grootte
 &lt;/div&gt;
 </code>
@@ -106,53 +110,20 @@
 
   <h3>Alles tegelijk</h3>
 
-  <style type="text/css">
-  #boxmodel-css {
-      width: 50%;
-      float: left;
-  }
+  <code class="livepreview">
+  <span class="css">
+div {
+    margin: <input type="range" value="0" min="0" max="50">px;
+    padding: <input type="range" value="0" min="0" max="50">px;
 
-  #boxmodel-output {
-      float: left;
-      width: 45%;
-      border: 1px solid #e1e1e8;
-      border-left-width: 0;
+    border: <input type="range" value="1" min="0" max="20">px solid black;
 
-  }
-
-  input.css-range {
-      float: right;
-      margin-right: 10px;
-  }
-  </style>
-
-<code class="pre css" id="boxmodel-css">div {
-    margin: <span id="margin"></span>px; <input type="range" class="css-range margin" value="0" min="0" max="50">
-    padding: <span id="padding"></span>px; <input type="range" class="css-range padding" value="0" min="0" max="50">
-
-    border: <span id="border-width"></span>px solid black; <input type="range" class="css-range border-width" value="1" min="0" max="20">
-
-    width: <span id="width"></span>px; <input type="range" class="css-range width" value="100" min="0" max="300">
-    height: <span id="height"></span>px; <input type="range" class="css-range height" value="100" min="0" max="300">
-}</code>
-<iframe id="boxmodel-output"></iframe>
-
-<script type="text/javascript">
-$(function() {
-    var update = function() {
-        $('#boxmodel-css span').each(function(i, el) {
-            var css_value = el.id;
-            var value = $('#boxmodel-css input.'+css_value).val();
-            $(el).text(value);
-        });
-        var css = $('#boxmodel-css').text();
-        $('#boxmodel-output').contents().find('body').html('<style>*{margin:0;padding:0;}'+css+'</style><div>Een div</div>')
-    };
-    $('.css-range').on('input', update);
-    $('#boxmodel-output').height($('#boxmodel-css').outerHeight());
-    update();
-});
-</script>
+    width: <input type="range" value="100" min="0" max="300">px;
+    height: <input type="range" value="100" min="0" max="300">px;
+}
+    </span>
+    &lt;div&gt;Een div&lt;/div&gt;
+</code>
 
 </body>
 </html>

@@ -103,6 +103,7 @@ code.livepreview select {
 }
 
 .editor select, .editor input {
+    padding: 0;
     height: 20px;
     position: absolute;
     right: 5px;

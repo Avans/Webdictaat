@@ -89,7 +89,7 @@ $(function() {
                 ace_css_editor.on('change', update);
 
             update();
-            window.setTimeout(update, 500);
+            window.setTimeout(update, 1000);
 
             preview.after($('<p class="live_preview"></p>'));
 
@@ -104,9 +104,13 @@ $(function() {
 
                 editor.session.setValue(template.text());
             }
-            inputs.on('input', input_change);
-            if(inputs.length > 0)
+            inputs.on('input', input_change).on('change', input_change);
+            if(inputs.length > 0) {
                 input_change.call(inputs[0]);
+                window.setTimeout(function() {
+                    input_change.call(inputs[0]);
+                }, 1000);
+            }
 
             // Remove original element
             code.detach();
