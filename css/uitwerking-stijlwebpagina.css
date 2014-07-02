@@ -1,0 +1,45 @@
+/* Dit is maar een voorbeeld,  uitwerking van studenten kan verschillen */
+
+body {
+    margin: 3em 3em 0 3em;
+    font-family: Helvetica, serif;
+}
+
+h1 {
+    background-color: #355681;
+    font-size: 28px;
+    line-height: 40px;
+    margin: 1em 0 0.5em 0;
+    font-weight: normal;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 0 10px 0 10px;
+    font-family: 'Muli', sans-serif;
+}
+
+h2 {
+    margin: 1em 0 0.5em 0;
+   font-weight: 600;
+   font-family: 'Titillium Web', sans-serif;
+   position: relative;
+   text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+   font-size: 22px;
+   line-height: 40px;
+   color: #355681;
+   text-transform: uppercase;
+   border-bottom: 1px solid rgba(53,86,129, 0.3);
+}
+
+hr {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #437dff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
