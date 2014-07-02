@@ -66,6 +66,15 @@ Submit:   &lt;input type="submit"&gt;&lt;br&gt;
 
   <p>Het name attribuut geeft de naam aan van het invoerveld. Het script dat het formulier verwerkt kan dan aan de hand van deze naam de waarde van het invoerveld weer krijgen.</p>
 
+  <p>Een checkbox en een radiobutton veld komen bijna nooit voor met maar één keuze. Je bied mensen meerdere keuzes aan door het input object te herhalen met verschillende waarden, maar met DEZELFDE name!</p>
+
+  <code class="livepreview">
+&lt;input type="radio" name="kiesMaar" value="1"&gt;Ja
+&lt;input type="radio" name="kiesMaar" value="0"&gt;Nee
+  </code>
+
+  <p>Alleen hierdoor begrijpt de browser dat het om hetzelfde veld gaat en zal bijvoorbeeld je radiobutton veld ook echt gaan werken!
+
   <h4>value</h4>
 
   <p>Soms wil je al een waarde ingevoerd hebben als het formulier getoond wordt. Dat kan je dan doen met het value attribuut:</p>
