@@ -20,8 +20,6 @@ $(function() {
                 css_span.detach();
             }
             code.html(code.html().trim().replace(/&nbsp;$/, ''));
-            console.log(css_height);
-
 
             var editors = $('<div class="editors"></div>');
             code.after(editors);

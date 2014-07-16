@@ -104,7 +104,8 @@ code.livepreview {
     box-sizing: border-box;
 }
 
-code.livepreview select {
+code.livepreview select, input {
+    width: 1px;
 }
 
 .editor select, .editor input {
