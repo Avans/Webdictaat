@@ -9,7 +9,6 @@ $(function() {
             if(has_css) {
                 css_span.html(css_span.html().trim().replace(/&nbsp;$/, ''));
                 inputs = css_span.find('select,input');
-
                 inputs.each(function(i, el) {
                     $(el).parent().css('position', 'relative');
                     $(el).css('top', $(el).position().top + 8);
@@ -17,10 +16,12 @@ $(function() {
                     placeholder.data('input', el);
                     $(el).replaceWith(placeholder);
                 }).data('template', css_span);
-                var css_height = css_span.height() + 5;
+                var css_height = css_span.outerHeight();
                 css_span.detach();
             }
             code.html(code.html().trim().replace(/&nbsp;$/, ''));
+            console.log(css_height);
+
 
             var editors = $('<div class="editors"></div>');
             code.after(editors);
@@ -41,7 +42,7 @@ $(function() {
             //Make a copy of the code element as an editor
             if(has_css) {
                 var css_editor = $('<code class="editor css"></code>')
-                    .height(css_height)
+                    .css('height', css_height + 8 + 8 + 1 + 5)
                     .html(css_span.html());
 
                 editors.append(css_editor);
@@ -53,7 +54,7 @@ $(function() {
             }
 
             var html_editor = $('<code class="editor html"></code>')
-                .height(code.height())
+                .css('height', code.outerHeight())
                 .html(code.html());
             editors.append(html_editor);
 
@@ -64,9 +65,9 @@ $(function() {
             var preview = $('<iframe class="live_preview"></iframe>');
             editors.after(preview);
 
-            var height = html_editor.height();
+            var height = html_editor.outerHeight() - 2;
             if(has_css)
-                height += css_editor.height() + 17;
+                height += css_editor.outerHeight();
             preview.height(height);
 
             function update_function(ace_html_editor, ace_css_editor, preview) {

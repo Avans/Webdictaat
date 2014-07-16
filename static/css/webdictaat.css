@@ -2,7 +2,7 @@ figure {
     clear: both;
 }
 
-p > code, li > code {
+p > code, li > code, dt > code, dd > code {
     padding: 0;
 }
 .mono {
@@ -16,6 +16,11 @@ p > code, li > code {
 .ace_hidden-cursors {
     opacity:0;
 }
+
+.ace_scroller {
+    background-color: transparent !important;
+}
+
 .assignment img.screenshot {
     box-shadow: 0 0 30px #888;
     border: 1px solid #aaa;
@@ -77,8 +82,8 @@ p > code, li > code {
     float: left !important;
     margin: 0;
     border: 1px solid rgb(225, 225, 232);
-    box-shadow: none;
-    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 0;
     font-size: 12px;
     clear: right;
 
@@ -92,14 +97,14 @@ p > code, li > code {
 code.livepreview {
     display: block;
     width: 50%;
+    font-size: 12px;
+    line-height: 20px !important;
     white-space: pre-wrap;
-    min-height: 2.5em;
+    padding: 8px !important;
+    box-sizing: border-box;
 }
 
 code.livepreview select {
-    position: absolute;
-    vertical-align: middle;
-    width: 100px;
 }
 
 .editor select, .editor input {
@@ -110,10 +115,14 @@ code.livepreview select {
     width: 25%;
 }
 
-.css {
+.editor.css {
+    border-top-left-radius: 8px;
     border-bottom-width: 0;
-    background-image: url(../img/css.png);
+}
+
+.css {
     color: #bc0000;
+    background-image: url(../img/css.png);
     background-repeat: no-repeat;
     background-position: right top;
 }
@@ -121,16 +130,28 @@ code.livepreview select {
 .html {
     background-image: url(../img/html.png);
     color: #d14;
+    clear: left;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
-pre, code, iframe.live_preview {
+.css + .html {
+    border-top-left-radius: 0;
+}
+
+
+
+pre, code {
     padding: 8px;
 }
 
 iframe.live_preview {
-    width: 45%;
+    width: 50%;
     border: 1px solid rgb(225, 225, 232);
     border-left-width: 0;
+    box-sizing: border-box;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 p.live_preview {

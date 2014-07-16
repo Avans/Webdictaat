@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maten &amp; kleuren</title>
+</head>
+
+<body>
+  <h2>Maten &amp; kleuren</h2>
+
+  <img src="schuifmaat.png" class="pull-right">
+  <p>In CSS ben je veel bezig met het opgeven van groottes en afstanden om alle paddings en margins en fontgroottes goed te zetten. Dit kun je doen in pixels met de <code>px</code> suffix. Maar er zijn nog een aantal andere mogelijkheden om maten op te geven. Iedere maat heeft weer zijn eigen voordeel en nadeel.</p>
+
+  <dl>
+    <dt>Pixels <code>px</code></dt>
+    <dd>De meest voor zichzelf sprekende eenheid. Gelijk aan het aantal pixels op het beeldscherm.</dd>
+
+    <dt>Centimeters <code>cm</code></dt>
+    <dd>Hiermee kan je de daadwerkelijke fysieke grootte in centimeters op het beeldscherm aangeven. Deze wordt net als millimeters en inches weinig gebruikt.</dd>
+
+    <dt>Millimeters <code>mm</code></dt>
+    <dd>De grootte in millimeters.</dd>
+
+    <dt>Inches <code>in</code></dt>
+    <dd>De grootte in inches.</dd>
+
+    <dt>Points <code>pt</code></dt>
+    <dd>De grootte in points, de waardes die je ook in de meeste tekstverwerkers gebruikt om lettergroottes aan te geven. Dit wordt veel gebruikt om font grootte aan te geven.</dd>
+
+    <dt>Em <code>em</code></dt>
+    <dd>Een speciale waarde die relatief is ten opzichte van de font-grootte in die context. <code>1.0em</code> is precies even groot als de font-grootte, en <code>2.0em</code> is twee keer zo groot. Deze waarde wordt veel gebruikt voor ruimtes die groter moeten worden naarmate de tekst zelf ook groter wordt. Dit kun je testen door de tekstgrootte in een browser aan te passen (ctrl+)</dd>
+
+    <code class="livepreview">
+      <span class="css">
+body {
+    font-size: <input type="range" min="5" max="20" value="10">pt;
+}
+
+.groot {
+    font-size: 2.0em;
+}
+      </span>
+&lt;p&gt;Dit is een normale tekst&lt;/p&gt;
+&lt;p class="groot"&gt;Deze tekst is twee keer zo groot als de normale tekst&lt;/p&gt;
+    </code>
+  </dl>
+
+  <dt>Percentage <code>%</code></dt>
+  <dd>s</dd>
+
+</body>
+</html>
