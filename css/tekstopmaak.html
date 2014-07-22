@@ -39,6 +39,18 @@ p {
       &lt;p&gt;Een grote tekst&lt;/p&gt;
   </code>
 
+  <h3>line-height</h3>
+  <p>De regelhoogte van de tekst. Wordt vaak aangegeven in <a href="units.html">em</a></p>
+
+  <code class="livepreview">
+    <span class="css">
+p {
+    line-height: <input type="range" min="0" max="5" step="0.1" value="1.0">em;
+}
+    </span>
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta velit interdum eleifend dignissim. Vestibulum sagittis iaculis tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur facilisis tellus in ultricies dictum. Cras quam velit, convallis sed diam et, dignissim iaculis neque. Suspendisse mollis massa ligula, non consequat dolor scelerisque et. In at placerat eros, commodo vehicula orci.&lt;/p&gt;
+  </code>
+
   <h3>font-weight</h3>
   <p>Dikgedrukte text. Waardes: <code>bold</code>, <code>normal</code></p>
   <code class="livepreview">
@@ -49,6 +61,17 @@ p {
     </span>
     &lt;p&gt;Een vette tekst!&lt;/p&gt;
   </code>
+
+  <h3>font-style</h3>
+  <p>Schuingedrukte tekst. Waardes: <code>bold</code>, <code>normal</code></p>
+  <code class="livepreview">
+    <span class="css">
+p {
+  font-style: <select><option>normal</option><option selected>italic</option></select>;
+}
+  </span>
+  &lt;p&gt;Schuingedrukte tekst&lt;/p&gt;
+</code>
 
   <h3>font-family</h3>
   <p>Lettertype</p>
@@ -62,7 +85,7 @@ p {
   </code>
 
   <h3>color</h3>
-  <p>De kleur van de tekst</p>
+  <p>De <a href="units.html">kleur</a> van de tekst</p>
   <code class="livepreview">
       <span class="css">
 p {
@@ -108,5 +131,16 @@ p {
     &lt;p&gt;Deze tekst wordt automatisch hoofdletters&lt;/p&gt;
   </code>
 
+  <h3>text-align</h3>
+  <p>Uitlijning van de tekst</p>
+
+  <code class="livepreview">
+    <span class="css">
+p {
+    text-align: <select><option>left</option><option selected>center</option><option>right</option></select>;
+}
+    </span>
+    &lt;p&gt;Gecentreerd&lt;/p&gt;
+  </code>
 </body>
 </html>

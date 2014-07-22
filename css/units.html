@@ -45,7 +45,56 @@ body {
   </dl>
 
   <dt>Percentage <code>%</code></dt>
-  <dd>s</dd>
+  <dd>Bij sommige properties kan je ook percentages gebruiken als eenheid. Dit wordt vaak gebruikt bij de <b>width</b> en <b>height</b> properties bij het maken van een layout. Bijvoorbeeld een menu dat altijd 20% van de pagina breed is.</dd>
+
+    <code class="livepreview">
+      <span class="css">
+div {
+    border: 1px solid black;
+    width: <input type="range" min="0" max="100" value="25">%;
+    height: <input type="range" min="0" max="100" value="25">%;
+}
+      </span>
+&lt;div&gt;Een procentuele grootte&lt;/p&gt;
+    </code>
+
+  <h2>Kleuren</h2>
+
+  <p>Op veel plekken in CSS kan je kleuren aangeven. Bijvoorbeeld de kleur van een border, de kleur van de tekst of de achtergrondkleur van een div. Een kleur aangeven kan je op verschillende manieren doen.</p>
+
+  <dl>
+    <dt>Namen</dt>
+    <dd>CSS heeft een lijst van ingebouwde engelse kleurnamen die je kan gebruiken. Dit zijn: <code>aqua</code>, <code>black</code>, <code>blue</code>, <code>fuchsia</code>, <code>gray</code>, <code>green</code>, <code>lime</code>, <code>maroon</code>, <code>navy</code>, <code>olive</code>, <code>orange</code>, <code>purple</code>, <code>red</code>, <code>silver</code>, <code>teal</code>, <code>white</code> en <code>yellow</code>.</dd>
+
+    <dt>RGB-waardes</dt>
+    <dd>Als we wat specifiekere kleuren willen gebruiken moeten we RGB waardes gebruiken. Elke kleur kunnen we samenstellen door <span style="color: #FF0000">rood</span>, <span style="color: #00FF00">groen</span> en <span style="color: #0000FF">blauw</span> met elkaar te mengen. Elk kleurcomponent is een 8-bit waarde van 0 tot en met 255. <code>rgb(50, 255, 60)</code> is een voorbeeld van een lichtgroene kleur.</dd>
+
+    <dt>RGBA-waardes</dt>
+    <dd>Hetzelfde als RGB maar dan met een vierde alfa-waarde waarmee je de transparantie van de kleur kan aangeven. Deze waarde loopt van 0.0 (volledig transparant) tot 1.0 (volledig ondoorzichtig).</dd>
+
+    <dt>Hex-waardes</dt>
+    <dd>Een veelgebruikte verkorte notatie van rgb zijn de hex waardes. Hiermee schrijf je de rgb waardes hexadecimaal op van 00 (0) tot FF (255). De rood, groen en blauw hexwaardes schrijf je dan achter elkaar met een # ervoor. #<span style="color: #FF0000">BB</span><span style="color: #00FF00">00</span><span style="color: #0000FF">FF</span> is bijvoorbeeld een <span style="color: #BB00FF">paarse kleur</span>.
+  </dl>
+
+  <code class="livepreview">
+      <span class="css">
+div {
+    background-color: <select>
+        <option>fuchsia</option>
+        <option>rgb(50, 255, 60)</option>
+        <option>rgba(50, 255, 60, 0.3)</option>
+        <option selected>#BB00FF</option>
+    </select>;
+}
+      </span>
+&lt;div&gt;Div met een kleurtje&lt;/div&gt;
+  </code>
+
+  <div class="assignment">
+    <p class="easy">De kleur rood meng je door 100% rood, 0% groen en 0% blauw. Maak de achtergrondkleur van de div rood met de <code>rgb()</code> notatie</p>
+    <p class="medium">Maak de achtergrondkleur rood met de hex-notatie</p>
+  </div>
+
 
 </body>
 </html>
