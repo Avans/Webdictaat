@@ -167,7 +167,7 @@ $(function() {
     };
     var linkmouseup = function(e) {
         // Check if it is a link to a local page
-        var regex = '^' + window.location.protocol + '//' + window.location.host + window.location.pathname + '([/_a-zA-Z0-9]+\\.html)$';
+        var regex = '^' + window.location.protocol + '//' + window.location.host + window.location.pathname + '([/_a-zA-Z0-9-]+\\.html)$';
 
         var match = this.href.match(regex);
         if(match && !$(e.currentTarget).hasClass('no_ajax')) {

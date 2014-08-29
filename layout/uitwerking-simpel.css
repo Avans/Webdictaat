@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica;
+  color: white;
+  font-size: 20pt;
+}
+
+header {
+  background-color: red;
+  text-align: center;
+  padding: 30pt;
+}
+
+menu {
+  float: left;
+  width: 20%;
+  background-color: blue;
+  height: 300px;
+}
+
+article {
+  height: 300px;
+  float: left;
+  width: 80%;
+  background-color: green;
+}

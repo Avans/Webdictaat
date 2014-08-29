@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica;
+  color: white;
+  font-size: 20pt;
+}
+
+header {
+  background-color: red;
+  text-align: center;
+  padding: 20pt;
+}
+
+section {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+menu {
+  float: left;
+  width: 20%;
+  background-color: blue;
+  height: 300px;
+}
+
+article {
+  height: 300px;
+  float: left;
+  width: 60%;
+  background-color: green;
+}
+
+aside {
+  float: left;
+  background-color: black;
+  width: 20%;
+  height: 300px;
+}
+
+footer {
+  clear: both;
+  background-color: gray;
+  padding: 20pt;
+  text-align: center;
+}

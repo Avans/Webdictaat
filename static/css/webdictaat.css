@@ -190,6 +190,11 @@ figcaption {
     text-align: center;
 }
 
+.colorbox {
+  padding: 3px;
+  margin: 2px;
+}
+
 /* Anatomy stuff */
  .anatomy {
      font-family: Courier; monospace;
