@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img src="center.jpg" class="pull-right" style="margin: 15px">
+  <h2>Centreren</h2>
+
+  <p>Veel layouts op internet hebben tegenwoordig een gecentreerde website. De gehele inhoud staat dan in een &lt;div&gt; die een vaste breedte heeft en in het midden van de pagina staat. Op deze pagina gaan we het dus hebben om <strong>elementen</strong> te centreren. Als je tekst wil centreren kan je dat doen met de "text-align: center;" property.</p>
+
+  <p>De truc om dit met CSS voor elkaar te krijgen zit hem in de <code>margin</code> stijlregel (<a href="../css/boxmodel.html">weet je nog</a>, daarmee geef je de ruimte aan de buitenkant van de border aan). Als elementen zowel links als rechts een margin met de waarde <code>auto</code> hebben berekend de browser de juiste waardes zodat dat element precies in het midden komt te staan.</p>
+
+  <p>Vergeet niet het element ook een <code>width</code> te geven, standaard zijn elementen namelijk 100% breed en dan zie je niet meer dat het eigenlijk gecentreert is.</p>
+
+  <code class="livepreview">
+<span class="css">
+#content {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: <input type="range" min="0" max="100" value="60">%;
+  border: 1px solid black;
+}
+</span>
+&lt;div id="content"&gt;Gecentreerde div&lt;/div&gt;
+  </code>
+
+  <p>Je kan dit ook korter opschrijven tot <code>margin: 0 auto 0 auto;</code>. Deze kortere notatie noemt in de volgorde <strong>top, right, bottom, left</strong> alle margins op (te onthouden als: vanaf top met de klok mee). Hiermee maak je je element gecentreerd en geef je tegelijk aan dat deze een top en bottom margin heeft van 0. Als dat nog teveel typwerk kan je het zelfs opschrijven als <code>margin: 0 auto;</code></p>
+
+    <code class="livepreview">
+  <span class="css">
+  #content {
+    margin: 0 auto;
+
+    width: 60%;
+    border: 1px solid black;
+  }
+  </span>
+  &lt;div id="content"&gt;Nog een gecentreerde div&lt;/div&gt;
+</code>
+
+</body>
+</html>
