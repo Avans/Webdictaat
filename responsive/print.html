@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img src="printer.png" class="pull-right" style="margin: 15px">
+  <h2>Print stylesheets</h2>
+
+  <p>Je kent het vast wel: je print een webpagina uit en het resultaat is een rommel van lijntjes, kleurvlakken, menu items, en als je geluk hebt ook het gedeelte wat je eigenlijk wilt printen. Met print stylesheets zorg je ervoor dat dit bij jouw website niet gebeurd.</p>
+
+  <p>Een print stylesheet is een extra los css bestand wat je in de &lt;head&gt; van je document opneemt in een &lt;link&gt; met een extra <code>media="print"</code> attribuut.</p>
+
+  <code class="pre">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;link rel="stylesheet" href="print-style.css" media="print"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+
+  <p>Regels die in de print stylesheet staan worden toegepast op het moment dat je het document uitprint. Vaak staan hier dan regels in om navigatie elementen en achtergrondkleuren weg te halen.</p>
+
+  <p>Wikipedia heeft een mooi voorbeeld van hoe een webpagina kan veranderen als je hem afdrukt:</p>
+
+  <img src="wiki-screen.png" class="screenshot">
+  <img src="wiki-print.png" class="screenshot">
+  </body>
+</html>
