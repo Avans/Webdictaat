@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <img src="responsive.png" class="pull-right" style="margin: 15px">
+  <h2>Media queries</h2>
+
+  <p>De <a href="print.html">print stylesheets</a> zijn maar een klein voorbeeld van wat je allemaal met media queries kan doen. Je kan de CSS regels laten afhangen van vele verschillende omstandigheden. Eén van de meest gebruikte manieren is om dat te doen aan de hand van de <code>min-width</code> en de <code>max-width</code>.</p>
+
+  <p>Deze techniek wordt veel gebruikt om een site leesbaar en toegankelijk te maken voor alle mogelijke tablets, smartphones en desktops tegelijk. Probeer dit webdictaat maar eens smaller te maken, je zult zien dat als je het venster smal genoeg maakt de elementen op de pagina op een andere plek gaan staan.</p>
+
+  <p>Op deze site: <a href="http://mediaqueri.es/">http://mediaqueri.es/</a> staan een aantal mooie voorbeelden van hoe een website zich aanpast aan de hand van de breedte van de browser</p>
+
+  <code class="livepreview">
+    <span class="css">
+body {
+  padding: 40px;
+}
+
+div {
+  width: 30%;
+  height: 70px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: yellow;
+  float: left;
+}
+
+@media screen and (max-width: 330px) {
+
+    body {
+        padding: 0;
+    }
+
+    div {
+      float: none;
+      width: 70%;
+    }
+
+}
+    </span>
+
+  Een lekkere dikke padding voor deze pagina. Maar niet als de pagina te smal is (bijvoorbeeld op mobiele apparaten, of als je de window resized.)
+  &lt;div&gt;Deze divs staan normaal&lt;/div&gt;
+  &lt;div&gt;Naast elkaar&lt;/div&gt;
+  </code>
+
+  </body>
+</html>
