@@ -5,6 +5,18 @@ body {
   text-align: center;
 }
 
+#menu {
+  float: left;
+  width: 30%;
+}
+
+#content {
+  float: left;
+  width: 70%;
+}
+
+
+
 h1 {
   background-color: #444;
   width: 50%;
@@ -15,6 +27,27 @@ h1 {
 h2 {
   margin: 0.5em;
   background-color: #222;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  color: #EEE;
+  border: 1px solid #BBB;
+  background-color: #666;
+  margin: 5px;
+  padding: 15px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  #menu, #content {
+    float: none;
+    width: 100%;
+  }
 }
 
 @media print {

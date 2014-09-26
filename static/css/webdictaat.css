@@ -184,6 +184,7 @@ img.screenshot {
     margin: 2em auto 1em auto;
     box-shadow: 0 0 30px #888;
     max-width: 80%;
+    clear: right;
 }
 
 figcaption {
