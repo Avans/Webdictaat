@@ -1,0 +1,260 @@
+html {
+	background-color: #D3D3D3; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial;
+	width: 1000px;
+	border-left: solid 1px grey;
+	border-right: solid 1px grey;
+	border-bottom: solid 5px red;
+	border-top: solid 5px red;
+	height: 1342px;
+}
+#header {
+	float: left;
+	width: 100%;
+	height: 200px;
+	border-bottom: 1px solid grey;
+}
+#psv_logo {
+	float: left;
+	width: 200px;
+	height: 200px;
+}
+#sidebar {
+	width: 200px;
+	height: 1010px; 
+	float: left;
+	background-color: #FFFFFF;
+}
+#zoekbalk {
+	margin: 5px;
+
+}
+.sidebar_button {
+	width: 90%;
+	padding: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border-bottom: 1px solid grey;
+
+}
+#sidebar a:link  {
+	color: grey;
+	font-weight: bold;
+	text-decoration: none;
+	}
+#sidebar a:visited {
+	color: grey;
+	font-weight: bold;
+	text-decoration: none;
+}
+#sidebar a:hover {
+	color: red;
+	font-weight: bold;
+	text-decoration: none;
+}
+#sidebar a.sidebar_xlink:hover{
+	color: white;
+	background-color:#ff0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#content {
+	width: 600px;
+	height: 1010px;	
+	float: left;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	background-color: #FFFFFF;	
+}
+#kolom_rechts {
+	width: 198px;
+	height: 1010px;	
+	float: left;
+	background-color: #FFFFFF;	
+}
+#twitter_button {
+	margin: 10px;
+}
+#facebook_button {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#kolom_rechts_pic {
+	margin: 10px;
+}
+/* footer */
+#footer {
+
+	width: 100%;
+	height: 130px;	
+	float: left;
+	border-top: 1px solid grey;
+	background-color: #FFFFFF;	
+}
+.footer_text {
+	margin-top: 5px;
+	font-size: 13px;
+	text-align: center;
+	color: black;
+}
+#footer_pic {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom: 1px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+}
+#footer a:link{
+	color: black;
+	text-decoration: none;
+}
+#footer a:visited {
+	color: black;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: red;
+	text-decoration: underline;
+}
+/* subject */
+.subject {
+	width: 580px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 230px;
+}
+.subject_pic_fullsize {
+	margin-top: 5px;
+	float: left;
+	width: 580px;
+}
+.subject_pic {
+	float: left;
+	width: 270px;
+}
+.subject_tekst_fullsize {
+	float: left;
+	width: 580px;
+}
+.subject_tekst {
+	float: left;
+	width: 310px;
+}
+h3 {
+	margin-bottom: 5px;
+	color: red;
+}
+h4 {
+	margin-bottom: 5px;
+	color: red;
+}
+a:link {
+	color: black;
+	text-decoration: none;
+}
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+
+html {
+	background-color: #D3D3D3; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Arial;
+	width: 600px;
+	border-left: solid 1px grey;
+	border-right: solid 1px grey;
+	border-bottom: solid 5px red;
+	border-top: solid 5px red;
+	height: 1655px;
+}
+#header {
+	float: left;
+	width: 100%;
+	height: 200px;
+	border-bottom: 1px solid grey;
+}
+#psv_logo {
+	float: left;
+	width: 600px;
+	height: 200px;
+	background-color: white;
+}
+#sidebar {
+	width: 160px;
+	height: 1430px; 
+	float: left;
+	background-color: #FFFFFF;
+}
+#content {
+	width: 438px;
+	height: 1430px;	
+	float: left;
+	border-left: 1px solid grey;
+	background-color: #FFFFFF;	
+}
+#kolom_rechts {
+	display: none;
+}
+.subject {
+	width: 425px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 300px;
+}
+.subject_pic_fullsize {
+	margin-top: 5px;
+	float: left;
+	width: 580px;
+}
+.subject_pic {
+	float: left;
+	width: 270px;
+}
+.subject_tekst_fullsize {
+	float: left;
+	width: 580px;
+}
+.subject_tekst {
+	float: left;
+	width: 425px;
+}
+#footer {
+	width: 100%;
+	height: 25px;	
+	float: left;
+	border-top: 1px solid grey;
+	background-color: #FFFFFF;	
+}
+#kolom_rechts_pic {
+	display: none;
+}
+#footer_pic {
+	display: none;
+}
+
+}
+

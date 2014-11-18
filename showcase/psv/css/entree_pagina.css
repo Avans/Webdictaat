@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	height: 500px;
+}
+#header {
+	margin-top: 100px;
+	text-align: center;
+	width: 1000px;
+	height: 100px;
+}
+#header_tekst {
+	width: 1000px;
+	color: white;
+	font-weight: bold;
+	font-family: 'Tangerine', serif;
+	font-size: 48px;
+	text-shadow: 4px 4px 4px #aaa;
+}
+#content {
+	width: 1000px;
+	height: 650px;	
+	float: left;
+}
+#footer {
+	text-align: center;
+	width: 1000px;
+}
