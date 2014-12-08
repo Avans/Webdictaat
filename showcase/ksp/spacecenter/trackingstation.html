@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tracking Station | Space Center | Kerbal Space Program</title>
+		<link rel="stylesheet" type="text/css" href="../style/style_main.css" />
+		<link rel="stylesheet" type="text/css" href="../style/style_responsive.css" />
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="menu_head">
+			<div class="container">
+				<a id="logo_head" href="../index.html"></a>
+
+				<div class="buttonContainer">
+					<div class="menuButton_head subMenu">Planets
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="../planets/dres.html">Dres</a>
+							<a class="subMenu_item" href="../planets/duna.html">Duna</a>
+							<a class="subMenu_item" href="../planets/eeloo.html">Eeloo</a>
+							<a class="subMenu_item" href="../planets/eve.html">Eve</a>
+							<a class="subMenu_item" href="../planets/jool.html">Jool</a>
+							<a class="subMenu_item" href="../planets/kerbin.html">Kerbin</a>
+							<a class="subMenu_item" href="../planets/kerbol.html">Kerbol</a>
+							<a class="subMenu_item" href="../planets/moho.html">Moho</a>
+						</div>
+					</div>
+
+					<div class="menuButton_head subMenu active">Space Center
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="../spacecenter/vab.html">Vehicle Assembly Building</a>
+							<a class="subMenu_item" href="../spacecenter/launchpad.html">Launch pad</a>
+							<a class="subMenu_item" href="../spacecenter/spaceplanehangar.html">Space Plane Hangar</a>
+							<a class="subMenu_item" href="../spacecenter/runway.html">Runway</a>
+							<a class="subMenu_item active" href="../spacecenter/trackingstation.html">Tracking Station</a>
+							<a class="subMenu_item" href="../spacecenter/astronautcomplex.html">Astronaut Complex</a>
+							<a class="subMenu_item" href="../spacecenter/researchdevelopment.html">Research and Development</a>
+							<a class="subMenu_item" href="../spacecenter/missioncontrol.html">Mission Control</a>
+							<a class="subMenu_item" href="../spacecenter/administrationfacility.html">Administration Facility</a>
+						</div>
+					</div>
+
+					<a class="menuButton_head" href="../index.html">Home</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="container_main">
+	
+			<div id="container_left">
+				<a class="menu_wiki_item" href="#usage">Usage</a>
+				<a class="menu_wiki_item" href="#asteroids">Asteroids</a>
+				<a class="menu_wiki_item" href="#changelog">Changelog</a>
+			</div>
+
+			<div id="container_right">
+				<div class="text">
+					<h1>Tracking Station</h1>
+					<hr>
+					<p>
+					The Tracking Station is the building located at the Kerbal Space Center on Kerbin dedicated to the access, observation, cancellation and recovery of all currently active missions, including splashed-down or landed craft and debris. It does not include crashed or otherwise ended missions. Celestial bodies can also be observed at the Tracking Station.<br /><br />	
+					In the Space Center view, the Tracking Station is the round building with three rotating parabolic dishes in a triangle surrounding the building. The coordinates for the tracking station are approximately 0˚ 07’ 37” S, 74˚ 36’ 19” W (as of 0.21). Prior to the 0.21 update, a single antenna was located on top of the tracking station. The collision model for each of the rotating antennae is a sphere.
+					</p>
+
+					<a class="textAnchor" id="usage"></a>
+					<h3>Usage</h3>
+					<hr>
+
+					The tracking station's main display is similar to the map view, with the main addition being a list on the left of the screen displaying every mission (craft, kerbonaut on EVA or Extend-o-matic Series A1 Deployable Flag) in the game. At the top of the screen are a set of buttons which can be used to filter out different types of mission; by default, everything except for debris is shown. A single type can be selected using the left mouse button, and other types can be added or removed from the selection using the right mouse button. Information and physical statistics about the currently selected object are available through the buttons on the right like while in map view; craft have a crew manifest (if crewed), while bodies have a short description.<br />
+					Once a mission is selected, several actions are available to the player.
+					<ul>
+						<li><strong>Fly</strong> will switch the view to the selected mission. If it is either a kerbonaut on EVA or a craft with a working command module, it is also possible to control the craft. However, even if it cannot be controlled, it can still be switched to, so it is possible to view the surroundings. This works even with flags.</li>
+						<li><strong>Terminate</strong> will destroy the vehicle. If the vehicle had a crew, they will be killed and listed as “lost” in the Astronaut Complex. This option is disabled if recovery is possible.</li>
+						<li><strong>Recover</strong> will recover the vehicle from the world and keep the crew on the duty roster, returning them to “Available” status. This action can only be performed if the mission is located anywhere on Kerbin and has come to a halt, including splashdown in the ocean. It also returns all science gathered but not yet transmitted.</li>
+					</ul>
+
+					<a class="textAnchor" id="asteroids"></a>
+					<h3>Asteroids</h3>
+					<hr>
+
+					In version 0.23.5 the tracking station became able to detect asteroids. While viewing the tracking station, new icons named "Unknown Object" will periodically appear in the vicinity of Kerbin. If one is selected, clicking the Track button will give it a temporary designation and display additional information such as its class, orbital path, and any future interaction with Kerbin's SOI. The asteroid will also become visible in space while controlling vessels, where it can be selected as a target for maneuvers.<br /><br />
+					While an asteroid is selected, an Untrack button is shown, which if clicked will discard the asteroid's name and data and return it to Unknown Object status. Unknown objects will eventually disappear as they drift away from Kerbin.
+
+					<a class="textAnchor" id="changelog"></a>
+					<h3>Changelog</h3>
+					<hr>
+
+					<h4>0.23.5</h4>
+					<ul>
+						<li>Asteroids can be tracked in the Tracking Station.</li>
+					</ul>
+					<h4>0.22</h4>
+					<ul>
+						<li>The border is not rounded.</li>
+						<li>Border connected to roads and other borders.</li>
+					</ul>
+					<h4>0.21</h4>
+					<ul>
+						<li>Redesigned exterior</li>
+					</ul>
+					<h4>0.20</h4>
+					<ul>
+						<li>Added information about selected planets, moons, or ships.</li>
+						<li>Added clock in upper left corner.</li>
+						<li>Added ability to hide various types of vessels.</li>
+					</ul>
+					<h4>0.18.3</h4>
+					<ul>
+						<li>Now available in new demo. Removed reference to the contrary.</li>
+					</ul>
+					<h4>0.17</h4>
+					<ul>
+						<li>Ability to terminate flights</li>
+					</ul>
+					<h4>0.14.0</h4>
+					<ul>
+						<li>Initial release</li>
+						<li>Able to resume flights from the Tracking Station</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="footer">&copy; 2014 Jasper Attema &amp; <a href="http://djangovanderheijden.nl/">Django van der Heijden</a> - <a id="contactLink" href="../contact.html">Contact us</a></div>
+		
+		<div id="fixedbg"></div>
+		
+		<script type="text/javascript" src="../js/main.js"></script>
+	</body>
+</html>

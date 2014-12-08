@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact | Kerbal Space Program</title>
+		<link rel="stylesheet" type="text/css" href="style/style_main.css" />
+		<link rel="stylesheet" type="text/css" href="style/style_responsive.css" />
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8">
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="menu_head">
+			<div class="container">
+				<a id="logo_head" href="index.html"></a>
+
+				<div class="buttonContainer">
+					<div class="menuButton_head subMenu">Planets
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="planets/dres.html">Dres</a>
+							<a class="subMenu_item" href="planets/duna.html">Duna</a>
+							<a class="subMenu_item" href="planets/eeloo.html">Eeloo</a>
+							<a class="subMenu_item" href="planets/eve.html">Eve</a>
+							<a class="subMenu_item" href="planets/jool.html">Jool</a>
+							<a class="subMenu_item" href="planets/kerbin.html">Kerbin</a>
+							<a class="subMenu_item" href="planets/kerbol.html">Kerbol</a>
+							<a class="subMenu_item" href="planets/moho.html">Moho</a>
+						</div>
+					</div>
+
+					<div class="menuButton_head subMenu">Space Center
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="spacecenter/vab.html">Vehicle Assembly Building</a>
+							<a class="subMenu_item" href="spacecenter/launchpad.html">Launch pad</a>
+							<a class="subMenu_item" href="spacecenter/spaceplanehangar.html">Space Plane Hangar</a>
+							<a class="subMenu_item" href="spacecenter/runway.html">Runway</a>
+							<a class="subMenu_item" href="spacecenter/trackingstation.html">Tracking Station</a>
+							<a class="subMenu_item" href="spacecenter/astronautcomplex.html">Astronaut Complex</a>
+							<a class="subMenu_item" href="spacecenter/researchdevelopment.html">Research and Development</a>
+							<a class="subMenu_item" href="spacecenter/missioncontrol.html">Mission Control</a>
+							<a class="subMenu_item" href="spacecenter/administrationfacility.html">Administration Facility</a>
+						</div>
+					</div>
+
+					<a class="menuButton_head" href="index.html">Home</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="container_main">
+
+			<div id="contactForm">
+				<h3>If you'd like to contact us, please fill out the form below:</h3>
+				<form action="contact.html" method="POST" id="form_contact">
+					<label for="contact_name" form="form_contact">Your name</label>
+					<input type="text" id="contact_name" name="name" placeholder="Name">
+
+					<label for="contact_email" form="form_contact">Your email address (so we can respond)</label>
+					<input type="text" id="contact_email" name="email" placeholder="Email address">
+
+					<label for="contact_reason" form="form_contact">Why do you want to contact us?</label>
+					<select name="reason" id="contact_reason">
+						<option value="Suggestion">I have a suggestion for your website</option>
+						<option value="Amazing">I want to tell you how amazing you are</option>
+						<option value="ContactTest">I simply want to test the contact form</option>
+						<option value="Hate">I hate your website and want to make sure you know</option>
+					</select>
+
+					<label for="contact_message" form="form_contact">Your message</label>
+					<textarea name="message" id="contact_message" placeholder="Type message here"></textarea>
+
+					<input type="submit" value="Send mail">
+				</form>
+			</div>
+			
+		</div>
+
+		<div id="footer" class="centered">&copy; 2014 Jasper Attema &amp; <a href="http://djangovanderheijden.nl/">Django van der Heijden</a> - <a id="contactLink" href="contact.html">Contact us</a></div>
+		
+		<div id="fixedbg"></div>
+		
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

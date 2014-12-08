@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vehicle Assembly Building | Space Center | Kerbal Space Program</title>
+		<link rel="stylesheet" type="text/css" href="../style/style_main.css" />
+		<link rel="stylesheet" type="text/css" href="../style/style_responsive.css" />
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="menu_head">
+			<div class="container">
+				<a id="logo_head" href="../index.html"></a>
+
+				<div class="buttonContainer">
+					<div class="menuButton_head subMenu">Planets
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="../planets/dres.html">Dres</a>
+							<a class="subMenu_item" href="../planets/duna.html">Duna</a>
+							<a class="subMenu_item" href="../planets/eeloo.html">Eeloo</a>
+							<a class="subMenu_item" href="../planets/eve.html">Eve</a>
+							<a class="subMenu_item" href="../planets/jool.html">Jool</a>
+							<a class="subMenu_item" href="../planets/kerbin.html">Kerbin</a>
+							<a class="subMenu_item" href="../planets/kerbol.html">Kerbol</a>
+							<a class="subMenu_item" href="../planets/moho.html">Moho</a>
+						</div>
+					</div>
+
+					<div class="menuButton_head subMenu active">Space Center
+						<div class="subMenu_head">
+							<a class="subMenu_item active" href="../spacecenter/vab.html">Vehicle Assembly Building</a>
+							<a class="subMenu_item" href="../spacecenter/launchpad.html">Launch pad</a>
+							<a class="subMenu_item" href="../spacecenter/spaceplanehangar.html">Space Plane Hangar</a>
+							<a class="subMenu_item" href="../spacecenter/runway.html">Runway</a>
+							<a class="subMenu_item" href="../spacecenter/trackingstation.html">Tracking Station</a>
+							<a class="subMenu_item" href="../spacecenter/astronautcomplex.html">Astronaut Complex</a>
+							<a class="subMenu_item" href="../spacecenter/researchdevelopment.html">Research and Development</a>
+							<a class="subMenu_item" href="../spacecenter/missioncontrol.html">Mission Control</a>
+							<a class="subMenu_item" href="../spacecenter/administrationfacility.html">Administration Facility</a>
+						</div>
+					</div>
+
+					<a class="menuButton_head" href="../index.html">Home</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="container_main">
+	
+			<div id="container_left">
+				<a class="menu_wiki_item" href="#usage">Usage</a>
+				<a class="menu_wiki_item" href="#interface">Interface</a>
+				<a class="menu_wiki_item" href="#appearance">Appearance</a>
+				<a class="menu_wiki_item" href="#changelog">Changelog</a>
+			</div>
+
+			<div id="container_right">
+				<div class="characteristics">
+					<img src="../images/spacecenter/vab.png" alt="Vehicle Assembly Building" />
+					<hr>
+
+					<h3>Characteristics</h3>
+					Location: <span class="explanation">Kerbin, Kerbal Space Center</span><br>
+					Altitude: <span class="explanation">Unknown</span><br>
+					Since version: <span class="explanation">0.7.3</span>
+				</div>
+				<div class="text">
+					<h1>Vehicle Assembly Building</h1>
+					<hr>
+
+					<p>The Vehicle Assembly Building, commonly called the VAB (sometimes wrongly "Vertical Assembly Building"), is one of the two craft construction facilities at Kerbal Space Center and is KSC's largest single building. In Kerbal Space Program game development history, it can also be considered the oldest.</p>
+
+					<a class="textAnchor" id="usage"></a>
+					<h3>Usage</h3>
+					<hr>
+
+					<p>Like its counterpart the Spaceplane Hangar (SPH), the VAB's use is constructing craft. The available parts list is the same in both facilities. The essential difference between them is that while the SPH's axis of symmetry when placing or moving parts is bilateral, the VAB provides radial symmetry and its axis is vertical with respect to the building like a rocket rather than horizontal like a plane. Parts can be placed singly or with two-, three-, four-, six- or eight-fold radial symmetry. Vessels constructed in the VAB will launch from the Launch Pad.</p>
+
+					<p>Subassemblies of user-combined parts can be stored and copied to other vehicles later. Subassemblies are shared between the VAB and SPH allowing exchanges of crafts between them, though care must be taken which part is the root others trace their attachment to.</p>
+
+					<a class="textAnchor" id="interface"></a>
+					<h3>Interface</h3>
+					<hr>
+
+					<p><strong>Mode:</strong> Along the top of the screen are several controls. The left most controls vary with the current mode the VAB is in. Mode is controlled by the three blue icons just to the left of center along the top. These are: Parts (the default mode), Action Groups, and Crew. These modes are each described on their own page.</p>
+
+					<p><strong>Craft Name</strong> is in the top center. Clicking on the name allows the user to edit the name before saving the current craft. It also opens a drop down box that lets the user enter longer text such as a description of the vehicle, operations guides, or anything else noteworthy. Clicking anywhere else on the screen closes the drop down box.</p>
+
+					<p><strong>Mission Flag</strong> is just to the right of top center. It presets the flag used, if this is a manned vehicle, when a Extend-o-matic Series A1 Deployable Flag is placed once landed. </p>
+
+					<p>File controls are located along the top right of the screen.</p>
+
+					<ul>
+						<li><strong>New</strong> - Clears currently active vehicle from the VAB.</li>
+						<li><strong>Load</strong> - Opens a pop up window to load any previously saved vehicle assemblies.</li>
+						<li><strong>Save</strong> - Saves the currently active vehicle to disk. </li>
+					</ul>
+
+					<p><strong>Launch</strong> is second in from the top right corner. If not recently saved, overwrites Auto Saved Ship on disk, then switches from the VAB to the Launch pad.</p>
+
+					<p><strong>Exit</strong> is the rightmost button. It exits the VAB back to the Space Center.</p>
+
+					<p><strong>Staging</strong> On the right edge of the screen, rising from the bottom, is a dynamic and editable list of the current stages of the vehicle under construction. The game will attempt to build the stages as the user adds parts. However, the user may want to change the order that stages are activated, or edit what happens at each stage.</p>
+
+					<p><strong>Notifications</strong> are on the bottom, second in from the right. These report completed Contracts.</p>
+
+					<p><strong>Contracts</strong> are on the bottom, just left of Notifications. These list currently active contracts accepted in Mission Control.</p>
+
+					<a class="textAnchor" id="appearance"></a>
+					<h3>Appearance</h3>
+					<hr>
+
+					<p>The Vehicle Assembly Building is structured around an approximately 100 m tall assembly bay tower (108 m including helipad) located at the center of KSC. A wing extends south from the assembly bay tower, itself taller than most buildings at KSC and structured in three tiers. A smaller, lower wing extends a short distance on the north side. On the roof, there are 2 helipads between the skylights. There are no helicopters in the game, but the helipads provide a suitable landing target for VTOL vehicles.</p>
+
+					<p>On the east face of the assembly bay tower is an 8-leaf vertical lift door approximately 93 m tall. Closed at all other times, during craft assembly the east door is visibly open (giving 50 m clearance) as though ready for the craft to be rolled out. However, craft appear directly on the Launch Pad and the door is never seen in motion. The view outside is always lit as midday regardless of time in-game. Additionally, on the north, west, and south faces of the VAB are large, yellow, swinging doors which appear to be auxiliary entrances.</p>
+
+					<p>Kerbal scientists and workers roam the floor while a gauntlet of ground crew remain stationed at the main east door. Utility vehicles drive in and out and onto cargo lifts set in the north and south interior framework of the VAB. Occasionally, the utility vehicles will drive through one another, or through Kerbals on the floor, all without any effect on each other. None of this activity interacts with the build process, though scientists appear to examine the craft and workers hammer, drill, tighten, and wrench thin air.</p>
+
+					<p>Just to the northwest of the VAB is the retirement monument to the old Mk1 Pod used in the earliest versions of KSP.</p>
+
+					<a class="textAnchor" id="changelog"></a>
+					<h3>Changelog</h3>
+					<hr>
+
+					<h4>0.22</h4>
+					<ul>
+						<li>Added posibility to add and use subassemblies.</li>
+						<li>Redesigned exterior</li>
+					</ul>
+					<h4>0.21</h4>
+					<ul>
+						<li>Redesigned exterior and interior with supply trucks, animated lifts, and more Kerbal Engineer.</li>
+						<li>Tweaked lighting for VAB interior and Launchpad.</li>
+					</ul>
+					<h4>0.16</h4>
+					<ul>
+						<li>Added ground crew</li>
+					</ul>
+					<h4>0.7.3</h4>
+					<ul>
+						<li>Initial release</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="footer">&copy; 2014 Jasper Attema &amp; <a href="http://djangovanderheijden.nl/">Django van der Heijden</a> - <a id="contactLink" href="../contact.html">Contact us</a></div>
+		
+		<div id="fixedbg"></div>
+		
+		<script type="text/javascript" src="../js/main.js"></script>
+	</body>
+</html>

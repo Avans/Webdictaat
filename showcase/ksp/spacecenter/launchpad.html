@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Launch Pad | Space Center | Kerbal Space Program</title>
+		<link rel="stylesheet" type="text/css" href="../style/style_main.css" />
+		<link rel="stylesheet" type="text/css" href="../style/style_responsive.css" />
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+	</head>
+	<body>
+		<div id="menu_head">
+			<div class="container">
+				<a id="logo_head" href="../index.html"></a>
+
+				<div class="buttonContainer">
+					<div class="menuButton_head subMenu">Planets
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="../planets/dres.html">Dres</a>
+							<a class="subMenu_item" href="../planets/duna.html">Duna</a>
+							<a class="subMenu_item" href="../planets/eeloo.html">Eeloo</a>
+							<a class="subMenu_item" href="../planets/eve.html">Eve</a>
+							<a class="subMenu_item" href="../planets/jool.html">Jool</a>
+							<a class="subMenu_item" href="../planets/kerbin.html">Kerbin</a>
+							<a class="subMenu_item" href="../planets/kerbol.html">Kerbol</a>
+							<a class="subMenu_item" href="../planets/moho.html">Moho</a>
+						</div>
+					</div>
+
+					<div class="menuButton_head subMenu active">Space Center
+						<div class="subMenu_head">
+							<a class="subMenu_item" href="../spacecenter/vab.html">Vehicle Assembly Building</a>
+							<a class="subMenu_item active" href="../spacecenter/launchpad.html">Launch pad</a>
+							<a class="subMenu_item" href="../spacecenter/spaceplanehangar.html">Space Plane Hangar</a>
+							<a class="subMenu_item" href="../spacecenter/runway.html">Runway</a>
+							<a class="subMenu_item" href="../spacecenter/trackingstation.html">Tracking Station</a>
+							<a class="subMenu_item" href="../spacecenter/astronautcomplex.html">Astronaut Complex</a>
+							<a class="subMenu_item" href="../spacecenter/researchdevelopment.html">Research and Development</a>
+							<a class="subMenu_item" href="../spacecenter/missioncontrol.html">Mission Control</a>
+							<a class="subMenu_item" href="../spacecenter/administrationfacility.html">Administration Facility</a>
+						</div>
+					</div>
+
+					<a class="menuButton_head" href="../index.html">Home</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="container_main">
+	
+			<div id="container_left">
+				<a class="menu_wiki_item" href="#interface">Game Interface</a>
+				<a class="menu_wiki_item" href="#changelog">Changelog</a>
+			</div>
+
+			<div id="container_right">
+				<div class="characteristics">
+					<img src="../images/spacecenter/launchpad.png" alt="Launch Pad" />
+					<hr>
+
+					<h3>Characteristics</h3>
+					Location: <span class="explanation">Kerbin, Kerbal Space Center</span><br>
+					Coordinates: <span class="explanation">0&deg; 6′ 9″ S</span><br>
+					Map: <span class="explanation">74&deg; 34′ 31″ W</span><br>
+					Altitude: <span class="explanation">~68.41 m</span><br>
+					Since version: <span class="explanation">0.7.3</span>
+
+				</div>
+
+				<div class="text">
+					<h1>Launch Pad</h1>
+					<hr>
+					<p>
+					The Launch Pad is a structure at the Kerbal Space Center whose primary use is to launch vehicles created in the Vehicle Assembly Building.
+					The launch pad is placed a short distance from the VAB. On its western side is a short ramp which allows wheeled vehicles to be driven down to the ground after launch. Its other sides are surrounded by equipment and blast deflectors and make for a much steeper and more hazardous descent. Several miscellaneous facilities are found nearby, and a wide track connects the base of the ramp to the VAB's main door.
+					Prior to version 0.19.0, the pad featured a launch tower; this was removed as it served no function while forming an obstacle to very wide vehicles. The TT18-A Launch Stability Enhancer is available instead for stabilization and support.
+					</p>
+
+					<a class="textAnchor" id="interface"></a>
+					<h3>Game interface</h3>
+					<hr>
+					The launch pad can be accessed in two ways. From the Space Center view and from inside the VAB.
+					
+					<h4>From the Space Center</h4>
+					If a vehicle remains on the pad blocking it, like an un-launched rocket from an earlier session, a warning pop-up window opens: LaunchPad not clear vehiclename is already on the launchpad, where vehiclename is whatever rocket was previously loaded but not launched. The menu has the following choices:<br />
+					<ul>
+						<li>Go to vehiclename on pad - Goes to the Launch pad with the previously loaded vehicle standing by.</li>
+						<li>Clear the LaunchPad and proceed (recover vehiclename) - Clears the pad, and opens the Launch new mission menu.</li>
+						<li>Abort the launch - Closes the window and stays on the Space Center view.</li>
+					</ul>
+					When the pad is clear, the Launch New Mission menu opens. This menu is broken into four panes.
+				
+					<h4>Launch new mission</h4>
+					This window lists the currently available ships.
+				
+					<h4>Ship name and description</h4>
+					This window is actually dynamically titled the currently highlighted ship and displays any saved vehicle description. It also provides an option to change the current mission flag.
+				
+					<h4>Parts with crew capacity</h4>
+					The Parts with crew capacity pane will display each part with crew seating individually, such as command modules and lander cans, automatically adding crew to fill the first compartment on the list. Additional seats are initially empty. The available menu options are:<br />
+					<ul>
+						<li>Fill - Fills all remaining seats from the available crew pane. If there are more seats than crew, those seats remain empty.</li>
+						<li>Clear - Removes all crew and places them in the Available crew pane.</li>
+						<li>Reset - undoes any changes, and repopulates the initial crew compartment.</li>
+					</ul>
+
+					<h4>Available crew</h4>
+					The Available Crew pane simply shows the list of possible crew members available for a mission, by name and showing their Courage and Stupidity stats. The only available menu option is:<br />
+					<ul>
+						<li>Go to Astronaut Complex - takes the user to the Astronaut Complex interface. Exiting the Astronaut Complex returns to the Load new mission menu.</li>
+					</ul>
+					Users can add crew to the vehicle from the Available crew pane by hovering the mouse over the crew member and clicking the green check mark that appears. The crew member moves to the next available seat. To move the crew member to another seat, click and drag the crew member to any of the other empty seats. To remove a crew member from the vehicle, hover over the crew member and click the red X that appears, returning the crew member to the Available crew pane. Clicking an empty seat has no action.
+				
+					<h4>From the VAB</h4>
+					When accessed from the Launch icon in the VAB, the pad is automatically cleared of any remaining debris from a previous launch. Then the vehicle currently in the VAB is moved to the launch pad, and after a short pause to establish the game physics, is ready to launch the vehicle.
+					If a vehicle remains on the pad because it wasn't launched from a previous session, then a popup warning window opens: LaunchPad not clear vehiclename is already on the LaunchPad where vehiclename is whatever rocket was previously loaded but not launched. The menu has the following choices:<br />
+					<ul>
+					<li>Clear the LaunchPad and proceed (recover vehiclename) - Clears the pad, and moves the vehicle in the VAB to the Launch pad.</li>
+					<li>Abort the launch - Closes the window and stays in the VAB.</li>
+					</ul>
+					This differs from the menu displayed when accessing the occupied Launch pad from the Space center in that going to the already positioned rocket is not possible.
+					Refer to the tutorials for information on how to launch, and control the vehicle in flight.
+
+					<a class="textAnchor" id="changelog"></a>
+					<h3>Changelog</h3>
+					<hr>
+					<h4>0.22.0</h4>
+					<ul>
+						<li>Launchpad was given rails for crawlers to match new VAB rails from 0.21.0</li>
+					</ul>
+					<h4>0.19.0</h4>
+					<ul>
+						<li>Launchpad was redesigned. The launch tower was removed.</li>
+					</ul>
+					<h4>0.7.3</h4>
+					<ul>
+						<li>Initial Release</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="footer">&copy; 2014 Jasper Attema &amp; <a href="http://djangovanderheijden.nl/">Django van der Heijden</a> - <a id="contactLink" href="../contact.html">Contact us</a></div>
+		
+		<div id="fixedbg"></div>
+		
+		<script type="text/javascript" src="../js/main.js"></script>
+	</body>
+</html>

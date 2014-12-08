@@ -1,0 +1,79 @@
+/*Tablet viewmode*/
+@media screen and (max-width: 1280px) {
+	#menu_head, #logo_head, .menuButton_head, .subMenu_head, .subMenu_item {
+		-webkit-transition: none !important;
+		-moz-transition: none !important;
+		-ms-transition: none !important;
+		-o-transition: none !important;
+		transition: none !important;
+	}
+
+	#menu_head {
+		position: relative !important;
+	}
+
+	#menu_head .container {
+		width: 100% !important;
+	}
+
+	#container_main {
+		margin-top: 15px !important;
+	}
+
+	#container_right, #container_left {
+		width: calc(100% - 30px) !important;
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+		padding-top: 1px !important;
+		float: none !important;
+	}
+
+	.text .textAnchor {
+		top: -8px !important;
+	}
+}
+
+/*Make sure inline images don't get too small.*/
+@media screen and (max-width: 800px) {
+	.inline_img {
+		margin: 0px !important;
+		margin-bottom: 15px !important;
+		width: calc(100% - 2px) !important;
+	}
+}
+
+/*Phone viewmode*/
+@media screen and (max-width: 625px) {
+	.characteristics {
+		width: 100% !important;
+		border-left: 0px !important;
+	}
+
+	#footer {
+		text-align: center !important;
+	}
+}
+
+/*Adjusting header for phone size*/
+@media screen and (max-width: 450px) {
+	#menu_head #logo_head {
+		display: none !important;
+	}
+
+	#menu_head .container {
+		float: right !important;
+		position: relative !important;
+		left: -50% !important;
+		width: auto !important;
+	}
+
+	#menu_head .container .buttonContainer {
+		float: none !important;
+		position: relative !important;
+		left: 50% !important;
+	}
+
+	#contactForm {
+		width: calc(100% - 30px) !important;
+	}
+}
