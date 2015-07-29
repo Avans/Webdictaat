@@ -24,7 +24,7 @@
     <script src="static/js/webdictaat.js"></script>
   </head>
 
-  <body>
+  <body updatelinks>
 
     <div class="navbar navbar-fixed-top" ng-controller="authCtrl">
       <div class="navbar-inner">
@@ -133,7 +133,7 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <article class="span9" id="content">
+        <article class="span9" id="content" ui-view>
             Welkom in het webdictaat. Kies iets in het menu
         </article><!--/span-->
       </div><!--/row-->
