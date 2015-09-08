@@ -58,7 +58,7 @@ p > code, li > code, dt > code, dd > code {
     margin-bottom: 7px;
 }
 
-.easy, .medium, .hard {
+.easy, .medium, .hard, .guru {
     padding-left: 3px;
 }
 
@@ -72,6 +72,10 @@ p > code, li > code, dt > code, dd > code {
 
 .hard {
     border-left: 4px solid rgba(240,0,0,0.7);
+}
+
+.guru {
+    border-left: 4px solid rgba(0,0,0,0.7);
 }
 
 /* Live preview stuff */
