@@ -2,7 +2,7 @@
 var app = angular.module('webs1', ['PointyPony', 'ui.router']);
 
 app.constant('appConfig', {
-  courseToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IldFQlMgdGVzdCI.LmMGE0RDudXtO47AmsW3OPhT9aXc0mdBX5JhC7Bj1IQ",
+  courseToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.IldlYnMxIg.uGpO7JypD9I6gKr-n6pW_J8loElFd0Elt2MY-8niG0o",
 });
 
 app.config(function($stateProvider, $httpProvider) {
@@ -30,14 +30,6 @@ app.directive('updatelinks', function($compile) {
                     $(this).attr('href', '#/'+href);
                 }
             });
-
-            if(scope.url) {
-                var dirname = scope.url.substring(0, scope.url.lastIndexOf('/'));
-
-                element.find('img').each(function() {
-                   $(this).attr('src', dirname + '/' + $(this).attr('src'));
-                });
-            }
 
         }
     };

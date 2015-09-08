@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="webs1">
+<html lang="en" ng-app="webs1" ng-controller="courseCtrl">
   <head>
     <meta charset="utf-8">
     <title>Webdictaat Avans</title>
@@ -17,7 +17,7 @@
     <script src="static/js/jquery-1.9.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="http://localhost:3000/js/pointypony.js"></script>
+    <script src="http://advans.herokuapp.com/js/pointypony.js"></script>
     <script src="app/app.js"></script>
     <script src="static/js/jquery-ui.js"></script>
     <script src="static/ace/ace.js"></script>
@@ -25,7 +25,6 @@
   </head>
 
   <body updatelinks>
-
     <div class="navbar navbar-fixed-top" ng-controller="authCtrl">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -39,7 +38,7 @@
            <ul class="nav pull-right" ng-show="user">
               <li><button class="btn" id="logout" ng-click="logout()">Uitloggen</button></li>
               <li><p id="logged_in_name" class="nav navbar-text">Ingelogd als {{user.name}}</p></li>
-              <li><p id="points" class="nav navbar-text">{{user.points}} punten</p></li>
+              <li><p id="points" class="nav navbar-text">{{user.totalPoints}} punten</p></li>
             </ul>
 
             <ul class="nav pull-right" ng-hide="user">

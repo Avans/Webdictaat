@@ -22,11 +22,10 @@
 
   <p>Ben je er klaar voor om een begin te maken aan je carrière als webprogrammeur? Dan gaan we nu echt beginnen met HTML te schrijven!</p>
 
-  <div class="assignment easy">
-    <img src="uitwerking-eerstewebpagina.png" class="screenshot" alt="Uitwerking Opdracht 1">
+  <div class="assignment easy" assignment="basis-firstpage">
+    <img src="basis/uitwerking-eerstewebpagina.png" class="screenshot" alt="Uitwerking Opdracht 1">
     <h2>Eerste pagina</h2>
-
-    <p></p>
+    <section class="header" ng-include="'templates/assignmentHeader.html'"></section>
 
     <p>We gaan rustig aan beginnen, de eerste opdracht is om een website zoals in de screenshot hiernaast te maken.</p>
 
@@ -37,9 +36,10 @@
 
   </div>
 
-  <div class="assignment medium">
-    <img src="uitwerking-eigenwebpagina.png" class="screenshot" alt="Uitwerking Opdracht 2">
+  <div class="assignment medium" assignment="basis-personalpage">
+    <img src="basis/uitwerking-eigenwebpagina.png" class="screenshot" alt="Uitwerking Opdracht 2">
     <h2>Persoonlijke webpagina</h2>
+    <section class="header" ng-include="'templates/assignmentHeader.html'"></section>
 
     <p>De eerste opdracht al af? Dat is snel!</p>
 
@@ -48,9 +48,11 @@
     <p>Alle tags die je nodig hebt zijn te vinden in het theorie gedeelte van deze week.</p>
   </div>
 
-  <div class="assignment medium">
-    <img src="uitwerking-valideren.png" class="screenshot" alt="Uitwerking Valideren">
+  <div class="assignment medium" assignment="basis-validate">
+    <img src="basis/uitwerking-valideren.png" class="screenshot" alt="Uitwerking Valideren">
     <h2>Valideren</h2>
+    <section class="header" ng-include="'templates/assignmentHeader.html'"></section>
+
     <p>Heb je voor de vorige opdracht <b>nette en correcte HTML</b> geschreven? Weet je het zeker?</p>
 
     <p>Gebruik de <a href="http://validator.w3.org/" target="_new">HTML validator</a> om te controleren of de webpagina die je tot nu toe gemaakt hebt technisch ook in orde is. Fix eventuele problemen die de validator aangeeft.</p>
@@ -58,9 +60,11 @@
     <p>Let op: de validator geeft standaard een aantal warnings over character encodings en HTML5. Die mag je negeren, die gaan namelijk niet over de validiteit van jouw pagina.</p>
   </div>
 
-  <div class="assignment hard">
-      <img src="uitwerking-meertags.png" class="screenshot" alt="Uitwerking Opdracht 3">
+  <div class="assignment hard" assignment="basis-moretags">
+      <img src="basis/uitwerking-meertags.png" class="screenshot" alt="Uitwerking Opdracht 3">
       <h2>Meer tags</h2>
+      <section class="header" ng-include="'templates/assignmentHeader.html'"></section>
+
       <p>In het dictaat hebben we al een hoop tags besproken. Maar dat is nog maar een fractie van alle tags die er zijn!</p>
       <p><a href="https://google.com/#q=html+tags" target="_blank">Zoek op internet</a> naar tags die niet in het dictaat staan en zoek uit hoe ze werken. Pas deze toe op je pagina van de vorige opdracht.</p>
       <p>Denk bijvoorbeeld eens aan om een mooie quote of een voortgangsbalk op je website te zetten.</p>
