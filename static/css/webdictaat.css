@@ -1,3 +1,46 @@
+
+
+/** Leaderboard **/
+
+.leaderboard{
+    width:100%;
+}
+
+.leaderboard > thead{
+    color: lightgray;
+    font-size:80%;
+}
+
+.leaderboard td{
+
+    padding:4px;
+}
+
+.leaderboard tr > td:first-child{
+    text-align: center;
+    width:30px;
+}
+
+.leaderboard tr > td:last-child{
+    text-align: center;
+    width:200px;
+}
+
+.leaderBoard tbody > tr:first-child{
+    border-bottom: 2px solid gold;
+    font-size:120%;
+    font-weight: bold;
+}
+
+.leaderBoard tbody > tr:nth-child(2){
+    border-bottom: 2px solid silver;
+    font-weight: bold;
+}
+.leaderBoard tbody > tr:nth-child(3){
+   border-bottom: 2px solid #CD7F32;
+    font-weight: bold;
+}
+
 figure {
     clear: both;
 }
