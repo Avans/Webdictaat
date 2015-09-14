@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mijn favoriete films</title>
+
+    <style>
+body {
+    background-color: #ffeeee;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+div {
+    margin: 2%;
+    width: 20%;
+    float: left;
+    -webkit-perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+    transition: all .2s ease-in-out;
+}
+
+img {
+    width: 100%;
+    border:10px solid #fcfafa;
+    transform: rotateY(30deg);
+    box-shadow:0 3px 10px #888;
+
+    -webkit-transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+}
+
+img:hover {
+    -webkit-transform: rotateY(0deg) scale(1.5);
+}
+    </style>
+  </head>
+<body>
+
+  <h1>Mijn favoriete films</h1>
+
+
+<div><img src="uitwerking-movies-vendetta.jpg" alt="V for Vendetta" /></div>
+<div><img src="uitwerking-movies-drhorrible.jpg" alt="Dr. Horrible" /></div>
+<div><img src="uitwerking-movies-sourcecode.jpg" alt="Source Code" /></div>
+<div><img src="uitwerking-movies-memento.jpg" alt="Memento" /></div>
+
+</body>
+</html>
