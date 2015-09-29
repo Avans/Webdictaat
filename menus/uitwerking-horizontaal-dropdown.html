@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Een horizontaal menu</title>
+    <style>
+    menu {
+      padding: 0;
+      font-family: sans-serif;
+    }
+    menu ul, menu li {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    menu > ul > li {
+      position: relative;
+      float: left;
+    }
+    menu > ul > li > a {
+
+    }
+
+    menu ul ul {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      display: none;
+    }
+    menu li:hover > ul {
+      display: block;
+    }
+    menu a {
+      display: block;
+
+      background-color: #6dd733;
+      color: black;
+      width: 150px;
+      text-align: center;
+      height: 30px;
+      padding-top: 10px;
+      text-decoration: none;
+    }
+
+    menu li:hover > a {
+      background-color: #52a425;
+    }
+    </style>
+  </head>
+<body>
+
+<menu>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="overmij.html">Over mij</a></li>
+    <li><a href="rooster.html">Rooster</a>
+      <ul>
+        <li><a href="maandag.html">Maandag</a></li>
+        <li><a href="dinsdag.html">Dinsdag</a></li>
+        <li><a href="woensdag.html">Woensdag</a></li>
+        <li><a href="donderdag.html">Donderdag</a></li>
+        <li><a href="vrijdag.html">Vrijdag</a></li>
+      </ul>
+
+    </li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+
+
+  </ul>
+</menu>
+
+</body>
+</html>

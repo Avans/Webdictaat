@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+
+#cssmenu {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: sans-serif;
+}
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu ul {
+  position: relative;
+}
+#cssmenu ul li {
+  float: left;
+  position: relative;
+}
+
+#cssmenu ul li:hover {
+  position: relative;
+  cursor: default;
+}
+#cssmenu ul ul {
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+}
+#cssmenu ul li:hover > ul {
+  visibility: visible;
+}
+#cssmenu ul ul {
+  top: 0;
+  left: 100%;
+}
+#cssmenu ul li {
+  float: none;
+}
+
+#cssmenu {
+  width: 200px;
+  background: #333333;
+  font-size: 12px;
+}
+
+#cssmenu a {
+  display: block;
+  padding: 15px 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+#cssmenu ul {
+  width: 200px;
+}
+
+#cssmenu > ul > li > a {
+  color: #ffffff;
+}
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenu > ul > li.active a {
+  background: #1b9bff;
+}
+#cssmenu > ul > li a:hover,
+#cssmenu > ul > li:hover a {
+  background: #1b9bff;
+}
+
+#cssmenu ul ul li:hover > a {
+  background: #4eb1ff;
+}
+
+</style>
+   <title>CSS verticaal menu</title>
+</head>
+<body>
+
+<div id="cssmenu">
+<ul>
+   <li><a href="home.html">Home</a></li>
+   <li><a href="overmij.html">Over mij</a></li>
+   <li><a href="rooster.html">Rooster</a>
+      <ul>
+         <li><a href="maandag.html">Maandag</a></li>
+         <li><a href="dinsdag.html">Dinsdag</a></li>
+         <li><a href="woensdag.html">Woensdag</a></li>
+         <li><a href="donderdag.html">Donderdag</a></li>
+         <li><a href="vrijdag.html">Vrijdag</a></li>
+      </ul>
+   </li>
+   <li><a href="faq.html">FAQ</a></li>
+   <li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+
+</body>
+<html>
