@@ -1,0 +1,398 @@
+@font-face {
+	font-family: BottleRocket;
+	src: url(fonts/bottrgr.ttf);
+}
+
+@font-face {
+	font-family: stones;
+    src: url(fonts/Royalacid.ttf);
+}
+
+body {
+	background-color: rgb(55,154,200);
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.flexbody {
+    /*flex dingen*/
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#tekstlogo {
+	text-align: center;
+	color: rgb(201,0,0);
+	text-transform: uppercase;
+	display: inline-block;
+	text-shadow: rgb(0,0,0) 1px 1px 0;
+	width: 75%;
+	margin: 0;
+}
+
+.column {
+	background-color: rgb(255, 0, 105);
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	width: 75%;
+	padding-bottom: 35px;
+}
+
+.columntitlebar {
+	color: white;
+	padding-top: 7px;
+	padding-left: 15px;
+	padding-bottom: 6px;
+	font-size: 1.5em;
+}
+
+.columninhoud {
+	display: inline-block;
+	background-color: rgb(255,255,255);
+	padding-top: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	font-size: 1em;
+	font-family: open-sans, 'Open Sans', Arial, sans-serif;
+}
+
+form textarea {
+	width: 80%;
+}
+
+.photogallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#inleiding {
+	font-weight: bolder;
+}
+
+.columninhoud .photo {
+	margin-top: 10px;
+	display: block;
+	position: static;
+}
+
+.floatleft {
+	margin-right: 10px;
+	margin-left: 0;
+	float: left;
+}
+
+.floatright {
+	margin-left: 10px;
+	margin-right: 0;
+	float: right;
+}
+
+.columninhoud p {
+	margin-top: 10px;
+	margin-bottom: 8px;
+}
+
+.jagger2 {
+	width: 300px;
+}
+
+.jagger2 img {
+	width: 100%;
+	height: auto;
+}
+
+.taylor img {
+	width: 200px;
+}
+
+.quote {
+	font-size: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.photogallery p {
+	margin-top: 7px;
+}
+
+.photogallery #pextramargin {
+	margin-bottom: 15px;
+}
+
+.columninhoud .portrait {
+	height: 250px;
+	margin: 2px;
+}
+
+.flexfooter {
+	background-color: rgb(200,232,243);
+	height: 115px;
+	width: 100%;
+	padding-top: 10px;
+	clear: both;
+	position: relative;
+	z-index: 10;
+	margin-top: 3em;
+    /*flex dingen*/
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+
+.footercolumn img {
+	width: 80px;
+	height: auto;
+}
+
+/** HoverForDetails **/
+
+.hoverForDetails {
+	position: relative;
+	border: 3px solid white;
+	box-shadow: 2px 2px 22px gray;
+	overflow: hidden;
+	width: 250px;
+}
+
+.hoverForDetails .hoverable {
+	margin: 0;
+}
+
+.hoverForDetails .details {
+	position: absolute;
+	left: 0px;
+	bottom: -80px;
+	height: 80px;
+	width: 100%;
+	background-color: rgba(200,200,200,0.6);
+	padding: 30px;
+	box-sizing: border-box;
+	transition: bottom 0.2s;
+}
+
+.hoverForDetails:hover .details {
+	display: block;
+	bottom: 0px;
+}
+
+.nametext {
+	text-decoration: none;
+	color: black;
+	margin: 3px;
+}
+
+/* Menu */
+.main-nav {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	background-color: rgb(200,232,243);
+	width: 100%;
+	height: 45px;
+	margin-top: 0;
+	padding: 0;
+}
+
+.main-nav li {
+	height: 30px;
+	width: 90px;
+	margin-top: 8px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.main-nav li a {
+	text-decoration: none;
+	font-family: BottleRocket;
+	color: rgb(255, 0, 105);
+	font-size: 1.5em;
+	display: block;
+}
+
+ul li {
+	list-style: none;
+	background-color: rgb(200,232,243);
+}
+
+ul li:hover {
+	background-color: rgb(255, 0, 105);
+}
+
+ul li:hover > a {
+	color: rgb(255,255,255);
+}
+
+.drop-nav {
+	position: absolute;
+	display: none;
+	border: 1px solid grey;
+	padding: 0;
+	top: 38px;
+}
+
+.drop-nav li {
+	position: relative;
+	top: 0px;
+	text-align: center;
+	height: 30px;
+	width: 200px;
+	margin: 0px;
+	border-radius: 0;
+}
+
+.drop-nav li a {
+	padding-top: 2px;
+}
+
+.dropdown:hover > .drop-nav {
+	display: block;
+}
+
+.main-nav li img {
+	height: 30px;
+	width: auto;
+}
+
+@media screen and (max-width: 750px) {
+	
+	#tekstlogo {
+		width: 100%;
+	}
+    
+	.main-nav {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.main-nav li {
+		width: 100%;
+	}
+
+	.drop-nav {
+		border: 1px solid grey;
+		top: 50px;
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	.menulogo img {
+		height: 23px;
+		width: auto;
+		padding-top: 10px;
+	}
+
+	.column {
+		width: 100%;
+		border-radius: 0px;
+	}
+
+	.columninhoud {
+		font-size: 1.5em;
+	}
+
+	.columninhoud .portrait {
+		width: 250px;
+		height: auto;
+	}
+
+	.nametext {
+		font-size: 0.75em;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.photo img {
+		width: 100%;
+	}
+
+	.photo {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+/* Video */
+.videobox {
+	position: relative;
+}
+
+.videobox iframe {
+	height: 525px;
+	vertical-align: middle;
+	width: 100%;
+	border: 0;
+}
+
+/* Shop */
+.shop a img {
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+/* Nieuws */
+.news {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+}
+
+.newsitem {
+	width: 33%;
+	margin: 10px;
+}
+
+.newsitem img {
+	width: 100%;
+}
+
+.newstitle {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.newslink {
+	text-decoration: none;
+	font-weight: bold;
+	color: #232323;
+}
+
+.innewstitle {
+	margin-top: 10px;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.newscolumntitle {
+	font-weight: bold;
+	font-size: 1.25em;
+	margin-top: 20px;
+	margin-bottom: 3px;
+}
+
+.news1foto {
+	width: 60%;
+}
+
+.news2foto {
+	width: 45%;
+}
+
+.news3foto {
+	width: 40%;
+}

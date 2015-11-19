@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Stones</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="index.html"><img src="images/Rolling_Stones_Logo.png" alt="Home"></a></li>
+        <li class="dropdown">
+          <a href="bands.html">Band</a>
+          <ul class="drop-nav">
+            <li><a href="jagger.html">Mick Jagger</a></li>
+            <li><a href="jones.html">Brian Jones</a></li>
+            <li><a href="richards.html">Keith Richards</a></li>
+            <li><a href="watts.html">Charlie Watts</a></li>
+            <li><a href="wood.html">Ron Wood</a></li>
+            <li><a href="taylor.html">Mick Taylor</a></li>
+            <li><a href="Wyman.html">Bill Wyman</a></li>
+          </ul>
+        </li>
+        <li class="menuitem"><a href="geschiedenis.html">Biografie</a></li>
+        <li class="menuitem"><a href="albums.html">Albums</a></li>
+        <li class="menuitem"><a href="form.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="flexbody">
+      <div class="column">
+        <div class="columntitlebar">
+          Schrijf naar The Rolling Stones!         
+        </div>
+        <div class="columninhoud">
+          <p>
+            Vul hier uw gegevens in en wij gaan ons best doen om te zorgen dat de leden van The Rolling Stones dit te lezen krijgen! Dit wordt natuurlijk alleen gedaan als het berichtje aardig is.
+          </p>
+          <form>
+            <fieldset>
+              <legend>Persoonlijk:</legend>
+              <label for="voornaam">Voornaam: </label>
+              <input id="voornaam" type="text" placeholder="Typ hier uw voornaam..." required><br>
+              <label for="achternaam" >Achternaam: </label>
+              <input id="achternaam" type="text" placeholder="Typ hier uw achternaam..." required><br>
+              <label for="leeftijd">Leeftijd: </label>
+              <input id="leeftijd" type="number" required>
+            </fieldset>
+            <br>
+            <fieldset>
+              <legend>Overig:</legend>
+              <label for="bericht">Bericht: </label>
+              <textarea id="bericht" placeholder="I love The Rolling Stones!" rows="5" required></textarea>
+              <br><br>
+              <label for="robotcontrol">Typ: "I love The Rolling Stones!" </label>
+              <input id="robotcontrol" type="text" required><br><br>
+              <input id="submit" type="submit">    
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="flexfooter">
+      <div class="footercolumn">
+        <img src="images/Rolling_Stones_Logo.png" alt="Rolling Stones">
+      </div>
+    </div>
+  </body>
+</html>
