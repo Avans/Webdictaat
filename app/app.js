@@ -21,6 +21,15 @@ app.config(function($stateProvider, $httpProvider) {
     });
 });
 
+app.controller('assignmentCtrl',function($scope, ppAssignmentService, ppReviewService){
+            
+    $scope.assignments = [];
+
+    ppAssignmentService.getAssignments(function(){
+        $scope.assignments = ppAssignmentService.assignments;
+    })
+});
+
 app.directive('updatelinks', function($compile) {
     return {
         link: function(scope, element) {

@@ -305,3 +305,83 @@ figcaption {
 
      border-top-width: 0;
  }
+ 
+
+ .assignments{
+     list-style-type: none;
+     padding:0px;
+ }
+
+ .assignments li{
+     padding:20px;
+     background-color: #f5f5f5;
+     border-left:8px solid gray;
+     margin:8px;
+     display:inline-block;
+     width:30%;
+     min-width: 25%;
+     position: relative;
+     box-shadow: 1px 1px 4px 1px gray;
+     -webkit-transition: background-color 400ms linear;
+        -moz-transition: background-color 400ms linear;
+        -o-transition: background-color 400ms linear;
+        -ms-transition: background-color 400ms linear;
+        transition: background-color 400ms linear;
+ }
+
+ .assignments li.complete{
+     border-color:green;
+     padding: 6px 20px;
+     background-color:white;
+ }
+
+ .assignments li:hover{
+     background-color:white;
+ }
+
+ .assignments li .name{
+     display:block;
+ }
+
+  .assignments li .tag{
+      color:gray;
+      font-size:85%;
+  }
+
+  .assignments li .points{
+      position: absolute;
+      right:0px;
+      bottom:5px;
+      font-size:120%;
+  }
+
+  .assignments li .pointsDescr{
+      font-size:65% !important;
+      color:#eee;
+  }
+
+
+.ribbon {
+    background: #3c485f;
+    width: auto;
+    display: inline-block;
+    padding: 0 10px 0 0;
+    margin: auto;
+    position: relative;
+    color: #fff;
+    line-height: 22px;
+    height:24px;
+    font-size:22px;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.ribbon:before{
+        content: '';
+      border: 12px solid #3c485f;
+      border-left-color: transparent;
+      border-left-width: 8px;
+      position: absolute;
+      top: 0;
+      left: -15px;
+}

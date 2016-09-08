@@ -1,0 +1,13 @@
+<md-toolbar class="md-theme-indigo withSkyline">
+	<h1 class="md-toolbar-tools">Opdrachten overview</h1>
+</md-toolbar>
+
+<div  ng-controller="assignmentCtrl" >
+    <ul class="assignments">
+        <li ng-repeat="assignment in assignments | orderBy: '+metatag'" ng-class="{ complete: assignment.isComplete}">
+            <span class="name">{{assignment.descr}}</span>
+            <span class="tag">opdracht {{assignment.metatag}}</span>
+            <section class="points ribbon">{{assignment.points}} <span class="pointsDescr">points</span></section>
+        </li>
+    </ul>
+</div>
