@@ -6,19 +6,15 @@
 
   <p>Een mooie manier van een menu maken is om deze horizontaal bovenaan de pagina te plaatsen. We hebben al geleerd om een menu met &lt;ul&gt; en &lt;li&gt; te maken. Maar dit soort lijsten worden standaard verticaal weergegeven.</p>
 
-  <p>We kunnen een menu horizontaal maken met behulp van de <code>float</code> property. Als floats dezelfde ruimte in beslag nemen gaan ze namelijk naast elkaar staan. Dit kunnen we gebruiken om de menu items naast elkaar te plaatsen.</p>
+  <p>We kunnen een menu horizontaal maken met behulp van de <code>display: flex</code> property.</p>
 
-  <p>We moeten wel opletten dat we alleen de menu items van het hoofdmenu horizontaal plaatsen, als we alle menu items horizontaal neerzetten wordt het juist weer verwarrend (probeer maar eens).</p>
+  <p>We moeten wel opletten dat we alleen de menu items van het hoofdmenu via flex horizontaal plaatsen. Als we ook alle submenu's horizontaal plaatsen wordt het verwarrend. (Probeer maar eens de &gt; weg te halen)</p>
 
-  <p>In onderstaand voorbeeld hebben we dat gedaan met de <code>nav > ul > li</code> selector, die zegt dat alleen de li die in een ul zit die binnen de nav zit. Dit geldt wel voor de hoofdmenu items maar niet voor de submenu items</p>
-
-  <p>Let op dat we hier de <code>></code> selector moeten gebruiken. Als we enkel spaties gebruiken selecteren we alle li elementen in plaats van enkel de items van het hoofdmenu.</p>
 
 <code class="livepreview pre">
 <span class="css">
-nav > ul > li {
-  float: left;
-  border: 1px solid black;
+nav > ul {
+  display: flex;
 }
 </span>
 
