@@ -1,0 +1,1130 @@
+
+/* ======================================== */
+/* FONTS STUFF*/
+/* ======================================== */
+@font-face {
+    font-family: 'overfont';
+    src: url('fonts/big-noodle-oblique.woff')
+}
+
+@font-face {
+    font-family: 'overtext';
+    src: url('fonts/futura-no-2d.woff')
+}
+
+h1 {
+	font-family: 'overfont', sans-serif;
+	text-align: center;
+	font-size: 4em; 
+	color: #EEE;
+	text-shadow: 2px 2px 3px black;
+}
+
+h2 {
+	font-family: 'overtext', sans-serif;
+	text-align: center;
+	color: #EEE;
+	text-shadow: 2px 2px 3px black;
+}
+
+p {
+	font-family: 'overtext', sans-serif;
+	text-align: center;
+	color: #EEE;
+	text-shadow: 2px 2px 3px black;
+}
+
+a.nounderline {
+	text-decoration: none;
+}
+
+
+/* ======================================== */
+/* HEADER STUFF*/
+/* ======================================== */
+
+#header {
+	height:300px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+/* HEADER - HOME  */
+.h-numbani {
+	background: url(img/headers/header_numbani.jpg) no-repeat center fixed;
+}
+
+/* HEADER - OFFENSE HEROES */
+.h-genji {
+	background: url(img/headers/header_genji.jpg) no-repeat center fixed;
+}
+
+.h-mccree {
+	background: url(img/headers/header_mccree.jpg) no-repeat center fixed;
+}
+
+.h-pharah {
+	background: url(img/headers/header_pharah.jpg) no-repeat center fixed;
+}
+
+.h-reaper {
+	background: url(img/headers/header_reaper.jpg) no-repeat center fixed;
+}
+
+.h-soldier76 {
+	background: url(img/headers/header_soldier76.jpg) no-repeat center fixed;
+}
+
+.h-tracer {
+	background: url(img/headers/header_tracer.jpg) no-repeat center fixed;
+}
+
+/* HEADER - DEFENSE HEROES */
+.h-bastion {
+	background: url(img/headers/header_bastion.jpg) no-repeat center fixed;
+}
+
+.h-hanzo {
+	background: url(img/headers/header_hanzo.jpg) no-repeat center fixed;
+}
+
+.h-junkrat {
+	background: url(img/headers/header_junkrat.jpg) no-repeat center fixed;
+}
+
+.h-mei { /* MEI IS BAE */
+	background: url(img/headers/header_mei.jpg) no-repeat center fixed;
+}
+
+.h-torbjorn {
+	background: url(img/headers/header_torbjörn.jpg) no-repeat center fixed;
+}
+
+.h-widowmaker {
+	background: url(img/headers/header_widowmaker.jpg) no-repeat center fixed;
+}
+
+/* HEADER - TANK HEROES */
+.h-dva {
+	background: url(img/headers/header_dva.jpg) no-repeat center fixed;
+}
+
+.h-reinhardt {
+	background: url(img/headers/header_reinhardt.jpg) no-repeat center fixed;
+}
+
+.h-roadhog {
+	background: url(img/headers/header_roadhog.jpg) no-repeat center fixed;
+}
+
+.h-winston {
+	background: url(img/headers/header_winston.jpg) no-repeat center fixed;
+}
+
+.h-zarya {
+	background: url(img/headers/header_zarya.jpg) no-repeat center fixed;
+}
+/* HEADER - SUPPORT HEROES */
+
+.h-ana {
+	background: url(img/headers/header_ana.jpg) no-repeat center fixed;
+}
+
+.h-lucio {
+	background: url(img/headers/header_lucio.jpg) no-repeat center fixed;
+}
+
+.h-mercy {
+	background: url(img/headers/header_mercy.jpg) no-repeat center fixed;
+}
+
+.h-symmetra {
+	background: url(img/headers/header_symmetra.jpg) no-repeat center fixed;
+}
+
+.h-zenyatta {
+	background: url(img/headers/header_zenyatta.jpg) no-repeat center fixed;
+}
+
+/* ======================================== */
+/* NAVIGATION STUFF*/
+/* ======================================== */
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background-color: rgba(14,32,66,0.9);
+}
+
+nav ul a{
+	display: block;
+	text-decoration: none;
+	font-family: 'overfont', sans-serif;
+	font-size: 2em;
+	color: white;
+	padding: 10px 20px 10px 20px;
+}
+
+nav ul ul a{
+	padding: 5px;
+	font-size: 1.5em;
+}
+
+nav ul li{
+	display: inline-block;
+	width: 160px;
+}
+
+nav ul li.current-page{
+	background-color: rgba(255,165,0,0.5);
+}
+
+nav ul li ul li{
+	width: 160px;
+	display: block;
+	position: relative;
+}
+
+nav ul ul{
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+
+nav ul li:hover > ul{
+	display: block;
+}
+
+nav ul ul ul{
+	left: 100%;
+	z-index: 1;
+	top: 0;
+}
+
+nav ul li:hover{
+	background-color: orange;
+	transition-duration: 0.5s;
+}
+
+/* ======================================== */
+/* MENU BUTTONS STUFF*/
+/* ======================================== */
+.button-offense { 
+	background: url("img/roles/offenseIcon.png") no-repeat transparent;
+}
+
+.button-defense { 
+	background: url("img/roles/defenseIcon.png") no-repeat transparent;
+}
+
+.button-tank { 
+	background: url("img/roles/tankIcon.png") no-repeat	transparent;
+}
+
+.button-support { 
+	background: url("img/roles/supportIcon.png") no-repeat transparent;
+}
+
+.button-ana {
+	background: url("img/menu-icons/icon_ana.png") no-repeat transparent;
+}
+
+.button-bastion {
+	background: url("img/menu-icons/icon_bastion.png") no-repeat transparent;
+}
+
+.button-dva {
+	background: url("img/menu-icons/icon_dva.png") no-repeat transparent;
+}
+
+.button-genji {
+	background: url("img/menu-icons/icon_genji.png") no-repeat transparent;
+}
+
+.button-hanzo {
+	background: url("img/menu-icons/icon_hanzo.png") no-repeat transparent;
+}
+
+.button-junkrat {
+	background: url("img/menu-icons/icon_junkrat.png") no-repeat transparent;
+}
+
+.button-lucio {
+	background: url("img/menu-icons/icon_lucio.png") no-repeat transparent;
+}
+
+.button-mccree {
+	background: url("img/menu-icons/icon_mccree.png") no-repeat	transparent;
+}
+
+.button-mei {
+	background: url("img/menu-icons/icon_mei.png") no-repeat transparent;
+}
+
+.button-mercy {
+	background: url("img/menu-icons/icon_mercy.png") no-repeat transparent;
+}
+
+.button-pharah {
+	background: url("img/menu-icons/icon_pharah.png") no-repeat	transparent;
+}
+
+.button-reaper {
+	background: url("img/menu-icons/icon_reaper.png") no-repeat	transparent;
+}
+
+.button-reinhardt {
+	background: url("img/menu-icons/icon_reinhardt.png") no-repeat transparent;
+}
+
+.button-roadhog {
+	background: url("img/menu-icons/icon_roadhog.png") no-repeat transparent;
+}
+
+.button-soldier76 {
+	background: url("img/menu-icons/icon_soldier76.png") no-repeat transparent;
+}
+
+.button-symmetra {
+	background: url("img/menu-icons/icon_symmetra.png") no-repeat transparent;
+}
+
+.button-torbjorn {
+	background: url("img/menu-icons/icon_torbjorn.png") no-repeat transparent;
+}
+
+.button-tracer {
+	background: url("img/menu-icons/icon_tracer.png") no-repeat	transparent;
+}
+
+.button-widowmaker {
+	background: url("img/menu-icons/icon_widowmaker.png") no-repeat	transparent;
+}
+
+.button-winston {
+	background: url("img/menu-icons/icon_winston.png") no-repeat transparent;
+}
+
+.button-zarya {
+	background: url("img/menu-icons/icon_zarya.png") no-repeat	transparent;
+}
+
+.button-zenyatta {
+	background: url("img/menu-icons/icon_zenyatta.png") no-repeat transparent;
+}
+
+.menuitem {
+	background-size: contain;
+}
+
+
+/* ======================================== */
+/* HTML BODY STUFF*/
+/* ======================================== */
+
+.b-dorado {
+	background: url(img/backgrounds/dorado.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.b-gibraltar {
+	background: url(img/backgrounds/gibraltar.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.b-hanamura {
+	background: url(img/backgrounds/hanamura.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.b-kingsrow {
+	background: url(img/backgrounds/kingsrow.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.b-volskaya01 {
+	background: url(img/backgrounds/volskaya01.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.b-volskaya02 {
+	background: url(img/backgrounds/volskaya02.jpg) no-repeat center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* ======================================== */
+/* CONTENT STUFF*/
+/* ======================================== */
+video {
+	width: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+
+#content {
+}
+
+.box-container {
+	text-align: center;
+	justify-content: center;
+	width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.boxinbox {
+	width: 400px;
+	text-align: center;
+}
+
+.container {
+	margin: auto;
+	padding-bottom: 50px;
+	min-width: 0px;
+	max-width: 1000px;
+}
+
+.nav-heroes .block-offense {
+	background: url("img/roles/roles_offense.jpg") no-repeat center;
+	background-size: cover;
+	background-color: #0E2042;
+	height: 300px;
+	width: 49%;
+	display: inline-block;
+	filter: grayscale(75%);
+	transition-duration: 0.2s;
+}
+
+.nav-heroes .block-defense {
+	background: url("img/roles/roles_defense.jpg") no-repeat center;
+	background-size: cover;
+	background-color: #0E2042;
+	height: 300px;
+	width: 49%;
+	display: inline-block;
+	filter: grayscale(75%);
+	transition-duration: 0.2s;
+}
+
+.nav-heroes .block-tank {
+	background: url("img/roles/roles_tank.jpg") no-repeat center;
+	background-size: cover;
+	background-color: #0E2042;
+	height: 300px;
+	width: 49%;
+	display: inline-block;
+	filter: grayscale(75%);
+	transition-duration: 0.2s;
+}
+
+.nav-heroes .block-support {
+	background: url("img/roles/roles_support.jpg") no-repeat center;
+	background-size: cover;
+	background-color: #0E2042;
+	height: 300px;
+	width: 49%;
+	display: inline-block;
+	filter: grayscale(75%);
+	transition-duration: 0.2s;
+}
+
+.nav-heroes .block-offense:hover {
+	filter: grayscale(0%);
+	transition-duration: 0.5s;
+}
+
+.nav-heroes .block-defense:hover {
+	filter: grayscale(0%);
+	transition-duration: 0.5s;
+}
+
+.nav-heroes .block-tank:hover {
+	filter: grayscale(0%);
+	transition-duration: 0.5s;
+}
+
+.nav-heroes .block-support:hover {
+	filter: grayscale(0%);
+	transition-duration: 0.5s;
+}
+
+.button-previous a {
+	color: white;
+	text-decoration: none;
+	font-size: 100px;
+	float: left;
+	margin: 170px 20px 20px 50px;
+	z-index: 1000;
+}
+
+.button-next a {
+	color: white;
+	text-decoration: none;
+	font-size: 100px;
+	float: right;
+	margin: 170px 50px 20px 20px;
+	z-index: 1000;
+}
+
+.button-next a:hover, .button-previous a:hover {
+	color: orange;
+}
+
+.block-hero {
+	height: 550px;
+	position: relative;
+}
+
+.block-hero h1 {
+	text-align: left;
+	color: orange;
+}
+
+.block-hero p {
+	text-align: left;
+	color: #FFF;
+	width: 30%;
+	margin-top: 140px;
+}
+
+.hero-container {
+	display: block; 
+}
+
+.hero-container h1 {
+	position: relative;
+	margin: 0;
+	padding: 40px 0px 0px 0px;
+}
+
+.hero-container p {
+	position: relative;
+	margin: 0;
+	padding: 20px 0px 20px 0px;
+}
+
+.story-icons {
+	display: inline;
+}
+
+.icon-container {
+	padding: 10px;
+}
+
+.icon-container p {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	padding-left: 10px;
+	max-width: 200px;
+}
+
+.img-hero {
+	position: absolute;	
+	z-index: -1;
+}
+
+
+.block-ability {
+	display: flex;
+	flex-direction: row;
+}
+
+
+.block-ability h1 p {
+	margin: 0;
+	padding: 0;
+
+}
+	
+.block-ability p {
+	margin: 25px;
+	text-shadow: none;
+
+}
+
+.block-ability1 {
+	background-color: #0E2042;
+	opacity: 0.8;
+	position: relative;
+	width: 25%;
+	margin: 3px;
+	border: 0.1px solid #EEE;
+}
+
+.block-ability1 img {
+	width:50%;
+}
+
+.block-ability1:hover {
+	opacity: 0.9;
+}
+
+.block-story {
+	background-color: #0E2042;
+	display: block;
+	opacity: 0.8;
+	border: 0.1px solid #EEE;
+	margin: 3px;
+}
+
+.block-story h1 {
+	text-shadow: none;
+	margin: 0px;
+	padding-top: 40px;
+}
+
+.block-story p {
+	text-shadow: none;
+	padding: 30px;
+
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3	;
+
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+
+    -webkit-column-rule: 1px outset #EEE; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px outset #EEE; /* Firefox */
+    column-rule: 1px outset #EEE;
+}
+
+.block-story:hover {
+	opacity: 0.9; 
+}
+
+.icons {
+	display: block;
+	margin: auto;
+	padding: 30px 30px 0px 30px;
+}
+
+/* ======================================== */
+/* INDEX STUFF*/
+/* ======================================== */
+
+.index-button-heroes{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	height: 200px;
+	background: url("img/index/heroes.jpg");
+	background-size: cover;
+	background-position: 0% 25%;
+}
+
+.index-button-gameplay{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	height: 200px;
+	background: url("img/index/gameplay.jpg");
+	background-size: cover;
+	background-position: 0% 50%;
+}
+
+.index-button-heroes:hover h1,
+.index-button-gameplay:hover h1{
+	color: rgba(255,255,255,1);
+	transition-duration: 0.3s;
+
+}
+
+.index-button-heroes h1,
+.index-button-gameplay h1{
+	margin: 0;
+	font-size: 10em;
+	text-shadow: 0px 0px 0px;
+	color: rgba(255,255,255,0);
+	transition-duration: 0.1s;
+	text-shadow: 1px 1px 15px rgba(0,0,0,0.5);
+	text-decoration: none;
+}
+
+/* ======================================== */
+/* GAMEPLAY STUFF*/
+/* ======================================== */
+
+.gamemodebox{
+	padding: 1px 10px 10px 10px;
+	margin-bottom: 15px;
+}
+
+.mapbox{
+	display: flex;
+	margin-bottom: 10px;
+	background-color: rgba(14,32,66,0.8);
+
+
+}
+
+.mapdescription{
+	width: 66%;
+	padding: 10px;
+}
+
+.mi-anubis{
+	background: url(img/gameplay/anubis.jpg);
+}
+
+.mi-dorado{
+	background: url(img/gameplay/dorado.jpg);
+}
+
+.mi-eichenwalde{
+	background: url(img/gameplay/eichenwalde.jpg);
+}
+
+.mi-gibraltar{
+	background: url(img/gameplay/gibraltar.jpg);
+}
+
+.mi-hanamura{
+	background: url(img/gameplay/hanamura.jpg);
+}
+
+.mi-hollywood{
+	background: url(img/gameplay/hollywood.jpg);
+}
+
+.mi-ilios{
+	background: url(img/gameplay/ilios.jpg);
+}
+
+.mi-kingsrow{
+	background: url(img/gameplay/kingsrow.jpg);
+}
+
+.mi-lijiang{
+	background: url(img/gameplay/lijiang.jpg);
+}
+
+.mi-nepal{
+	background: url(img/gameplay/nepal.jpg);
+}
+
+.mi-numbani{
+	background: url(img/gameplay/numbani.jpg);
+}
+
+.mi-route66{
+	background: url(img/gameplay/route66.jpg);
+}
+
+.mi-volskaya{
+	background: url(img/gameplay/volskaya.jpg);
+}
+
+
+.mapimage{
+	width: 33%;
+	min-height: 200px;
+	float: left;
+	background-size: cover;
+}
+
+
+.gamemodebox h1{
+	font-size: 3em;
+}
+
+.mapimage-l h1 {
+	font-size: 2.5em;
+}
+
+.fancybutton {
+	width: 40%;
+	list-style: none;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	background-color: rgba(14,32,66,0.9);
+	z-index: 1;
+
+}
+
+.fancybutton:hover{
+	background-color: orange;
+	transition-duration: 0.5s;
+}
+
+.fancybutton a{
+	display: block;
+	text-decoration: none;
+	font-family: 'overfont', sans-serif;
+	font-size: 2em;
+	color: white;
+	padding: 10px 20px 10px 20px;
+}
+
+/* ======================================== */
+/* SNOWBALL STUFF*/
+/* ======================================== */
+.snowball{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	height: 300px;
+	animation:floaty 2s infinite;
+	z-index: -1;
+}
+
+.snowball img{
+	width: 100%;
+	height: 100%;
+	animation:spinny 3s infinite;
+}
+	  
+@keyframes floaty {
+	  0%, 100%	{bottom:20px;}
+	  50%		{bottom:0;}
+}
+
+@keyframes spinny {
+	  0%, 100%	{transform: rotate(-5deg);}
+	  50%		{transform: rotate(5deg);}
+}
+
+/* ======================================== */
+/* RESPONSIVE STUFF*/
+/* ======================================== */
+
+@media only screen and (max-width: 800px) {
+
+	/* === HEADER === */
+	#header {
+	height:100px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	}
+
+	/* === NAVIGATION === */
+	nav ul li{
+		display: block;
+		width: 100%;
+	}
+
+	nav ul li{
+	display: block;
+	}
+
+	nav ul li.current-page{
+	display: block;
+	}
+
+	nav ul ul{
+	display: static;
+	position: relative;
+	}
+
+	nav ul ul ul{
+	display: static;
+	position: relative;
+	left: 0;
+	}
+
+	nav ul li ul li{
+	width: 100%;
+	display: block;
+	}
+
+	.button-offense  {
+		background-image: none;
+	}
+
+	.button-defense  {
+		background-image: none;
+	}
+
+	.button-tank {
+		background-image: none;
+	}
+
+	.button-support  {
+		background-image: none;
+	}
+
+	/* === INDEX === */
+	.index-button-heroes h1,
+	.index-button-gameplay h1{
+	margin: 0;
+	font-size: 6em;
+	}
+
+	/* === HEROES === */
+	.nav-heroes .block-offense,
+	.nav-heroes .block-defense,
+	.nav-heroes .block-tank,
+	.nav-heroes .block-support{
+		width: 100%;
+		display: inline-block;
+	}
+
+	/* === HERO PAGES === */
+	.button-next,
+	.button-previous{
+		display: none;
+	}
+
+	.block-hero h1 {
+		text-align: center;
+	}
+
+	.block-hero p {
+		text-align: center;
+		width: 100%;
+	}
+
+	.block-hero {
+		height: auto;
+	}
+
+	.img-hero {
+		position: static;
+	}
+
+	.icon-hero {
+		display: inline;
+	}
+	.icon-container {
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
+
+	.icon-container p {
+		max-width: 80%;
+		text-align: left;
+	}
+
+	.block-story p {
+	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1	;
+	}
+
+    .block-ability {
+	display: flex;
+	flex-direction: column;
+	}
+
+	.block-ability1 {
+		width: 100%;
+	}
+
+	.block-ability1 img {
+	width:10%;
+	}
+
+	/* === SNOWBALL === */
+	.snowball {
+		display: none;
+	}
+
+	/* === GAMEPLAY === */
+	.mapbox{
+		flex-direction: column;
+	}
+
+	.mapimage{
+		width: 100%;
+		min-height: 200px;
+		float: left;
+		background-size: cover;
+	}
+
+	.mapdescription{
+		width: 100%;
+		padding: 0px 10px 0px 5px;
+	}
+
+	/* === FOOTER === */
+	#footer {
+	display: none;
+	background-color: rgba(14,32,66,0.9);
+	margin-top: 50px;
+	}
+
+}
+
+/* ======================================== */
+/* FOOTER STUFF*/
+/* ======================================== */
+
+#footer {
+	background-color: rgba(14,32,66,0.9);
+	margin-top: 50px;
+}
+
+.footer-container {
+	margin: 0;
+	padding: 0;
+	height: 200px;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.blizzard-logo {
+	width:10%;
+}
+
+.overwatch-logo {
+	width:15%;
+}
+
+
+.footer-middle {
+	margin: auto;
+	width: 600px;
+	display: block;
+	padding-top: 60px;
+}
+
+.blizzard-logo {
+	margin: 50px;
+	padding: 0;
+	display: block;
+	float: left;
+}
+
+.footer-container p {
+	color: #AAA;
+	text-shadow: none;
+	margin: 0;
+	padding: 0px 25px 0px 25px;
+	width: 500px;
+	display: inline-block;
+	border-left: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+}
+
+.overwatch-logo {
+	margin: 60px 50px 50px 50px;
+	padding: 0;
+	display: block;
+	float: right;
+}
+
+
+
+.trailer {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.index-button-heroes{
+	margin: 0 auto;
+	width: 80%;
+	height: 200px;
+	background: url("img/index/heroes.jpg");
+	background-size: cover;
+	background-position: 0% 25%;
+}
+
+.index-button-gameplay{
+	margin: 0 auto;
+	width: 80%;
+	height: 200px;
+	background: url("img/index/gameplay.jpg");
+	background-size: cover;
+	background-position: 0% 50%;
+
+}
+
+header > h1{
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+
+}
+
+
+/* ======================================== */
+/* FORM STUFF*/
+/* ======================================== */
+
+form{
+	padding: 10px;
+	margin: 0 auto;
+	max-width: 500px;
+	font-family: 'overtext', sans-serif;
+	color: #EEE;
+	text-shadow: 2px 2px 3px black;
+	background-color: rgba(255,255,255,0.4);
+}
+
+form ul{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+form li{
+	padding: 0;
+	margin: 10px 0 0 0;
+	list-style: none;
+}
+
+form input{
+	box-sizing: border-box;
+	outline: none;
+}
+
+form label{
+	display: block;
+	margin-bottom: 5px;
+}
+
+form input[type=submit]{
+	font-family: 'overfont';
+	font-size: 1.5em;
+	color: #EEE;
+	border: none;
+	padding: 10px 15px 10px 15px;
+	background: rgba(14,32,66,0.8);
+	text-align: center;
+}
+
+form input[type=submit]:hover{
+	transition-duration: 0.5s;
+	background: orange;
+}
+
+form .single-field{
+	width: 100%;
+}
+
+form .double-field{
+	width: 49%;
+}
+
+form .textfield{
+	height: 200px;
+}

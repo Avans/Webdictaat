@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+	<head>
+		<title>
+			Contact - Star Citizen.com	
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" >
+		<script src="js/jquery.min.js"></script>
+		<script src="js/doubletaptogo.js"></script>
+		<script>
+			$( function()
+			{
+				$( 'nav li:has(ul)' ).doubleTapToGo();
+			});
+		</script>
+	</head>
+	
+	<body>
+	<header id='navigation'>
+		<a class='hideNav' href='#navigation'>Hide Navigation</a>
+		<a class='showNav' href='#'>Show Navigation</a>
+		<div class='topHeader'>
+		
+			<div class="logo"><img class='logoimg' src='img/LogoStarCitizen.png' alt='logo'></div>
+			<div class='titel'>
+				Star Citizen
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li class="eersteOptie"><a href="index.html" aria-haspopup="true">Home</a>
+				<ul>
+					<li><a href="game.html" aria-haspopup="true">Game</a>
+					<ul>
+						<li class="top"><a href="modules.html">Modules</a> </li>
+						<li class="bottom"><a href="funding.html">Funding</a> </li>
+					</ul>
+					</li>
+					<li><a href="about.html">About</a></li>
+					<li class="bottom"><a href="contact.html">Contact</a></li>
+				</ul>
+				</li>
+				<li class="tweedeOptie"><a href="Ships/ships.html" aria-haspopup="true">Ships</a>
+				<ul>
+					<li ><a href="Ships/capitals.html">Capital Ships</a></li>
+					<li><a href="Ships/interceptors.html">Interceptors</a></li>
+					<li><a href="Ships/bombers.html">Bombers</a></li>
+					<li><a href="Ships/cargo.html">Cargo/Transport</a></li>
+					<li class="bottom"><a href="Ships/racing.html">Racing</a></li>
+				</ul>
+				</li>
+				<li class="derdeOptie"><a href="Races/aliens.html" aria-haspopup="true">Alien Races</a>
+				<ul>
+					<li ><a href="Races/vanduul.html">Vanduul</a></li>
+					<li><a href="Races/banu.html">Banu</a></li>
+					<li class="bottom"><a href="Races/XiAn.html">Xi'An</a></li>
+				</ul>
+				</li>
+				<li class="vierdeOptie"><a href="Lore/lore.html" aria-haspopup="true">Lore</a>
+				<ul>
+					<li ><a href="Lore/squadron42.html" aria-haspopup="true">Squadron 42</a>
+					<ul>
+						<li class="top"><a href="Lore/squadron42-lore.html">Story</a> </li>
+						<li class="bottom"><a href="Lore/squadron42-bts.html">Behind the scenes</a> </li>
+					</ul>
+					</li>
+					<li class="bottom"><a href="Lore/PersistantUniverse.html">Persistant Universe</a></li>
+				</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class='container'>
+		<h1 class='articleNaam'>Star Citizen Contact</h1>
+		<div><a href='game.html'><img src='img/big_arrow.png' alt='arrow'>Go back to Home</a></div>
+		<article>
+		<h2 class = "tussenKopje"> Contact </h2>
+		
+		<p class="article">
+			Contact Site administrators by leaving your information down here.
+		</p>
+		<form>
+			<fieldset>
+				<legend class="ContactLegend">Nutteloze dingen</legend>
+				<p class="article">Your comment:<textarea rows="1" required></textarea> </p>
+				<p class="article"> Name: <input type='text' required></p>
+				<p class="article"> E-mail: <input type='text' required></p>
+				<p class="article"> Type of comment:
+				<select required>
+					<option value=''> ---- </option>
+					<optgroup label='Complaint'>
+					<option value='IncoInfo'> Incorrect information </option>
+					<option value='Bug'> Bug </option>
+					<option value='OffensiveCont'> Offensive Content </option>
+					<option value='Other'> Other </option>
+					</optgroup>
+				</select></p>
+			</fieldset>
+			<fieldset>
+			<legend class="ContactLegend">News letter</legend>
+				<p class="article">Would you like to recieve our newsletter?: <input type='checkbox'> </p>
+				<p class="article"> <input type='submit' ></p>
+			</fieldset>
+		</form>
+	
+	
+	</article>
+	</div>
+	<footer>
+		Disclaimer: Any mental damage caused by this site is at own risk. <br>
+		Contact us at: NULL <br>
+		Site build by: Bart Kroeze, Alwyn Stiles
+	</footer>
+	
+	</body>
+		
+</html>
