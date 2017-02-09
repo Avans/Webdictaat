@@ -5,32 +5,34 @@
 
   <h2>Flexbox Layout</h2>
   
-  LET OP! DEZE PAGINA IS NOG IN BEWERKING (Luc Claessens)
+  LET OP! DEZE PAGINA IS NOG IN BEWERKING (Luc Claessens)<br><br>
 
-  <p>Het positioneren van containers in een pagina kan erg lastig zijn. Een eenvoudige nieuwe manier om dit netjes te doen is de <b>flexbox layout</b>.</p>
-
-  <p>Voor een flexbox layout hoef je eigenlijk maar een paar dingen te doen.</p>
+  <p>
+    Het positioneren van containers in een pagina kan erg lastig zijn. 
+    Een eenvoudige nieuwe manier om dit netjes te doen is de <b>flexbox layout</b>.
+    Voor een flexbox layout hoef je eigenlijk maar een paar dingen te doen:
+  </p>
     
   <ol>
     <li>Je moet een omsluitende container definieren, waarin je een aantal subcontainers opneemt</li>
     <li>Je moet aangeven hoeveel ruimte elke subcontainer nodig heeft</li>
   </ol>
   
-  <p>Laten we beginnen met een eenvoudig voorbeeld. We gaan drie containers horizontaal op een rij zetten. De eerste en de laatste container moeten ieder 25% van de breedte beslaan. De middelste container dus 50%.</p>
+  <p>
+    Laten we beginnen met een eenvoudig voorbeeld. We gaan drie containers horizontaal op een rij zetten. 
+    De eerste en de laatste container moeten ieder 25% van de breedte beslaan. De middelste container dus 50%.
+  </p>
 
   
   <code class="livepreview">
     <span class="css">
-span {
-    position: <select><option>static</option><option selected>absolute</option></select>;
-    top: <input type="range" min="0" max="100" value="0">px;
-    left: <input type="range" min="0" max="100" value="0">px;
+outer-container {
+    display: <select><option selected>flex</option><option>-webkit-flex</option></select>;
     border: 1px solid red;
-    color: red;
 }
     </span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;span&gt;Help, ik zit gevangen in een muur van tekst&lt;/span&gt; Cras ac dui feugiat, suscipit enim gravida, commodo elit. Ut eu vulputate orci. Ut id quam tincidunt dui congue ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras auctor tristique ipsum sit amet lacinia. Suspendisse placerat volutpat consequat.
+Test &lt;span&gt;Help, ik zit gevangen in een muur van tekst&lt;/span&gt; Cras ac dui feugiat, suscipit enim gravida, commodo elit. Ut eu vulputate orci. Ut id quam tincidunt dui congue ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras auctor tristique ipsum sit amet lacinia. Suspendisse placerat volutpat consequat.
   </code>
 
 
