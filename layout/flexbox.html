@@ -20,10 +20,30 @@
   
   <p>
     Laten we beginnen met een eenvoudig voorbeeld. We gaan drie containers horizontaal op een rij zetten. 
-    De eerste en de laatste container moeten ieder 25% van de breedte beslaan. De middelste container dus 50%.
+    Iedere container krijgt hierbij evenveel ruimte in de breedte.
   </p>
 
   <code class="livepreview pre">
+<span class="css">
+.outer-container {
+    display: flex;
+    border: 1px solid black;
+}
+</span>
+&lt;div class="outer-container"&gt;
+   &lt;div class="inner-container"&gt;div 1&lt;/div&gt;
+   &lt;div class="inner-container"&gt;div 2&lt;/div&gt;
+   &lt;div class="inner-container"&gt;div 3&lt;/div&gt;
+&lt;/div&gt;
+  </code>
+
+  <p>Zie je hoe eenvoudig het is? We hoeven eigenlijk alleen voor de omvattende container flexboxing AAN te zetten.</p>
+  <p>Nu zijn alle inner-containers echter precies even breed. Dat kun je aanpassen door iedere container een relatieve flexwaarde te geven.
+    Stel dat we de eerste en de laatste container ieder 25% van de breedte willen geven en de middelste container 50%.
+    Je moet er dan voor zorgen dat alle inner-containers.................
+  </p>
+  
+    <code class="livepreview pre">
 <span class="css">
 .outer-container {
     display: flex;
@@ -46,6 +66,7 @@
    &lt;div class="inner-container-small"&gt;div 3&lt;/div&gt;
 &lt;/div&gt;
   </code>
-
+  
+  
 </body>
 </html>
