@@ -29,6 +29,9 @@
     display: flex;
     border: 1px solid black;
 }
+.inner-container {
+    border: 1px solid red;
+}
 </span>
 &lt;div class="outer-container"&gt;
    &lt;div class="inner-container"&gt;div 1&lt;/div&gt;
@@ -37,10 +40,11 @@
 &lt;/div&gt;
   </code>
 
-  <p>Zie je hoe eenvoudig het is? We hoeven eigenlijk alleen voor de omvattende container flexboxing AAN te zetten.</p>
-  <p>Nu zijn alle inner-containers echter precies even breed. Dat kun je aanpassen door iedere container een relatieve flexwaarde te geven.
-    Stel dat we de eerste en de laatste container ieder 25% van de breedte willen geven en de middelste container 50%.
-    Je moet er dan voor zorgen dat alle inner-containers.................
+  <p>Zie je hoe eenvoudig het is? We hoeven eigenlijk alleen voor de omvattende container (outer-container) flexboxing AAN te zetten.</p>
+  <p>Nu zijn alle inner-containers echter precies even breed en ze gebruiken bovendien niet de volledige ruimte van de outer-container. Vaak wil je dat wel</p>
+  <p>Je kunt dat aanpassen door iedere container een relatieve flexwaarde te geven. Het percentage van de totale breedte die een container
+    zal innemen is gelijk aan de flexwaarde die jij de container geeft gedeeld door het totaal aan flexwaarden binnen de outer-container.
+    Stel dat we de eerste en de laatste container ieder 25% van de breedte willen geven en de middelste container 50%:
   </p>
   
     <code class="livepreview pre">
@@ -67,6 +71,7 @@
 &lt;/div&gt;
   </code>
   
+   <p>Merk op dat in de css geen % wordt gebruikt. Welke andere waarden voor 25 en 50 zou je kunnen gebruiken?</p>
   
 </body>
 </html>
