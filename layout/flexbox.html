@@ -23,18 +23,29 @@
     De eerste en de laatste container moeten ieder 25% van de breedte beslaan. De middelste container dus 50%.
   </p>
 
-  
-  <code class="livepreview">
-    <span class="css">
-outer-container {
-    display: <select><option selected>flex</option><option>-webkit-flex</option></select>;
-    border: 1px solid red;
+  <code class="livepreview pre">
+<span class="css">
+.outer-container {
+    display: flex;
+    border: 1px solid black;
 }
-    </span>
 
-Test &lt;span&gt;Help, ik zit gevangen in een muur van tekst&lt;/span&gt; Cras ac dui feugiat, suscipit enim gravida, commodo elit. Ut eu vulputate orci. Ut id quam tincidunt dui congue ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras auctor tristique ipsum sit amet lacinia. Suspendisse placerat volutpat consequat.
+.inner-container-small {
+    border: 1px solid blue;
+    flex: 25;
+}
+  
+.inner-container-large {
+    border: 1px solid red;
+    flex: 50;
+}
+</span>
+&lt;div class="outer-container"&gt;
+   &lt;div class="inner-container-small"&gt;div 1&lt;/div&gt;
+   &lt;div class="inner-container-larger"&gt;div 2&lt;/div&gt;
+   &lt;div class="inner-container-small"&gt;div 3&lt;/div&gt;
+&lt;/div&gt;
   </code>
-
 
 </body>
 </html>
