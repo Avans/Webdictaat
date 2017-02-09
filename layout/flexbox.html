@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <img src="layout/flexbox.png" class="pull-right" style="margin: 15px;">
+  <img src="layout/flexbox.jpg" class="pull-right" style="margin: 15px;">
 
   <h2>Flexbox Layout</h2>
   
   LET OP! DEZE PAGINA IS NOG IN BEWERKING (Luc Claessens)
 
-  <p>Een eenvoudige nieuwe manier om containers in een html-pagina te positioneren is de <b>flexbox layout</b>.</p>
+  <p>Het positioneren van containers in een pagina kan erg lastig zijn. Een eenvoudige nieuwe manier om dit netjes te doen is de <b>flexbox layout</b>.</p>
 
-  <p>Vorige week hebben we al gezien hoe we de <a href="../css/boxmodel.html"><b>grootte</b></a> van elementen kunnen definiëren. En we hebben ook gezien hoe we elementen kunnen <a href="../css/float.html"><b>floaten</b></a>. Dit zijn al twee heel belangrijke ingrediënten om layouts te kunnen maken. Deze gaan we later gebruiken om kolommen op een pagina te maken</p>
+  <p>Voor een flexbox layout hoef je eigenlijk maar een paar dingen te doen.</p>
+    
+  <ol>
+    <li>Je moet een omsluitende container definieren, waarin je een aantal subcontainers opneemt</li>
+    <li>Je moet aangeven hoeveel ruimte elke subcontainer nodig heeft</li>
+  </ol>
+  
+  <p>Laten we beginnen met een eenvoudig voorbeeld. We gaan drie containers horizontaal op een rij zetten. De eerste en de laatste container moeten ieder 25% van de breedte beslaan. De middelste container dus 50%.</p>
 
-  <h3>position</h3>
-
-  <p>Een derde ingrediënt is de <code>position</code> CSS eigenschap. Hiermee kunnen we elementen op een andere manier positioneren dan dat standaard gebeurt. Standaard hebben elementen de waarde <code>static</code> voor deze eigenschap, deze elementen zijn dan <b>niet gepositioneerd</b>. Dat is niet erg, de meeste elementen zijn niet gepositioneerd. Als een element een <code>absolute</code>, <code>relative</code> of <code>fixed</code> position heeft is deze <b>wel gepositioneerd</b>. Hier komen we later op terug.</p>
-
-  <p>Laten we meteen maar gaan kijken naar wat er gebeurt als we elementen absoluut gaan positioneren.</p>
-
-  <h4>absolute</h4>
-  <p>Dit is de meest drastische manier om een element te positioneren. Als je een element absoluut positioneert wordt het <b>verwijderd uit de flow</b> van de HTML pagina en wordt op een <b>absolute plek</b> op de pagina geplaatst.
-
+  
   <code class="livepreview">
     <span class="css">
 span {
@@ -32,61 +31,6 @@ span {
     </span>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;span&gt;Help, ik zit gevangen in een muur van tekst&lt;/span&gt; Cras ac dui feugiat, suscipit enim gravida, commodo elit. Ut eu vulputate orci. Ut id quam tincidunt dui congue ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras auctor tristique ipsum sit amet lacinia. Suspendisse placerat volutpat consequat.
-  </code>
-
-  <p>Als een element absoluut gepositioneerd is kunnen we met <code>top</code>, <code>bottom</code>, <code>left</code> en <code>right</code> aangeven hoe ver van de rand het element geplaatst moet worden.</p>
-
-  <p>Wat is de rand? Normaal is dat de rand van je webpagina, de &lt;body&gt; tag. Maar als je element zich bevind <b>binnen</b> een element dat <b>wel gepositioneerd</b> is, dan gelden de randen van dat element als de rand die gebruikt wordt bij het positioneren.</p>
-
-  <code class="livepreview">
-    <span class="css">
-div {
-    position: <select><option>static</option><option selected>absolute</option></select>;
-    top: <input type="range" min="0" max="100" value="20">px;
-    left: <input type="range" min="0" max="100" value="20">px;
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-}
-
-span {
-    position: <select><option>static</option><option selected>absolute</option></select>;
-    bottom: <input type="range" min="0" max="200" value="0">px;
-    right: <input type="range" min="0" max="200" value="0">px;
-    border: 1px solid red;
-    color: red;
-    width: 100px;
-}
-
-
-    </span>
-
-&lt;div&gt;
-  Ik ben een div.
-  Zolang ik &lt;b&gt;wel gepositioneerd&lt;/b&gt; ben geld ik als de rand waar al mijn subelementen tegenaan positioneren.
-  &lt;span&gt;Ik ben een absoluut gepositioneerde span&lt;/span&gt;
-&lt;/div&gt;
-  </code>
-
-  <div class="assignment">
-    <p class="easy">Kan je ook een negatieve waarde opgeven voor top, left, bottom en right? Wat gebeurt er als je dat doet?</p>
-    <p class="easy">Wat gebeurt er als de div niet meer gepositioneerd is?</p>
-  </div>
-
-  <h4>relative</h4>
-
-  <code class="livepreview">
-    <span class="css">
-span {
-    position: relative</select>;
-    top: <input type="range" min="0" max="100" value="0">px;
-    left: <input type="range" min="0" max="100" value="0">px;
-    border: 1px solid red;
-    color: red;
-}
-    </span>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac dui feugiat, suscipit enim gravida, commodo elit. Ut eu vulputate orci. Ut id quam tincidunt dui congue ultricies. &lt;span&gt;Help, ik zit gevangen in een muur van tekst&lt;/span&gt; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras auctor tristique ipsum sit amet lacinia. Suspendisse placerat volutpat consequat.
   </code>
 
 
